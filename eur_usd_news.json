@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Analyst Ratings",
+    "url": "https://www.investing.com/news/analyst-ratings",
+    "published_at": null,
+    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+  },
+  {
+    "id": 2,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Economic Indicators",
+    "url": "https://www.investing.com/news/economic-indicators",
+    "published_at": null,
+    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+  },
+  {
+    "id": 3,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Sports & General",
+    "url": "https://www.investing.com/news/general",
+    "published_at": null,
+    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+  },
+  {
+    "id": 4,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Insider Trading",
+    "url": "https://www.investing.com/news/insider-trading-news",
+    "published_at": null,
+    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+  },
+  {
+    "id": 5,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Investment Ideas",
+    "url": "https://www.investing.com/news/investment-ideas",
+    "published_at": null,
+    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+  },
+  {
+    "id": 6,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Dollar marginally higher as traders brace for data deluge; yen extends surge",
+    "url": "https://www.investing.com/news/forex-news/dollar-marginally-higher-ahead-of-data-deluge-sterling-down-on-political-strife-4495720",
+    "published_at": null,
+    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+  },
+  {
+    "id": 7,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Stocks hit record highs; Treasury yields fall after US data",
+    "url": "https://www.investing.com/news/stock-market-news/asia-stocks-rise-as-nikkei-sets-fresh-record-dollar-drops-4495410",
+    "published_at": null,
+    "snippet": "By Caroline Valetkevitch and Alun John NEW YORK/LONDON, Feb 10 (Reuters) - Major stock indexes mostly rose on Tuesday, with a..."
+  },
+  {
+    "id": 8,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "OSN Activates New Philippines–UAE Corridor for Global Business Payments",
+    "url": "https://www.investing.com/news/cryptocurrency-news/osn-activates-new-philippinesuae-corridor-for-global-business-payments-4496576",
+    "published_at": null,
+    "snippet": "Abu Dhabi, UAE, February 10th, 2026, Chainwire\nAs trade, employment, and digital payment flows continue to accelerate, OSN, a..."
+  },
+  {
+    "id": 9,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "CTAs reduce equity exposure, increase USD shorts amid shifting market trends: UBS",
+    "url": "https://www.investing.com/news/stock-market-news/ctas-reduce-equity-exposure-increase-usd-shorts-amid-shifting-market-trends-ubs-93CH-4495681",
+    "published_at": null,
+    "snippet": "Investing.com - Systematic trend-following investors known as Commodity Trading Advisors (CTAs) have been gradually reducing their..."
+  },
+  {
+    "id": 10,
+    "currency_pair": "EUR/USD",
+    "source": "Investing.com",
+    "title": "Macron warns of renewed US clashes as he urges EU to use ’Greenland moment’ to push reforms",
+    "url": "https://www.investing.com/news/stock-market-news/macron-warns-of-renewed-us-clashes-as-he-urges-eu-to-use-greenland-moment-to-push-reforms-4495530",
+    "published_at": null,
+    "snippet": "PARIS, Feb 10 (Reuters) - French President Emmanuel Macron said on Tuesday Europe should brace for further clashes with the U.S...."
+  }
+]
