@@ -6,7 +6,7 @@
     "title": "Analyst Ratings",
     "url": "https://www.investing.com/news/analyst-ratings",
     "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "title": "Economic Indicators",
     "url": "https://www.investing.com/news/economic-indicators",
     "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "title": "Sports & General",
     "url": "https://www.investing.com/news/general",
     "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "title": "Insider Trading",
     "url": "https://www.investing.com/news/insider-trading-news",
     "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
   },
   {
     "id": 5,
@@ -42,96 +42,276 @@
     "title": "Investment Ideas",
     "url": "https://www.investing.com/news/investment-ideas",
     "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
   },
   {
     "id": 6,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Dollar marginally higher as traders brace for data deluge; yen extends surge",
-    "url": "https://www.investing.com/news/forex-news/dollar-marginally-higher-ahead-of-data-deluge-sterling-down-on-political-strife-4495720",
+    "title": "CIBC monthly FX outlook: Why the US dollar selloff is likely over",
+    "url": "https://www.investing.com/news/forex-news/cibc-monthly-fx-outlook-why-the-us-dollar-selloff-is-likely-over-4500900",
     "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
   },
   {
     "id": 7,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Stocks hit record highs; Treasury yields fall after US data",
-    "url": "https://www.investing.com/news/stock-market-news/asia-stocks-rise-as-nikkei-sets-fresh-record-dollar-drops-4495410",
+    "title": "Dollar, yields gain, US stocks little changed after US jobs data beat",
+    "url": "https://www.investing.com/news/stock-market-news/buoyant-stocks-pause-for-breath-on-signs-of-softening-us-consumption-4498572",
     "published_at": null,
-    "snippet": "By Caroline Valetkevitch and Alun John NEW YORK/LONDON, Feb 10 (Reuters) - Major stock indexes mostly rose on Tuesday, with a..."
+    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - The dollar and Treasury yields rose, while U.S...."
   },
   {
     "id": 8,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "BoJ to bring forward interest rate hikes post election - BofA Securities",
-    "url": "https://www.investing.com/news/economy-news/boj-to-bring-forward-interest-rate-hikes-post-election--bofa-securities-4496620",
+    "title": "Morning Bid: Retail softens as jobs loom",
+    "url": "https://www.investing.com/news/commodities-news/morning-bid-retail-softens-as-jobs-loom-4499293",
     "published_at": null,
-    "snippet": "Investing.com - Japan’s Prime Minister Sanae Takaichi now has a popular mandate to revitalise the country’s economy, and Bank of..."
+    "snippet": "By Mike Dolan 11 Feb -   What matters in U.S. and global markets today By Mike Dolan, Editor-At-Large, Finance and Markets Just..."
   },
   {
     "id": 9,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "CTAs reduce equity exposure, increase USD shorts amid shifting market trends: UBS",
-    "url": "https://www.investing.com/news/stock-market-news/ctas-reduce-equity-exposure-increase-usd-shorts-amid-shifting-market-trends-ubs-93CH-4495681",
+    "title": "Dollar weakens ahead of key U.S. nonfarm payrolls report",
+    "url": "https://www.investing.com/news/forex-news/asia-fx-firms-as-dollar-weakens-ahead-of-payrolls-yuan-steady-after-soft-cpi-4498634",
     "published_at": null,
-    "snippet": "Investing.com - Systematic trend-following investors known as Commodity Trading Advisors (CTAs) have been gradually reducing their..."
+    "snippet": "Investing.com - The U.S. dollar weakened on Wednesday, coming under pressure ahead of the release of crucial U.S. employment data..."
   },
   {
     "id": 10,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Asia FX firms, yen retains election gains as dollar falls ahead of key data",
-    "url": "https://www.investing.com/news/forex-news/asia-fx-firms-yen-retains-election-gains-as-dollar-falls-ahead-of-key-data-4495461",
-    "published_at": null,
-    "snippet": "Investing.com-- Most Asian currencies firmed on Tuesday, tracking an overnight slide in the dollar as a recent rebound in the..."
+    "title": "Dollar marginally higher as traders brace for data deluge; yen extends surge",
+    "url": "https://www.investing.com/news/forex-news/dollar-marginally-higher-ahead-of-data-deluge-sterling-down-on-political-strife-4495720",
+    "published_at": "2026-02-10T00:00:00+00:00",
+    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
   },
   {
     "id": 11,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Dollar soft ahead of US data, yen holds onto its gains after election",
-    "url": "https://www.investing.com/news/economy-news/dollar-soft-ahead-of-us-data-yen-holds-onto-its-gains-after-election-4495408",
-    "published_at": null,
-    "snippet": "By Ankur Banerjee and Jiaxing Li SINGAPORE, Feb 10 (Reuters) - The U.S. dollar nursed steep losses on Tuesday ahead of a slate of..."
+    "title": "BoJ to bring forward interest rate hikes post election - BofA Securities",
+    "url": "https://www.investing.com/news/economy-news/boj-to-bring-forward-interest-rate-hikes-post-election--bofa-securities-4496620",
+    "published_at": "2026-02-10T00:00:00+00:00",
+    "snippet": "Investing.com - Japan’s Prime Minister Sanae Takaichi now has a popular mandate to revitalise the country’s economy, and Bank of..."
   },
   {
     "id": 12,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Trading Day: Takaichi and tech tonics",
-    "url": "https://www.investing.com/news/economy-news/trading-day-takaichi-and-tech-tonics-4495231",
-    "published_at": null,
-    "snippet": "ORLANDO, Florida, Feb 9 (Reuters) - World stocks rallied on Monday, propelled by optimism around Japanese Prime Minister Sanae..."
+    "title": "CTAs reduce equity exposure, increase USD shorts amid shifting market trends: UBS",
+    "url": "https://www.investing.com/news/stock-market-news/ctas-reduce-equity-exposure-increase-usd-shorts-amid-shifting-market-trends-ubs-93CH-4495681",
+    "published_at": "2026-02-10T00:00:00+00:00",
+    "snippet": "Investing.com - Systematic trend-following investors known as Commodity Trading Advisors (CTAs) have been gradually reducing their..."
   },
   {
     "id": 13,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Yen strengthens against U.S. dollar after Japanese election",
-    "url": "https://www.investing.com/news/economy-news/yen-slide-deepens-as-takaichi-triumph-in-japan-election-paves-the-way-for-more-stimulus-4492529",
-    "published_at": null,
-    "snippet": "By Sophie Kiderlin and Chibuike Oguh NEW YORK/LONDON, Feb 9 (Reuters) - The yen strengthened on Monday after Japanese Prime..."
+    "title": "Asia FX firms, yen retains election gains as dollar falls ahead of key data",
+    "url": "https://www.investing.com/news/forex-news/asia-fx-firms-yen-retains-election-gains-as-dollar-falls-ahead-of-key-data-4495461",
+    "published_at": "2026-02-09T00:00:00+00:00",
+    "snippet": "Investing.com-- Most Asian currencies firmed on Tuesday, tracking an overnight slide in the dollar as a recent rebound in the..."
   },
   {
     "id": 14,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Dollar falls ahead of data deluge; yen firms after Takaichi’s election victory",
-    "url": "https://www.investing.com/news/forex-news/dollar-slips-ahead-of-data-dump-yen-gains-on-intervention-talk-4493132",
-    "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar fell on Monday after a solid week of gains, with investors looking ahead to a busy week for..."
+    "title": "Dollar soft ahead of US data, yen holds onto its gains after election",
+    "url": "https://www.investing.com/news/economy-news/dollar-soft-ahead-of-us-data-yen-holds-onto-its-gains-after-election-4495408",
+    "published_at": "2026-02-09T00:00:00+00:00",
+    "snippet": "By Ankur Banerjee and Jiaxing Li SINGAPORE, Feb 10 (Reuters) - The U.S. dollar nursed steep losses on Tuesday ahead of a slate of..."
   },
   {
     "id": 15,
     "currency_pair": "USD/JPY",
     "source": "Investing.com",
-    "title": "Bank of America looks at what happens to yen after the Japanese election",
-    "url": "https://www.investing.com/news/forex-news/bank-of-america-looks-at-what-happens-to-yen-after-the-japanese-election-4493716",
+    "title": "Trading Day: Takaichi and tech tonics",
+    "url": "https://www.investing.com/news/economy-news/trading-day-takaichi-and-tech-tonics-4495231",
     "published_at": "2026-02-09T00:00:00+00:00",
-    "snippet": "Investing.com – Japanese Prime Minister Sanae Takaichi was rewarded with the biggest landslide win in postwar history after..."
+    "snippet": "ORLANDO, Florida, Feb 9 (Reuters) - World stocks rallied on Monday, propelled by optimism around Japanese Prime Minister Sanae..."
+  },
+  {
+    "id": 16,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Dollar Falls as Impact of Strong Job Creation Fades",
+    "url": "https://www.wsj.com/finance/currencies/usd-jpy-attempting-to-hold-above-153-90-154-34-range-8c2f2b05?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The dollar fell, giving up most of the early gains propelled by robust U.S. job creation."
+  },
+  {
+    "id": 17,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "The WSJ Dollar Index Falls 0.10% to 94.29",
+    "url": "https://www.wsj.com/finance/currencies/yen-broadly-weakens-amid-mild-risk-appetite-e4d20e51?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index declined 0.1% — down for three consecutive trading days."
+  },
+  {
+    "id": 18,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Treasury Yields, Dollar Fall Ahead of Data Reports",
+    "url": "https://www.wsj.com/finance/currencies/yen-mostly-strengthens-japanese-ldps-win-mostly-priced-in-by-markets-6e172e4c?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The dollar fell ahead of a stream of data reports."
+  },
+  {
+    "id": 19,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Gold futures reclaim $5,000 mark, buoyed by ‘gradual erosion of confidence’ in the U.S. dollar",
+    "url": "https://www.marketwatch.com/story/gold-futures-once-again-reclaim-5-000-mark-af3da5ee?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+  },
+  {
+    "id": 20,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "‘Sell America’ fears drag dollar toward 4-year low on Japan election, China report",
+    "url": "https://www.marketwatch.com/story/sell-america-fears-drag-dollar-toward-4-year-low-on-japan-election-china-report-a87651a4?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+  },
+  {
+    "id": 21,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Bitcoin’s attempt at a rebound runs into gold’s recapture of $5,000",
+    "url": "https://www.marketwatch.com/story/bitcoins-attempt-at-a-rebound-runs-into-golds-recapture-of-5-000-d18cd953?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+  },
+  {
+    "id": 22,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Takaichi’s victory in Japanese election means a billion-dollar payday for Berkshire Hathaway",
+    "url": "https://www.marketwatch.com/story/takaichis-victory-in-japanese-election-means-a-billion-dollar-payday-for-berkshire-hathaway-00674bab?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+  },
+  {
+    "id": 23,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "A New Crypto Winter Is Here and Even the Biggest Bulls Aren’t Certain Why",
+    "url": "https://www.wsj.com/finance/currencies/a-new-crypto-winter-is-here-and-even-the-biggest-bulls-are-worried-82019de4?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+  },
+  {
+    "id": 24,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "The WSJ Dollar Index Rises 0.38% This Week to 95.06",
+    "url": "https://www.wsj.com/finance/currencies/yen-strengthens-on-possible-position-adjustments-before-japans-election-e380fd1a?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+  },
+  {
+    "id": 25,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Bitcoin bounces above $70K but is still headed for its worst week since 2022",
+    "url": "https://www.marketwatch.com/story/bitcoin-rises-after-brutal-week-of-selling-3e74d460?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days."
+  },
+  {
+    "id": 26,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Bitcoin Booster’s $12 Billion Loss Headlines Crypto’s Worst Day Since 2022 Crash",
+    "url": "https://www.wsj.com/finance/currencies/strategy-earnings-fourth-2025-33688dab?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days."
+  },
+  {
+    "id": 27,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "The WSJ Dollar Index Rises 0.33% to 95.35",
+    "url": "https://www.wsj.com/finance/currencies/yen-consolidates-amid-risks-of-japans-verbal-intervention-f3a32df4?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days."
+  },
+  {
+    "id": 28,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "The WSJ Dollar Index Rises 0.29% to 95.03",
+    "url": "https://www.wsj.com/finance/currencies/yen-mostly-weakens-on-prospect-of-big-election-win-for-ldp-daafefbf?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days."
+  },
+  {
+    "id": 29,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Dollar Gives Back Recent Gains as U.S. Lawmakers Reach Funding Deal",
+    "url": "https://www.wsj.com/finance/currencies/yen-mixed-as-traders-digest-japanese-finance-ministers-fx-remarks-96314604?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The dollar weakened as markets faced another U.S. data gap."
+  },
+  {
+    "id": 30,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "The Crypto-Hoarding Strategy Is Unraveling",
+    "url": "https://www.wsj.com/finance/currencies/the-crypto-hoarding-strategy-is-unraveling-34b720f5?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days."
+  },
+  {
+    "id": 31,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "The WSJ Dollar Index Rises 0.30% to 94.98",
+    "url": "https://www.wsj.com/finance/currencies/asian-currencies-mixed-traders-digest-warshs-nomination-as-next-fed-chair-92e67ef3?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days."
+  },
+  {
+    "id": 32,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Gold now down nearly $1,000 from peak as silver extends losses after a record 31% one-day slump",
+    "url": "https://www.marketwatch.com/story/gold-now-down-nearly-1-000-from-peak-as-silver-struggles-following-record-31-slump-56067f2a?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": ""
+  },
+  {
+    "id": 33,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "Kevin Warsh needs to keep the Fed out of politics — no matter what Trump says",
+    "url": "https://www.marketwatch.com/story/kevin-warsh-needs-to-keep-the-fed-out-of-politics-no-matter-what-trump-says-3815671f?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": ""
+  },
+  {
+    "id": 34,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "The dollar’s rebound probably won’t last",
+    "url": "https://www.marketwatch.com/story/the-dollars-rebound-probably-wont-last-cfd9a7df?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": ""
+  },
+  {
+    "id": 35,
+    "currency_pair": "USD/JPY",
+    "source": "MarketWatch",
+    "title": "There’s now a bigger risk for stocks than the economy or corporate earnings",
+    "url": "https://www.marketwatch.com/story/theres-now-a-bigger-risk-for-stocks-than-the-economy-or-corporate-earnings-cff2eee0?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": ""
   }
 ]

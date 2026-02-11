@@ -1,70 +1,70 @@
 [
   {
     "id": 1,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
     "title": "Analyst Ratings",
     "url": "https://www.investing.com/news/analyst-ratings",
     "published_at": null,
-    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
+    "snippet": "Investing.com - The U.S. dollar weakened on Wednesday, coming under pressure ahead of the release of crucial U.S. employment data..."
   },
   {
     "id": 2,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
     "title": "Economic Indicators",
     "url": "https://www.investing.com/news/economic-indicators",
     "published_at": null,
-    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
+    "snippet": "Investing.com - The U.S. dollar weakened on Wednesday, coming under pressure ahead of the release of crucial U.S. employment data..."
   },
   {
     "id": 3,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
     "title": "Sports & General",
     "url": "https://www.investing.com/news/general",
     "published_at": null,
-    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
+    "snippet": "Investing.com - The U.S. dollar weakened on Wednesday, coming under pressure ahead of the release of crucial U.S. employment data..."
   },
   {
     "id": 4,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
     "title": "Insider Trading",
     "url": "https://www.investing.com/news/insider-trading-news",
     "published_at": null,
-    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
+    "snippet": "Investing.com - The U.S. dollar weakened on Wednesday, coming under pressure ahead of the release of crucial U.S. employment data..."
   },
   {
     "id": 5,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
     "title": "Investment Ideas",
     "url": "https://www.investing.com/news/investment-ideas",
     "published_at": null,
-    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
+    "snippet": "Investing.com - The U.S. dollar weakened on Wednesday, coming under pressure ahead of the release of crucial U.S. employment data..."
   },
   {
     "id": 6,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
-    "title": "CIBC monthly FX outlook: Why the US dollar selloff is likely over",
-    "url": "https://www.investing.com/news/forex-news/cibc-monthly-fx-outlook-why-the-us-dollar-selloff-is-likely-over-4500900",
+    "title": "Dollar weakens ahead of key U.S. nonfarm payrolls report",
+    "url": "https://www.investing.com/news/forex-news/asia-fx-firms-as-dollar-weakens-ahead-of-payrolls-yuan-steady-after-soft-cpi-4498634",
     "published_at": null,
-    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
+    "snippet": "Investing.com - The U.S. dollar weakened on Wednesday, coming under pressure ahead of the release of crucial U.S. employment data..."
   },
   {
     "id": 7,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
-    "title": "Yen perky as Japan fiscal fears dissipate, dollar shaky ahead of payrolls",
-    "url": "https://www.investing.com/news/forex-news/yen-perky-as-japan-fiscal-fears-dissipate-dollar-shaky-ahead-of-payrolls-4498593",
+    "title": "China CPI inflation undershoots forecasts in Jan; deflation worries linger",
+    "url": "https://www.investing.com/news/economic-indicators/china-cpi-inflation-undershoots-forecasts-in-jan-deflation-worries-linger-4498596",
     "published_at": null,
-    "snippet": "By Rae Wee SINGAPORE, Feb 11 (Reuters) - The yen held on to solid gains on Wednesday, bolstered by a rally in Japan’s stock..."
+    "snippet": "Updates at 04:02 GMT with analyst commentsInvesting.com-- Chinese consumer price index inflation grew much less than expected in..."
   },
   {
     "id": 8,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
     "title": "Dollar marginally higher as traders brace for data deluge; yen extends surge",
     "url": "https://www.investing.com/news/forex-news/dollar-marginally-higher-ahead-of-data-deluge-sterling-down-on-political-strife-4495720",
@@ -73,61 +73,16 @@
   },
   {
     "id": 9,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
-    "title": "European stocks close mixed: Corporate earnings in spotlight; BP suspends buybacks",
-    "url": "https://www.investing.com/news/stock-market-news/european-stocks-mixed-with-corporate-earnings-in-spotlight-bp-suspends-buybacks-4495591",
-    "published_at": "2026-02-10T00:00:00+00:00",
-    "snippet": "Investing.com - European stocks traded in a mixed fashion Tuesday, as investors digested a deluge of quarterly earnings from some..."
+    "title": "Asia FX firms, yen retains election gains as dollar falls ahead of key data",
+    "url": "https://www.investing.com/news/forex-news/asia-fx-firms-yen-retains-election-gains-as-dollar-falls-ahead-of-key-data-4495461",
+    "published_at": "2026-02-09T00:00:00+00:00",
+    "snippet": "Investing.com-- Most Asian currencies firmed on Tuesday, tracking an overnight slide in the dollar as a recent rebound in the..."
   },
   {
     "id": 10,
-    "currency_pair": "GBP/USD",
-    "source": "Investing.com",
-    "title": "Morning Bid: Yen lift, dollar drift",
-    "url": "https://www.investing.com/news/commodities-news/morning-bid-yen-lift-dollar-drift-4496033",
-    "published_at": "2026-02-10T00:00:00+00:00",
-    "snippet": "By Mike Dolan Feb 10 -   What matters in U.S. and global markets today By Mike Dolan, Editor-At-Large, Finance and Markets The..."
-  },
-  {
-    "id": 11,
-    "currency_pair": "GBP/USD",
-    "source": "Investing.com",
-    "title": "Political uncertainty continue to drags pound as Starmer faces pressure: Jefferies",
-    "url": "https://www.investing.com/news/economy-news/political-uncertainty-continue-to-drags-pound-as-starmer-faces-pressure-jefferies-4495903",
-    "published_at": "2026-02-10T00:00:00+00:00",
-    "snippet": "Investing.com -- Political uncertainty continues to weigh on the pound and UK assets as Prime Minister Keir Starmer faces mounting..."
-  },
-  {
-    "id": 12,
-    "currency_pair": "GBP/USD",
-    "source": "Investing.com",
-    "title": "Dollar soft ahead of US data, yen holds onto its gains after election",
-    "url": "https://www.investing.com/news/economy-news/dollar-soft-ahead-of-us-data-yen-holds-onto-its-gains-after-election-4495408",
-    "published_at": "2026-02-09T00:00:00+00:00",
-    "snippet": "By Ankur Banerjee and Jiaxing Li SINGAPORE, Feb 10 (Reuters) - The U.S. dollar nursed steep losses on Tuesday ahead of a slate of..."
-  },
-  {
-    "id": 13,
-    "currency_pair": "GBP/USD",
-    "source": "Investing.com",
-    "title": "Trading Day: Takaichi and tech tonics",
-    "url": "https://www.investing.com/news/economy-news/trading-day-takaichi-and-tech-tonics-4495231",
-    "published_at": "2026-02-09T00:00:00+00:00",
-    "snippet": "ORLANDO, Florida, Feb 9 (Reuters) - World stocks rallied on Monday, propelled by optimism around Japanese Prime Minister Sanae..."
-  },
-  {
-    "id": 14,
-    "currency_pair": "GBP/USD",
-    "source": "Investing.com",
-    "title": "Yen strengthens against U.S. dollar after Japanese election",
-    "url": "https://www.investing.com/news/economy-news/yen-slide-deepens-as-takaichi-triumph-in-japan-election-paves-the-way-for-more-stimulus-4492529",
-    "published_at": "2026-02-09T00:00:00+00:00",
-    "snippet": "By Sophie Kiderlin and Chibuike Oguh NEW YORK/LONDON, Feb 9 (Reuters) - The yen strengthened on Monday after Japanese Prime..."
-  },
-  {
-    "id": 15,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "Investing.com",
     "title": "Dollar falls ahead of data deluge; yen firms after Takaichi’s election victory",
     "url": "https://www.investing.com/news/forex-news/dollar-slips-ahead-of-data-dump-yen-gains-on-intervention-talk-4493132",
@@ -135,8 +90,53 @@
     "snippet": "Investing.com - The U.S. dollar fell on Monday after a solid week of gains, with investors looking ahead to a busy week for..."
   },
   {
+    "id": 11,
+    "currency_pair": "USD/CNY",
+    "source": "Investing.com",
+    "title": "Asia FX muted, yen buoyed by intervention warnings after Takaichi election win",
+    "url": "https://www.investing.com/news/forex-news/asia-fx-muted-yen-buoyed-by-intervention-warnings-after-takaichi-election-win-4492563",
+    "published_at": "2026-02-08T00:00:00+00:00",
+    "snippet": "Investing.com-- Most Asian currencies moved in a tight range on Monday, while the Japanese yen firmed slightly after the country’s..."
+  },
+  {
+    "id": 12,
+    "currency_pair": "USD/CNY",
+    "source": "Investing.com",
+    "title": "Dollar set for best weekly advance in nearly a month; euro, sterling rise",
+    "url": "https://www.investing.com/news/forex-news/dollar-set-for-strong-weekly-gain-euro-sterling-bounce-4489674",
+    "published_at": "2026-02-06T00:00:00+00:00",
+    "snippet": "Investing.com -- The U.S. dollar fell on Friday, but losses were small and the greenback was headed for its best weekly advance in..."
+  },
+  {
+    "id": 13,
+    "currency_pair": "USD/CNY",
+    "source": "Investing.com",
+    "title": "Asia FX muted as dollar heads for weekly gains; yen fragile ahead of elections",
+    "url": "https://www.investing.com/news/forex-news/asia-fx-muted-as-dollar-heads-for-weekly-gains-yen-fragile-ahead-of-elections-4489370",
+    "published_at": "2026-02-06T00:00:00+00:00",
+    "snippet": "Investing.com-- Most Asian currencies moved in a tight range on Friday with the yen recovering some weekly losses ahead of a..."
+  },
+  {
+    "id": 14,
+    "currency_pair": "USD/CNY",
+    "source": "Investing.com",
+    "title": "Yuan heads for longest weekly winning streak against dollar in 13 years",
+    "url": "https://www.investing.com/news/forex-news/yuan-heads-for-longest-weekly-winning-streak-against-dollar-in-13-years-4489368",
+    "published_at": "2026-02-06T00:00:00+00:00",
+    "snippet": "HONG KONG, Feb 6 (Reuters) - China’s yuan held a soft tone on Friday, but remained on track for its longest winning streak..."
+  },
+  {
+    "id": 15,
+    "currency_pair": "USD/CNY",
+    "source": "Investing.com",
+    "title": "Dollar edges up, euro and sterling slip after central banks hold rates steady",
+    "url": "https://www.investing.com/news/forex-news/dollar-edges-higher-euro-and-sterling-slip-ahead-of-central-bank-decisions-4486801",
+    "published_at": "2026-02-05T00:00:00+00:00",
+    "snippet": "Investing.com - The U.S. dollar edged higher Thursday, regaining some strength this week amid volatility in stock markets, while..."
+  },
+  {
     "id": 16,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Dollar Falls as Impact of Strong Job Creation Fades",
     "url": "https://www.wsj.com/finance/currencies/usd-jpy-attempting-to-hold-above-153-90-154-34-range-8c2f2b05?mod=mw_quote_news",
@@ -145,7 +145,7 @@
   },
   {
     "id": 17,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "The WSJ Dollar Index Falls 0.10% to 94.29",
     "url": "https://www.wsj.com/finance/currencies/yen-broadly-weakens-amid-mild-risk-appetite-e4d20e51?mod=mw_quote_news",
@@ -154,7 +154,7 @@
   },
   {
     "id": 18,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Treasury Yields, Dollar Fall Ahead of Data Reports",
     "url": "https://www.wsj.com/finance/currencies/yen-mostly-strengthens-japanese-ldps-win-mostly-priced-in-by-markets-6e172e4c?mod=mw_quote_news",
@@ -163,7 +163,7 @@
   },
   {
     "id": 19,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Gold futures reclaim $5,000 mark, buoyed by ‘gradual erosion of confidence’ in the U.S. dollar",
     "url": "https://www.marketwatch.com/story/gold-futures-once-again-reclaim-5-000-mark-af3da5ee?mod=mw_quote_news",
@@ -172,7 +172,7 @@
   },
   {
     "id": 20,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "‘Sell America’ fears drag dollar toward 4-year low on Japan election, China report",
     "url": "https://www.marketwatch.com/story/sell-america-fears-drag-dollar-toward-4-year-low-on-japan-election-china-report-a87651a4?mod=mw_quote_news",
@@ -181,7 +181,7 @@
   },
   {
     "id": 21,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Bitcoin’s attempt at a rebound runs into gold’s recapture of $5,000",
     "url": "https://www.marketwatch.com/story/bitcoins-attempt-at-a-rebound-runs-into-golds-recapture-of-5-000-d18cd953?mod=mw_quote_news",
@@ -190,7 +190,7 @@
   },
   {
     "id": 22,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Takaichi’s victory in Japanese election means a billion-dollar payday for Berkshire Hathaway",
     "url": "https://www.marketwatch.com/story/takaichis-victory-in-japanese-election-means-a-billion-dollar-payday-for-berkshire-hathaway-00674bab?mod=mw_quote_news",
@@ -199,7 +199,7 @@
   },
   {
     "id": 23,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "A New Crypto Winter Is Here and Even the Biggest Bulls Aren’t Certain Why",
     "url": "https://www.wsj.com/finance/currencies/a-new-crypto-winter-is-here-and-even-the-biggest-bulls-are-worried-82019de4?mod=mw_quote_news",
@@ -208,7 +208,7 @@
   },
   {
     "id": 24,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "The WSJ Dollar Index Rises 0.38% This Week to 95.06",
     "url": "https://www.wsj.com/finance/currencies/yen-strengthens-on-possible-position-adjustments-before-japans-election-e380fd1a?mod=mw_quote_news",
@@ -217,7 +217,7 @@
   },
   {
     "id": 25,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Bitcoin bounces above $70K but is still headed for its worst week since 2022",
     "url": "https://www.marketwatch.com/story/bitcoin-rises-after-brutal-week-of-selling-3e74d460?mod=mw_quote_news",
@@ -226,7 +226,7 @@
   },
   {
     "id": 26,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Bitcoin Booster’s $12 Billion Loss Headlines Crypto’s Worst Day Since 2022 Crash",
     "url": "https://www.wsj.com/finance/currencies/strategy-earnings-fourth-2025-33688dab?mod=mw_quote_news",
@@ -235,7 +235,7 @@
   },
   {
     "id": 27,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "The WSJ Dollar Index Rises 0.33% to 95.35",
     "url": "https://www.wsj.com/finance/currencies/yen-consolidates-amid-risks-of-japans-verbal-intervention-f3a32df4?mod=mw_quote_news",
@@ -244,7 +244,7 @@
   },
   {
     "id": 28,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "The WSJ Dollar Index Rises 0.29% to 95.03",
     "url": "https://www.wsj.com/finance/currencies/yen-mostly-weakens-on-prospect-of-big-election-win-for-ldp-daafefbf?mod=mw_quote_news",
@@ -253,7 +253,7 @@
   },
   {
     "id": 29,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Dollar Gives Back Recent Gains as U.S. Lawmakers Reach Funding Deal",
     "url": "https://www.wsj.com/finance/currencies/yen-mixed-as-traders-digest-japanese-finance-ministers-fx-remarks-96314604?mod=mw_quote_news",
@@ -262,7 +262,7 @@
   },
   {
     "id": 30,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "The Crypto-Hoarding Strategy Is Unraveling",
     "url": "https://www.wsj.com/finance/currencies/the-crypto-hoarding-strategy-is-unraveling-34b720f5?mod=mw_quote_news",
@@ -271,7 +271,7 @@
   },
   {
     "id": 31,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "The WSJ Dollar Index Rises 0.30% to 94.98",
     "url": "https://www.wsj.com/finance/currencies/asian-currencies-mixed-traders-digest-warshs-nomination-as-next-fed-chair-92e67ef3?mod=mw_quote_news",
@@ -280,7 +280,7 @@
   },
   {
     "id": 32,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Gold now down nearly $1,000 from peak as silver extends losses after a record 31% one-day slump",
     "url": "https://www.marketwatch.com/story/gold-now-down-nearly-1-000-from-peak-as-silver-struggles-following-record-31-slump-56067f2a?mod=mw_quote_news",
@@ -289,7 +289,7 @@
   },
   {
     "id": 33,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "Kevin Warsh needs to keep the Fed out of politics — no matter what Trump says",
     "url": "https://www.marketwatch.com/story/kevin-warsh-needs-to-keep-the-fed-out-of-politics-no-matter-what-trump-says-3815671f?mod=mw_quote_news",
@@ -298,7 +298,7 @@
   },
   {
     "id": 34,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "The dollar’s rebound probably won’t last",
     "url": "https://www.marketwatch.com/story/the-dollars-rebound-probably-wont-last-cfd9a7df?mod=mw_quote_news",
@@ -307,7 +307,7 @@
   },
   {
     "id": 35,
-    "currency_pair": "GBP/USD",
+    "currency_pair": "USD/CNY",
     "source": "MarketWatch",
     "title": "There’s now a bigger risk for stocks than the economy or corporate earnings",
     "url": "https://www.marketwatch.com/story/theres-now-a-bigger-risk-for-stocks-than-the-economy-or-corporate-earnings-cff2eee0?mod=mw_quote_news",

@@ -34,16 +34,37 @@ USER_AGENT = (
 )
 HEADERS = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
 
-# Supported currency pairs and their Investing.com news URLs.
+# Supported currency pairs and their news URLs.
 SUPPORTED_PAIRS: Dict[str, Dict[str, str]] = {
     "EUR/USD": {
         "investing_url": "https://www.investing.com/currencies/eur-usd-news",
+        "marketwatch_url": "https://www.marketwatch.com/investing/currency/eurusd",
+        "yahoo_url": "https://finance.yahoo.com/quote/EURUSD=X/",
     },
     "USD/JPY": {
         "investing_url": "https://www.investing.com/currencies/usd-jpy-news",
+        "marketwatch_url": "https://www.marketwatch.com/investing/currency/usdjpy",
+        "yahoo_url": "https://finance.yahoo.com/quote/JPY=X/",
     },
     "GBP/USD": {
         "investing_url": "https://www.investing.com/currencies/gbp-usd-news",
+        "marketwatch_url": "https://www.marketwatch.com/investing/currency/gbpusd",
+        "yahoo_url": "https://finance.yahoo.com/quote/GBPUSD=X/",
+    },
+    "USD/CNY": {
+        "investing_url": "https://www.investing.com/currencies/usd-cny-news",
+        "marketwatch_url": "https://www.marketwatch.com/investing/currency/usdcny",
+        "yahoo_url": "https://finance.yahoo.com/quote/CNY=X/",
+    },
+    "USD/CAD": {
+        "investing_url": "https://www.investing.com/currencies/usd-cad-news",
+        "marketwatch_url": "https://www.marketwatch.com/investing/currency/usdcad",
+        "yahoo_url": "https://finance.yahoo.com/quote/CAD=X/",
+    },
+    "AUD/USD": {
+        "investing_url": "https://www.investing.com/currencies/aud-usd-news",
+        "marketwatch_url": "https://www.marketwatch.com/investing/currency/audusd",
+        "yahoo_url": "https://finance.yahoo.com/quote/AUDUSD=X/",
     },
 }
 
@@ -260,6 +281,137 @@ def scrape_investing_pair(
     return items
 
 
+def scrape_marketwatch_pair(
+    pair: str,
+    url: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[Dict]:
+    """
+    Best-effort scraper for a currency pair's news section on MarketWatch.
+    We target links with the "mod=mw_quote_news" marker, which are specifically
+    attached to quote-related news items.
+    """
+    print(f"\n[INFO] Crawling MarketWatch ({pair} news)...")
+    html = fetch_html(url)
+    if not html:
+        return []
+
+    soup = BeautifulSoup(html, "html.parser")
+    items: List[Dict] = []
+
+    # Links for the quote's news section typically contain this marker.
+    for a in soup.select("a[href*='mod=mw_quote_news']"):
+        try:
+            title = a.get_text(strip=True)
+            if not title or len(title) < 15:
+                continue
+
+            href = a.get("href", "")
+            if not href:
+                continue
+            if not href.startswith("http"):
+                href = "https://www.marketwatch.com" + href
+
+            # MarketWatch often shows the datetime as nearby text, but it may not
+            # be in a dedicated <time> tag. For simplicity and robustness, we
+            # leave publish time as None and let within_date_range() keep it.
+            published_dt: Optional[datetime] = None
+
+            if not within_date_range(published_dt, start_date, end_date):
+                continue
+
+            snippet = ""
+            sibling_p = a.find_next("p")
+            if sibling_p:
+                snippet = sibling_p.get_text(strip=True)[:600]
+
+            items.append(
+                {
+                    "source": "MarketWatch",
+                    "currency_pair": pair,
+                    "title": title,
+                    "url": href,
+                    "published_dt": published_dt,
+                    "snippet": snippet,
+                }
+            )
+
+            if max_items is not None and len(items) >= max_items:
+                break
+        except Exception:
+            continue
+
+    print(f"[INFO] MarketWatch items collected: {len(items)}")
+    return items
+
+
+def scrape_yahoo_pair(
+    pair: str,
+    url: str,
+    max_items: Optional[int] = None,
+) -> List[Dict]:
+    """
+    Best-effort scraper for a currency pair's quote page on Yahoo Finance.
+
+    We do NOT rely on a stable DOM or exact "news" section selector, since
+    Yahoo frequently changes layouts and uses heavy client-side rendering.
+    Instead, we:
+      - Look for <a> tags that link to /news/ articles.
+      - Treat their text as the title.
+    Date information on the quote page is often shown as relative labels like
+    "2d ago"; to keep this scraper robust, we currently leave publish time as
+    None and let the LLM focus on article content.
+    """
+    print(f"\n[INFO] Crawling Yahoo Finance ({pair} quote news)...")
+    html = fetch_html(url)
+    if not html:
+        return []
+
+    soup = BeautifulSoup(html, "html.parser")
+    items: List[Dict] = []
+
+    for a in soup.select("a[href*='/news/']"):
+        try:
+            title = a.get_text(strip=True)
+            if not title or len(title) < 15:
+                continue
+
+            href = a.get("href", "")
+            if not href:
+                continue
+            if not href.startswith("http"):
+                href = "https://finance.yahoo.com" + href
+
+            # Publish time is left as None for robustness.
+            published_dt: Optional[datetime] = None
+
+            snippet = ""
+            sibling_p = a.find_next("p")
+            if sibling_p:
+                snippet = sibling_p.get_text(strip=True)[:600]
+
+            items.append(
+                {
+                    "source": "Yahoo Finance",
+                    "currency_pair": pair,
+                    "title": title,
+                    "url": href,
+                    "published_dt": published_dt,
+                    "snippet": snippet,
+                }
+            )
+
+            if max_items is not None and len(items) >= max_items:
+                break
+        except Exception:
+            continue
+
+    print(f"[INFO] Yahoo Finance items collected: {len(items)}")
+    return items
+
+
 def collect_news_for_pair(
     pair: str,
     start_date: Optional[date],
@@ -272,8 +424,7 @@ def collect_news_for_pair(
     """
     raw_items: List[Dict] = []
 
-    # Currently only Investing.com is used as a stable source. More sources
-    # can be added here if needed.
+    # Currently Investing.com and MarketWatch are used as sources.
     cfg = SUPPORTED_PAIRS.get(pair)
     if not cfg:
         raise SystemExit(
@@ -281,15 +432,51 @@ def collect_news_for_pair(
             f"Supported: {', '.join(sorted(SUPPORTED_PAIRS.keys()))}"
         )
 
+    remaining = max_items
+
+    # 1) Investing.com
+    before = len(raw_items)
     raw_items.extend(
         scrape_investing_pair(
             pair=pair,
             url=cfg["investing_url"],
             start_date=start_date,
             end_date=end_date,
-            max_items=max_items,
+            max_items=remaining,
         )
     )
+    if remaining is not None:
+        added = len(raw_items) - before
+        remaining = max(0, remaining - added)
+
+    # 2) MarketWatch (only if we still want more items and URL is configured)
+    mw_url = cfg.get("marketwatch_url")
+    if mw_url and (remaining is None or remaining > 0):
+        before = len(raw_items)
+        raw_items.extend(
+            scrape_marketwatch_pair(
+                pair=pair,
+                url=mw_url,
+                start_date=start_date,
+                end_date=end_date,
+                max_items=remaining,
+            )
+        )
+        if remaining is not None:
+            added = len(raw_items) - before
+            remaining = max(0, remaining - added)
+
+    # 3) Yahoo Finance (currently configured only for some pairs, e.g. EUR/USD)
+    yahoo_url = cfg.get("yahoo_url")
+    if yahoo_url and (remaining is None or remaining > 0):
+        before = len(raw_items)
+        raw_items.extend(
+            scrape_yahoo_pair(
+                pair=pair,
+                url=yahoo_url,
+                max_items=remaining,
+            )
+        )
 
     if not raw_items:
         return []
@@ -371,6 +558,7 @@ def load_default_config() -> Dict[str, Optional[str]]:
             "end_date": None,
             "currency_pair": "EUR/USD",
             "max_news": None,
+            "enabled_llm_providers": ["deepseek", "openai"],
         }
 
     try:
@@ -383,6 +571,7 @@ def load_default_config() -> Dict[str, Optional[str]]:
             "end_date": None,
             "currency_pair": "EUR/USD",
             "max_news": None,
+            "enabled_llm_providers": ["deepseek", "openai"],
         }
 
     start_date = data.get("start_date")
@@ -393,11 +582,24 @@ def load_default_config() -> Dict[str, Optional[str]]:
         # Fallback to EUR/USD if an unsupported pair is configured.
         currency_pair = "EUR/USD"
 
+    # Parse llm_models: each model can have enabled=true/false
+    enabled_providers: List[str] = []
+    llm_models = data.get("llm_models")
+    if isinstance(llm_models, dict):
+        for name in ("deepseek", "openai", "gemini"):
+            model_cfg = llm_models.get(name)
+            if isinstance(model_cfg, dict) and model_cfg.get("enabled") is True:
+                enabled_providers.append(name)
+    if not enabled_providers:
+        # Fallback: enable deepseek and openai if no valid config
+        enabled_providers = ["deepseek", "openai"]
+
     return {
         "start_date": start_date if isinstance(start_date, str) else None,
         "end_date": end_date if isinstance(end_date, str) else None,
         "currency_pair": currency_pair,
         "max_news": max_news if isinstance(max_news, int) and max_news > 0 else None,
+        "enabled_llm_providers": enabled_providers,
     }
 
 
@@ -470,12 +672,27 @@ def make_openai_client() -> Optional[OpenAI]:
     return OpenAI(api_key=key)
 
 
+def make_gemini_client() -> Optional[OpenAI]:
+    key = os.getenv("GEMINI_API_KEY")
+    if not key:
+        debug_log(
+            "[WARN] GEMINI_API_KEY not set; Gemini analysis will be skipped."
+        )
+        return None
+    return OpenAI(
+        api_key=key,
+        base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+    )
+
+
 def run_llm_analysis(news: List[NewsItem],
                      pair: str,
-                     provider: str = "both",
+                     enabled_providers: Optional[List[str]] = None,
                      max_articles: int = 8) -> Dict[str, str]:
     if not news:
         return {"error": "No news available for analysis."}
+    if enabled_providers is None:
+        enabled_providers = ["deepseek", "openai"]
 
     context = build_news_context_for_llm(
         news, max_articles=max_articles, fetch_full_paragraphs=True
@@ -483,8 +700,9 @@ def run_llm_analysis(news: List[NewsItem],
     prompt = build_analysis_prompt(context, pair)
 
     results: Dict[str, str] = {}
+    providers = set(enabled_providers)
 
-    if provider in ("deepseek", "both"):
+    if "deepseek" in providers:
         deepseek = make_deepseek_client()
         if deepseek is not None:
             print("\n[INFO] Requesting analysis from DeepSeek...")
@@ -499,7 +717,7 @@ def run_llm_analysis(news: List[NewsItem],
             except Exception as exc:
                 results["deepseek"] = f"Error calling DeepSeek: {exc}"
 
-    if provider in ("openai", "both"):
+    if "openai" in providers:
         client = make_openai_client()
         if client is not None:
             print("\n[INFO] Requesting analysis from OpenAI...")
@@ -513,6 +731,21 @@ def run_llm_analysis(news: List[NewsItem],
                 results["openai"] = resp.choices[0].message.content.strip()
             except Exception as exc:
                 results["openai"] = f"Error calling OpenAI: {exc}"
+
+    if "gemini" in providers:
+        client = make_gemini_client()
+        if client is not None:
+            print("\n[INFO] Requesting analysis from Gemini...")
+            try:
+                resp = client.chat.completions.create(
+                    model="gemini-2.0-flash",
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.1,
+                    max_tokens=1500,
+                )
+                results["gemini"] = resp.choices[0].message.content.strip()
+            except Exception as exc:
+                results["gemini"] = f"Error calling Gemini: {exc}"
 
     if not results:
         results["error"] = "No LLM providers were configured or all calls failed."
@@ -530,7 +763,7 @@ def print_analysis_report(results: Dict[str, str], pair: str) -> None:
         return
 
     ordered_keys = []
-    for name in ("deepseek", "openai"):
+    for name in ("deepseek", "openai", "gemini"):
         if name in results:
             ordered_keys.append(name)
     for name in results.keys():
@@ -562,13 +795,6 @@ def parse_args() -> argparse.Namespace:
         "-e",
         help="End date (inclusive) in YYYY-MM-DD. Default: today (UTC).",
         default=None,
-    )
-    parser.add_argument(
-        "--provider",
-        "-p",
-        choices=["deepseek", "openai", "both"],
-        default="both",
-        help="Which LLM provider(s) to use.",
     )
     parser.add_argument(
         "--max-articles",
@@ -658,7 +884,7 @@ def main() -> None:
     results = run_llm_analysis(
         news_items,
         pair=pair,
-        provider=args.provider,
+        enabled_providers=cfg.get("enabled_llm_providers", ["deepseek", "openai"]),
         max_articles=args.max_articles,
     )
     print_analysis_report(results, pair)

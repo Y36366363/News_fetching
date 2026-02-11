@@ -1,4 +1,9 @@
-Updates 
+Updates 2/11/2026
+1. Now the tool can del with 6 different pairs of currency trading. Please    revise the variable "currency_pair" to see the effects. The 6 pairs are "EUR/USD", "USD/JPY", "GBP/USD", "USD/CNY", "USD/CAD", "AUD/USD".
+2. Modified the news sources. Now in all 6 cases, investing.com can fetch 15 news and market watch can fetch 20 news. Yahoo Finance can fetch news only for EUR/USD.
+3. Added Gemini model. You can fill in the gemini_api_key to get those news reported in Gemini as well. In default_config.json, you can decide on whether models to use in variable "llm_models". 
+
+Updates 2/10/2026
 1. Added the default_config.json to set up the initial values
 	start_date and end_date in formats of yyyy-mm-dd; 
 2. Added currency_pair
@@ -6,9 +11,9 @@ Updates
 3. Added max_news
 	set up the number of maximum news to collect in one run, default is None 
 
-# EUR/USD News Fetching & LLM Analysis
+# Currency News Fetching & LLM Analysis
 
-This small project crawls **EUR/USD** related news directly from financial websites (no official news APIs), stores the results as JSON, and asks **DeepSeek** and/or **OpenAI** to provide a trading-oriented analysis.
+This small project crawls currencies related news directly from financial websites (no official news APIs), stores the results as JSON, and asks **DeepSeek** , **OpenAI** , **Gemini** to provide a trading-oriented analysis.
 
 Current sources:
 - Yahoo Finance (`https://finance.yahoo.com/currencies/eur-usd/`)

@@ -1,6 +1,11 @@
 {
-  "start_date": "2026-02-01",
-  "end_date": "2026-02-10",
-  "currency_pair": "GBP/USD",
-  "max_news": 20
+  "start_date": "2026-02-04",
+  "end_date": "2026-02-11",
+  "currency_pair": "EUR/USD",
+  "max_news": null,
+  "llm_models": {
+    "deepseek": {"enabled": false},
+    "openai": {"enabled": false},
+    "gemini": {"enabled": true}
+  }
 }
