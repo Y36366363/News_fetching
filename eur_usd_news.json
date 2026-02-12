@@ -6,7 +6,8 @@
     "title": "Analyst Ratings",
     "url": "https://www.investing.com/news/analyst-ratings",
     "published_at": null,
-    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - Treasury yields rose and stock indexes were mostly..."
+    "snippet": "Investing.com -- The U.S. dollar slipped slightly lower Thursday, remaining under pressure and on track for a weekly drop, even...",
+    "asset_type": "currency"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "title": "Economic Indicators",
     "url": "https://www.investing.com/news/economic-indicators",
     "published_at": null,
-    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - Treasury yields rose and stock indexes were mostly..."
+    "snippet": "Investing.com -- The U.S. dollar slipped slightly lower Thursday, remaining under pressure and on track for a weekly drop, even...",
+    "asset_type": "currency"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "title": "Sports & General",
     "url": "https://www.investing.com/news/general",
     "published_at": null,
-    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - Treasury yields rose and stock indexes were mostly..."
+    "snippet": "Investing.com -- The U.S. dollar slipped slightly lower Thursday, remaining under pressure and on track for a weekly drop, even...",
+    "asset_type": "currency"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "title": "Insider Trading",
     "url": "https://www.investing.com/news/insider-trading-news",
     "published_at": null,
-    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - Treasury yields rose and stock indexes were mostly..."
+    "snippet": "Investing.com -- The U.S. dollar slipped slightly lower Thursday, remaining under pressure and on track for a weekly drop, even...",
+    "asset_type": "currency"
   },
   {
     "id": 5,
@@ -42,348 +46,307 @@
     "title": "Investment Ideas",
     "url": "https://www.investing.com/news/investment-ideas",
     "published_at": null,
-    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - Treasury yields rose and stock indexes were mostly..."
+    "snippet": "Investing.com -- The U.S. dollar slipped slightly lower Thursday, remaining under pressure and on track for a weekly drop, even...",
+    "asset_type": "currency"
   },
   {
     "id": 6,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "Yields gain, stocks up slightly after US jobs data beat",
-    "url": "https://www.investing.com/news/stock-market-news/buoyant-stocks-pause-for-breath-on-signs-of-softening-us-consumption-4498572",
+    "title": "Dollar firms slightly after blowout jobs report, heads for weekly loss",
+    "url": "https://www.investing.com/news/forex-news/dollar-slips-lower-and-heads-for-weekly-loss-payrolls-offers-little-support-4501916",
     "published_at": null,
-    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - Treasury yields rose and stock indexes were mostly..."
+    "snippet": "Investing.com -- The U.S. dollar slipped slightly lower Thursday, remaining under pressure and on track for a weekly drop, even...",
+    "asset_type": "currency"
   },
   {
     "id": 7,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "CIBC monthly FX outlook: Why the US dollar selloff is likely over",
-    "url": "https://www.investing.com/news/forex-news/cibc-monthly-fx-outlook-why-the-us-dollar-selloff-is-likely-over-4500900",
+    "title": "ECB to extend its longest interest rate pause since below zero days- Reuters Poll",
+    "url": "https://www.investing.com/news/economy-news/ecb-to-extend-its-longest-interest-rate-pause-since-below-zero-days-reuters-poll-4502167",
     "published_at": null,
-    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was..."
+    "snippet": "By Indradip Ghosh BENGALURU, Feb 12 (Reuters) - The European Central Bank will keep its deposit rate at 2.00% at least through...",
+    "asset_type": "currency"
   },
   {
     "id": 8,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "BofA lifts Germany growth outlook on fiscal push, sees momentum fade after 2026",
-    "url": "https://www.investing.com/news/economy-news/bofa-lifts-germany-growth-outlook-on-fiscal-push-sees-momentum-fade-after-2026-4499421",
+    "title": "Euro and yuan global ambitions hasten the dollar drop: Mike Dolan",
+    "url": "https://www.investing.com/news/economy-news/euro-and-yuan-global-ambitions-hasten-the-dollar-drop-mike-dolan-4502102",
     "published_at": null,
-    "snippet": "Investing.com -- Bank of America (BofA) on Wednesday raised its growth projections for Germany, citing a stronger fiscal impulse,..."
+    "snippet": "By Mike Dolan LONDON, Feb 11 (Reuters) - The dollar is sliding again against the euro and yuan, just as European and Chinese...",
+    "asset_type": "currency"
   },
   {
     "id": 9,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "EU must simplify regulation to compete with US, China, says von der Leyen",
-    "url": "https://www.investing.com/news/stock-market-news/eu-to-meet-in-belgian-castle-to-tackle-economic-rivalry-with-us-china-4498755",
+    "title": "Analysis-Markets sense opportunity as erratic US spurs ’middle powers’ into action",
+    "url": "https://www.investing.com/news/economy-news/analysismarkets-sense-opportunity-as-erratic-us-spurs-middle-powers-into-action-4501652",
     "published_at": null,
-    "snippet": "By Kate Abnett and Philip Blenkinsop ANTWERP/BRUSSELS, Feb 11 (Reuters) - The European Union must simplify its regulations to..."
+    "snippet": "LONDON, Feb 12 (Reuters) - The global order once championed by Washington across economics, trade and security is being upended...",
+    "asset_type": "currency"
   },
   {
     "id": 10,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "Gold miners rise as bullion prices climb on weaker dollar",
-    "url": "https://www.investing.com/news/stock-market-news/gold-miners-rise-as-bullion-prices-climb-on-weaker-dollar-93CH-4499041",
-    "published_at": null,
-    "snippet": "Investing.com -- Gold mining stocks rose in premarket trading Wednesday as gold prices climbed, supported by a weaker dollar and..."
+    "title": "Yields gain, stocks up slightly after US jobs data beat",
+    "url": "https://www.investing.com/news/stock-market-news/buoyant-stocks-pause-for-breath-on-signs-of-softening-us-consumption-4498572",
+    "published_at": "2026-02-11T00:00:00+00:00",
+    "snippet": "By Caroline Valetkevitch and Amanda Cooper NEW YORK/LONDON, Feb 11 (Reuters) - Treasury yields rose and stock indexes were mostly...",
+    "asset_type": "currency"
   },
   {
     "id": 11,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "Euro and yuan global ambitions hasten the dollar drop: Mike Dolan",
-    "url": "https://www.investing.com/news/economy-news/euro-and-yuan-global-ambitions-hasten-the-dollar-drop-mike-dolan-4498762",
-    "published_at": null,
-    "snippet": "By Mike Dolan LONDON, Feb 11 (Reuters) - The dollar is sliding again against the euro and yuan, just as European and Chinese..."
+    "title": "CIBC monthly FX outlook: Why the US dollar selloff is likely over",
+    "url": "https://www.investing.com/news/forex-news/cibc-monthly-fx-outlook-why-the-us-dollar-selloff-is-likely-over-4500900",
+    "published_at": "2026-02-11T00:00:00+00:00",
+    "snippet": "Investing.com -- The latest foreign exchange outlook from CIBC Economics suggests that the recent volatility in the US dollar was...",
+    "asset_type": "currency"
   },
   {
     "id": 12,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "Yen perky as Japan fiscal fears dissipate, dollar shaky ahead of payrolls",
-    "url": "https://www.investing.com/news/forex-news/yen-perky-as-japan-fiscal-fears-dissipate-dollar-shaky-ahead-of-payrolls-4498593",
-    "published_at": null,
-    "snippet": "By Rae Wee SINGAPORE, Feb 11 (Reuters) - The yen held on to solid gains on Wednesday, bolstered by a rally in Japan’s stock..."
+    "title": "BofA lifts Germany growth outlook on fiscal push, sees momentum fade after 2026",
+    "url": "https://www.investing.com/news/economy-news/bofa-lifts-germany-growth-outlook-on-fiscal-push-sees-momentum-fade-after-2026-4499421",
+    "published_at": "2026-02-11T00:00:00+00:00",
+    "snippet": "Investing.com -- Bank of America (BofA) on Wednesday raised its growth projections for Germany, citing a stronger fiscal impulse,...",
+    "asset_type": "currency"
   },
   {
     "id": 13,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "Stocks mixed but world index hits record high; Treasury yields fall",
-    "url": "https://www.investing.com/news/stock-market-news/asia-stocks-rise-as-nikkei-sets-fresh-record-dollar-drops-4495410",
-    "published_at": null,
-    "snippet": "By Caroline Valetkevitch NEW YORK, Feb 10 (Reuters) - Major stock indexes were mixed on Tuesday, with a world equity index and..."
+    "title": "EU must simplify regulation to compete with US, China, says von der Leyen",
+    "url": "https://www.investing.com/news/stock-market-news/eu-to-meet-in-belgian-castle-to-tackle-economic-rivalry-with-us-china-4498755",
+    "published_at": "2026-02-11T00:00:00+00:00",
+    "snippet": "By Kate Abnett and Philip Blenkinsop ANTWERP/BRUSSELS, Feb 11 (Reuters) - The European Union must simplify its regulations to...",
+    "asset_type": "currency"
   },
   {
     "id": 14,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "Dollar marginally higher as traders brace for data deluge; yen extends surge",
-    "url": "https://www.investing.com/news/forex-news/dollar-marginally-higher-ahead-of-data-deluge-sterling-down-on-political-strife-4495720",
-    "published_at": "2026-02-10T00:00:00+00:00",
-    "snippet": "Investing.com - The U.S. dollar was largely unchanged on Tuesday, but remained near one-week lows ahead of the release of a slate..."
+    "title": "Gold miners rise as bullion prices climb on weaker dollar",
+    "url": "https://www.investing.com/news/stock-market-news/gold-miners-rise-as-bullion-prices-climb-on-weaker-dollar-93CH-4499041",
+    "published_at": "2026-02-11T00:00:00+00:00",
+    "snippet": "Investing.com -- Gold mining stocks rose in premarket trading Wednesday as gold prices climbed, supported by a weaker dollar and...",
+    "asset_type": "currency"
   },
   {
     "id": 15,
     "currency_pair": "EUR/USD",
     "source": "Investing.com",
-    "title": "OSN Activates New Philippines–UAE Corridor for Global Business Payments",
-    "url": "https://www.investing.com/news/cryptocurrency-news/osn-activates-new-philippinesuae-corridor-for-global-business-payments-4496576",
-    "published_at": "2026-02-10T00:00:00+00:00",
-    "snippet": "Abu Dhabi, UAE, February 10th, 2026, Chainwire\nAs trade, employment, and digital payment flows continue to accelerate, OSN, a..."
+    "title": "Euro and yuan global ambitions hasten the dollar drop: Mike Dolan",
+    "url": "https://www.investing.com/news/economy-news/euro-and-yuan-global-ambitions-hasten-the-dollar-drop-mike-dolan-4498762",
+    "published_at": "2026-02-11T00:00:00+00:00",
+    "snippet": "By Mike Dolan LONDON, Feb 11 (Reuters) - The dollar is sliding again against the euro and yuan, just as European and Chinese...",
+    "asset_type": "currency"
   },
   {
     "id": 16,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Dollar Falls as Impact of Strong Job Creation Fades",
-    "url": "https://www.wsj.com/finance/currencies/usd-jpy-attempting-to-hold-above-153-90-154-34-range-8c2f2b05?mod=mw_quote_news",
+    "title": "Post-Payrolls Dollar Decline Points to ‘Entrenched Bearishness’",
+    "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-as-traders-digest-u-s-employment-report-1f73cd2b?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The dollar fell, giving up most of the early gains propelled by robust U.S. job creation."
+    "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
+    "asset_type": "currency"
   },
   {
     "id": 17,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Falls 0.10% to 94.29",
-    "url": "https://www.wsj.com/finance/currencies/yen-broadly-weakens-amid-mild-risk-appetite-e4d20e51?mod=mw_quote_news",
+    "title": "Currency strategist who incurred Bessent’s wrath exposes safe-haven myth of the dollar",
+    "url": "https://www.marketwatch.com/story/currency-strategist-who-incurred-bessents-wrath-exposes-safe-haven-myth-of-the-dollar-b4e1125d?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index declined 0.1% — down for three consecutive trading days."
+    "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 18,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Treasury Yields, Dollar Fall Ahead of Data Reports",
-    "url": "https://www.wsj.com/finance/currencies/yen-mostly-strengthens-japanese-ldps-win-mostly-priced-in-by-markets-6e172e4c?mod=mw_quote_news",
+    "title": "The WSJ Dollar Index Falls 0.10% to 94.20",
+    "url": "https://www.wsj.com/finance/currencies/usd-jpy-attempting-to-hold-above-153-90-154-34-range-8c2f2b05?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The dollar fell ahead of a stream of data reports."
+    "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 19,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Gold futures reclaim $5,000 mark, buoyed by ‘gradual erosion of confidence’ in the U.S. dollar",
-    "url": "https://www.marketwatch.com/story/gold-futures-once-again-reclaim-5-000-mark-af3da5ee?mod=mw_quote_news",
+    "title": "The WSJ Dollar Index Falls 0.10% to 94.29",
+    "url": "https://www.wsj.com/finance/currencies/yen-broadly-weakens-amid-mild-risk-appetite-e4d20e51?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+    "snippet": "The WSJ Dollar Index declined 0.1% — down for three consecutive trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 20,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "‘Sell America’ fears drag dollar toward 4-year low on Japan election, China report",
-    "url": "https://www.marketwatch.com/story/sell-america-fears-drag-dollar-toward-4-year-low-on-japan-election-china-report-a87651a4?mod=mw_quote_news",
+    "title": "Treasury Yields, Dollar Fall Ahead of Data Reports",
+    "url": "https://www.wsj.com/finance/currencies/yen-mostly-strengthens-japanese-ldps-win-mostly-priced-in-by-markets-6e172e4c?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+    "snippet": "The dollar fell ahead of a stream of data reports.",
+    "asset_type": "currency"
   },
   {
     "id": 21,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Bitcoin’s attempt at a rebound runs into gold’s recapture of $5,000",
-    "url": "https://www.marketwatch.com/story/bitcoins-attempt-at-a-rebound-runs-into-golds-recapture-of-5-000-d18cd953?mod=mw_quote_news",
+    "title": "Gold futures reclaim $5,000 mark, buoyed by ‘gradual erosion of confidence’ in the U.S. dollar",
+    "url": "https://www.marketwatch.com/story/gold-futures-once-again-reclaim-5-000-mark-af3da5ee?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+    "asset_type": "currency"
   },
   {
     "id": 22,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Takaichi’s victory in Japanese election means a billion-dollar payday for Berkshire Hathaway",
-    "url": "https://www.marketwatch.com/story/takaichis-victory-in-japanese-election-means-a-billion-dollar-payday-for-berkshire-hathaway-00674bab?mod=mw_quote_news",
+    "title": "‘Sell America’ fears drag dollar toward 4-year low on Japan election, China report",
+    "url": "https://www.marketwatch.com/story/sell-america-fears-drag-dollar-toward-4-year-low-on-japan-election-china-report-a87651a4?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+    "asset_type": "currency"
   },
   {
     "id": 23,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "A New Crypto Winter Is Here and Even the Biggest Bulls Aren’t Certain Why",
-    "url": "https://www.wsj.com/finance/currencies/a-new-crypto-winter-is-here-and-even-the-biggest-bulls-are-worried-82019de4?mod=mw_quote_news",
+    "title": "Bitcoin’s attempt at a rebound runs into gold’s recapture of $5,000",
+    "url": "https://www.marketwatch.com/story/bitcoins-attempt-at-a-rebound-runs-into-golds-recapture-of-5-000-d18cd953?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+    "asset_type": "currency"
   },
   {
     "id": 24,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Rises 0.38% This Week to 95.06",
-    "url": "https://www.wsj.com/finance/currencies/yen-strengthens-on-possible-position-adjustments-before-japans-election-e380fd1a?mod=mw_quote_news",
+    "title": "Takaichi’s victory in Japanese election means a billion-dollar payday for Berkshire Hathaway",
+    "url": "https://www.marketwatch.com/story/takaichis-victory-in-japanese-election-means-a-billion-dollar-payday-for-berkshire-hathaway-00674bab?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak."
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+    "asset_type": "currency"
   },
   {
     "id": 25,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Bitcoin bounces above $70K but is still headed for its worst week since 2022",
-    "url": "https://www.marketwatch.com/story/bitcoin-rises-after-brutal-week-of-selling-3e74d460?mod=mw_quote_news",
+    "title": "A New Crypto Winter Is Here and Even the Biggest Bulls Aren’t Certain Why",
+    "url": "https://www.wsj.com/finance/currencies/a-new-crypto-winter-is-here-and-even-the-biggest-bulls-are-worried-82019de4?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days."
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+    "asset_type": "currency"
   },
   {
     "id": 26,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Bitcoin Booster’s $12 Billion Loss Headlines Crypto’s Worst Day Since 2022 Crash",
-    "url": "https://www.wsj.com/finance/currencies/strategy-earnings-fourth-2025-33688dab?mod=mw_quote_news",
+    "title": "The WSJ Dollar Index Rises 0.38% This Week to 95.06",
+    "url": "https://www.wsj.com/finance/currencies/yen-strengthens-on-possible-position-adjustments-before-japans-election-e380fd1a?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days."
+    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+    "asset_type": "currency"
   },
   {
     "id": 27,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Rises 0.33% to 95.35",
-    "url": "https://www.wsj.com/finance/currencies/yen-consolidates-amid-risks-of-japans-verbal-intervention-f3a32df4?mod=mw_quote_news",
+    "title": "Bitcoin bounces above $70K but is still headed for its worst week since 2022",
+    "url": "https://www.marketwatch.com/story/bitcoin-rises-after-brutal-week-of-selling-3e74d460?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days."
+    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 28,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Rises 0.29% to 95.03",
-    "url": "https://www.wsj.com/finance/currencies/yen-mostly-weakens-on-prospect-of-big-election-win-for-ldp-daafefbf?mod=mw_quote_news",
+    "title": "Bitcoin Booster’s $12 Billion Loss Headlines Crypto’s Worst Day Since 2022 Crash",
+    "url": "https://www.wsj.com/finance/currencies/strategy-earnings-fourth-2025-33688dab?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days."
+    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 29,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Dollar Gives Back Recent Gains as U.S. Lawmakers Reach Funding Deal",
-    "url": "https://www.wsj.com/finance/currencies/yen-mixed-as-traders-digest-japanese-finance-ministers-fx-remarks-96314604?mod=mw_quote_news",
+    "title": "The WSJ Dollar Index Rises 0.33% to 95.35",
+    "url": "https://www.wsj.com/finance/currencies/yen-consolidates-amid-risks-of-japans-verbal-intervention-f3a32df4?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The dollar weakened as markets faced another U.S. data gap."
+    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 30,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "The Crypto-Hoarding Strategy Is Unraveling",
-    "url": "https://www.wsj.com/finance/currencies/the-crypto-hoarding-strategy-is-unraveling-34b720f5?mod=mw_quote_news",
+    "title": "The WSJ Dollar Index Rises 0.29% to 95.03",
+    "url": "https://www.wsj.com/finance/currencies/yen-mostly-weakens-on-prospect-of-big-election-win-for-ldp-daafefbf?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days."
+    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 31,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Rises 0.30% to 94.98",
-    "url": "https://www.wsj.com/finance/currencies/asian-currencies-mixed-traders-digest-warshs-nomination-as-next-fed-chair-92e67ef3?mod=mw_quote_news",
+    "title": "Dollar Gives Back Recent Gains as U.S. Lawmakers Reach Funding Deal",
+    "url": "https://www.wsj.com/finance/currencies/yen-mixed-as-traders-digest-japanese-finance-ministers-fx-remarks-96314604?mod=mw_quote_news",
     "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days."
+    "snippet": "The dollar weakened as markets faced another U.S. data gap.",
+    "asset_type": "currency"
   },
   {
     "id": 32,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Gold now down nearly $1,000 from peak as silver extends losses after a record 31% one-day slump",
-    "url": "https://www.marketwatch.com/story/gold-now-down-nearly-1-000-from-peak-as-silver-struggles-following-record-31-slump-56067f2a?mod=mw_quote_news",
+    "title": "The Crypto-Hoarding Strategy Is Unraveling",
+    "url": "https://www.wsj.com/finance/currencies/the-crypto-hoarding-strategy-is-unraveling-34b720f5?mod=mw_quote_news",
     "published_at": null,
-    "snippet": ""
+    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 33,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "Kevin Warsh needs to keep the Fed out of politics — no matter what Trump says",
-    "url": "https://www.marketwatch.com/story/kevin-warsh-needs-to-keep-the-fed-out-of-politics-no-matter-what-trump-says-3815671f?mod=mw_quote_news",
+    "title": "The WSJ Dollar Index Rises 0.30% to 94.98",
+    "url": "https://www.wsj.com/finance/currencies/asian-currencies-mixed-traders-digest-warshs-nomination-as-next-fed-chair-92e67ef3?mod=mw_quote_news",
     "published_at": null,
-    "snippet": ""
+    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days.",
+    "asset_type": "currency"
   },
   {
     "id": 34,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "The dollar’s rebound probably won’t last",
-    "url": "https://www.marketwatch.com/story/the-dollars-rebound-probably-wont-last-cfd9a7df?mod=mw_quote_news",
+    "title": "Gold now down nearly $1,000 from peak as silver extends losses after a record 31% one-day slump",
+    "url": "https://www.marketwatch.com/story/gold-now-down-nearly-1-000-from-peak-as-silver-struggles-following-record-31-slump-56067f2a?mod=mw_quote_news",
     "published_at": null,
-    "snippet": ""
+    "snippet": "",
+    "asset_type": "currency"
   },
   {
     "id": 35,
     "currency_pair": "EUR/USD",
     "source": "MarketWatch",
-    "title": "There’s now a bigger risk for stocks than the economy or corporate earnings",
-    "url": "https://www.marketwatch.com/story/theres-now-a-bigger-risk-for-stocks-than-the-economy-or-corporate-earnings-cff2eee0?mod=mw_quote_news",
+    "title": "Kevin Warsh needs to keep the Fed out of politics — no matter what Trump says",
+    "url": "https://www.marketwatch.com/story/kevin-warsh-needs-to-keep-the-fed-out-of-politics-no-matter-what-trump-says-3815671f?mod=mw_quote_news",
     "published_at": null,
-    "snippet": ""
-  },
-  {
-    "id": 36,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "ECB’s Kazimir says major deviation needed for policy change",
-    "url": "https://finance.yahoo.com/news/ecb-kazimir-says-major-deviation-153503774.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
-  },
-  {
-    "id": 37,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "UK pound falls as Starmer’s political crisis deepens",
-    "url": "https://finance.yahoo.com/news/uk-pm-starmer-under-pressure-100407374.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
-  },
-  {
-    "id": 38,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "The White House says it wants a strong US dollar. Investors are still keeping their distance.",
-    "url": "https://finance.yahoo.com/news/the-white-house-says-it-wants-a-strong-us-dollar-investors-are-still-keeping-their-distance-140014369.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
-  },
-  {
-    "id": 39,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "ECB Will Assess Impact of Euro Strength in March, Cipollone Says",
-    "url": "https://finance.yahoo.com/news/ecb-assess-impact-euro-strength-115734518.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
-  },
-  {
-    "id": 40,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "Europe's central bank maintains interest rate with economic growth resilient",
-    "url": "https://finance.yahoo.com/news/europes-central-bank-maintains-interest-131722640.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
-  },
-  {
-    "id": 41,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "European Central Bank Set to Hold Rates as Markets Await Lagarde’s Guidance",
-    "url": "https://finance.yahoo.com/news/european-central-bank-set-hold-103921152.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
-  },
-  {
-    "id": 42,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "Can Lagarde Push the EUR/USD Higher? (Part 2)",
-    "url": "https://finance.yahoo.com/news/lagarde-push-eur-usd-higher-085244606.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
-  },
-  {
-    "id": 43,
-    "currency_pair": "EUR/USD",
-    "source": "Yahoo Finance",
-    "title": "European retail sentiment edges up despite cautious consumers",
-    "url": "https://finance.yahoo.com/news/european-retail-sentiment-edges-despite-091546315.html",
-    "published_at": null,
-    "snippet": "Sign in to access your portfolio"
+    "snippet": "",
+    "asset_type": "currency"
   }
 ]

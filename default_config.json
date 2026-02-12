@@ -1,11 +1,13 @@
 {
-  "start_date": "2026-02-04",
-  "end_date": "2026-02-11",
+  "start_date": "2026-02-05",
+  "end_date": "2026-02-12",
+  "asset_type": "currency",
   "currency_pair": "EUR/USD",
+  "stock": "AAPL",
   "max_news": null,
   "llm_models": {
-    "deepseek": {"enabled": false},
+    "deepseek": {"enabled": true},
     "openai": {"enabled": false},
-    "gemini": {"enabled": true}
+    "gemini": {"enabled": false}
   }
 }

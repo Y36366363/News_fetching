@@ -1,0 +1,512 @@
+[
+  {
+    "id": 1,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "2:33pSocial Security could run out of money in just 6 years — even sooner than originally feared",
+    "url": "https://www.marketwatch.com/story/social-security-could-run-out-of-money-in-just-6-years-even-sooner-than-originally-feared-c28eb5a5?mod=mw_latestnews",
+    "published_at": null,
+    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 2,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "2:23pStocks are swinging like crazy while the S&P 500 goes nowhere in 2026. Investors might not like what comes next.",
+    "url": "https://www.marketwatch.com/story/stocks-are-swinging-like-crazy-while-the-s-p-500-goes-nowhere-in-2026-investors-might-not-like-what-comes-next-f04a0eb5?mod=mw_latestnews",
+    "published_at": null,
+    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 3,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "2:23pIs the stock market open on Presidents Day? Will USPS, FedEx and UPS make deliveries?",
+    "url": "https://www.marketwatch.com/story/is-the-stock-market-open-on-presidents-day-will-usps-fedex-and-ups-make-deliveries-31d15912?mod=mw_latestnews",
+    "published_at": null,
+    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 4,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "2:18pAST SpaceMobile’s stock is falling as the satellite company seeks more cash",
+    "url": "https://www.marketwatch.com/story/ast-spacemobiles-stock-is-falling-as-the-satellite-company-seeks-more-cash-225b5cbb?mod=mw_latestnews",
+    "published_at": null,
+    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 5,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "2:16pTrump touts ‘largest deregulatory action in American history.’ Here’s why it’s too soon to call it that.",
+    "url": "https://www.marketwatch.com/story/trump-touts-largest-deregulatory-action-in-american-history-heres-why-its-too-soon-to-call-it-that-f33c0349?mod=mw_latestnews",
+    "published_at": null,
+    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 6,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "2:10p‘I’m not made of money’: My heating engineer didn’t fix my radiators on his first visit. Do I pay him a second time?",
+    "url": "https://www.marketwatch.com/story/im-not-made-of-money-my-heating-engineer-charged-me-twice-he-didnt-fix-the-problem-the-first-time-do-i-pay-9cc6b4b9?mod=mw_latestnews",
+    "published_at": null,
+    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 7,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores Inc. stock underperforms Tuesday when compared to competitors",
+    "url": "https://www.marketwatch.com/data-news/ross-stores-inc-stock-underperforms-tuesday-when-compared-to-competitors-6522ffd7-17303f551e5a?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 8,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores Inc. stock outperforms competitors on strong trading day",
+    "url": "https://www.marketwatch.com/data-news/ross-stores-inc-stock-outperforms-competitors-on-strong-trading-day-05e57632-b80cf36e7810?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 9,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Bigger Tax Refunds Are Coming. Which Retailers Gain the Most.",
+    "url": "https://www.barrons.com/articles/tax-refunds-consumer-spending-retailers-4f09cf1d?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 10,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Could retail actually rebound in 2026? These are the chains — and trends — to watch.",
+    "url": "https://www.marketwatch.com/story/could-retail-actually-rebound-in-2026-these-are-the-chains-and-trends-to-watch-83492ac0?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 11,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Retail Stocks Could Get a Tax Refund Boost in 2026",
+    "url": "https://www.barrons.com/articles/retail-stocks-tax-refunds-35640aa8?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 12,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Burlington Stores Offers More Than Coats to Keep Investors Warm This Winter",
+    "url": "https://www.barrons.com/articles/burlington-stock-sales-tjx-0001541112?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 13,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Urban Outfitters Stock Sees RS Rating Dresses Up For Holidays",
+    "url": "https://www.investors.com/news/urban-outfitters-stock-sees-rs-rating-dresses-up-for-holdiays/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 14,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Burlington is still a coat factory to many shoppers, and that was a bad thing this year",
+    "url": "https://www.marketwatch.com/story/how-burlington-missed-the-mark-on-sales-and-bucked-an-off-price-retail-trend-562b962e?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 15,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores Names Gunnar Bjorklund Board Chair",
+    "url": "https://www.marketwatch.com/story/ross-stores-names-gunnar-bjorklund-board-chair-8e816e31?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 16,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Retailers try to downplay worries about lower-income shoppers, as bargains reign supreme",
+    "url": "https://www.marketwatch.com/story/retailers-try-to-downplay-worries-about-lower-income-shoppers-as-bargains-reign-supreme-057cf776?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 17,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Stock Market Today: Dow Gains Nearly 500 Points After Whipsaw Action As Nvidia Finishes Lower (Live Coverage)",
+    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-stock-market-sell-off-nvidia-nvda-palantir-pltr/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 18,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores Rallies After Beating Views, As Discounters Tap This Shopping Trend",
+    "url": "https://www.investors.com/news/ross-stores-rost-stock-earnings-gap-tjx/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 19,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Another off-price retailer just turned more optimistic about its future. Bargain hunting is the name of the game.",
+    "url": "https://www.marketwatch.com/story/another-off-price-retailer-just-turned-more-optimistic-about-its-future-bargain-hunting-is-the-name-of-the-game-ed1ed084?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 20,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores Lifts Full-Year View on Higher Same-Store Sales",
+    "url": "https://www.wsj.com/business/earnings/ross-stores-lifts-full-year-view-on-higher-same-store-sales-84be62e4?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 21,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Target and Walmart lead retail earnings this week, as a ‘tale of two consumers’ emerges in the economy",
+    "url": "https://www.marketwatch.com/story/target-and-walmart-lead-retail-earnings-this-week-as-a-tale-of-two-consumers-emerges-in-the-economy-a3dd9e71?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 22,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "These Retailers Wring Profits From Every Cent. 2 Stocks to Buy.",
+    "url": "https://www.barrons.com/articles/retail-deckers-o-reilly-lululemon-stock-a57ff28c?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 23,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Off-price retailer Ross flashes another sign that consumers are seeking discounts this fall",
+    "url": "https://www.marketwatch.com/story/ross-stores-flash-another-sign-that-consumers-are-seeking-discounts-this-fall-3697b70f?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 24,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores Sales Rise, Helped by Sharp July Rebound",
+    "url": "https://www.wsj.com/business/retail/ross-stores-sales-rise-helped-by-sharp-july-rebound-abc6145a?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 25,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Walmart, Workday and Zoom feature in Thursday's earnings slate",
+    "url": "https://www.marketwatch.com/livecoverage/stock-market-today-dow-s-p500-nasdaq-mixed-after-lastest-dip-powell-speech-looms-walmart-earnings/card/walmart-workday-and-zoom-feature-in-thursday-s-earnings-slate-6YdSftCnW3UYi2o2MdxG?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 26,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "This Is the Real Threat to Retailers This Earnings Season",
+    "url": "https://www.barrons.com/articles/walmart-target-retail-earnings-e3a19f6c?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 27,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Is Costco Stock a Buy Now or Still Too Expensive to Touch?",
+    "url": "https://www.zacks.com/stock/news/2862451/is-costco-stock-a-buy-now-or-still-too-expensive-to-touch?cid=CS-MKTWTCH-HL-analyst_blog|most_popular_stocks-2862451&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 28,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Retail Sales Stall in December: 4 Stocks Still Worth Buying",
+    "url": "https://www.zacks.com/stock/news/2853836/retail-sales-stall-in-december-4-stocks-still-worth-buying?cid=CS-MKTWTCH-HL-analyst_blog|investment_ideas-2853836&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 29,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Goldman Sachs MarketBeta U.S. Equity ETF Buys 598 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8605778/goldman-sachs-marketbeta-us-equity-etf-buys-598-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Goldman Sachs MarketBeta U.S. Equity ETF Buys 598 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 30,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Goldman Sachs MarketBeta(R) Russell 1000 Value Equity ETF Buys 228 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8605500/goldman-sachs-marketbetar-russell-1000-value-equity-etf-buys-228-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Goldman Sachs MarketBeta(R) Russell 1000 Value Equity ETF Buys 228 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 31,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "ROST: Citigroup Maintains Buy Rating and Raises Price Target | ROST Stock News",
+    "url": "https://www.gurufocus.com/news/8603430/rost-citigroup-maintains-buy-rating-and-raises-price-target-rost-stock-news?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "ROST: Citigroup Maintains Buy Rating and Raises Price Target | ROST Stock News",
+    "asset_type": "stock"
+  },
+  {
+    "id": 32,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "A Glimpse Into The Expert Outlook On Ross Stores Through 14 Analysts",
+    "url": "https://www.benzinga.com/insights/analyst-ratings/26/02/50519763/a-glimpse-into-the-expert-outlook-on-ross-stores-through-14-analysts?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 33,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Eddie Bauer Files Chapter 11 Bankruptcy As Tariff Pressure Mounts",
+    "url": "https://www.benzinga.com/trading-ideas/short-ideas/26/02/50518551/eddie-bauer-files-chapter-11-bankruptcy-as-tariff-pressure-mounts?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 34,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "ROST: Goldman Sachs Raises Price Target to $214, Maintains Buy Rating | ROST Stock News",
+    "url": "https://www.gurufocus.com/news/8602864/rost-goldman-sachs-raises-price-target-to-214-maintains-buy-rating-rost-stock-news?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "ROST: Goldman Sachs Raises Price Target to $214, Maintains Buy Rating | ROST Stock News",
+    "asset_type": "stock"
+  },
+  {
+    "id": 35,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Dollar General Almost Doubles in a Year: Is DG Stock Still a Buy?",
+    "url": "https://www.zacks.com/stock/news/2846666/dollar-general-almost-doubles-in-a-year-is-dg-stock-still-a-buy?cid=CS-MKTWTCH-HL-analyst_blog|most_popular_stocks-2846666&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 36,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores price target raised to $224 from $188 at Citi",
+    "url": "https://www.tipranks.com/news/the-fly/ross-stores-price-target-raised-to-224-from-188-at-citi-thefly?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 37,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Goldman Sachs Large Cap Equity Fund Buys 30,787 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8601950/goldman-sachs-large-cap-equity-fund-buys-30787-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Goldman Sachs Large Cap Equity Fund Buys 30,787 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 38,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Systematic Core Fund Sells 1,366 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8601715/systematic-core-fund-sells-1366-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Systematic Core Fund Sells 1,366 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 39,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Nasdaq-100 Index Fund Sells 645 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8601320/nasdaq100-index-fund-sells-645-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Nasdaq-100 Index Fund Sells 645 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 40,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Mid Cap Value Fund Buys 113 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8601209/mid-cap-value-fund-buys-113-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Mid Cap Value Fund Buys 113 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 41,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores price target raised to $224 from $18 at Citi",
+    "url": "https://www.tipranks.com/news/the-fly/ross-stores-price-target-raised-to-224-from-18-at-citi-thefly?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 42,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores price target raised to $214 from $190 at Goldman Sachs",
+    "url": "https://www.tipranks.com/news/the-fly/ross-stores-price-target-raised-to-214-from-190-at-goldman-sachs-thefly?mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 43,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Ross Stores (ROST) Laps the Stock Market: Here's Why",
+    "url": "https://www.zacks.com/stock/news/2843301/ross-stores-rost-laps-the-stock-market-here-s-why?cid=CS-MKTWTCH-HL-tale_of_the_tape|yseop_template_6v2-2843301&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "",
+    "asset_type": "stock"
+  },
+  {
+    "id": 44,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Large Capital Growth Fund Sells 50,527 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8597878/large-capital-growth-fund-sells-50527-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Large Capital Growth Fund Sells 50,527 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 45,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "Stock Index Fund Sells 2,579 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8597460/stock-index-fund-sells-2579-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "Stock Index Fund Sells 2,579 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 46,
+    "currency_pair": "ROST",
+    "source": "MarketWatch",
+    "title": "BRIGHTON JONES LLC Sells 2,938 Shares of Ross Stores Inc (ROST)",
+    "url": "https://www.gurufocus.com/news/8595365/brighton-jones-llc-sells-2938-shares-of-ross-stores-inc-rost?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+    "published_at": null,
+    "snippet": "BRIGHTON JONES LLC Sells 2,938 Shares of Ross Stores Inc (ROST)",
+    "asset_type": "stock"
+  },
+  {
+    "id": 47,
+    "currency_pair": "ROST",
+    "source": "Yahoo Finance",
+    "title": "Is Costco Stock a Buy Now or Still Too Expensive to Touch?",
+    "url": "https://finance.yahoo.com/news/costco-stock-buy-now-still-151000503.html?.tsrc=rss",
+    "published_at": "2026-02-12T15:10:00+00:00",
+    "snippet": "COST trades at 46.21X forward P/E, below its median but above peers, while renewal rates, comps and digital sales stay strong, making it a hold for now.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 48,
+    "currency_pair": "ROST",
+    "source": "Yahoo Finance",
+    "title": "Dollar General Almost Doubles in a Year: Is DG Stock Still a Buy?",
+    "url": "https://finance.yahoo.com/news/dollar-general-almost-doubles-dg-140000586.html?.tsrc=rss",
+    "published_at": "2026-02-10T14:00:00+00:00",
+    "snippet": "DG shares are up about 98% in a year as value focus, remodels and expansion lift confidence. After the surge, investors debate if upside remains.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 49,
+    "currency_pair": "ROST",
+    "source": "Yahoo Finance",
+    "title": "Ross Stores (ROST) Laps the Stock Market: Here's Why",
+    "url": "https://finance.yahoo.com/news/ross-stores-rost-laps-stock-230003736.html?.tsrc=rss",
+    "published_at": "2026-02-09T23:00:03+00:00",
+    "snippet": "In the closing of the recent trading day, Ross Stores (ROST) stood at $194.5, denoting a +1.97% move from the preceding trading day.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 50,
+    "currency_pair": "ROST",
+    "source": "Yahoo Finance",
+    "title": "Madison Asset Management Liquidates Its $98 Million Trex Position",
+    "url": "https://www.fool.com/coverage/filings/2026/02/07/madison-asset-management-liquidates-its-usd98-million-trex-position/?.tsrc=rss",
+    "published_at": "2026-02-07T21:36:19+00:00",
+    "snippet": "Trex manufactures composite decking and outdoor living products for residential and commercial markets across the United States.",
+    "asset_type": "stock"
+  },
+  {
+    "id": 51,
+    "currency_pair": "ROST",
+    "source": "Yahoo Finance",
+    "title": "A Look At Ross Stores (ROST) Valuation After Recent Share Price Momentum",
+    "url": "https://finance.yahoo.com/news/look-ross-stores-rost-valuation-201116525.html?.tsrc=rss",
+    "published_at": "2026-02-05T20:11:16+00:00",
+    "snippet": "How Ross Stores stock has been performing Ross Stores (ROST) has attracted attention after a solid run over the past 3 years, with total return data and recent price moves giving investors fresh context for assessing the off price retailer. See our latest analysis for Ross Stores. At a share price of US$189.27, Ross Stores has had a 90 day share price return of 18.12% and a 1 year total shareholder return of 29.80%, suggesting recent momentum on top of longer term gains. If this kind of...",
+    "asset_type": "stock"
+  }
+]

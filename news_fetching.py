@@ -15,6 +15,7 @@ import argparse
 import json
 import os
 import time
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
 from datetime import date, datetime, timedelta, timezone
 from typing import Dict, List, Optional
@@ -25,6 +26,8 @@ from dateutil import parser as date_parser
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from asset_urls import SUPPORTED_PAIRS, SUPPORTED_STOCKS
+
 
 # Configuration
 
@@ -32,40 +35,34 @@ USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
-HEADERS = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
+HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+}
 
-# Supported currency pairs and their news URLs.
-SUPPORTED_PAIRS: Dict[str, Dict[str, str]] = {
-    "EUR/USD": {
-        "investing_url": "https://www.investing.com/currencies/eur-usd-news",
-        "marketwatch_url": "https://www.marketwatch.com/investing/currency/eurusd",
-        "yahoo_url": "https://finance.yahoo.com/quote/EURUSD=X/",
-    },
-    "USD/JPY": {
-        "investing_url": "https://www.investing.com/currencies/usd-jpy-news",
-        "marketwatch_url": "https://www.marketwatch.com/investing/currency/usdjpy",
-        "yahoo_url": "https://finance.yahoo.com/quote/JPY=X/",
-    },
-    "GBP/USD": {
-        "investing_url": "https://www.investing.com/currencies/gbp-usd-news",
-        "marketwatch_url": "https://www.marketwatch.com/investing/currency/gbpusd",
-        "yahoo_url": "https://finance.yahoo.com/quote/GBPUSD=X/",
-    },
-    "USD/CNY": {
-        "investing_url": "https://www.investing.com/currencies/usd-cny-news",
-        "marketwatch_url": "https://www.marketwatch.com/investing/currency/usdcny",
-        "yahoo_url": "https://finance.yahoo.com/quote/CNY=X/",
-    },
-    "USD/CAD": {
-        "investing_url": "https://www.investing.com/currencies/usd-cad-news",
-        "marketwatch_url": "https://www.marketwatch.com/investing/currency/usdcad",
-        "yahoo_url": "https://finance.yahoo.com/quote/CAD=X/",
-    },
-    "AUD/USD": {
-        "investing_url": "https://www.investing.com/currencies/aud-usd-news",
-        "marketwatch_url": "https://www.marketwatch.com/investing/currency/audusd",
-        "yahoo_url": "https://finance.yahoo.com/quote/AUDUSD=X/",
-    },
+# Investing.com (especially equities pages) can be protected by Cloudflare.
+# A slightly more browser-like header set often avoids the JS challenge page.
+INVESTING_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,"
+        "image/webp,image/apng,*/*;q=0.8"
+    ),
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "max-age=0",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "sec-ch-ua": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "Referer": "https://www.investing.com/",
 }
 
 # Path to default configuration (date range etc.), next to this script.
@@ -78,12 +75,13 @@ VERBOSE = False
 @dataclass
 class NewsItem:
     id: int
-    currency_pair: str
+    currency_pair: str  # For backward compatibility, also used for stock symbol
     source: str
     title: str
     url: str
     published_at: Optional[str]  # ISO 8601 string or None
     snippet: str                 # short content or first 1–2 paragraphs
+    asset_type: str = "currency"  # "currency" or "stock"
 
 
 # ---------------------------------------------------------------------------
@@ -136,7 +134,8 @@ def fetch_html(url: str, retries: int = 3, delay: int = 2) -> Optional[str]:
     """
     for attempt in range(1, retries + 1):
         try:
-            resp = requests.get(url, headers=HEADERS, timeout=15)
+            headers = INVESTING_HEADERS if "investing.com" in url else HEADERS
+            resp = requests.get(url, headers=headers, timeout=15)
             resp.raise_for_status()
             resp.encoding = resp.apparent_encoding
             return resp.text
@@ -265,6 +264,7 @@ def scrape_investing_pair(
                 {
                     "source": "Investing.com",
                     "currency_pair": pair,
+                    "asset_type": "currency",
                     "title": title,
                     "url": href,
                     "published_dt": published_dt,
@@ -331,6 +331,7 @@ def scrape_marketwatch_pair(
                 {
                     "source": "MarketWatch",
                     "currency_pair": pair,
+                    "asset_type": "currency",
                     "title": title,
                     "url": href,
                     "published_dt": published_dt,
@@ -396,6 +397,7 @@ def scrape_yahoo_pair(
                 {
                     "source": "Yahoo Finance",
                     "currency_pair": pair,
+                    "asset_type": "currency",
                     "title": title,
                     "url": href,
                     "published_dt": published_dt,
@@ -407,6 +409,256 @@ def scrape_yahoo_pair(
                 break
         except Exception:
             continue
+
+    print(f"[INFO] Yahoo Finance items collected: {len(items)}")
+    return items
+
+
+# ---------------------------------------------------------------------------
+# Stock scrapers
+# ---------------------------------------------------------------------------
+
+def scrape_investing_stock(
+    symbol: str,
+    url: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[Dict]:
+    """
+    Best-effort scraper for a stock's news from Investing.com.
+    Similar to scrape_investing_pair but for stocks.
+    """
+    print(f"\n[INFO] Crawling Investing.com ({symbol} news)...")
+    html = fetch_html(url)
+    if not html:
+        return []
+
+    soup = BeautifulSoup(html, "html.parser")
+    items: List[Dict] = []
+
+    for a in soup.select("a[href*='/news/']"):
+        try:
+            title = a.get_text(strip=True)
+            if not title or len(title) < 15:
+                continue
+
+            href = a.get("href", "")
+            if not href:
+                continue
+            if not href.startswith("http"):
+                href = "https://www.investing.com" + href
+
+            # Filter out section navigation links; prefer article-like URLs.
+            # Many Investing article URLs end with a numeric id (e.g. -4501054).
+            import re
+            if not re.search(r"-\d{4,}($|\?)", href):
+                continue
+
+            published_dt: Optional[datetime] = None
+            parent = a.parent
+            if parent is not None:
+                time_tag = parent.find("time")
+                if time_tag and time_tag.get_text(strip=True):
+                    published_dt = parse_iso_like_datetime(time_tag.get_text(strip=True))
+
+            if not within_date_range(published_dt, start_date, end_date):
+                continue
+
+            snippet = ""
+            sibling_p = a.find_next("p")
+            if sibling_p:
+                snippet = sibling_p.get_text(strip=True)[:600]
+
+            items.append(
+                {
+                    "source": "Investing.com",
+                    "currency_pair": symbol,  # Reusing field name for stock symbol
+                    "asset_type": "stock",
+                    "title": title,
+                    "url": href,
+                    "published_dt": published_dt,
+                    "snippet": snippet,
+                }
+            )
+
+            if max_items is not None and len(items) >= max_items:
+                break
+        except Exception:
+            continue
+
+    print(f"[INFO] Investing.com items collected: {len(items)}")
+    return items
+
+
+def scrape_marketwatch_stock(
+    symbol: str,
+    url: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[Dict]:
+    """
+    Best-effort scraper for a stock's news section on MarketWatch.
+    """
+    print(f"\n[INFO] Crawling MarketWatch ({symbol} news)...")
+    html = fetch_html(url)
+    if not html:
+        return []
+
+    soup = BeautifulSoup(html, "html.parser")
+    items: List[Dict] = []
+
+    for a in soup.select("a[href*='mod=mw_quote_news'], a[href*='/story/']"):
+        try:
+            title = a.get_text(strip=True)
+            if not title or len(title) < 15:
+                continue
+
+            href = a.get("href", "")
+            if not href:
+                continue
+            if not href.startswith("http"):
+                href = "https://www.marketwatch.com" + href
+
+            published_dt: Optional[datetime] = None
+
+            if not within_date_range(published_dt, start_date, end_date):
+                continue
+
+            snippet = ""
+            sibling_p = a.find_next("p")
+            if sibling_p:
+                snippet = sibling_p.get_text(strip=True)[:600]
+
+            items.append(
+                {
+                    "source": "MarketWatch",
+                    "currency_pair": symbol,
+                    "asset_type": "stock",
+                    "title": title,
+                    "url": href,
+                    "published_dt": published_dt,
+                    "snippet": snippet,
+                }
+            )
+
+            if max_items is not None and len(items) >= max_items:
+                break
+        except Exception:
+            continue
+
+    print(f"[INFO] MarketWatch items collected: {len(items)}")
+    return items
+
+
+def scrape_yahoo_stock(
+    symbol: str,
+    url: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[Dict]:
+    """
+    Best-effort scraper for a stock's quote page on Yahoo Finance.
+    """
+    print(f"\n[INFO] Crawling Yahoo Finance ({symbol} quote news)...")
+    # Yahoo Finance quote pages often load the story list via JS, so the HTML
+    # may not contain real headline anchors. Use the public RSS feed as the
+    # primary, stable source.
+    rss_url = (
+        f"https://feeds.finance.yahoo.com/rss/2.0/headline?"
+        f"s={symbol}&region=US&lang=en-US"
+    )
+
+    xml_text = fetch_html(rss_url)
+    items: List[Dict] = []
+    if xml_text:
+        try:
+            root = ET.fromstring(xml_text)
+            for it in root.findall(".//item"):
+                title = (it.findtext("title") or "").strip()
+                link = (it.findtext("link") or "").strip()
+                pub = (it.findtext("pubDate") or "").strip()
+                desc = (it.findtext("description") or "").strip()
+
+                if not title or not link:
+                    continue
+
+                published_dt: Optional[datetime] = None
+                if pub:
+                    try:
+                        published_dt = date_parser.parse(pub)
+                        if published_dt.tzinfo is None:
+                            published_dt = published_dt.replace(tzinfo=timezone.utc)
+                        else:
+                            published_dt = published_dt.astimezone(timezone.utc)
+                    except Exception:
+                        published_dt = None
+
+                if not within_date_range(published_dt, start_date, end_date):
+                    continue
+
+                snippet = ""
+                if desc:
+                    # RSS descriptions can contain HTML.
+                    snippet = BeautifulSoup(desc, "html.parser").get_text(
+                        " ", strip=True
+                    )[:600]
+
+                items.append(
+                    {
+                        "source": "Yahoo Finance",
+                        "currency_pair": symbol,
+                        "asset_type": "stock",
+                        "title": title,
+                        "url": link,
+                        "published_dt": published_dt,
+                        "snippet": snippet,
+                    }
+                )
+
+                if max_items is not None and len(items) >= max_items:
+                    break
+        except Exception:
+            items = []
+
+    # Fallback: attempt best-effort HTML scrape if RSS fails for any reason.
+    if not items:
+        html = fetch_html(url)
+        if not html:
+            print("[INFO] Yahoo Finance items collected: 0")
+            return []
+
+        soup = BeautifulSoup(html, "html.parser")
+        for a in soup.select("a[href*='/news/']"):
+            try:
+                title = a.get_text(strip=True)
+                if not title or len(title) < 15:
+                    continue
+
+                href = a.get("href", "")
+                if not href:
+                    continue
+                if not href.startswith("http"):
+                    href = "https://finance.yahoo.com" + href
+
+                items.append(
+                    {
+                        "source": "Yahoo Finance",
+                        "currency_pair": symbol,
+                        "asset_type": "stock",
+                        "title": title,
+                        "url": href,
+                        "published_dt": None,
+                        "snippet": "",
+                    }
+                )
+
+                if max_items is not None and len(items) >= max_items:
+                    break
+            except Exception:
+                continue
 
     print(f"[INFO] Yahoo Finance items collected: {len(items)}")
     return items
@@ -506,10 +758,116 @@ def collect_news_for_pair(
                 url=item["url"],
                 published_at=published_at_str,
                 snippet=item.get("snippet", ""),
+                asset_type=item.get("asset_type", "currency"),
             )
         )
 
     print(f"\n[INFO] Total unique {pair} news items: {len(unique_items)}")
+    return unique_items
+
+
+def collect_news_for_stock(
+    symbol: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[NewsItem]:
+    """
+    Aggregate news from all configured sources for a stock, de-duplicate, and convert
+    to NewsItem objects.
+    """
+    raw_items: List[Dict] = []
+
+    cfg = SUPPORTED_STOCKS.get(symbol)
+    if not cfg:
+        raise SystemExit(
+            f"Unsupported stock {symbol!r}. "
+            f"Supported: {', '.join(sorted(SUPPORTED_STOCKS.keys()))}"
+        )
+
+    remaining = max_items
+
+    # 1) Investing.com
+    investing_url = cfg.get("investing_url")
+    if investing_url and (remaining is None or remaining > 0):
+        before = len(raw_items)
+        raw_items.extend(
+            scrape_investing_stock(
+                symbol=symbol,
+                url=investing_url,
+                start_date=start_date,
+                end_date=end_date,
+                max_items=remaining,
+            )
+        )
+        if remaining is not None:
+            added = len(raw_items) - before
+            remaining = max(0, remaining - added)
+
+    # 2) MarketWatch
+    mw_url = cfg.get("marketwatch_url")
+    if mw_url and (remaining is None or remaining > 0):
+        before = len(raw_items)
+        raw_items.extend(
+            scrape_marketwatch_stock(
+                symbol=symbol,
+                url=mw_url,
+                start_date=start_date,
+                end_date=end_date,
+                max_items=remaining,
+            )
+        )
+        if remaining is not None:
+            added = len(raw_items) - before
+            remaining = max(0, remaining - added)
+
+    # 3) Yahoo Finance
+    yahoo_url = cfg.get("yahoo_url")
+    if yahoo_url and (remaining is None or remaining > 0):
+        before = len(raw_items)
+        raw_items.extend(
+            scrape_yahoo_stock(
+                symbol=symbol,
+                url=yahoo_url,
+                start_date=start_date,
+                end_date=end_date,
+                max_items=remaining,
+            )
+        )
+
+    if not raw_items:
+        return []
+
+    # De-duplicate by (source, title, url)
+    seen = set()
+    unique_items: List[NewsItem] = []
+    for idx, item in enumerate(raw_items, start=1):
+        key = (item["source"], item["title"], item["url"])
+        if key in seen:
+            continue
+        seen.add(key)
+
+        published_dt = item.get("published_dt")
+        published_at_str = (
+            published_dt.astimezone(timezone.utc).isoformat()
+            if isinstance(published_dt, datetime)
+            else None
+        )
+
+        unique_items.append(
+            NewsItem(
+                id=len(unique_items) + 1,
+                currency_pair=item["currency_pair"],
+                source=item["source"],
+                title=item["title"],
+                url=item["url"],
+                published_at=published_at_str,
+                snippet=item.get("snippet", ""),
+                asset_type=item.get("asset_type", "stock"),
+            )
+        )
+
+    print(f"\n[INFO] Total unique {symbol} news items: {len(unique_items)}")
     return unique_items
 
 
@@ -541,6 +899,7 @@ def load_news_from_json(path: str) -> List[NewsItem]:
                 url=obj.get("url", ""),
                 published_at=obj.get("published_at"),
                 snippet=obj.get("snippet", ""),
+                asset_type=obj.get("asset_type", "currency"),
             )
         )
     print(f"[INFO] Loaded {len(news)} news items from {path!r}")
@@ -556,7 +915,9 @@ def load_default_config() -> Dict[str, Optional[str]]:
         return {
             "start_date": None,
             "end_date": None,
+            "asset_type": "currency",
             "currency_pair": "EUR/USD",
+            "stock": None,
             "max_news": None,
             "enabled_llm_providers": ["deepseek", "openai"],
         }
@@ -569,18 +930,29 @@ def load_default_config() -> Dict[str, Optional[str]]:
         return {
             "start_date": None,
             "end_date": None,
+            "asset_type": "currency",
             "currency_pair": "EUR/USD",
+            "stock": None,
             "max_news": None,
             "enabled_llm_providers": ["deepseek", "openai"],
         }
 
     start_date = data.get("start_date")
     end_date = data.get("end_date")
+    asset_type = data.get("asset_type", "currency")
+    if asset_type not in ("currency", "stock"):
+        asset_type = "currency"
+    
     currency_pair = data.get("currency_pair", "EUR/USD")
+    stock = data.get("stock")
     max_news = data.get("max_news", None)
-    if currency_pair not in SUPPORTED_PAIRS:
-        # Fallback to EUR/USD if an unsupported pair is configured.
-        currency_pair = "EUR/USD"
+    
+    if asset_type == "currency":
+        if currency_pair not in SUPPORTED_PAIRS:
+            currency_pair = "EUR/USD"
+    elif asset_type == "stock":
+        if not stock or stock not in SUPPORTED_STOCKS:
+            stock = "AAPL"  # Default to Apple if invalid stock
 
     # Parse llm_models: each model can have enabled=true/false
     enabled_providers: List[str] = []
@@ -597,7 +969,9 @@ def load_default_config() -> Dict[str, Optional[str]]:
     return {
         "start_date": start_date if isinstance(start_date, str) else None,
         "end_date": end_date if isinstance(end_date, str) else None,
+        "asset_type": asset_type,
         "currency_pair": currency_pair,
+        "stock": stock if isinstance(stock, str) else None,
         "max_news": max_news if isinstance(max_news, int) and max_news > 0 else None,
         "enabled_llm_providers": enabled_providers,
     }
@@ -636,19 +1010,36 @@ def build_news_context_for_llm(news: List[NewsItem],
     return "\n\n".join(blocks)
 
 
-def build_analysis_prompt(news_context: str, pair: str) -> str:
-    return (
-        f"You are a professional {pair} forex analyst.\n"
-        f"Based on the following recent {pair}-related news, provide:\n\n"
-        "1. Key market drivers (economic data, monetary policy, risk sentiment).\n"
-        f"2. Short-term (1–3 days) outlook for {pair}.\n"
-        f"3. Medium-term (1–2 weeks) outlook for {pair}.\n"
-        "4. Trading bias (bullish / bearish / sideways) with concise reasoning.\n"
-        "5. Main risks or alternative scenarios that could invalidate your view.\n\n"
-        "Make the answer structured, concise, and practical for a trader.\n\n"
-        "Here is the news context:\n\n"
-        f"{news_context}\n"
-    )
+def build_analysis_prompt(news_context: str, asset: str, asset_type: str = "currency") -> str:
+    """
+    Build analysis prompt for either currency pairs or stocks.
+    """
+    if asset_type == "stock":
+        return (
+            f"You are a professional {asset} stock analyst.\n"
+            f"Based on the following recent {asset}-related news, provide:\n\n"
+            "1. Key market drivers (earnings, product launches, market trends, sector dynamics).\n"
+            f"2. Short-term (1–3 days) outlook for {asset} stock price.\n"
+            f"3. Medium-term (1–2 weeks) outlook for {asset} stock price.\n"
+            "4. Trading bias (bullish / bearish / sideways) with concise reasoning.\n"
+            "5. Main risks or alternative scenarios that could invalidate your view.\n\n"
+            "Make the answer structured, concise, and practical for a trader.\n\n"
+            "Here is the news context:\n\n"
+            f"{news_context}\n"
+        )
+    else:
+        return (
+            f"You are a professional {asset} forex analyst.\n"
+            f"Based on the following recent {asset}-related news, provide:\n\n"
+            "1. Key market drivers (economic data, monetary policy, risk sentiment).\n"
+            f"2. Short-term (1–3 days) outlook for {asset}.\n"
+            f"3. Medium-term (1–2 weeks) outlook for {asset}.\n"
+            "4. Trading bias (bullish / bearish / sideways) with concise reasoning.\n"
+            "5. Main risks or alternative scenarios that could invalidate your view.\n\n"
+            "Make the answer structured, concise, and practical for a trader.\n\n"
+            "Here is the news context:\n\n"
+            f"{news_context}\n"
+        )
 
 
 def make_deepseek_client() -> Optional[OpenAI]:
@@ -686,7 +1077,8 @@ def make_gemini_client() -> Optional[OpenAI]:
 
 
 def run_llm_analysis(news: List[NewsItem],
-                     pair: str,
+                     asset: str,
+                     asset_type: str = "currency",
                      enabled_providers: Optional[List[str]] = None,
                      max_articles: int = 8) -> Dict[str, str]:
     if not news:
@@ -697,7 +1089,7 @@ def run_llm_analysis(news: List[NewsItem],
     context = build_news_context_for_llm(
         news, max_articles=max_articles, fetch_full_paragraphs=True
     )
-    prompt = build_analysis_prompt(context, pair)
+    prompt = build_analysis_prompt(context, asset, asset_type)
 
     results: Dict[str, str] = {}
     providers = set(enabled_providers)
@@ -753,9 +1145,10 @@ def run_llm_analysis(news: List[NewsItem],
     return results
 
 
-def print_analysis_report(results: Dict[str, str], pair: str) -> None:
+def print_analysis_report(results: Dict[str, str], asset: str, asset_type: str = "currency") -> None:
+    asset_label = f"{asset} Stock" if asset_type == "stock" else f"{asset} Forex"
     print("\n" + "=" * 80)
-    print(f" {pair} Forex News Analysis Report ")
+    print(f" {asset_label} News Analysis Report ")
     print("=" * 80)
 
     if not results:
@@ -835,11 +1228,20 @@ def main() -> None:
     VERBOSE = bool(args.verbose)
     cfg = load_default_config()
 
-    # Selected currency pair (from config only, to keep usage simple)
-    pair = cfg.get("currency_pair", "EUR/USD")
-    if pair not in SUPPORTED_PAIRS:
-        pair = "EUR/USD"
-    print(f"[INFO] Selected currency_pair from config: {pair}")
+    # Determine asset type and selection
+    asset_type = cfg.get("asset_type", "currency")
+    if asset_type == "stock":
+        stock = cfg.get("stock", "AAPL")
+        if stock not in SUPPORTED_STOCKS:
+            stock = "AAPL"
+        print(f"[INFO] Selected stock from config: {stock}")
+        asset = stock
+    else:
+        pair = cfg.get("currency_pair", "EUR/USD")
+        if pair not in SUPPORTED_PAIRS:
+            pair = "EUR/USD"
+        print(f"[INFO] Selected currency_pair from config: {pair}")
+        asset = pair
 
     # Date window precedence:
     # 1) CLI args if provided
@@ -862,18 +1264,26 @@ def main() -> None:
 
     max_news = cfg.get("max_news")
 
-    news_items = collect_news_for_pair(pair, start_date, end_date, max_items=max_news)
+    # Collect news based on asset type
+    if asset_type == "stock":
+        news_items = collect_news_for_stock(asset, start_date, end_date, max_items=max_news)
+    else:
+        news_items = collect_news_for_pair(asset, start_date, end_date, max_items=max_news)
+    
     if not news_items:
         print("[INFO] No news items collected; nothing to analyze.")
         return
 
-    # If no explicit output path is provided, derive one from the pair,
-    # e.g. "EUR/USD" -> "eur_usd_news.json"
+    # If no explicit output path is provided, derive one from the asset
     if args.output:
         output_path = args.output
     else:
-        safe_pair = pair.replace("/", "_").replace(" ", "").lower()
-        output_path = f"{safe_pair}_news.json"
+        if asset_type == "stock":
+            safe_asset = asset.lower()
+            output_path = f"{safe_asset}_news.json"
+        else:
+            safe_asset = asset.replace("/", "_").replace(" ", "").lower()
+            output_path = f"{safe_asset}_news.json"
 
     save_news_to_json(news_items, output_path)
 
@@ -883,11 +1293,12 @@ def main() -> None:
 
     results = run_llm_analysis(
         news_items,
-        pair=pair,
+        asset=asset,
+        asset_type=asset_type,
         enabled_providers=cfg.get("enabled_llm_providers", ["deepseek", "openai"]),
         max_articles=args.max_articles,
     )
-    print_analysis_report(results, pair)
+    print_analysis_report(results, asset, asset_type)
 
 
 if __name__ == "__main__":
