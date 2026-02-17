@@ -1,3 +1,7 @@
+Updates 2/16/2026
+1. Added a new news-fetching source: news api, by using the api key of news api (100 calls per day). Now only 6 fx pairs can use this source.
+2. Added parameters in default_config.json for the usage of the parameter of each news source. Now you can determine which source to use or not.
+
 Updates 2/12/2026
 1. Tested the Gemini to make sure that it works for analysis generation.
 2. Added nasdaq 100 stocks to analyze, to do this, change "currency" to "stock" in default_config.json and set up the label name of the stock in "stock".

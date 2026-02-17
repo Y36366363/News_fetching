@@ -415,6 +415,178 @@ def scrape_yahoo_pair(
 
 
 # ---------------------------------------------------------------------------
+# NewsAPI (API source)
+# ---------------------------------------------------------------------------
+
+def _make_newsapi_key() -> Optional[str]:
+    key = os.getenv("NEWS_API_KEY")
+    if not key:
+        debug_log("[WARN] NEWS_API_KEY not set; NewsAPI source will be skipped.")
+        return None
+    return key
+
+
+def _newsapi_query_for_fx_pair(pair: str) -> str:
+    """
+    NewsAPI matching is sensitive to the exact terms used in articles.
+    Many FX articles do NOT write "USD/CNY" literally; they use names like
+    "yuan/renminbi", or tickers like "USDCNY"/"USDJPY".
+    """
+    parts = pair.replace(" ", "").upper().split("/")
+    base = parts[0] if len(parts) > 0 else pair.upper()
+    quote = parts[1] if len(parts) > 1 else ""
+
+    code_to_names = {
+        "USD": ["dollar", "U.S. dollar", "US dollar"],
+        "EUR": ["euro"],
+        "JPY": ["yen"],
+        "GBP": ["pound", "sterling"],
+        "CNY": ["yuan", "renminbi"],
+        "CNH": ["yuan", "renminbi"],
+        "CAD": ["Canadian dollar", "loonie"],
+        "AUD": ["Australian dollar", "aussie"],
+    }
+
+    pair_ticker = f"{base}{quote}" if quote else base
+
+    base_names = code_to_names.get(base, [])
+    quote_names = code_to_names.get(quote, []) if quote else []
+
+    # Pair identifiers (codes + common tickers)
+    pair_terms = [pair, pair.replace("/", " "), pair_ticker]
+
+    # Extra terms for some pairs
+    extra_terms: List[str] = []
+    if pair_ticker == "USDCNY":
+        extra_terms += ["CNH", "offshore yuan", "onshore yuan"]
+    if pair_ticker == "USDJPY":
+        extra_terms += ["Japan yen"]
+    if pair_ticker == "GBPUSD":
+        extra_terms += ["cable"]
+
+    # Combine terms
+    or_terms: List[str] = []
+    or_terms += [f'"{t}"' for t in pair_terms if t]
+    or_terms += [f'"{t}"' for t in extra_terms if t]
+
+    # Add name-based conjunctions: (euro AND dollar), (yuan AND dollar), ...
+    name_conjunctions: List[str] = []
+    for bn in base_names:
+        for qn in quote_names:
+            name_conjunctions.append(f'("{bn}" AND "{qn}")')
+    for c in name_conjunctions:
+        or_terms.append(c)
+
+    pair_block = " OR ".join(or_terms) if or_terms else f'"{pair}"'
+
+    # FX intent block (keep reasonably broad)
+    intent_block = (
+        'forex OR fx OR currency OR "exchange rate" OR "central bank" '
+        'OR "interest rate" OR "rate cut" OR "rate hike"'
+    )
+
+    return f"({pair_block}) AND ({intent_block})"
+
+
+def fetch_newsapi_fx_pair(
+    pair: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[Dict]:
+    """
+    Fetch FX-related news from NewsAPI.org (/v2/everything).
+    Returns items compatible with the rest of the pipeline.
+    """
+    key = _make_newsapi_key()
+    if not key:
+        return []
+
+    q = _newsapi_query_for_fx_pair(pair)
+
+    page_size = 30
+    if isinstance(max_items, int) and max_items > 0:
+        page_size = min(max_items, 100)
+
+    params = {
+        "q": q,
+        "language": "en",
+        "sortBy": "publishedAt",
+        "pageSize": page_size,
+        "apiKey": key,
+    }
+    if start_date:
+        params["from"] = start_date.isoformat()
+    if end_date:
+        # NewsAPI expects ISO8601; date is accepted as YYYY-MM-DD
+        params["to"] = end_date.isoformat()
+
+    print(f"\n[INFO] Fetching NewsAPI.org ({pair} news)...")
+    try:
+        resp = requests.get(
+            "https://newsapi.org/v2/everything",
+            params=params,
+            headers=HEADERS,
+            timeout=20,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as exc:
+        debug_log(f"[WARN] NewsAPI request failed: {exc}")
+        return []
+
+    articles = data.get("articles") if isinstance(data, dict) else None
+    if not isinstance(articles, list):
+        return []
+
+    items: List[Dict] = []
+    for a in articles:
+        try:
+            title = (a.get("title") or "").strip()
+            url = (a.get("url") or "").strip()
+            if not title or not url:
+                continue
+
+            published_dt: Optional[datetime] = None
+            published_at = a.get("publishedAt")
+            if isinstance(published_at, str) and published_at.strip():
+                published_dt = parse_iso_like_datetime(published_at)
+
+            if not within_date_range(published_dt, start_date, end_date):
+                continue
+
+            snippet = (
+                (a.get("description") or "")
+                or (a.get("content") or "")
+                or ""
+            ).strip()
+
+            src = a.get("source") or {}
+            src_name = src.get("name") if isinstance(src, dict) else None
+            source_label = f"NewsAPI: {src_name}" if src_name else "NewsAPI"
+
+            items.append(
+                {
+                    "source": source_label,
+                    "currency_pair": pair,
+                    "asset_type": "currency",
+                    "title": title,
+                    "url": url,
+                    "published_dt": published_dt,
+                    "snippet": snippet[:600],
+                }
+            )
+
+            if max_items is not None and len(items) >= max_items:
+                break
+        except Exception:
+            continue
+
+    print(f"[INFO] NewsAPI.org items collected: {len(items)}")
+    return items
+
+
+# ---------------------------------------------------------------------------
 # Stock scrapers
 # ---------------------------------------------------------------------------
 
@@ -669,6 +841,11 @@ def collect_news_for_pair(
     start_date: Optional[date],
     end_date: Optional[date],
     max_items: Optional[int] = None,
+    enable_investing: bool = True,
+    enable_marketwatch: bool = True,
+    enable_yahoo: bool = True,
+    enable_newsapi: bool = False,
+    newsapi_max_items: Optional[int] = None,
 ) -> List[NewsItem]:
     """
     Aggregate news from all configured sources, de-duplicate, and convert
@@ -687,23 +864,24 @@ def collect_news_for_pair(
     remaining = max_items
 
     # 1) Investing.com
-    before = len(raw_items)
-    raw_items.extend(
-        scrape_investing_pair(
-            pair=pair,
-            url=cfg["investing_url"],
-            start_date=start_date,
-            end_date=end_date,
-            max_items=remaining,
+    if enable_investing and (remaining is None or remaining > 0):
+        before = len(raw_items)
+        raw_items.extend(
+            scrape_investing_pair(
+                pair=pair,
+                url=cfg["investing_url"],
+                start_date=start_date,
+                end_date=end_date,
+                max_items=remaining,
+            )
         )
-    )
-    if remaining is not None:
-        added = len(raw_items) - before
-        remaining = max(0, remaining - added)
+        if remaining is not None:
+            added = len(raw_items) - before
+            remaining = max(0, remaining - added)
 
     # 2) MarketWatch (only if we still want more items and URL is configured)
     mw_url = cfg.get("marketwatch_url")
-    if mw_url and (remaining is None or remaining > 0):
+    if enable_marketwatch and mw_url and (remaining is None or remaining > 0):
         before = len(raw_items)
         raw_items.extend(
             scrape_marketwatch_pair(
@@ -720,7 +898,7 @@ def collect_news_for_pair(
 
     # 3) Yahoo Finance (currently configured only for some pairs, e.g. EUR/USD)
     yahoo_url = cfg.get("yahoo_url")
-    if yahoo_url and (remaining is None or remaining > 0):
+    if enable_yahoo and yahoo_url and (remaining is None or remaining > 0):
         before = len(raw_items)
         raw_items.extend(
             scrape_yahoo_pair(
@@ -729,6 +907,24 @@ def collect_news_for_pair(
                 max_items=remaining,
             )
         )
+
+    # 4) NewsAPI.org (optional API source)
+    if enable_newsapi and (remaining is None or remaining > 0):
+        cap = remaining
+        if isinstance(newsapi_max_items, int) and newsapi_max_items > 0:
+            cap = min(cap, newsapi_max_items) if cap is not None else newsapi_max_items
+        before = len(raw_items)
+        raw_items.extend(
+            fetch_newsapi_fx_pair(
+                pair=pair,
+                start_date=start_date,
+                end_date=end_date,
+                max_items=cap,
+            )
+        )
+        if remaining is not None:
+            added = len(raw_items) - before
+            remaining = max(0, remaining - added)
 
     if not raw_items:
         return []
@@ -771,6 +967,9 @@ def collect_news_for_stock(
     start_date: Optional[date],
     end_date: Optional[date],
     max_items: Optional[int] = None,
+    enable_investing: bool = True,
+    enable_marketwatch: bool = True,
+    enable_yahoo: bool = True,
 ) -> List[NewsItem]:
     """
     Aggregate news from all configured sources for a stock, de-duplicate, and convert
@@ -789,7 +988,7 @@ def collect_news_for_stock(
 
     # 1) Investing.com
     investing_url = cfg.get("investing_url")
-    if investing_url and (remaining is None or remaining > 0):
+    if enable_investing and investing_url and (remaining is None or remaining > 0):
         before = len(raw_items)
         raw_items.extend(
             scrape_investing_stock(
@@ -806,7 +1005,7 @@ def collect_news_for_stock(
 
     # 2) MarketWatch
     mw_url = cfg.get("marketwatch_url")
-    if mw_url and (remaining is None or remaining > 0):
+    if enable_marketwatch and mw_url and (remaining is None or remaining > 0):
         before = len(raw_items)
         raw_items.extend(
             scrape_marketwatch_stock(
@@ -823,7 +1022,7 @@ def collect_news_for_stock(
 
     # 3) Yahoo Finance
     yahoo_url = cfg.get("yahoo_url")
-    if yahoo_url and (remaining is None or remaining > 0):
+    if enable_yahoo and yahoo_url and (remaining is None or remaining > 0):
         before = len(raw_items)
         raw_items.extend(
             scrape_yahoo_stock(
@@ -919,6 +1118,11 @@ def load_default_config() -> Dict[str, Optional[str]]:
             "currency_pair": "EUR/USD",
             "stock": None,
             "max_news": None,
+            "enable_investing": True,
+            "enable_marketwatch": True,
+            "enable_yahoo": True,
+            "enable_newsapi": False,
+            "newsapi_max_items": None,
             "enabled_llm_providers": ["deepseek", "openai"],
         }
 
@@ -934,6 +1138,11 @@ def load_default_config() -> Dict[str, Optional[str]]:
             "currency_pair": "EUR/USD",
             "stock": None,
             "max_news": None,
+            "enable_investing": True,
+            "enable_marketwatch": True,
+            "enable_yahoo": True,
+            "enable_newsapi": False,
+            "newsapi_max_items": None,
             "enabled_llm_providers": ["deepseek", "openai"],
         }
 
@@ -946,6 +1155,13 @@ def load_default_config() -> Dict[str, Optional[str]]:
     currency_pair = data.get("currency_pair", "EUR/USD")
     stock = data.get("stock")
     max_news = data.get("max_news", None)
+    enable_investing = bool(data.get("enable_investing", True))
+    enable_marketwatch = bool(data.get("enable_marketwatch", True))
+    enable_yahoo = bool(data.get("enable_yahoo", True))
+    enable_newsapi = bool(data.get("enable_newsapi", False))
+    newsapi_max_items = data.get("newsapi_max_items", None)
+    if not (isinstance(newsapi_max_items, int) and newsapi_max_items > 0):
+        newsapi_max_items = None
     
     if asset_type == "currency":
         if currency_pair not in SUPPORTED_PAIRS:
@@ -973,6 +1189,11 @@ def load_default_config() -> Dict[str, Optional[str]]:
         "currency_pair": currency_pair,
         "stock": stock if isinstance(stock, str) else None,
         "max_news": max_news if isinstance(max_news, int) and max_news > 0 else None,
+        "enable_investing": enable_investing,
+        "enable_marketwatch": enable_marketwatch,
+        "enable_yahoo": enable_yahoo,
+        "enable_newsapi": enable_newsapi,
+        "newsapi_max_items": newsapi_max_items,
         "enabled_llm_providers": enabled_providers,
     }
 
@@ -1266,10 +1487,28 @@ def main() -> None:
 
     # Collect news based on asset type
     if asset_type == "stock":
-        news_items = collect_news_for_stock(asset, start_date, end_date, max_items=max_news)
+        news_items = collect_news_for_stock(
+            asset,
+            start_date,
+            end_date,
+            max_items=max_news,
+            enable_investing=bool(cfg.get("enable_investing", True)),
+            enable_marketwatch=bool(cfg.get("enable_marketwatch", True)),
+            enable_yahoo=bool(cfg.get("enable_yahoo", True)),
+        )
     else:
-        news_items = collect_news_for_pair(asset, start_date, end_date, max_items=max_news)
-    
+        news_items = collect_news_for_pair(
+            asset,
+            start_date,
+            end_date,
+            max_items=max_news,
+            enable_investing=bool(cfg.get("enable_investing", True)),
+            enable_marketwatch=bool(cfg.get("enable_marketwatch", True)),
+            enable_yahoo=bool(cfg.get("enable_yahoo", True)),
+            enable_newsapi=bool(cfg.get("enable_newsapi", False)),
+            newsapi_max_items=cfg.get("newsapi_max_items", None),
+        )
+
     if not news_items:
         print("[INFO] No news items collected; nothing to analyze.")
         return
