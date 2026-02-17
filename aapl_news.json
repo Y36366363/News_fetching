@@ -1,782 +1,847 @@
-[
-  {
-    "id": 1,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "CSCO, PLTR among market cap stock movers on Thursday",
-    "url": "https://www.investing.com/news/stock-market-news/csco-pltr-among-market-cap-stock-movers-on-thursday-93CH-4503840",
-    "published_at": null,
-    "snippet": "Thursday’s market has seen swings in various stocks based on news and other factors. Today, stocks like Cisco Systems (CSCO) and...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 2,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "Trump’s Justice Department antitrust head Gail Slater stepping down",
-    "url": "https://www.investing.com/news/stock-market-news/trumps-justice-department-antitrust-head-gail-slater-stepping-down-4503624",
-    "published_at": null,
-    "snippet": "By Jody Godoy Feb 12 (Reuters) - The Trump administration’s head of the Justice Department’s antitrust division said Thursday she...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 3,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "iPhone sales in China grew in January despite massive market slump",
-    "url": "https://www.investing.com/news/stock-market-news/iphone-sales-in-china-grew-in-january-despite-massive-market-slump-4502991",
-    "published_at": null,
-    "snippet": "Investing.com -- Apple defied trends in China by posting 8% year-on-year sales growth in January, making it the only major...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 4,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "BofA sees modest earnings downside for Apple from memory headwinds",
-    "url": "https://www.investing.com/news/stock-market-news/bofa-sees-modest-earnings-downside-for-apple-from-memory-headwinds-4502720",
-    "published_at": null,
-    "snippet": "Investing.com -- Bank of America said rising memory costs pose measurable earnings risks for major PC makers, but the impact...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 5,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "FTC scrutinises Apple News over alleged left-wing bias",
-    "url": "https://www.investing.com/news/stock-market-news/ftc-scrutinises-apple-news-over-alleged-leftwing-bias-4501645",
-    "published_at": null,
-    "snippet": "Investing.com-- The U.S. Federal Trade Commission has raised concerns with Apple Inc (NASDAQ:AAPL) over allegations that the...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 6,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "US FTC raises concerns over accusations Apple News favors articles from left-wing outlets",
-    "url": "https://www.investing.com/news/stock-market-news/us-ftc-raises-concerns-over-accusations-apple-news-favors-articles-from-leftwing-outlets-4501617",
-    "published_at": null,
-    "snippet": "Feb 11 (Reuters) - The U.S. Federal Trade Commission has raised concerns with Apple about accusations that Apple News promotes...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 7,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "Apple intelligence 2.0 launch likely delayed, Evercore ISI maintains rating",
-    "url": "https://www.investing.com/news/analyst-ratings/apple-intelligence-20-launch-likely-delayed-evercore-isi-maintains-rating-93CH-4501425",
-    "published_at": null,
-    "snippet": "Investing.com - Evercore ISI has reiterated its Outperform rating and $330.00 price target on Apple (NASDAQ:AAPL) amid...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 8,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "Apple Computer Inc receives Investment Bank Analyst Rating Update",
-    "url": "https://www.investing.com/news/pro/evercore-isi-maintains-apple-at-outperform-with-a-price-target-of-33000-4501211",
-    "published_at": null,
-    "snippet": "Investing.com -- Apple Inc. (NASDAQ:AAPL) stock pared gains Wednesday afternoon but remained higher by 0.9% following reports that...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 9,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "Apple stock pares gains after reports of Siri upgrade delays",
-    "url": "https://www.investing.com/news/stock-market-news/apple-stock-pares-gains-after-reports-of-siri-upgrade-delays-4501054",
-    "published_at": "2026-02-11T00:00:00+00:00",
-    "snippet": "Investing.com -- Apple Inc. (NASDAQ:AAPL) stock pared gains Wednesday afternoon but remained higher by 0.9% following reports that...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 10,
-    "currency_pair": "AAPL",
-    "source": "Investing.com",
-    "title": "Apple Hits Snags With Long-delayed Attempt To Launch New Siri - Bloomberg",
-    "url": "https://www.investing.com/news/pro/apple-hits-snags-with-longdelayed-attempt-to-launch-new-siri--bloomberg-432SI-4501050",
-    "published_at": "2026-02-11T00:00:00+00:00",
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 11,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "1:52pOpinionChina is hacking the tariff system by investing in U.S. firms — and American taxpayers foot the bill",
-    "url": "https://www.marketwatch.com/story/china-is-hacking-the-tariff-system-by-investing-in-u-s-firms-while-american-taxpayers-foot-the-bill-07f3eb97?mod=mw_latestnews",
-    "published_at": null,
-    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 12,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "1:37pOpinionBig Warner Bros. shareholders are losing patience with the Paramount-Netflix bidding war",
-    "url": "https://www.marketwatch.com/story/big-warner-bros-shareholders-are-getting-restless-in-this-paramount-netflix-bidding-war-3491dab8?mod=mw_latestnews",
-    "published_at": null,
-    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 13,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "1:30pSenior AI staffers keep quitting — and are issuing warnings about what’s going on at their companies",
-    "url": "https://www.marketwatch.com/story/senior-ai-staffers-keep-quitting-and-are-issuing-warnings-about-whats-going-on-at-their-companies-f770f785?mod=mw_latestnews",
-    "published_at": null,
-    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 14,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "1:22pThese 32 favorite stocks signal the bull market is running on fumes",
-    "url": "https://www.marketwatch.com/story/these-32-favorite-stocks-signal-the-bull-market-is-running-on-fumes-60b18b69?mod=mw_latestnews",
-    "published_at": null,
-    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 15,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "12:53pWhy energy is the best-performing sector in the S&P 500 so far this year",
-    "url": "https://www.marketwatch.com/story/why-energy-is-the-best-performing-sector-in-the-s-p-500-so-far-this-year-78bafd05?mod=mw_latestnews",
-    "published_at": null,
-    "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 16,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "FTC Warns Apple of Potential Federal Law Violation Regarding Apple News",
-    "url": "https://www.wsj.com/tech/ftc-warns-apple-of-potential-federal-law-violation-regarding-apple-news-c9413656?mod=mw_quote_news_topstories",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 17,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Hopes Fade For Early 2026 Apple Siri Release. Apple Stock Drops.",
-    "url": "https://www.investors.com/news/technology/apple-stock-aapl-siri-release-delayed-again/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news_topstories",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 18,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Dow Jones Futures Rise; Cisco, McDonald's, AppLovin Lead Earnings Movers",
-    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-cisco-mcdonalds-applovin-earnings/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news_topstories",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 19,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Dow drops 682 points on losses for Cisco, Walt Disney stocks",
-    "url": "https://www.marketwatch.com/data-news/dow-drops-682-points-on-losses-for-cisco-walt-disney-stocks-2474c73f-a80773b82118?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 20,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Dow's 550-point fall led by losses in shares of Cisco, Walt Disney",
-    "url": "https://www.marketwatch.com/data-news/dow-s-550-point-fall-led-by-losses-in-shares-of-cisco-walt-disney-9aeec5aa-55670f1500ae?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 21,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "FTC Warns Apple of Potential Federal Law Violation Regarding Apple News",
-    "url": "https://www.wsj.com/tech/ftc-warns-apple-of-potential-federal-law-violation-regarding-apple-news-c9413656?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 22,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Hopes Fade For Early 2026 Apple Siri Release. Apple Stock Drops.",
-    "url": "https://www.investors.com/news/technology/apple-stock-aapl-siri-release-delayed-again/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 23,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Dow's 135-point drop led by losses in shares of Cisco, Walt Disney",
-    "url": "https://www.marketwatch.com/data-news/dow-s-135-point-drop-led-by-losses-in-shares-of-cisco-walt-disney-8713b2ba-3635a7fe96ec?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 24,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Dow Jones Futures Rise; Cisco, McDonald's, AppLovin Lead Earnings Movers",
-    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-cisco-mcdonalds-applovin-earnings/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 25,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "AppLovin Reports Strong Earnings. The Stock Is Down.",
-    "url": "https://www.barrons.com/articles/applovin-earnings-stock-price-15875027?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 26,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "The Allure of Chinese Tech Stocks. A Pro Picks 7 Names.",
-    "url": "https://www.barrons.com/articles/ai-tech-stocks-samsung-china-beeneet-kothari-df3d9bfc?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 27,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Apple Stock Eyes Breakout As This Unseen Engine Unlocks Agentic AI",
-    "url": "https://www.investors.com/research/breakout-stocks-technical-analysis/apple-stock-near-breakout-xcode-agentic-ai-anthropic-claude-openai-codex/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 28,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Big Tech’s Spending Spree Is About Far More Than Capex",
-    "url": "https://www.barrons.com/articles/ai-spending-tech-stocks-chatgpt-meta-ai-edc9bed9?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 29,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Big Tech stocks are mostly down, weighing on S&P 500",
-    "url": "https://www.marketwatch.com/livecoverage/stock-market-today-dow-new-record-sp500-nasdaq-up-jobs-report-cisco-earnings/card/big-tech-stocks-are-mostly-down-weighing-on-s-p-500-TnKEvTyZHcWjFMPG5daA?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 30,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Here’s how Apple’s stock can surge in the face of rising memory costs",
-    "url": "https://www.marketwatch.com/story/heres-how-apples-stock-can-surge-in-the-face-of-rising-memory-costs-8cc35404?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 31,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "TSMC Stock Is on a Roll as Chip Sales Surge. This Trump Tariff News Could Drive It Higher.",
-    "url": "https://www.barrons.com/articles/tsmc-stock-taiwan-semi-ai-chips-tariffs-27928539?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 32,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Ferrari Stock Was Getting Crushed. Then It Beat Earnings.",
-    "url": "https://www.barrons.com/articles/ferrari-stock-price-earnings-61c0bb6e?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 33,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Dow Jones Futures: Nvidia, AMD, Tesla, Broadcom, Apple Are Big Movers",
-    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-nvidia-nvda-tesla-tsla-apple-broadcom/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 34,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "How To Invest In Stocks: Technical Analysis From The William O'Neil Archive",
-    "url": "https://www.investors.com/how-to-invest/how-to-invest-in-stocks-technical-analysis-william-oneil-archive/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 35,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Stock Market Today: Dow Up As Oracle Soars; Cathie Wood Buys Buffett Stock Amid 145% Run (Live Coverage)",
-    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-january-jobs-report-ai-stock-monday-mndy/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 36,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Big Tech ETF rallies sharply, with Nvidia leading gains in its portfolio",
-    "url": "https://www.marketwatch.com/livecoverage/stock-market-today-dow-set-to-hold-50-000-mark-s-p-500-and-nasdaq-struggle-ahead/card/big-tech-etf-rallies-sharply-with-nvidia-leading-gains-in-its-portfolio-AHg5OjPf4bbp4SH5RId5?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 37,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Dow Jones Futures Rise; Dow Above 50K With Apple, Boeing, AI Stocks In Buy Areas. But Market Is Still Divided.",
-    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-50000-apple-boeing-jpmorgan-ai-stocks/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 38,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "The Dow Surged Past 50,000. How It Got There, and Where It Goes Next.",
-    "url": "https://www.barrons.com/articles/dow-jones-industrial-average-50000-first-time-caterpillar-stock-ff67c63d?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 39,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Apple’s Vision Pro Gets YouTube, but VR Demand Keeps Sliding",
-    "url": "https://www.tipranks.com/news/apples-vision-pro-gets-youtube-but-vr-demand-keeps-sliding?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 40,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Cisco Triggers Tech Selloff, VIX Spikes 16%: What&#39;s Moving Markets Thursday?",
-    "url": "https://www.benzinga.com/markets/equities/26/02/50588874/stock-market-news-thursday-cisco-earnings-apple-slump-robinhood-applovin-gold-silver-bitcoin?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 41,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Tom Lee Says AI Killed Software And Job Losses Are &#39;Soon To Follow&#39;",
-    "url": "https://www.benzinga.com/crypto/cryptocurrency/26/02/50588700/tom-lee-says-ai-killed-software-and-job-losses-are-soon-to-follow?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 42,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Apple's Vision Pro Gains YouTube App as Market Faces Challenges",
-    "url": "https://www.gurufocus.com/news/8611732/apples-vision-pro-gains-youtube-app-as-market-faces-challenges?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "Apple's Vision Pro Gains YouTube App as Market Faces Challenges",
-    "asset_type": "stock"
-  },
-  {
-    "id": 43,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "10 Information Technology Stocks Whale Activity In Today&#39;s Session",
-    "url": "https://www.benzinga.com/insights/options/26/02/50586623/10-information-technology-stocks-whale-activity-in-todays-session?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 44,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "To Balance AI-Heavy Portfolios Smart Money Quietly Shifting Into Foreign Markets – Tech Stocks Underperform",
-    "url": "https://www.benzinga.com/Opinion/26/02/50586622/to-balance-ai-heavy-portfolios-smart-money-quietly-shifting-into-foreign-markets-tech-stocks-underperform?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 45,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Morning News Wrap-Up: Thursday’s Biggest Stock Market Stories!",
-    "url": "https://www.tipranks.com/news/morning-news-wrap-up-thursdays-biggest-stock-market-stories-feb-12th?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 46,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Strong iPhone Sales Drive Apple Up 18% in 6 Months: Buy the Stock?",
-    "url": "https://www.zacks.com/stock/news/2863216/strong-iphone-sales-drive-apple-up-18-in-6-months-buy-the-stock?cid=CS-MKTWTCH-HL-analyst_blog|most_popular_stocks-2863216&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 47,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Midday Fly By: Cisco reports Q2 beat, Trump orders Pentagon to buy coal",
-    "url": "https://www.tipranks.com/news/the-fly/midday-fly-by-cisco-reports-q2-beat-trump-orders-pentagon-to-buy-coal-thefly?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 48,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Best ETFs to Invest In, According to AI Analyst, 2/12/2026",
-    "url": "https://www.tipranks.com/news/best-etfs-to-invest-in-according-to-ai-analyst-2-12-2026?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 49,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "US Stocks Fall Sharply as Tech Giants Face Heavy Selling Pressure",
-    "url": "https://www.gurufocus.com/news/8611607/us-stocks-fall-sharply-as-tech-giants-face-heavy-selling-pressure?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "US Stocks Fall Sharply as Tech Giants Face Heavy Selling Pressure",
-    "asset_type": "stock"
-  },
-  {
-    "id": 50,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Here's Why Apple (AAPL) is a Great Momentum Stock to Buy",
-    "url": "https://www.zacks.com/stock/news/2863142/here-s-why-apple-aapl-is-a-great-momentum-stock-to-buy?cid=CS-MKTWTCH-HL-tale_of_the_tape|yseop_template_10-2863142&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 51,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Apple Stock (AAPL) Sinks on Reports It Might Pushback Siri AI Launch",
-    "url": "https://www.tipranks.com/news/apple-stock-aapl-sinks-on-reports-it-might-pushback-siri-ai-launch?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 52,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "1 Artificial Intelligence (AI) Winner Hiding in Plain Sight for 2026",
-    "url": "https://www.fool.com/investing/2026/02/12/1-artificial-intelligence-ai-winner-hiding-in-plai/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=7adcfedb-40c2-4797-bca6-497063c12c11&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 53,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "FTC Questions Political Bias in Apple News App Feed",
-    "url": "https://www.gurufocus.com/news/8611265/ftc-questions-political-bias-in-apple-news-app-feed?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "FTC Questions Political Bias in Apple News App Feed",
-    "asset_type": "stock"
-  },
-  {
-    "id": 54,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Vanguard Total Stock Market ETF (VTI) Daily Snapshot—2/12/26",
-    "url": "https://www.tipranks.com/news/vanguard-total-stock-market-etf-vti-daily-snapshot-2-12-26?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 55,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Alphabet Drops 7% Post Q4 Earnings: Buy, Sell or Hold the Stock?",
-    "url": "https://www.zacks.com/stock/news/2862641/alphabet-drops-7-post-q4-earnings-buy-sell-or-hold-the-stock?cid=CS-MKTWTCH-HL-analyst_blog|most_popular_stocks-2862641&mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 56,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Apple (AAPL) Reclaims Momentum in China as iPhone Share Climbs to 19%",
-    "url": "https://www.tipranks.com/news/apple-aapl-reclaims-momentum-in-china-as-iphone-share-climbs-to-19?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 57,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "The Great Distortion: 1,500 Stocks Vs. The Magnificent 7 In Norway&#39;s Massive U.S. Equity Portfolio",
-    "url": "https://www.benzinga.com/markets/hedge-funds/26/02/50579794/magnificent-7-stocks-norway-wealth-fund-portfolio?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 58,
-    "currency_pair": "AAPL",
-    "source": "MarketWatch",
-    "title": "Microsoft Is &#39;Worst-Performing&#39; Hyperscaler Stock Since ChatGPT Launch, Chamath Palihapitiya Says",
-    "url": "https://www.benzinga.com/markets/tech/26/02/50577130/microsoft-is-worst-performing-hyperscaler-stock-since-chatgpt-launch-chamath-palihapitiya-says?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "",
-    "asset_type": "stock"
-  },
-  {
-    "id": 59,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Apple May Push Siri AI Upgrade Beyond March 2026 Target",
-    "url": "https://finance.yahoo.com/news/apple-may-push-siri-ai-192440602.html?.tsrc=rss",
-    "published_at": "2026-02-12T19:24:40+00:00",
-    "snippet": "Testing issues could shift key Siri features from iOS 26.4 to later releases, including iOS 26.5 or iOS 27.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 60,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Stock market today: Dow, S&P 500, Nasdaq sink as tech stocks get pummeled",
-    "url": "https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-sink-as-tech-stocks-get-pummeled-163424340.html?.tsrc=rss",
-    "published_at": "2026-02-12T19:12:09+00:00",
-    "snippet": "Wall Street is gearing up for an update on the Fed's favored inflation gauge, after the jobs report bolstered the case for keeping rates unchanged.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 61,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "I Predicted Oracle Would Be the Hottest \"Ten Titans\" Stock to Buy in 2026, But the Growth Stock Is Already Down 27% This Year. Is Oracle Still a Buy?",
-    "url": "https://www.fool.com/investing/2026/02/12/buy-oracle-dip-ten-titans-growth-stock-2026/?.tsrc=rss",
-    "published_at": "2026-02-12T19:05:00+00:00",
-    "snippet": "The narrative around OpenAI has completely flipped, challenging Oracle's justification of borrowing money to fund artificial intelligence (AI) investments.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 62,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Equity Markets Drop Intraday; Oil Slumps",
-    "url": "https://finance.yahoo.com/news/equity-markets-drop-intraday-oil-185916111.html?.tsrc=rss",
-    "published_at": "2026-02-12T18:59:16+00:00",
-    "snippet": "US benchmark equity indexes were lower intraday amid notable declines in the technology, energy and",
-    "asset_type": "stock"
-  },
-  {
-    "id": 63,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Apple Faces FTC Inquiry Over Apple News Practices",
-    "url": "https://finance.yahoo.com/news/apple-faces-ftc-inquiry-over-185802672.html?.tsrc=rss",
-    "published_at": "2026-02-12T18:58:02+00:00",
-    "snippet": "Agency chair questions whether platform practices align with consumer expectations.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 64,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Sector Update: Tech Stocks Fall Thursday Afternoon",
-    "url": "https://finance.yahoo.com/news/sector-tech-stocks-fall-thursday-185019138.html?.tsrc=rss",
-    "published_at": "2026-02-12T18:50:19+00:00",
-    "snippet": "Tech stocks slumped Thursday afternoon with the State Street Technology Select Sector SPDR ETF (XLK)",
-    "asset_type": "stock"
-  },
-  {
-    "id": 65,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Market Movers: Micron Soars on CFO Comments",
-    "url": "https://247wallst.com/investing/2026/02/12/market-movers-micron-soars-on-cfo-comments/?.tsrc=rss",
-    "published_at": "2026-02-12T18:24:12+00:00",
-    "snippet": "Even as the market dives, Micron Technologies (NASDAQ: MU) is rocketing higher. All after CFO Mark Murphy addressed “inaccurate reporting” about the company’s next-generation high-bandwidth-memory positioning, saying that the company’s HBM4 offering is in high-volume production, as noted by MarketWatch.com. “Shipments to customers have ‘successfully’ ramped in the first quarter, he noted, with that development ... Market Movers: Micron Soars on CFO Comments",
-    "asset_type": "stock"
-  },
-  {
-    "id": 66,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "LiveOne Q3 Earnings Call Highlights",
-    "url": "https://www.marketbeat.com/instant-alerts/liveone-q3-earnings-call-highlights-2026-02-12/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-    "published_at": "2026-02-12T18:02:45+00:00",
-    "snippet": "LiveOne (NASDAQ:LVO) executives said the company’s fiscal third quarter marked an “inflection point,” highlighting lower costs, improved adjusted EBITDA, and what management described as an expanding pipeline of B2B partnerships as it works to scale the business. Quarterly results and segment perfo",
-    "asset_type": "stock"
-  },
-  {
-    "id": 67,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "US Equity Indexes Retreat as Broad-Based Risk-Off Sentiment Takes Hold",
-    "url": "https://finance.yahoo.com/news/us-equity-indexes-retreat-broad-175242317.html?.tsrc=rss",
-    "published_at": "2026-02-12T17:52:42+00:00",
-    "snippet": "US equity indexes fell in midday trading on Thursday amid a broad-based decline across the market, l",
-    "asset_type": "stock"
-  },
-  {
-    "id": 68,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "MP Stock Surges 148% in a Year: Worth Including in Your Portfolio?",
-    "url": "https://finance.yahoo.com/news/mp-stock-surges-148-worth-175000568.html?.tsrc=rss",
-    "published_at": "2026-02-12T17:50:00+00:00",
-    "snippet": "MP Materials surges 148% in a year, fueled by Apple and DoW deals and rising NdPr output, but premium valuation and losses cloud near-term upside.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 69,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Amazon Stock Faces Eight-Day Losing Streak",
-    "url": "https://finance.yahoo.com/m/f151cf53-2ed8-3ccb-a484-4efb5f6e5ba0/amazon-stock-faces-eight-day.html?.tsrc=rss",
-    "published_at": "2026-02-12T17:31:21+00:00",
-    "snippet": "Shares of retail and tech giant Amazon were down more than 2% in midday trading, on pace for their eighth consecutive decline. That losing streak would be Amazon's longest since 2019, according to Dow Jones Market Data.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 70,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Strong iPhone Sales Drive Apple Up 18% in 6 Months: Buy the Stock?",
-    "url": "https://finance.yahoo.com/news/strong-iphone-sales-drive-apple-171800893.html?.tsrc=rss",
-    "published_at": "2026-02-12T17:18:00+00:00",
-    "snippet": "AAPL jumps 18% in six months as iPhone 17 sales surge and Services hit records. Can AI upgrades and Google tie-up fuel the next leg higher?",
-    "asset_type": "stock"
-  },
-  {
-    "id": 71,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Here's Why Apple (AAPL) is a Great Momentum Stock to Buy",
-    "url": "https://finance.yahoo.com/news/heres-why-apple-aapl-great-170003225.html?.tsrc=rss",
-    "published_at": "2026-02-12T17:00:03+00:00",
-    "snippet": "Does Apple (AAPL) have what it takes to be a top stock pick for momentum investors? Let's find out.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 72,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "FTC Warns Apple of Potential Federal Law Violation Regarding Apple News",
-    "url": "https://finance.yahoo.com/m/9fd89f97-6ad2-3fc5-b915-9174f1d5aed6/ftc-warns-apple-of-potential.html?.tsrc=rss",
-    "published_at": "2026-02-12T16:53:00+00:00",
-    "snippet": "The letter from FTC Chairman Andrew Ferguson cited reports that Apple News promoted news articles from left-wing news outlets and suppressed news articles from more conservative publications.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 73,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Justice Department’s Antitrust Chief Leaves Post After Clashes With Leadership",
-    "url": "https://finance.yahoo.com/m/7bd9de22-a297-3a2e-946a-78c8904077ef/justice-department%E2%80%99s.html?.tsrc=rss",
-    "published_at": "2026-02-12T16:41:00+00:00",
-    "snippet": "Gail Slater’s departure follows feuds with senior officials over her independence during her 11 months in the role.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 74,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Stock Market Today, Feb. 12: Stocks moderate as initial claims fall, continuing claims rise",
-    "url": "https://www.thestreet.com/latest-news/stock-market-today-feb-12-stocks-moderate-as-initial-claims-fall-continuing-claims-rise?.tsrc=rss",
-    "published_at": "2026-02-12T16:35:01+00:00",
-    "snippet": "This live blog is refreshed periodically throughout the day with the latest updates from the market.To find the latest Stock Market Today threads, click here. Happy Thursday. This is TheStreet’s Stock Market Today for Feb. 12, 2026. You can follow the latest updates on the ...",
-    "asset_type": "stock"
-  },
-  {
-    "id": 75,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Hopes Fade For Early 2026 Apple Siri Release. Apple Stock Drops.",
-    "url": "https://finance.yahoo.com/m/5e981d48-7ceb-3f1e-92eb-19320e7f5330/hopes-fade-for-early-2026.html?.tsrc=rss",
-    "published_at": "2026-02-12T16:22:02+00:00",
-    "snippet": "Apple stock fell on reports that the company will delay the release of its AI-powered Siri until May, with some features pushed back to the fall.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 76,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "1 Artificial Intelligence (AI) Winner Hiding in Plain Sight for 2026",
-    "url": "https://www.fool.com/investing/2026/02/12/1-artificial-intelligence-ai-winner-hiding-in-plai/?.tsrc=rss",
-    "published_at": "2026-02-12T16:20:00+00:00",
-    "snippet": "TSMC will remain a bellwether of the booming AI market.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 77,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Alphabet Drops 7% Post Q4 Earnings: Buy, Sell or Hold the Stock?",
-    "url": "https://finance.yahoo.com/news/alphabet-drops-7-post-q4-154700707.html?.tsrc=rss",
-    "published_at": "2026-02-12T15:47:00+00:00",
-    "snippet": "GOOGL sinks 7% as $175B-$185B 2026 capex plan sparks AI monetization fears, even as Search and Cloud show strong momentum.",
-    "asset_type": "stock"
-  },
-  {
-    "id": 78,
-    "currency_pair": "AAPL",
-    "source": "Yahoo Finance",
-    "title": "Can Jabil's Consumer Electronics Expertise Boost Future Profits?",
-    "url": "https://finance.yahoo.com/news/jabils-consumer-electronics-expertise-boost-152800330.html?.tsrc=rss",
-    "published_at": "2026-02-12T15:28:00+00:00",
-    "snippet": "JBL boosts its consumer electronics reach with advanced manufacturing and partnerships with top global tech brands.",
-    "asset_type": "stock"
+{
+  "schema_version": 2,
+  "meta": {
+    "generated_at": "2026-02-17T05:05:14.572388+00:00",
+    "asset_type": "stock",
+    "asset": "AAPL",
+    "start_date": "2026-02-09",
+    "end_date": "2026-02-16",
+    "max_news": null,
+    "max_articles": 8,
+    "sources": {
+      "investing": true,
+      "marketwatch": true,
+      "yahoo": true,
+      "newsapi": true
+    },
+    "newsapi_max_items": 10,
+    "llm_enabled": [
+      "deepseek"
+    ]
+  },
+  "news": [
+    {
+      "id": 1,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "Big tech stocks lose billions as AI spending fears hit valuations",
+      "url": "https://www.investing.com/news/stock-market-news/big-tech-stocks-lose-billions-as-ai-spending-fears-hit-valuations-4507511",
+      "published_at": null,
+      "snippet": "Feb 16 (Reuters) - The worldâ€™s most valuable technology stocks have suffered sharp declines in market value this year after years...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 2,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "PayPal stock: can it regain lost share or has the ship sailed?",
+      "url": "https://www.investing.com/news/stock-market-news/paypal-stock-can-it-regain-lost-share-or-has-the-ship-sailed-4497907",
+      "published_at": "2026-02-15T00:00:00+00:00",
+      "snippet": "Investing.com --PayPalâ€™s grip on digital wallet checkouts is slipping as rivals gain ground and shifts in online shopping weaken...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 3,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "Whatâ€™s the impact from sky-rocketing memory prices on Apple?",
+      "url": "https://www.investing.com/news/stock-market-news/whats-the-impact-from-skyrocketing-memory-prices-on-apple-4502989",
+      "published_at": "2026-02-15T00:00:00+00:00",
+      "snippet": "Investing.com -- Appleâ€™s (NASDAQ:AAPL) latest financial results showed that the tech behemoth is benefiting from a strong iPhone...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 4,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "Morning Bid: No longer the Apple of their eye",
+      "url": "https://www.investing.com/news/economy-news/morning-bid-no-longer-the-apple-of-their-eye-4504336",
+      "published_at": "2026-02-13T00:00:00+00:00",
+      "snippet": "A look at the day ahead in European and global markets from Stella Qiu The tech selloff has returned with a vengeance. The latest...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 5,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "Trumpâ€™s DOJ antitrust head steps down after turbulent tenure",
+      "url": "https://www.investing.com/news/stock-market-news/trumps-justice-department-antitrust-head-gail-slater-stepping-down-4503624",
+      "published_at": "2026-02-12T00:00:00+00:00",
+      "snippet": "By Jody Godoy Feb 12 (Reuters) - The head of the U.S. Justice Departmentâ€™s antitrust division stepped down on Thursday less than...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 6,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "Trading Day: Bears barge bulls aside",
+      "url": "https://www.investing.com/news/economy-news/trading-day-bears-barge-bulls-aside-4504125",
+      "published_at": "2026-02-12T00:00:00+00:00",
+      "snippet": "ORLANDO, Florida, Feb 12 (Reuters) - Market sentiment soured rapidly on Thursday, sparking a steep selloff in U.S. stocks,...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 7,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "CSCO, PLTR among market cap stock movers on Thursday",
+      "url": "https://www.investing.com/news/stock-market-news/csco-pltr-among-market-cap-stock-movers-on-thursday-93CH-4503840",
+      "published_at": "2026-02-12T00:00:00+00:00",
+      "snippet": "Thursdayâ€™s market has seen swings in various stocks based on news and other factors. Today, stocks like Cisco Systems (CSCO) and...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 8,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "iPhone sales in China grew in January despite massive market slump",
+      "url": "https://www.investing.com/news/stock-market-news/iphone-sales-in-china-grew-in-january-despite-massive-market-slump-4502991",
+      "published_at": "2026-02-12T00:00:00+00:00",
+      "snippet": "Investing.com -- Apple defied trends in China by posting 8% year-on-year sales growth in January, making it the only major...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 9,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "BofA sees modest earnings downside for Apple from memory headwinds",
+      "url": "https://www.investing.com/news/stock-market-news/bofa-sees-modest-earnings-downside-for-apple-from-memory-headwinds-4502720",
+      "published_at": "2026-02-12T00:00:00+00:00",
+      "snippet": "Investing.com -- Bank of America said rising memory costs pose measurable earnings risks for major PC makers, but the impact...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 10,
+      "currency_pair": "AAPL",
+      "source": "Investing.com",
+      "title": "FTC scrutinises Apple News over alleged left-wing bias",
+      "url": "https://www.investing.com/news/stock-market-news/ftc-scrutinises-apple-news-over-alleged-leftwing-bias-4501645",
+      "published_at": "2026-02-11T00:00:00+00:00",
+      "snippet": "Investing.com--Â The U.S. Federal Trade Commission has raised concerns with Apple Inc (NASDAQ:AAPL) over allegations that the...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 11,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "11:01pU.S. stock futures slump as investors digest ongoing tech selloff",
+      "url": "https://www.marketwatch.com/story/u-s-stock-futures-flat-as-investors-digest-ongoing-tech-selloff-over-holiday-weekend-765f3c5c?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 12,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "8:23pIrish regulator opens E.U. privacy investigation into Elon Musk’s X over Grok’s deepfake images",
+      "url": "https://www.marketwatch.com/story/irish-regulator-opens-e-u-privacy-investigation-into-elon-musks-x-over-groks-deepfake-images-27803265?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 13,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "6:00p‘I’m close to retiring’: I’m behind on my property tax. Is this a really bad time to sell my house?",
+      "url": "https://www.marketwatch.com/story/im-close-to-retiring-im-behind-on-my-property-taxes-is-this-a-bad-time-to-sell-my-house-40954efd?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 14,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "5:57pBuying stocks everyone admires is a recipe for underperformance — but Apple breaks the rule",
+      "url": "https://www.marketwatch.com/story/buying-stocks-everyone-admires-is-a-recipe-for-underperformance-but-apple-breaks-the-rule-26de6e2f?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 15,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "5:49p‘Am I crazy?’ My boyfriend’s parents say he doesn’t earn enough to marry me. Who is to blame here?",
+      "url": "https://www.marketwatch.com/story/weve-been-dating-for-5-years-my-boyfriends-parents-say-he-doesnt-earn-enough-to-marry-should-i-speak-to-his-father-44b48700?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 16,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "5:28p‘It’s a life-changing sum’: Can I stop my kids from using their inheritance to support political causes I vehemently oppose?",
+      "url": "https://www.marketwatch.com/story/its-a-life-changing-sum-can-i-stop-my-kids-from-using-their-inheritance-to-support-political-causes-i-vehemently-oppose-90809fd7?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 17,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "11:45a‘I’m a loner’: I’m 62 with a multimillion-dollar portfolio and no heirs. Should I find a wife for my twilight years?",
+      "url": "https://www.marketwatch.com/story/im-a-loner-im-62-with-a-multimillion-dollar-portfolio-and-no-heirs-should-i-find-a-wife-for-my-twilight-years-4f4f4408?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 18,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "11:07a‘I feel the clock ticking’: My wife and I are in our 60s — and employ 48 people in a small town. Can we ever retire?",
+      "url": "https://www.marketwatch.com/story/i-feel-the-clock-ticking-my-wife-and-i-are-in-our-60s-and-employ-48-people-in-a-small-town-can-we-ever-retire-2399ba41?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 19,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "10:02aShipping industry set to consolidate as Hapag-Lloyd to buy Israeli firm for 58% premium",
+      "url": "https://www.marketwatch.com/story/shipping-industry-set-to-consolidate-as-hapag-lloyd-to-buy-israeli-firm-for-58-premium-35839cf0?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 20,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "9:27aThese might be the winners from the latest round of Chinese new year AI launches",
+      "url": "https://www.marketwatch.com/story/these-might-be-the-winners-from-the-latest-round-of-chinese-new-year-ai-launches-06779445?mod=mw_latestnews",
+      "published_at": null,
+      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 21,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Buying stocks everyone admires is a recipe for underperformance — but Apple breaks the rule",
+      "url": "https://www.marketwatch.com/story/buying-stocks-everyone-admires-is-a-recipe-for-underperformance-but-apple-breaks-the-rule-26de6e2f?mod=mw_quote_news_topstories",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 22,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+      "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_quote_news_topstories",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 23,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Apple To Hold Product Event On March 4. Cheaper iPhone Seen But No AI Siri",
+      "url": "https://www.investors.com/news/technology/apple-product-event-march-4-cheaper-iphone-no-ai-siri/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news_topstories",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 24,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Buying stocks everyone admires is a recipe for underperformance — but Apple breaks the rule",
+      "url": "https://www.marketwatch.com/story/buying-stocks-everyone-admires-is-a-recipe-for-underperformance-but-apple-breaks-the-rule-26de6e2f?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 25,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Apple To Hold Product Event On March 4. Cheaper iPhone Seen But No AI Siri",
+      "url": "https://www.investors.com/news/technology/apple-product-event-march-4-cheaper-iphone-no-ai-siri/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 26,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Dow Jones Futures Rise; Apple, Google, Amazon, Meta, Nvidia In Focus",
+      "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-apple-google-amazon-meta-nvidia-five-ways-to-handle-market/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 27,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Here are 7 charts guaranteed to stress you out about the stock market",
+      "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 28,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Phonographs, Player Pianos and Betamax: The Inventions That Transformed Entertainment",
+      "url": "https://www.wsj.com/business/media/10-inventions-entertainment-phonograph-streaming-a7b97be6?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 29,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Big Tech’s Spending Spree Could Limit Buybacks and Dividends",
+      "url": "https://www.barrons.com/articles/ai-spending-tech-stocks-chatgpt-meta-ai-edc9bed9?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 30,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Why Amazon Stock and the Rest of Big Tech Could Be the Next GE. That’s Not a Good Thing.",
+      "url": "https://www.barrons.com/articles/amazon-big-tech-next-ge-discount-6c09dea8?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 31,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Berkshire Hathaway Might Have Sold More Apple, Bank of America Stock in Fourth Quarter",
+      "url": "https://www.barrons.com/articles/berkshire-hathaway-apple-bank-of-america-stock-buffett-87de1c56?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 32,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "A Memory-Chip Shortage Is Squeezing Consumer Tech—and It’s Set to Get Worse",
+      "url": "https://www.wsj.com/tech/a-memory-chip-shortage-is-squeezing-consumer-techand-its-set-to-get-worse-95002024?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 33,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Apple sees $200 billion market-cap wipeout as stock slides on AI fears",
+      "url": "https://www.marketwatch.com/story/apple-sees-200-billion-market-cap-wipeout-as-stock-slides-on-ai-fears-88917cc0?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 34,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Tech Down Amid Fears About Tech Boom Sustainability - Tech Roundup",
+      "url": "https://www.marketwatch.com/story/tech-down-amid-fears-about-tech-boom-sustainability-tech-roundup-abba7109?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 35,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Hopes Fade For Early 2026 Apple Siri Release. Apple Stock Drops.",
+      "url": "https://www.investors.com/news/technology/apple-stock-aapl-siri-release-delayed-again/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 36,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Cisco, Apple share losses contribute to Dow's 650-point fall",
+      "url": "https://www.marketwatch.com/data-news/cisco-apple-share-losses-contribute-to-dow-s-650-point-fall-c0f96b17-f4c22c9c3db6?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 37,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Cisco, Walt Disney share losses contribute to Dow's 482-point fall",
+      "url": "https://www.marketwatch.com/data-news/cisco-walt-disney-share-losses-contribute-to-dow-s-482-point-fall-14ff902f-4bde84b194ab?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 38,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Dow drops 682 points on losses for Cisco, Walt Disney stocks",
+      "url": "https://www.marketwatch.com/data-news/dow-drops-682-points-on-losses-for-cisco-walt-disney-stocks-2474c73f-a80773b82118?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 39,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Dow's 550-point fall led by losses in shares of Cisco, Walt Disney",
+      "url": "https://www.marketwatch.com/data-news/dow-s-550-point-fall-led-by-losses-in-shares-of-cisco-walt-disney-9aeec5aa-55670f1500ae?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 40,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "FTC Warns Apple of Potential Federal Law Violation Regarding Apple News",
+      "url": "https://www.wsj.com/tech/ftc-warns-apple-of-potential-federal-law-violation-regarding-apple-news-c9413656?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 41,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Dow's 135-point drop led by losses in shares of Cisco, Walt Disney",
+      "url": "https://www.marketwatch.com/data-news/dow-s-135-point-drop-led-by-losses-in-shares-of-cisco-walt-disney-8713b2ba-3635a7fe96ec?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 42,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Dow Jones Futures Rise; Cisco, McDonald's, AppLovin Lead Earnings Movers",
+      "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-cisco-mcdonalds-applovin-earnings/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 43,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "AppLovin Reports Strong Earnings. The Stock Is Down.",
+      "url": "https://www.barrons.com/articles/applovin-earnings-stock-price-15875027?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 44,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "3 Vanguard ETFs to Buy to Protect Your Portfolio From a Potential Stock Market Crash",
+      "url": "https://www.fool.com/investing/2026/02/16/3-vanguard-etfs-to-buy-to-protect-your-portfolio/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=dcd4a153-1cd0-4e38-8ffc-310e4919749a&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 45,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Apple Explores Multiple Foldable iPhone Designs Amid Market Speculations",
+      "url": "https://www.gurufocus.com/news/8621395/apple-explores-multiple-foldable-iphone-designs-amid-market-speculations?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Apple Explores Multiple Foldable iPhone Designs Amid Market Speculations",
+      "asset_type": "stock"
+    },
+    {
+      "id": 46,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Apple (AAPL) Launches Video Podcasts",
+      "url": "https://www.tipranks.com/news/apple-aapl-launches-video-podcasts?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 47,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in Xenia Hotels & Resorts Inc",
+      "url": "https://www.gurufocus.com/news/8621302/wellington-management-group-llp-reduces-stake-in-xenia-hotels-resorts-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in Xenia Hotels & Resorts Inc",
+      "asset_type": "stock"
+    },
+    {
+      "id": 48,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in Viavi Solutions Inc",
+      "url": "https://www.gurufocus.com/news/8621301/wellington-management-group-llp-reduces-stake-in-viavi-solutions-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in Viavi Solutions Inc",
+      "asset_type": "stock"
+    },
+    {
+      "id": 49,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in TPG Inc",
+      "url": "https://www.gurufocus.com/news/8621300/wellington-management-group-llp-reduces-stake-in-tpg-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in TPG Inc",
+      "asset_type": "stock"
+    },
+    {
+      "id": 50,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Increases Stake in Soleno Therapeutics Inc",
+      "url": "https://www.gurufocus.com/news/8621299/wellington-management-group-llp-increases-stake-in-soleno-therapeutics-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Increases Stake in Soleno Therapeutics Inc",
+      "asset_type": "stock"
+    },
+    {
+      "id": 51,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Significantly Reduces Stake in Silgan Holdings Inc.",
+      "url": "https://www.gurufocus.com/news/8621298/wellington-management-group-llp-significantly-reduces-stake-in-silgan-holdings-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Significantly Reduces Stake in Silgan Holdings Inc.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 52,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP's Strategic Acquisition of Shake Shack Inc Shares",
+      "url": "https://www.gurufocus.com/news/8621297/wellington-management-group-llps-strategic-acquisition-of-shake-shack-inc-shares?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP's Strategic Acquisition of Shake Shack Inc Shares",
+      "asset_type": "stock"
+    },
+    {
+      "id": 53,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in Ryder System Inc",
+      "url": "https://www.gurufocus.com/news/8621296/wellington-management-group-llp-reduces-stake-in-ryder-system-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in Ryder System Inc",
+      "asset_type": "stock"
+    },
+    {
+      "id": 54,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in Rush Enterprises Inc",
+      "url": "https://www.gurufocus.com/news/8621295/wellington-management-group-llp-reduces-stake-in-rush-enterprises-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in Rush Enterprises Inc",
+      "asset_type": "stock"
+    },
+    {
+      "id": 55,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in Peapack Gladstone Financial Corp",
+      "url": "https://www.gurufocus.com/news/8621294/wellington-management-group-llp-reduces-stake-in-peapack-gladstone-financial-corp?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in Peapack Gladstone Financial Corp",
+      "asset_type": "stock"
+    },
+    {
+      "id": 56,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Increases Stake in OceanFirst Financial Corp",
+      "url": "https://www.gurufocus.com/news/8621293/wellington-management-group-llp-increases-stake-in-oceanfirst-financial-corp?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Increases Stake in OceanFirst Financial Corp",
+      "asset_type": "stock"
+    },
+    {
+      "id": 57,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP's Strategic Acquisition of Norwood Financial Corp Shares",
+      "url": "https://www.gurufocus.com/news/8621292/wellington-management-group-llps-strategic-acquisition-of-norwood-financial-corp-shares?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP's Strategic Acquisition of Norwood Financial Corp Shares",
+      "asset_type": "stock"
+    },
+    {
+      "id": 58,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP's Strategic Reduction in MidWestOne Financial Group Inc Holdings",
+      "url": "https://www.gurufocus.com/news/8621291/wellington-management-group-llps-strategic-reduction-in-midwestone-financial-group-inc-holdings?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP's Strategic Reduction in MidWestOne Financial Group Inc Holdings",
+      "asset_type": "stock"
+    },
+    {
+      "id": 59,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in The Middleby Corp",
+      "url": "https://www.gurufocus.com/news/8621290/wellington-management-group-llp-reduces-stake-in-the-middleby-corp?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in The Middleby Corp",
+      "asset_type": "stock"
+    },
+    {
+      "id": 60,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP's Strategic Acquisition of Metropolitan Bank Holding Corp Shares",
+      "url": "https://www.gurufocus.com/news/8621289/wellington-management-group-llps-strategic-acquisition-of-metropolitan-bank-holding-corp-shares?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP's Strategic Acquisition of Metropolitan Bank Holding Corp Shares",
+      "asset_type": "stock"
+    },
+    {
+      "id": 61,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in Kymera Therapeutics Inc",
+      "url": "https://www.gurufocus.com/news/8621288/wellington-management-group-llp-reduces-stake-in-kymera-therapeutics-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in Kymera Therapeutics Inc",
+      "asset_type": "stock"
+    },
+    {
+      "id": 62,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP Reduces Stake in The Kroger Co.",
+      "url": "https://www.gurufocus.com/news/8621287/wellington-management-group-llp-reduces-stake-in-the-kroger-co?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP Reduces Stake in The Kroger Co.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 63,
+      "currency_pair": "AAPL",
+      "source": "MarketWatch",
+      "title": "Wellington Management Group LLP's Strategic Acquisition in Knight-Swift Transportation Holdings Inc.",
+      "url": "https://www.gurufocus.com/news/8621286/wellington-management-group-llps-strategic-acquisition-in-knightswift-transportation-holdings-inc?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Wellington Management Group LLP's Strategic Acquisition in Knight-Swift Transportation Holdings Inc.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 64,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Oracle Surges 12% While Apple, Amazon Tumble in Choppy Tech Week",
+      "url": "https://247wallst.com/investing/2026/02/16/oracle-surges-12-while-apple-amazon-tumble-in-choppy-tech-week/?.tsrc=rss",
+      "published_at": "2026-02-16T23:00:24+00:00",
+      "snippet": "Tech stocks delivered a choppy week, with the sector’s biggest names diverging sharply as AI spending debates intensified and bear market territory claimed two Magnificent Seven members. Incredibly, every single Magnificent 7 stock is now down year-to-date after NVIDIA (NASDAQ: NVDA) shares slipped 2.23% on Friday. Let’s dive into the biggest storylines in technology this week. While many stocks ... Oracle Surges 12% While Apple, Amazon Tumble in Choppy Tech Week",
+      "asset_type": "stock"
+    },
+    {
+      "id": 65,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Apple (AAPL) Trading 10% Below Analyst Targets After This Week’s 8% Drop",
+      "url": "https://247wallst.com/investing/2026/02/16/apple-aapl-trading-14-2-below-analyst-targets-after-this-weeks-8-drop/?.tsrc=rss",
+      "published_at": "2026-02-16T19:11:36+00:00",
+      "snippet": "Apple (NASDAQ: AAPL) closed at $255.78 on February 13, down 7.95% from the previous week’s $277.86. Yet Wall Street analysts still see the stock climbing to an average target of $292.15, implying 10% upside from current levels. That disconnect raises a question: is the market pricing in risks analysts are missing, or did the selloff ... Apple (AAPL) Trading 10% Below Analyst Targets After This Week’s 8% Drop",
+      "asset_type": "stock"
+    },
+    {
+      "id": 66,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Apple’s Siri shocker is flashing a warning AAPL bulls can’t ignore",
+      "url": "https://www.thestreet.com/investing/apples-siri-shocker-is-flashing-a-warning-aapl-bulls-cant-ignore?.tsrc=rss",
+      "published_at": "2026-02-16T18:33:00+00:00",
+      "snippet": "Apple (AAPL), since WWDC 2024, has sold a simple comeback story: Siri is getting a real AI brain, further cementing Apple's AI credentials. CEO Tim Cook put it this way. However, the latest reporting presents a problem for Apple and Siri enthusiasts. The issue for Apple comes down to one word: ...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 67,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Timely Tips And Tools On How To Invest In Stocks In This Market",
+      "url": "https://finance.yahoo.com/m/1663986a-080f-323f-a903-88893df2011d/timely-tips-and-tools-on-how.html?.tsrc=rss",
+      "published_at": "2026-02-16T17:18:55+00:00",
+      "snippet": "This week's how to invest newsletter highlights a simple three-step routine, a tool of the week and a timely tip from Bill O'Neil.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 68,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "These 3 Stocks Appear to Be Set Up For a Massive 2026",
+      "url": "https://247wallst.com/investing/2026/02/16/these-3-stocks-appear-to-be-set-up-for-a-massive-2026/?.tsrc=rss",
+      "published_at": "2026-02-16T16:52:48+00:00",
+      "snippet": "It’s been quite the run in the stock market, for investors of all ages and risk profiles. However, it’s been true that investors who have continued to hold overweight exposure to growth stocks have continued to perform better than those who have been sitting in fixed income assets, cash or other lower-beta stocks. I’m all ... These 3 Stocks Appear to Be Set Up For a Massive 2026",
+      "asset_type": "stock"
+    },
+    {
+      "id": 69,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Apple To Hold Product Event On March 4. Cheaper iPhone Seen But No AI Siri",
+      "url": "https://finance.yahoo.com/m/bca7d23f-83fd-32b0-8f61-70dd1c76609e/apple-to-hold-product-event.html?.tsrc=rss",
+      "published_at": "2026-02-16T16:42:04+00:00",
+      "snippet": "The March 4 product event could unveil a budget Apple iPhone as well as new MacBooks and iPads. But An AI-powered Siri is unlikely.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 70,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Apple Faces FTC Scrutiny And AI Siri Delays As Stock Sets Expectations",
+      "url": "https://finance.yahoo.com/news/apple-faces-ftc-scrutiny-ai-151026449.html?.tsrc=rss",
+      "published_at": "2026-02-16T15:10:26+00:00",
+      "snippet": "The FTC has reportedly sent a warning letter to Apple CEO Tim Cook alleging that Apple News may be unlawfully favoring or suppressing political content. Public criticism of Apple News editorial decisions is building, with calls for deeper scrutiny of how the service ranks and presents politically relevant stories. At the same time, Apple is facing fresh delays to its planned AI powered Siri upgrade due to performance and integration issues. These twin pressures arrive as Apple,...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 71,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Here is What to Know Beyond Why Apple Inc. (AAPL) is a Trending Stock",
+      "url": "https://finance.yahoo.com/news/know-beyond-why-apple-inc-140001569.html?.tsrc=rss",
+      "published_at": "2026-02-16T14:00:01+00:00",
+      "snippet": "Zacks.com users have recently been watching Apple (AAPL) quite a bit. Thus, it is worth knowing the facts that could determine the stock's prospects.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 72,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Should You Buy Apple Stock While It's Under $270?",
+      "url": "https://www.fool.com/investing/2026/02/16/should-you-buy-apple-stock-while-its-under-270/?.tsrc=rss",
+      "published_at": "2026-02-16T13:50:00+00:00",
+      "snippet": "Strong iPhone sales propelled financial results in the latest fiscal quarter.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 73,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "The AI Stock That Could Turn the Tables on the \"Magnificent Seven\"",
+      "url": "https://www.fool.com/investing/2026/02/16/the-ai-stock-that-could-turn-the-tables-on-the-mag/?.tsrc=rss",
+      "published_at": "2026-02-16T10:30:00+00:00",
+      "snippet": "This company is seeing revenue climb in the double digits.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 74,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "The Big Tech losers as AI fears wipe billions of dollars off valuations",
+      "url": "https://finance.yahoo.com/news/big-tech-stocks-lose-billions-093834534.html?.tsrc=rss",
+      "published_at": "2026-02-16T09:38:34+00:00",
+      "snippet": "Concerns over risks to Microsoft's AI business and growing competition from Google ‌and Anthropic have wiped roughly $613 billion off its market value.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 75,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "1 Unstoppable Stock to Buy Before It Joins Nvidia, Apple, and Alphabet in the $3 Trillion Club",
+      "url": "https://www.fool.com/investing/2026/02/16/1-unstoppable-stock-to-buy-before-it-joins-nvidia/?.tsrc=rss",
+      "published_at": "2026-02-16T08:22:00+00:00",
+      "snippet": "Semiconductors are the foundation upon which technology is built, and this company is ringing the cash register.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 76,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Is Apple (AAPL) Fairly Priced After Recent Share Price Pullback And AI Growth Hopes",
+      "url": "https://finance.yahoo.com/news/apple-aapl-fairly-priced-recent-071042147.html?.tsrc=rss",
+      "published_at": "2026-02-16T07:10:42+00:00",
+      "snippet": "If you are wondering whether Apple stock still offers good value at today's price, you are not alone. A closer look at what you are paying for each future dollar of cash flow can be very revealing. At a last close of US$255.78, Apple has seen mixed returns, with a 6.9% drop over the past week, a roughly flat 0.1% move over 30 days, and gains of 5.0%, 70.1% and 108.4% over 1, 3 and 5 years respectively. This raises fair questions about both growth potential and changing risk...",
+      "asset_type": "stock"
+    },
+    {
+      "id": 77,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "House prices 'stand still' in February at an average £368,019",
+      "url": "https://uk.finance.yahoo.com/news/house-prices-property-february-rightmove-060057828.html?.tsrc=rss",
+      "published_at": "2026-02-16T06:00:57+00:00",
+      "snippet": "House prices in Britain have held steady in February, with the average price of a newly listed home coming in at £368,019, says Rightmove.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 78,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Dow Jones Futures Rise; Apple, Google, Amazon, Meta, Nvidia In Focus",
+      "url": "https://finance.yahoo.com/m/5a940658-9875-3edf-9d6a-97242b856cd9/dow-jones-futures-rise%3B.html?.tsrc=rss",
+      "published_at": "2026-02-16T04:04:21+00:00",
+      "snippet": "Here are ways to reduce the risks of a highly dangerous market. Apple, Google, Amazon, Meta and Nvidia are masking some underlying strength",
+      "asset_type": "stock"
+    },
+    {
+      "id": 79,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Apple Stock Is Interesting, but Here's What I'd Buy Instead",
+      "url": "https://www.fool.com/investing/2026/02/15/apple-stock-is-interesting-but-heres-what-id-buy-i/?.tsrc=rss",
+      "published_at": "2026-02-16T01:25:00+00:00",
+      "snippet": "Apple stock has posted respectable gains on the market over the past six months, but its supplier partner has been a better investment.",
+      "asset_type": "stock"
+    },
+    {
+      "id": 80,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Tom Lee Says AI Killed Software And Job Losses Are 'Soon To Follow'",
+      "url": "https://finance.yahoo.com/news/tom-lee-says-ai-killed-230155251.html?.tsrc=rss",
+      "published_at": "2026-02-15T23:01:55+00:00",
+      "snippet": "Fundstrat’s Tom Lee warned AI is destroying the $450 billion software sector and job losses will follow, predicting a dovish Fed under Kevin Warsh will cut rates as core CPI is forecasted to drop in Friday’s data release. The AI Job Destruction Warning Lee told CNBC on Thursday that AI is “wreaking havoc across software” and job losses are “soon to follow.” Software companies, which once “ate the world,” now face existential threat from AI displacement. “If software shrinks, that’s deflation,” L",
+      "asset_type": "stock"
+    },
+    {
+      "id": 81,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Is Apple (AAPL) John Overdeck’s Top Pick?",
+      "url": "https://finance.yahoo.com/news/apple-aapl-john-overdeck-top-224942582.html?.tsrc=rss",
+      "published_at": "2026-02-15T22:49:42+00:00",
+      "snippet": "While the NVIDIA Corporation (NASDAQ:NVDA) remains the billionaire’s largest position, Apple Inc. (NASDAQ:AAPL) ranks 3rd on the list of John Overdeck’s top holdings with a 2.79% portfolio share ($1.39 billion). We recently published a list of youngest hedge fund billionaires and their top stock picks. According to Reuters, on February 6, 2026, Apple Inc. (NASDAQ:AAPL) plans to […]",
+      "asset_type": "stock"
+    },
+    {
+      "id": 82,
+      "currency_pair": "AAPL",
+      "source": "Yahoo Finance",
+      "title": "Rampant AI Demand for Memory Is Fueling a Growing Chip Crisis",
+      "url": "https://finance.yahoo.com/news/rampant-ai-demand-memory-fueling-223000743.html?.tsrc=rss",
+      "published_at": "2026-02-15T22:30:00+00:00",
+      "snippet": "Since the start of 2026, Tesla Inc., Apple Inc. and a dozen other major corporations have signaled that the shortage of DRAM, or dynamic random access memory — the fundamental building block of almost all technology — will constrain production.  Cook warned it will compress iPhone margins.  Micron Technology Inc. called the bottleneck “unprecedented.”",
+      "asset_type": "stock"
+    }
+  ],
+  "analysis": {
+    "deepseek": "**1. Key Market Drivers**\n*   **Sector Sentiment:** Negative pressure from broad \"Big Tech\" sell-off driven by AI spending fears impacting valuations (News 1).\n*   **Cost Pressures:** Rising memory prices pose a risk to gross margins (News 3).\n*   **Demand Signal:** Positive iPhone sales data in China for January, a key market, providing a counter-narrative to regional weakness (News 8).\n*   **Market Tone:** General risk-off sentiment indicated by bearish market action (News 6) and a shift away from former leaders (\"No longer the Apple of their eye\") (News 4).\n\n**2. Short-Term Outlook (1-3 Days)**\n**Sideways to Bearish.** The stock is likely to be tugged between negative sector momentum (Big Tech/AI fears) and its own positive China sales data. Immediate reaction will be dominated by the broader market's risk appetite. Expect elevated volatility and tracking with the Nasdaq.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\n**Sideways with Downward Bias.** The positive China sales catalyst is a one-month data point and may be quickly absorbed. The persistent overhang of sector-wide valuation concerns and margin pressure narratives is likely to keep a lid on any sustained rally, leading to potential underperformance versus the market.\n\n**4. Trading Bias**\n**Bearish / Sideways.**\n*   **Reasoning:** The dominant market narrative is negative for mega-cap tech (AI spending fears, valuation reset). AAPL's positive idiosyncratic news (China sales) is unlikely to fully offset this powerful sector headwind in the near term. The stock is in a defensive holding pattern at best.\n\n**5. Main Risks & Alternative Scenarios**\n*   **Upside Risk:** A broader market rebound or rotation back into quality tech could see AAPL recover quickly, especially if the China data sparks positive revisions. Softer-than-expected inflation data (hinted in news) could be a macro catalyst.\n*   **Downside Risk:** Acceleration of the tech sell-off or negative pre-announcement on component costs (memory) would likely drive AAPL below recent support. Further deterioration in China macro data could also invalidate the January sales strength."
   }
-]
+}

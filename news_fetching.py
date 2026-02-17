@@ -1074,8 +1074,31 @@ def collect_news_for_stock(
 # JSON persistence
 # ---------------------------------------------------------------------------
 
-def save_news_to_json(news: List[NewsItem], path: str) -> None:
-    payload = [asdict(item) for item in news]
+def save_news_to_json(
+    news: List[NewsItem],
+    path: str,
+    *,
+    meta: Optional[Dict] = None,
+    analysis: Optional[Dict[str, str]] = None,
+) -> None:
+    """
+    Save crawled news to JSON.
+
+    Backward compatible:
+    - If meta/analysis are not provided, writes a simple list (legacy format).
+    - If meta and/or analysis are provided, writes a report object:
+      {schema_version, meta, news, analysis}
+    """
+    payload_news = [asdict(item) for item in news]
+    if meta is None and analysis is None:
+        payload = payload_news
+    else:
+        payload = {
+            "schema_version": 2,
+            "meta": meta or {},
+            "news": payload_news,
+            "analysis": analysis or {},
+        }
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
     print(f"[INFO] Saved {len(news)} news items to {path!r}")
@@ -1088,7 +1111,16 @@ def load_news_from_json(path: str) -> List[NewsItem]:
     with open(path, "r", encoding="utf-8") as f:
         raw = json.load(f)
     news: List[NewsItem] = []
-    for obj in raw:
+
+    # Support both legacy list format and the newer report format.
+    if isinstance(raw, dict) and isinstance(raw.get("news"), list):
+        raw_items = raw["news"]
+    elif isinstance(raw, list):
+        raw_items = raw
+    else:
+        raw_items = []
+
+    for obj in raw_items:
         news.append(
             NewsItem(
                 id=obj.get("id", len(news) + 1),
@@ -1524,9 +1556,26 @@ def main() -> None:
             safe_asset = asset.replace("/", "_").replace(" ", "").lower()
             output_path = f"{safe_asset}_news.json"
 
-    save_news_to_json(news_items, output_path)
+    meta = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "asset_type": asset_type,
+        "asset": asset,
+        "start_date": start_date.isoformat() if start_date else None,
+        "end_date": end_date.isoformat() if end_date else None,
+        "max_news": max_news,
+        "max_articles": args.max_articles,
+        "sources": {
+            "investing": bool(cfg.get("enable_investing", True)),
+            "marketwatch": bool(cfg.get("enable_marketwatch", True)),
+            "yahoo": bool(cfg.get("enable_yahoo", True)),
+            "newsapi": bool(cfg.get("enable_newsapi", False)),
+        },
+        "newsapi_max_items": cfg.get("newsapi_max_items", None),
+        "llm_enabled": cfg.get("enabled_llm_providers", []),
+    }
 
     if args.no_llm:
+        save_news_to_json(news_items, output_path, meta=meta, analysis={})
         print("[INFO] Skipping LLM analysis (--no-llm specified).")
         return
 
@@ -1537,6 +1586,7 @@ def main() -> None:
         enabled_providers=cfg.get("enabled_llm_providers", ["deepseek", "openai"]),
         max_articles=args.max_articles,
     )
+    save_news_to_json(news_items, output_path, meta=meta, analysis=results)
     print_analysis_report(results, asset, asset_type)
 
 

@@ -1,452 +1,477 @@
-[
-  {
-    "id": 1,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Analyst Ratings",
-    "url": "https://www.investing.com/news/analyst-ratings",
-    "published_at": null,
-    "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
-    "asset_type": "currency"
+{
+  "schema_version": 2,
+  "meta": {
+    "generated_at": "2026-02-17T05:03:25.953552+00:00",
+    "asset_type": "currency",
+    "asset": "EUR/USD",
+    "start_date": "2026-02-09",
+    "end_date": "2026-02-16",
+    "max_news": null,
+    "max_articles": 8,
+    "sources": {
+      "investing": true,
+      "marketwatch": true,
+      "yahoo": true,
+      "newsapi": true
+    },
+    "newsapi_max_items": 10,
+    "llm_enabled": [
+      "deepseek"
+    ]
   },
-  {
-    "id": 2,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Economic Indicators",
-    "url": "https://www.investing.com/news/economic-indicators",
-    "published_at": null,
-    "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 3,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Sports & General",
-    "url": "https://www.investing.com/news/general",
-    "published_at": null,
-    "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 4,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Insider Trading",
-    "url": "https://www.investing.com/news/insider-trading-news",
-    "published_at": null,
-    "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 5,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Investment Ideas",
-    "url": "https://www.investing.com/news/investment-ideas",
-    "published_at": null,
-    "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 6,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Dollar holds gains in thin trading as markets await Fed minutes, US GDP",
-    "url": "https://www.investing.com/news/economy-news/dollar-holds-gains-in-thin-trading-as-markets-await-fed-minutes-us-gdp-4507836",
-    "published_at": null,
-    "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 7,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "EUR/USD: Goldman sees further upside amid broad USD weakness",
-    "url": "https://www.investing.com/news/forex-news/eurusd-goldman-sees-further-upside-amid-broad-usd-weakness-93CH-4507614",
-    "published_at": null,
-    "snippet": "Investing.com - Goldman Sachs raised its outlook for the Euro on Monday, projecting further upside in the coming months despite...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 8,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Factbox-How to boost the international role of the euro",
-    "url": "https://www.investing.com/news/economy-news/factboxhow-to-boost-the-international-role-of-the-euro-4507610",
-    "published_at": null,
-    "snippet": "(Repeats) \nBy Jan Strupczewski BRUSSELS, Feb 16 (Reuters) - Euro zone finance ministers will discuss on Monday how to boost the...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 9,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Dollar struggles to post gains; yen suffers from weak growth data",
-    "url": "https://www.investing.com/news/forex-news/dollar-struggles-to-post-gains-yen-suffers-from-weak-growth-data-4507493",
-    "published_at": null,
-    "snippet": "Investing.com - The U.S. dollar edged marginally higher Monday, struggling to make much progress in holiday-thinned trade after...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 10,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "How to boost the international role of the euro",
-    "url": "https://www.investing.com/news/economy-news/how-to-boost-the-international-role-of-the-euro-4507448",
-    "published_at": null,
-    "snippet": "By Jan Strupczewski BRUSSELS, Feb 13 (Reuters) - Euro zone finance ministers will on Monday discuss how to boost the...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 11,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "GRAPHIC- Europeâ€™s earnings gain pace while lofty valuations cap rewards",
-    "url": "https://www.investing.com/news/stock-market-news/europes-earnings-gain-pace-while-lofty-valuations-cap-rewards-4507359",
-    "published_at": null,
-    "snippet": "LONDON, Feb 16 (Reuters) - European company earnings growth is picking up this reporting season against a tentatively improving...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 12,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "ECB makes euro backstop global to bolster currencyâ€™s role",
-    "url": "https://www.investing.com/news/economy-news/ecb-makes-euro-backstop-global-to-bolster-currencys-role-4507256",
-    "published_at": "2026-02-14T00:00:00+00:00",
-    "snippet": "FRANKFURT, Feb 14 (Reuters) - The European Central Bank unveiled plans on Saturday to widen access to its euro liquidity...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 13,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Factbox-ECB opens up euro lifeline in bid to boost global role",
-    "url": "https://www.investing.com/news/economy-news/factboxecb-opens-up-euro-lifeline-in-bid-to-boost-global-role-4507257",
-    "published_at": "2026-02-14T00:00:00+00:00",
-    "snippet": "FRANKFURT, Feb 14 (Reuters) - The European Central Bank is opening its euro lifeline to nearly all foreign countries to boost the...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 14,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "What is the actual Forex impact on stock market? JPMorgan answers",
-    "url": "https://www.investing.com/news/pro/what-is-the-actual-forex-impact-on-stock-market-jpmorgan-answers-432SI-4507229",
-    "published_at": "2026-02-14T00:00:00+00:00",
-    "snippet": "Investing.com --Â The U.S. dollar was marginally lower on Friday, as traders slightly upped their bets for further Federal Reserve...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 15,
-    "currency_pair": "EUR/USD",
-    "source": "Investing.com",
-    "title": "Dollar edges down after cooler inflation data, set for third weekly loss in four",
-    "url": "https://www.investing.com/news/forex-news/dollar-on-track-for-weekly-loss-cpi-data-in-spotlight-4504533",
-    "published_at": "2026-02-13T00:00:00+00:00",
-    "snippet": "Investing.com --Â The U.S. dollar was marginally lower on Friday, as traders slightly upped their bets for further Federal Reserve...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 16,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Dollar Positioning Reaches Most Negative in Over 14 Years",
-    "url": "https://www.wsj.com/finance/currencies/asian-currencies-mixed-could-be-supported-by-fed-rate-cut-prospects-9017e49b?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "Dollar positioning reached its most negative in more than 14 years, according to the BofA’s latest foreign exchange and rates sentiment survey.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 17,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Falls 0.95% This Week to 94.15",
-    "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-risk-off-sentiment-could-weigh-b4a63f52?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index edged lower — down for a sixth consecutive trading day.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 18,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Coinbase Swings to a Fourth-Quarter Loss Amid Crypto Meltdown",
-    "url": "https://www.wsj.com/finance/currencies/coinbase-swings-to-a-fourth-quarter-loss-amid-crypto-meltdown-a9d8d36e?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 19,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Dow ends below 50,000 threshold for first time since Friday as AI fears spark wider stock selloff",
-    "url": "https://www.marketwatch.com/story/dow-ends-below-50-000-threshold-for-first-time-since-friday-as-ai-fears-spark-wider-stock-selloff-f6ee91e1?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 20,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Post-Payrolls Dollar Decline Points to ‘Entrenched Bearishness’",
-    "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-as-traders-digest-u-s-employment-report-1f73cd2b?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 21,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Currency strategist who incurred Bessent’s wrath exposes safe-haven myth of the dollar",
-    "url": "https://www.marketwatch.com/story/currency-strategist-who-incurred-bessents-wrath-exposes-safe-haven-myth-of-the-dollar-b4e1125d?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 22,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Falls 0.10% to 94.20",
-    "url": "https://www.wsj.com/finance/currencies/usd-jpy-attempting-to-hold-above-153-90-154-34-range-8c2f2b05?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 23,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Falls 0.10% to 94.29",
-    "url": "https://www.wsj.com/finance/currencies/yen-broadly-weakens-amid-mild-risk-appetite-e4d20e51?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index declined 0.1% — down for three consecutive trading days.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 24,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Treasury Yields, Dollar Fall Ahead of Data Reports",
-    "url": "https://www.wsj.com/finance/currencies/yen-mostly-strengthens-japanese-ldps-win-mostly-priced-in-by-markets-6e172e4c?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The dollar fell ahead of a stream of data reports.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 25,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Gold futures reclaim $5,000 mark, buoyed by ‘gradual erosion of confidence’ in the U.S. dollar",
-    "url": "https://www.marketwatch.com/story/gold-futures-once-again-reclaim-5-000-mark-af3da5ee?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 26,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "‘Sell America’ fears drag dollar toward 4-year low on Japan election, China report",
-    "url": "https://www.marketwatch.com/story/sell-america-fears-drag-dollar-toward-4-year-low-on-japan-election-china-report-a87651a4?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 27,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Bitcoin’s attempt at a rebound runs into gold’s recapture of $5,000",
-    "url": "https://www.marketwatch.com/story/bitcoins-attempt-at-a-rebound-runs-into-golds-recapture-of-5-000-d18cd953?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 28,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Takaichi’s victory in Japanese election means a billion-dollar payday for Berkshire Hathaway",
-    "url": "https://www.marketwatch.com/story/takaichis-victory-in-japanese-election-means-a-billion-dollar-payday-for-berkshire-hathaway-00674bab?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 29,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "A New Crypto Winter Is Here and Even the Biggest Bulls Aren’t Certain Why",
-    "url": "https://www.wsj.com/finance/currencies/a-new-crypto-winter-is-here-and-even-the-biggest-bulls-are-worried-82019de4?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 30,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Rises 0.38% This Week to 95.06",
-    "url": "https://www.wsj.com/finance/currencies/yen-strengthens-on-possible-position-adjustments-before-japans-election-e380fd1a?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 31,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Bitcoin bounces above $70K but is still headed for its worst week since 2022",
-    "url": "https://www.marketwatch.com/story/bitcoin-rises-after-brutal-week-of-selling-3e74d460?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 32,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Bitcoin Booster’s $12 Billion Loss Headlines Crypto’s Worst Day Since 2022 Crash",
-    "url": "https://www.wsj.com/finance/currencies/strategy-earnings-fourth-2025-33688dab?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 33,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Rises 0.33% to 95.35",
-    "url": "https://www.wsj.com/finance/currencies/yen-consolidates-amid-risks-of-japans-verbal-intervention-f3a32df4?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 34,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "The WSJ Dollar Index Rises 0.29% to 95.03",
-    "url": "https://www.wsj.com/finance/currencies/yen-mostly-weakens-on-prospect-of-big-election-win-for-ldp-daafefbf?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 35,
-    "currency_pair": "EUR/USD",
-    "source": "MarketWatch",
-    "title": "Dollar Gives Back Recent Gains as U.S. Lawmakers Reach Funding Deal",
-    "url": "https://www.wsj.com/finance/currencies/yen-mixed-as-traders-digest-japanese-finance-ministers-fx-remarks-96314604?mod=mw_quote_news",
-    "published_at": null,
-    "snippet": "The dollar weakened as markets faced another U.S. data gap.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 36,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: newsBTC",
-    "title": "XRP Ledger Positioned At The Heart Of Japan’s Next Financial Transformation",
-    "url": "http://www.newsbtc.com/xrp-news/xrp-ledger-at-the-heart-of-japan/",
-    "published_at": "2026-02-16T23:30:41+00:00",
-    "snippet": "With a strong regulatory environment, proactive institutional participation, and a growing appetite for blockchain-powered financial solutions, Japan is positioning itself at the forefront of next-generation finance, and XRPL is increasingly becoming central …",
-    "asset_type": "currency"
-  },
-  {
-    "id": 37,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: Cointelegraph",
-    "title": "Germany‘s central bank president touts stablecoin and CBDC benefits for EU",
-    "url": "https://cointelegraph.com/news/germany-central-bank-president-stablecoins",
-    "published_at": "2026-02-16T21:56:24+00:00",
-    "snippet": "In a speech at the New Year’s Reception of the American Chamber of Commerce in Frankfurt, Deutsche Bundesbank President Joachim Nagel addressed concerns on stablecoins and CBDCs.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 38,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: Crypto Briefing",
-    "title": "Brent Johnson: Dedollarization is complex and unlikely, the Dollar Milkshake Theory reveals market impacts, and a currency crisis is mathematically inevitable | Bankless",
-    "url": "https://cryptobriefing.com/brent-johnson-dedollarization-is-complex-and-unlikely-the-dollar-milkshake-theory-reveals-market-impacts-and-a-currency-crisis-is-mathematically-inevitable-bankless/",
-    "published_at": "2026-02-16T20:55:00+00:00",
-    "snippet": "The desire for dedollarization exists but is complex to achieve. The Dollar Milkshake Theory outlines how sovereign debt crises impact markets. US assets are predicted to outperform due to superior market structure.\nThe post Brent Johnson: Dedollarization is …",
-    "asset_type": "currency"
-  },
-  {
-    "id": 39,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: Theflightdeal.com",
-    "title": "American: Philadelphia – Dublin, Ireland. $477 (Basic Economy) / $677 (Regular Economy). Roundtrip, including all Taxes",
-    "url": "https://www.theflightdeal.com/2026/02/16/american-philadelphia-dublin-ireland-477-basic-economy-677-regular-economy-roundtrip-including-all-taxes/",
-    "published_at": "2026-02-16T17:53:52+00:00",
-    "snippet": "A good sale to Dublin.American / British Airways / Finnair / Iberia's $677 fare is a regular economy fare with ONE checked bag and a normal size carry-onAmerican / British Airways / Finnair /",
-    "asset_type": "currency"
-  },
-  {
-    "id": 40,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: GlobeNewswire",
-    "title": "Vicat - FY 2025 Results",
-    "url": "https://www.globenewswire.com/news-release/2026/02/16/3238827/0/en/Vicat-FY-2025-Results.html",
-    "published_at": "2026-02-16T17:00:00+00:00",
-    "snippet": "Robust revenue growth of +3.3% like-for-like1 in 2025, accelerating in Q4 (+8.1%)Cement business stabilized in France, recovery in Switzerland, and strong...",
-    "asset_type": "currency"
-  },
-  {
-    "id": 41,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: Theflightdeal.com",
-    "title": "Iberia: Miami – Madrid, Spain. $426 (Basic Economy) / $626 (Regular Economy). Roundtrip, including all Taxes",
-    "url": "https://www.theflightdeal.com/2026/02/16/iberia-miami-madrid-spain-426-basic-economy-626-regular-economy-roundtrip-including-all-taxes/",
-    "published_at": "2026-02-16T15:23:08+00:00",
-    "snippet": "A good sale to Madrid.American / British Airways / Finnair / Iberia's $626 fare is a regular economy fare with ONE checked bag and a normal size carry-on includedAmerican / British Airways / F",
-    "asset_type": "currency"
-  },
-  {
-    "id": 42,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: CoinDesk",
-    "title": "From Wall Street to Web3: This is crypto’s year of integration, Silicon Valley Bank says",
-    "url": "https://www.coindesk.com/business/2026/02/16/from-wall-street-to-web3-this-is-crypto-s-year-of-integration-silicon-valley-bank-says",
-    "published_at": "2026-02-16T15:00:00+00:00",
-    "snippet": "From bank-led stablecoins to tokenized T-bills and AI-powered wallets, digital assets will move from pilot projects to financial plumbing this year.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 43,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: Financial Post",
-    "title": "Euro-Area Finance Chiefs Push for Bigger Role of Single Currency",
-    "url": "https://financialpost.com/pmn/business-pmn/euro-area-finance-chiefs-push-for-bigger-role-of-single-currency",
-    "published_at": "2026-02-16T14:41:40+00:00",
-    "snippet": "Euro-area finance chiefs are pushing to expand the single currency’s global role, as US President Donald Trump roils markets and the US dollar weakens.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 44,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: Digital Journal",
-    "title": "Asian markets sluggish as Lunar New Year holiday looms",
-    "url": "https://www.digitaljournal.com/world/asian-markets-sluggish-as-lunar-new-year-holiday-looms/article",
-    "published_at": "2026-02-16T14:35:24+00:00",
-    "snippet": "The holiday period meant that trading floors were closed in mainland China, Seoul and Taipei.\nThe post Asian markets sluggish as Lunar New Year holiday looms appeared first on Digital Journal.",
-    "asset_type": "currency"
-  },
-  {
-    "id": 45,
-    "currency_pair": "EUR/USD",
-    "source": "NewsAPI: Theflightdeal.com",
-    "title": "United: Boston – Porto, Portugal. $376 (Basic Economy) / $576 (Regular Economy). Roundtrip, including all Taxes",
-    "url": "https://www.theflightdeal.com/2026/02/16/united-boston-porto-portugal-376-basic-economy-576-regular-economy-roundtrip-including-all-taxes/",
-    "published_at": "2026-02-16T14:23:57+00:00",
-    "snippet": "A good sale to Porto. Pricing will vary slightly depending on routing.United and its partners Air Canada, Austrian, Lufthansa and Swiss Air's $576 fare is a regular economy fare with ONE check lug",
-    "asset_type": "currency"
+  "news": [
+    {
+      "id": 1,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Analyst Ratings",
+      "url": "https://www.investing.com/news/analyst-ratings",
+      "published_at": null,
+      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 2,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Economic Indicators",
+      "url": "https://www.investing.com/news/economic-indicators",
+      "published_at": null,
+      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 3,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Sports & General",
+      "url": "https://www.investing.com/news/general",
+      "published_at": null,
+      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 4,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Insider Trading",
+      "url": "https://www.investing.com/news/insider-trading-news",
+      "published_at": null,
+      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 5,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Investment Ideas",
+      "url": "https://www.investing.com/news/investment-ideas",
+      "published_at": null,
+      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 6,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Dollar holds gains in thin trading as markets await Fed minutes, US GDP",
+      "url": "https://www.investing.com/news/economy-news/dollar-holds-gains-in-thin-trading-as-markets-await-fed-minutes-us-gdp-4507836",
+      "published_at": null,
+      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 7,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "EUR/USD: Goldman sees further upside amid broad USD weakness",
+      "url": "https://www.investing.com/news/forex-news/eurusd-goldman-sees-further-upside-amid-broad-usd-weakness-93CH-4507614",
+      "published_at": null,
+      "snippet": "Investing.com - Goldman Sachs raised its outlook for the Euro on Monday, projecting further upside in the coming months despite...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 8,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Factbox-How to boost the international role of the euro",
+      "url": "https://www.investing.com/news/economy-news/factboxhow-to-boost-the-international-role-of-the-euro-4507610",
+      "published_at": null,
+      "snippet": "(Repeats) \nBy Jan Strupczewski BRUSSELS, Feb 16 (Reuters) - Euro zone finance ministers will discuss on Monday how to boost the...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 9,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Dollar struggles to post gains; yen suffers from weak growth data",
+      "url": "https://www.investing.com/news/forex-news/dollar-struggles-to-post-gains-yen-suffers-from-weak-growth-data-4507493",
+      "published_at": null,
+      "snippet": "Investing.com - The U.S. dollar edged marginally higher Monday, struggling to make much progress in holiday-thinned trade after...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 10,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "How to boost the international role of the euro",
+      "url": "https://www.investing.com/news/economy-news/how-to-boost-the-international-role-of-the-euro-4507448",
+      "published_at": null,
+      "snippet": "By Jan Strupczewski BRUSSELS, Feb 13 (Reuters) - Euro zone finance ministers will on Monday discuss how to boost the...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 11,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "GRAPHIC- Europe’s earnings gain pace while lofty valuations cap rewards",
+      "url": "https://www.investing.com/news/stock-market-news/europes-earnings-gain-pace-while-lofty-valuations-cap-rewards-4507359",
+      "published_at": null,
+      "snippet": "LONDON, Feb 16 (Reuters) - European company earnings growth is picking up this reporting season against a tentatively improving...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 12,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "ECB makes euro backstop global to bolster currency’s role",
+      "url": "https://www.investing.com/news/economy-news/ecb-makes-euro-backstop-global-to-bolster-currencys-role-4507256",
+      "published_at": "2026-02-14T00:00:00+00:00",
+      "snippet": "FRANKFURT, Feb 14 (Reuters) - The European Central Bank unveiled plans on Saturday to widen access to its euro liquidity...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 13,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Factbox-ECB opens up euro lifeline in bid to boost global role",
+      "url": "https://www.investing.com/news/economy-news/factboxecb-opens-up-euro-lifeline-in-bid-to-boost-global-role-4507257",
+      "published_at": "2026-02-14T00:00:00+00:00",
+      "snippet": "FRANKFURT, Feb 14 (Reuters) - The European Central Bank is opening its euro lifeline to nearly all foreign countries to boost the...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 14,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "What is the actual Forex impact on stock market? JPMorgan answers",
+      "url": "https://www.investing.com/news/pro/what-is-the-actual-forex-impact-on-stock-market-jpmorgan-answers-432SI-4507229",
+      "published_at": "2026-02-14T00:00:00+00:00",
+      "snippet": "Investing.com -- The U.S. dollar was marginally lower on Friday, as traders slightly upped their bets for further Federal Reserve...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 15,
+      "currency_pair": "EUR/USD",
+      "source": "Investing.com",
+      "title": "Dollar edges down after cooler inflation data, set for third weekly loss in four",
+      "url": "https://www.investing.com/news/forex-news/dollar-on-track-for-weekly-loss-cpi-data-in-spotlight-4504533",
+      "published_at": "2026-02-13T00:00:00+00:00",
+      "snippet": "Investing.com -- The U.S. dollar was marginally lower on Friday, as traders slightly upped their bets for further Federal Reserve...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 16,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Asian Currencies Consolidate as Lunar New Year Holidays Dim Trading",
+      "url": "https://www.wsj.com/finance/currencies/yen-stronger-further-gains-may-rest-on-takaichis-econ-steps-6ed6dc0e?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Asian currencies consolidated against the U.S. dollar as Lunar New Year holidays in most of the region dim trading.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 17,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Dollar Positioning Reaches Most Negative in Over 14 Years",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-mixed-could-be-supported-by-fed-rate-cut-prospects-9017e49b?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Dollar positioning reached its most negative in more than 14 years, according to the BofA’s latest foreign exchange and rates sentiment survey.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 18,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Falls 0.95% This Week to 94.15",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-risk-off-sentiment-could-weigh-b4a63f52?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index edged lower — down for a sixth consecutive trading day.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 19,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Coinbase Swings to a Fourth-Quarter Loss Amid Crypto Meltdown",
+      "url": "https://www.wsj.com/finance/currencies/coinbase-swings-to-a-fourth-quarter-loss-amid-crypto-meltdown-a9d8d36e?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 20,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Dow ends below 50,000 threshold for first time since Friday as AI fears spark wider stock selloff",
+      "url": "https://www.marketwatch.com/story/dow-ends-below-50-000-threshold-for-first-time-since-friday-as-ai-fears-spark-wider-stock-selloff-f6ee91e1?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 21,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Post-Payrolls Dollar Decline Points to ‘Entrenched Bearishness’",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-as-traders-digest-u-s-employment-report-1f73cd2b?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 22,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Currency strategist who incurred Bessent’s wrath exposes safe-haven myth of the dollar",
+      "url": "https://www.marketwatch.com/story/currency-strategist-who-incurred-bessents-wrath-exposes-safe-haven-myth-of-the-dollar-b4e1125d?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 23,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Falls 0.10% to 94.20",
+      "url": "https://www.wsj.com/finance/currencies/usd-jpy-attempting-to-hold-above-153-90-154-34-range-8c2f2b05?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 24,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Falls 0.10% to 94.29",
+      "url": "https://www.wsj.com/finance/currencies/yen-broadly-weakens-amid-mild-risk-appetite-e4d20e51?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index declined 0.1% — down for three consecutive trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 25,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Treasury Yields, Dollar Fall Ahead of Data Reports",
+      "url": "https://www.wsj.com/finance/currencies/yen-mostly-strengthens-japanese-ldps-win-mostly-priced-in-by-markets-6e172e4c?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The dollar fell ahead of a stream of data reports.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 26,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Gold futures reclaim $5,000 mark, buoyed by ‘gradual erosion of confidence’ in the U.S. dollar",
+      "url": "https://www.marketwatch.com/story/gold-futures-once-again-reclaim-5-000-mark-af3da5ee?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 27,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "‘Sell America’ fears drag dollar toward 4-year low on Japan election, China report",
+      "url": "https://www.marketwatch.com/story/sell-america-fears-drag-dollar-toward-4-year-low-on-japan-election-china-report-a87651a4?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 28,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Bitcoin’s attempt at a rebound runs into gold’s recapture of $5,000",
+      "url": "https://www.marketwatch.com/story/bitcoins-attempt-at-a-rebound-runs-into-golds-recapture-of-5-000-d18cd953?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 29,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Takaichi’s victory in Japanese election means a billion-dollar payday for Berkshire Hathaway",
+      "url": "https://www.marketwatch.com/story/takaichis-victory-in-japanese-election-means-a-billion-dollar-payday-for-berkshire-hathaway-00674bab?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 30,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "A New Crypto Winter Is Here and Even the Biggest Bulls Aren’t Certain Why",
+      "url": "https://www.wsj.com/finance/currencies/a-new-crypto-winter-is-here-and-even-the-biggest-bulls-are-worried-82019de4?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 31,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Rises 0.38% This Week to 95.06",
+      "url": "https://www.wsj.com/finance/currencies/yen-strengthens-on-possible-position-adjustments-before-japans-election-e380fd1a?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index fell 0.3%, snapping a two-trading-day winning streak.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 32,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Bitcoin bounces above $70K but is still headed for its worst week since 2022",
+      "url": "https://www.marketwatch.com/story/bitcoin-rises-after-brutal-week-of-selling-3e74d460?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 33,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "Bitcoin Booster’s $12 Billion Loss Headlines Crypto’s Worst Day Since 2022 Crash",
+      "url": "https://www.wsj.com/finance/currencies/strategy-earnings-fourth-2025-33688dab?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 34,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Rises 0.33% to 95.35",
+      "url": "https://www.wsj.com/finance/currencies/yen-consolidates-amid-risks-of-japans-verbal-intervention-f3a32df4?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 35,
+      "currency_pair": "EUR/USD",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Rises 0.29% to 95.03",
+      "url": "https://www.wsj.com/finance/currencies/yen-mostly-weakens-on-prospect-of-big-election-win-for-ldp-daafefbf?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 36,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: newsBTC",
+      "title": "XRP Ledger Positioned At The Heart Of Japan’s Next Financial Transformation",
+      "url": "http://www.newsbtc.com/xrp-news/xrp-ledger-at-the-heart-of-japan/",
+      "published_at": "2026-02-16T23:30:41+00:00",
+      "snippet": "With a strong regulatory environment, proactive institutional participation, and a growing appetite for blockchain-powered financial solutions, Japan is positioning itself at the forefront of next-generation finance, and XRPL is increasingly becoming central …",
+      "asset_type": "currency"
+    },
+    {
+      "id": 37,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Cointelegraph",
+      "title": "Germany‘s central bank president touts stablecoin and CBDC benefits for EU",
+      "url": "https://cointelegraph.com/news/germany-central-bank-president-stablecoins",
+      "published_at": "2026-02-16T21:56:24+00:00",
+      "snippet": "In a speech at the New Year’s Reception of the American Chamber of Commerce in Frankfurt, Deutsche Bundesbank President Joachim Nagel addressed concerns on stablecoins and CBDCs.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 38,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Crypto Briefing",
+      "title": "Brent Johnson: Dedollarization is complex and unlikely, the Dollar Milkshake Theory reveals market impacts, and a currency crisis is mathematically inevitable | Bankless",
+      "url": "https://cryptobriefing.com/brent-johnson-dedollarization-is-complex-and-unlikely-the-dollar-milkshake-theory-reveals-market-impacts-and-a-currency-crisis-is-mathematically-inevitable-bankless/",
+      "published_at": "2026-02-16T20:55:00+00:00",
+      "snippet": "The desire for dedollarization exists but is complex to achieve. The Dollar Milkshake Theory outlines how sovereign debt crises impact markets. US assets are predicted to outperform due to superior market structure.\nThe post Brent Johnson: Dedollarization is …",
+      "asset_type": "currency"
+    },
+    {
+      "id": 39,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Theflightdeal.com",
+      "title": "American: Philadelphia – Dublin, Ireland. $477 (Basic Economy) / $677 (Regular Economy). Roundtrip, including all Taxes",
+      "url": "https://www.theflightdeal.com/2026/02/16/american-philadelphia-dublin-ireland-477-basic-economy-677-regular-economy-roundtrip-including-all-taxes/",
+      "published_at": "2026-02-16T17:53:52+00:00",
+      "snippet": "A good sale to Dublin.American / British Airways / Finnair / Iberia's $677 fare is a regular economy fare with ONE checked bag and a normal size carry-onAmerican / British Airways / Finnair /",
+      "asset_type": "currency"
+    },
+    {
+      "id": 40,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: GlobeNewswire",
+      "title": "Vicat - FY 2025 Results",
+      "url": "https://www.globenewswire.com/news-release/2026/02/16/3238827/0/en/Vicat-FY-2025-Results.html",
+      "published_at": "2026-02-16T17:00:00+00:00",
+      "snippet": "Robust revenue growth of +3.3% like-for-like1 in 2025, accelerating in Q4 (+8.1%)Cement business stabilized in France, recovery in Switzerland, and strong...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 41,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Theflightdeal.com",
+      "title": "Iberia: Miami – Madrid, Spain. $426 (Basic Economy) / $626 (Regular Economy). Roundtrip, including all Taxes",
+      "url": "https://www.theflightdeal.com/2026/02/16/iberia-miami-madrid-spain-426-basic-economy-626-regular-economy-roundtrip-including-all-taxes/",
+      "published_at": "2026-02-16T15:23:08+00:00",
+      "snippet": "A good sale to Madrid.American / British Airways / Finnair / Iberia's $626 fare is a regular economy fare with ONE checked bag and a normal size carry-on includedAmerican / British Airways / F",
+      "asset_type": "currency"
+    },
+    {
+      "id": 42,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: CoinDesk",
+      "title": "From Wall Street to Web3: This is crypto’s year of integration, Silicon Valley Bank says",
+      "url": "https://www.coindesk.com/business/2026/02/16/from-wall-street-to-web3-this-is-crypto-s-year-of-integration-silicon-valley-bank-says",
+      "published_at": "2026-02-16T15:00:00+00:00",
+      "snippet": "From bank-led stablecoins to tokenized T-bills and AI-powered wallets, digital assets will move from pilot projects to financial plumbing this year.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 43,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Financial Post",
+      "title": "Euro-Area Finance Chiefs Push for Bigger Role of Single Currency",
+      "url": "https://financialpost.com/pmn/business-pmn/euro-area-finance-chiefs-push-for-bigger-role-of-single-currency",
+      "published_at": "2026-02-16T14:41:40+00:00",
+      "snippet": "Euro-area finance chiefs are pushing to expand the single currency’s global role, as US President Donald Trump roils markets and the US dollar weakens.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 44,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Digital Journal",
+      "title": "Asian markets sluggish as Lunar New Year holiday looms",
+      "url": "https://www.digitaljournal.com/world/asian-markets-sluggish-as-lunar-new-year-holiday-looms/article",
+      "published_at": "2026-02-16T14:35:24+00:00",
+      "snippet": "The holiday period meant that trading floors were closed in mainland China, Seoul and Taipei.\nThe post Asian markets sluggish as Lunar New Year holiday looms appeared first on Digital Journal.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 45,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Theflightdeal.com",
+      "title": "United: Boston – Porto, Portugal. $376 (Basic Economy) / $576 (Regular Economy). Roundtrip, including all Taxes",
+      "url": "https://www.theflightdeal.com/2026/02/16/united-boston-porto-portugal-376-basic-economy-576-regular-economy-roundtrip-including-all-taxes/",
+      "published_at": "2026-02-16T14:23:57+00:00",
+      "snippet": "A good sale to Porto. Pricing will vary slightly depending on routing.United and its partners Air Canada, Austrian, Lufthansa and Swiss Air's $576 fare is a regular economy fare with ONE check lug",
+      "asset_type": "currency"
+    }
+  ],
+  "analysis": {
+    "deepseek": "**1. Key Market Drivers**\n*   **Monetary Policy Focus:** Market attention is on the upcoming FOMC Meeting Minutes and US GDP data, which will shape expectations for the Fed's rate path.\n*   **Broad USD Weakness:** A prevailing theme of US Dollar softness, as cited by Goldman Sachs, is providing underlying support for EUR/USD.\n*   **Risk Sentiment & Liquidity:** Thin, pre-holiday trading conditions are amplifying price moves and may lead to heightened volatility around data releases.\n\n**2. Short-Term Outlook (1-3 Days)**\nSlightly bullish but choppy. The pair is likely to trade with an upward bias, driven by the broad USD weakness narrative. However, direction will be dictated by the reaction to the Fed Minutes and US GDP data. Any hawkish Fed nuances or strong US data could trigger a pullback, while dovish tones or weak data could accelerate gains. Expect increased volatility in thin year-end markets.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\nCautiously bullish, contingent on data. The path of least resistance remains higher if the USD weakness theme persists and key US data does not dramatically alter the Fed's dovish pivot narrative. The pair will aim to consolidate above recent resistance levels, but momentum may fade as the year ends due to reduced liquidity.\n\n**4. Trading Bias & Reasoning**\n**Bullish.**\n*   The primary driver is the cited \"broad USD weakness\" environment.\n*   Major bank analysis (Goldman Sachs) aligns with a continued upside view.\n*   Technical momentum favors bulls as long as key support holds.\n\n**5. Main Risks / Alternative Scenarios**\n*   **Hawkish Fed Surprise:** If the FOMC Minutes or upcoming US data (PCE) signal a more cautious, less dovish Fed than markets currently price, the USD could rebound sharply.\n*   **Year-End Liquidity Squeeze:** Illiquid markets can lead to exaggerated, technically-driven reversals that defy fundamental drivers.\n*   **Eurozone Data Deterioration:** Weak upcoming Eurozone data could shift the relative central bank policy outlook, undermining EUR support.\n*   **Risk-Off Shift:** A sudden deterioration in global risk sentiment could trigger safe-haven USD buying, overpowering the current weakness theme."
   }
-]
+}

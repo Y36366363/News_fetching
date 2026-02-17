@@ -1,3 +1,6 @@
+Updates 2/17/2026
+1. Now the output analysis for each LLM model can also be seen in the corresponding file. For example, for stock "AMZN", at the very end of the file, amzn_news.json, there is a new configuration "analysis" that storages the analysis generating from the model we use. If any of these models are forbidden in default_config.json, they will not be shown with each run.
+
 Updates 2/16/2026
 1. Added a new news-fetching source: news api, by using the api key of news api (100 calls per day). Now only 6 fx pairs can use this source.
 2. Added parameters in default_config.json for the usage of the parameter of each news source. Now you can determine which source to use or not.
