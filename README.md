@@ -1,3 +1,6 @@
+Updates 2/18/2026
+1. Now with each run, the news collected from news api can be seen in another json file. For example, besides the basic information storaged in the file eur_usd_news.json, there is another file generated "eur_usd_news.json". In the column of "content", you can see the exact contents of the news collected. Since there is no valid access of contents to the cratching websites, only fx pairs of news api are available now.
+
 Updates 2/17/2026
 1. Now the output analysis for each LLM model can also be seen in the corresponding file. For example, for stock "AMZN", at the very end of the file, amzn_news.json, there is a new configuration "analysis" that storages the analysis generating from the model we use. If any of these models are forbidden in default_config.json, they will not be shown with each run.
 

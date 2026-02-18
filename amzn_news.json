@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "meta": {
-    "generated_at": "2026-02-17T05:09:35.391440+00:00",
+    "generated_at": "2026-02-18T17:51:17.053925+00:00",
     "asset_type": "stock",
     "asset": "AMZN",
     "start_date": "2026-02-09",
@@ -26,108 +26,108 @@
       "id": 1,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "From OpenAI to Google, India hosts global AI summitÂ",
-      "url": "https://www.investing.com/news/stock-market-news/from-openai-to-google-india-hosts-global-ai-summit-4507461",
+      "title": "Moody’s executives dismiss AI fears after upbeat 2026 forecast, shares rise",
+      "url": "https://www.investing.com/news/stock-market-news/moodys-forecasts-upbeat-2026-profit-on-strong-demand-for-credit-ratings-4510892",
       "published_at": null,
-      "snippet": "By Munsif Vengattil NEW DELHI, Feb 16 (Reuters) - Top executives from global AI giants will join several world leaders in New...",
+      "snippet": "By Utkarsh Shetti Feb 18 (Reuters) - Moody’s on Wednesday highlighted the proprietary nature of its data to reassure investors...",
       "asset_type": "stock"
     },
     {
       "id": 2,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "Big tech stocks lose billions as AI spending fears hit valuations",
-      "url": "https://www.investing.com/news/stock-market-news/big-tech-stocks-lose-billions-as-ai-spending-fears-hit-valuations-4507511",
+      "title": "Berkshire issues last 13F of Buffett-era, New York Times gains on new stake",
+      "url": "https://www.investing.com/news/stock-market-news/berkshire-issues-last-13f-of-buffettera-enters-new-media-name-4509785",
       "published_at": null,
-      "snippet": "Feb 16 (Reuters) - The worldâ€™s most valuable technology stocks have suffered sharp declines in market value this year after years...",
+      "snippet": "Berkshire Hathaway (NYSE:BRKa) released its 13F for the quarter ended December 31, 2025, after the close of trading on Tuesday,...",
       "asset_type": "stock"
     },
     {
       "id": 3,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "PayPal stock: can it regain lost share or has the ship sailed?",
-      "url": "https://www.investing.com/news/stock-market-news/paypal-stock-can-it-regain-lost-share-or-has-the-ship-sailed-4497907",
-      "published_at": "2026-02-15T00:00:00+00:00",
-      "snippet": "Investing.com --PayPalâ€™s grip on digital wallet checkouts is slipping as rivals gain ground and shifts in online shopping weaken...",
+      "title": "UBS lifts forecast for big tech bond sales this year",
+      "url": "https://www.investing.com/news/stock-market-news/ubs-lifts-forecast-for-big-tech-bond-sales-this-year-4510804",
+      "published_at": null,
+      "snippet": "By Lucy Raitano LONDON, Feb 18 (Reuters) - UBS lifted its 2026 forecasts for U.S. tech investment grade bond sales on Wednesday,...",
       "asset_type": "stock"
     },
     {
       "id": 4,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "Amazon CEO Herrington sells $208k in AMZN stock",
-      "url": "https://www.investing.com/news/insider-trading-news/amazon-ceo-herrington-sells-208k-in-amzn-stock-93CH-4507118",
-      "published_at": "2026-02-14T00:00:00+00:00",
-      "snippet": "Amazon (NASDAQ:AMZN) CEO Worldwide Amazon Stores, Douglas J. Herrington, sold 1,000 shares of common stock on February 11, 2026,...",
+      "title": "Nvidia, Amazon and New York Times rise premarket; Palo Alto Networks falls",
+      "url": "https://www.investing.com/news/stock-market-news/nvidia-amazon-and-new-york-times-rise-premarket-palo-alto-networks-falls-4510488",
+      "published_at": null,
+      "snippet": "Investing.com -- U.S. stock futures rose Wednesday, with investors digesting more corporate earnings reports ahead of the release...",
       "asset_type": "stock"
     },
     {
       "id": 5,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "Microsoft, Ericsson lead global tech alliance for digital trust",
-      "url": "https://www.investing.com/news/stock-market-news/microsoft-ericsson-lead-global-tech-alliance-for-digital-trust-4506219",
-      "published_at": "2026-02-13T00:00:00+00:00",
-      "snippet": "STOCKHOLM, Feb 13 - A group of 15 companies, led by Microsoft and Ericsson, launched on Friday the â€œTrusted Tech Alliance,â€� built...",
+      "title": "This is the most under-owned megacap tech stock, according to Morgan Stanley",
+      "url": "https://www.investing.com/news/stock-market-news/this-is-the-most-underowned-megacap-tech-stock-according-to-morgan-stanley-4510558",
+      "published_at": null,
+      "snippet": "Investing.com -- In a note to clients on Wednesday, Morgan Stanley analysts revealed the most under-owned megacap technology...",
       "asset_type": "stock"
     },
     {
       "id": 6,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "Amazon-backed X-Energy gets first nuclear fuel license in 50 years",
-      "url": "https://www.investing.com/news/company-news/amazonbacked-xenergy-gets-first-nuclear-fuel-license-in-50-years-93CH-4506564",
-      "published_at": "2026-02-13T00:00:00+00:00",
-      "snippet": "Investing.com -- X-Energy Reactor Co., a nuclear company backed by Amazon.com Inc (NASDAQ:AMZN), received federal approval on...",
+      "title": "Walmart to tread with caution into 2026 as Furner-era begins",
+      "url": "https://www.investing.com/news/stock-market-news/walmart-to-tread-with-caution-into-2026-as-furnerera-begins-4510362",
+      "published_at": null,
+      "snippet": "By Aishwarya Venugopal and Juveria Tabassum Feb 18 (Reuters) - Investors have been upbeat about Walmart for months, but Wall...",
       "asset_type": "stock"
     },
     {
       "id": 7,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "Alphabet bondsâ€™ lack of guardrails highlights investor confidence",
-      "url": "https://www.investing.com/news/stock-market-news/alphabet-bonds-lack-of-guardrails-highlights-investor-confidence-4506492",
-      "published_at": "2026-02-13T00:00:00+00:00",
-      "snippet": "By Matt Tracy Feb 13 (Reuters) - Alphabet Incâ€™s global bond sale this week underscored the high level of investor demand for the...",
+      "title": "US stock futures trend higher as tech sentiment improves",
+      "url": "https://www.investing.com/news/economy-news/us-stock-futures-trend-higher-as-tech-sentiment-improves-4510331",
+      "published_at": null,
+      "snippet": "Feb 18 (Reuters) - U.S. stock index futures gained on Wednesday as tech stocks advanced reflecting easing AI concerns, while...",
       "asset_type": "stock"
     },
     {
       "id": 8,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "PJM plan could accelerate data center power deals, analysts say",
-      "url": "https://www.investing.com/news/stock-market-news/pjm-plan-could-accelerate-data-center-power-deals-analysts-say-4505653",
-      "published_at": "2026-02-13T00:00:00+00:00",
-      "snippet": "By Kavya Balaraman and Sumit Saha Feb 13 (Reuters) - A plan from PJM Interconnection, the largest power grid operator in the...",
+      "title": "This Magnificent 7 stock is under-appreciated GenAI winner, analyst says",
+      "url": "https://www.investing.com/news/stock-market-news/this-magnificent-7-stock-is-underappreciated-genai-winner-analyst-says-4510325",
+      "published_at": null,
+      "snippet": "Investing.com -- Morgan Stanley has named Amazon (NASDAQ:AMZN) its Top Pick, saying both AWS and Retail are under-appreciated...",
       "asset_type": "stock"
     },
     {
       "id": 9,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "Capgemini CEO dismisses calls for full European tech autonomy",
-      "url": "https://www.investing.com/news/stock-market-news/capgemini-ceo-dismisses-calls-for-full-european-tech-autonomy-4504562",
-      "published_at": "2026-02-13T00:00:00+00:00",
-      "snippet": "By Leo Marchandon Feb 13 (Reuters) - Capgemini CEO Aiman Ezzat on Friday dismissed calls for a total technological sovereignty in...",
+      "title": "Analog Devices earnings preview: Stifel sees upside on industrial strength, AI spending",
+      "url": "https://www.investing.com/news/pro/analog-devices-earnings-preview-stifel-sees-upside-on-industrial-strength-ai-spending-432SI-4510247",
+      "published_at": null,
+      "snippet": "By Suzanne McGee and Noel Randewich PROVIDENCE, Rhode Island, Feb 17 (Reuters) - Tiger Global Management and Adage Capital...",
       "asset_type": "stock"
     },
     {
       "id": 10,
       "currency_pair": "AMZN",
       "source": "Investing.com",
-      "title": "Exclusive-Italian tax police search Amazon in new tax probe",
-      "url": "https://www.investing.com/news/stock-market-news/exclusiveitalian-tax-police-search-amazon-in-new-tax-probe-sources-say-4502466",
-      "published_at": "2026-02-12T00:00:00+00:00",
-      "snippet": "By Emilio Parodi MILAN, Feb 12 (Reuters) - Italian tax police carried out searches on Thursday at Amazonâ€™s headquarters in Milan...",
+      "title": "Tiger Global, Adage Capital trimmed stakes in AI heavyweights in Q4",
+      "url": "https://www.investing.com/news/stock-market-news/softbank-group-dissolves-share-stake-in-nvidia-according-to-sec-filing-4509386",
+      "published_at": null,
+      "snippet": "By Suzanne McGee and Noel Randewich PROVIDENCE, Rhode Island, Feb 17 (Reuters) - Tiger Global Management and Adage Capital...",
       "asset_type": "stock"
     },
     {
       "id": 11,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "10:17pU.S. stock futures slump as investors digest ongoing tech selloff",
-      "url": "https://www.marketwatch.com/story/u-s-stock-futures-flat-as-investors-digest-ongoing-tech-selloff-over-holiday-weekend-765f3c5c?mod=mw_latestnews",
+      "title": "Trump economist Hassett says N.Y. Fed staff should be punished over tariff study",
+      "url": "https://www.marketwatch.com/story/hassett-says-new-york-fed-staff-should-be-disciplined-over-study-finding-americans-paid-for-trumps-tariffs-6fec90ca?mod=bulletin_ribbon",
       "published_at": null,
       "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
       "asset_type": "stock"
@@ -136,8 +136,8 @@
       "id": 12,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "8:23pIrish regulator opens E.U. privacy investigation into Elon Musk’s X over Grok’s deepfake images",
-      "url": "https://www.marketwatch.com/story/irish-regulator-opens-e-u-privacy-investigation-into-elon-musks-x-over-groks-deepfake-images-27803265?mod=mw_latestnews",
+      "title": "11:54aHassett says New York Fed staff should be disciplined over study finding Americans paid for Trump’s tariffs",
+      "url": "https://www.marketwatch.com/story/hassett-says-new-york-fed-staff-should-be-disciplined-over-study-finding-americans-paid-for-trumps-tariffs-6fec90ca?mod=mw_latestnews",
       "published_at": null,
       "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
       "asset_type": "stock"
@@ -146,8 +146,8 @@
       "id": 13,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "6:00p‘I’m close to retiring’: I’m behind on my property tax. Is this a really bad time to sell my house?",
-      "url": "https://www.marketwatch.com/story/im-close-to-retiring-im-behind-on-my-property-taxes-is-this-a-bad-time-to-sell-my-house-40954efd?mod=mw_latestnews",
+      "title": "11:06a8 ways you may be squandering money in retirement",
+      "url": "https://www.marketwatch.com/story/8-ways-to-keep-from-blowing-through-your-money-in-retirement-a9177a18?mod=mw_latestnews",
       "published_at": null,
       "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
       "asset_type": "stock"
@@ -156,8 +156,8 @@
       "id": 14,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "5:57pBuying stocks everyone admires is a recipe for underperformance — but Apple breaks the rule",
-      "url": "https://www.marketwatch.com/story/buying-stocks-everyone-admires-is-a-recipe-for-underperformance-but-apple-breaks-the-rule-26de6e2f?mod=mw_latestnews",
+      "title": "11:00a‘I have a moral and ethical conundrum’: My husband was killed by a careless driver. I received $2 million. What do I owe my stepdaughter?",
+      "url": "https://www.marketwatch.com/story/i-have-a-moral-and-ethical-conundrum-my-husband-was-killed-by-a-careless-driver-i-received-2-million-what-do-i-owe-my-stepdaughter-2c3250e8?mod=mw_latestnews",
       "published_at": null,
       "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
       "asset_type": "stock"
@@ -166,8 +166,8 @@
       "id": 15,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "5:49p‘Am I crazy?’ My boyfriend’s parents say he doesn’t earn enough to marry me. Who is to blame here?",
-      "url": "https://www.marketwatch.com/story/weve-been-dating-for-5-years-my-boyfriends-parents-say-he-doesnt-earn-enough-to-marry-should-i-speak-to-his-father-44b48700?mod=mw_latestnews",
+      "title": "10:30a‘The world feels unpredictable’: I’m 56. My husband is 64. Our mortgage costs $17K a month. Do we pay it off?",
+      "url": "https://www.marketwatch.com/story/the-world-feels-unpredictable-im-56-my-husband-is-64-our-mortgage-costs-17-000-a-month-do-we-pay-it-off-c8a454d8?mod=mw_latestnews",
       "published_at": null,
       "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
       "asset_type": "stock"
@@ -176,8 +176,8 @@
       "id": 16,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "5:28p‘It’s a life-changing sum’: Can I stop my kids from using their inheritance to support political causes I vehemently oppose?",
-      "url": "https://www.marketwatch.com/story/its-a-life-changing-sum-can-i-stop-my-kids-from-using-their-inheritance-to-support-political-causes-i-vehemently-oppose-90809fd7?mod=mw_latestnews",
+      "title": "10:22aModerna got the FDA to change its mind and review its flu vaccine after some concessions",
+      "url": "https://www.marketwatch.com/story/moderna-got-the-fda-to-change-its-mind-and-review-its-flu-vaccine-after-some-concessions-04c3f38e?mod=mw_latestnews",
       "published_at": null,
       "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
       "asset_type": "stock"
@@ -186,8 +186,8 @@
       "id": 17,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "11:45a‘I’m a loner’: I’m 62 with a multimillion-dollar portfolio and no heirs. Should I find a wife for my twilight years?",
-      "url": "https://www.marketwatch.com/story/im-a-loner-im-62-with-a-multimillion-dollar-portfolio-and-no-heirs-should-i-find-a-wife-for-my-twilight-years-4f4f4408?mod=mw_latestnews",
+      "title": "10:11aCorrectedWhy a 40-year Wall Street veteran is telling clients to sell everything American",
+      "url": "https://www.marketwatch.com/story/why-a-40-year-wall-street-veteran-is-telling-clients-to-sell-everything-american-77e50ae5?mod=mw_latestnews",
       "published_at": null,
       "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
       "asset_type": "stock"
@@ -196,38 +196,38 @@
       "id": 18,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "11:07a‘I feel the clock ticking’: My wife and I are in our 60s — and employ 48 people in a small town. Can we ever retire?",
-      "url": "https://www.marketwatch.com/story/i-feel-the-clock-ticking-my-wife-and-i-are-in-our-60s-and-employ-48-people-in-a-small-town-can-we-ever-retire-2399ba41?mod=mw_latestnews",
+      "title": "Berkshire returns to the newspaper business, takes bigger bite of Domino’s Pizza",
+      "url": "https://www.marketwatch.com/story/berkshire-returns-to-the-newspaper-business-takes-bigger-bite-of-dominos-pizza-5c4dc5d8?mod=mw_quote_news_topstories",
       "published_at": null,
-      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "snippet": "",
       "asset_type": "stock"
     },
     {
       "id": 19,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "10:02aShipping industry set to consolidate as Hapag-Lloyd to buy Israeli firm for 58% premium",
-      "url": "https://www.marketwatch.com/story/shipping-industry-set-to-consolidate-as-hapag-lloyd-to-buy-israeli-firm-for-58-premium-35839cf0?mod=mw_latestnews",
+      "title": "Amazon and Bank of America Stocks Shrug Off Berkshire Sales. Why They’re Rising.",
+      "url": "https://www.barrons.com/articles/amazon-apple-stocks-berkshire-sales-warren-buffett-99e7ccf4?mod=mw_quote_news_topstories",
       "published_at": null,
-      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "snippet": "",
       "asset_type": "stock"
     },
     {
       "id": 20,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "9:27aThese might be the winners from the latest round of Chinese new year AI launches",
-      "url": "https://www.marketwatch.com/story/these-might-be-the-winners-from-the-latest-round-of-chinese-new-year-ai-launches-06779445?mod=mw_latestnews",
+      "title": "Warren Buffett Just Left His Final Clues for Investors. What Berkshire’s Stock Moves Say.",
+      "url": "https://www.barrons.com/articles/warren-buffett-berkshire-stock-apple-amazon-6ef29c99?mod=mw_quote_news_topstories",
       "published_at": null,
-      "snippet": "Visit a quote page and your recently viewed tickers will be displayed here.",
+      "snippet": "",
       "asset_type": "stock"
     },
     {
       "id": 21,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Here are 7 charts guaranteed to stress you out about the stock market",
-      "url": "https://www.marketwatch.com/story/here-are-7-charts-guaranteed-to-stress-you-out-about-the-stock-market-085b23c1?mod=mw_quote_news_topstories",
+      "title": "Dow's nearly 275-point rally led by gains for Goldman Sachs, NVIDIA Corp. shares",
+      "url": "https://www.marketwatch.com/data-news/dow-s-nearly-275-point-rally-led-by-gains-for-goldman-sachs-nvidia-corp-shares-4f4c6673-be965a42ef78?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -236,8 +236,8 @@
       "id": 22,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Marketplaces Are the Next Frontier in Publisher Deals With AI Companies",
-      "url": "https://www.wsj.com/business/media/marketplaces-are-the-next-frontier-in-publisher-deals-with-ai-companies-11515b00?mod=mw_quote_news_topstories",
+      "title": "Amazon and Bank of America Stocks Shrug Off Berkshire Sales. Why They’re Rising.",
+      "url": "https://www.barrons.com/articles/amazon-apple-stocks-berkshire-sales-warren-buffett-99e7ccf4?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -246,14 +246,64 @@
       "id": 23,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Alphabet and Anthropic CEOs Expected to Attend AI Summit. Why Nvidia’s Huang Isn’t.",
-      "url": "https://www.barrons.com/articles/alphabet-anthropic-stock-ceo-ai-summit-c1833be3?mod=mw_quote_news_topstories",
+      "title": "Berkshire returns to the newspaper business, takes bigger bite of Domino’s Pizza",
+      "url": "https://www.marketwatch.com/story/berkshire-returns-to-the-newspaper-business-takes-bigger-bite-of-dominos-pizza-5c4dc5d8?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
     },
     {
       "id": 24,
+      "currency_pair": "AMZN",
+      "source": "MarketWatch",
+      "title": "Warren Buffett Just Left His Final Clues for Investors. What Berkshire’s Stock Moves Say.",
+      "url": "https://www.barrons.com/articles/warren-buffett-berkshire-stock-apple-amazon-6ef29c99?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 25,
+      "currency_pair": "AMZN",
+      "source": "MarketWatch",
+      "title": "The Wrong Way—and Right Way—to Hedge This Volatile Stock Market",
+      "url": "https://www.barrons.com/articles/wrong-way-right-way-to-hedge-stock-market-0b0802db?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 26,
+      "currency_pair": "AMZN",
+      "source": "MarketWatch",
+      "title": "Berkshire Buys New York Times Stock; Sells Apple, Bank of America, Amazon In 4Q",
+      "url": "https://www.barrons.com/articles/berkshire-buffett-nytimes-purchase-56cc6646?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 27,
+      "currency_pair": "AMZN",
+      "source": "MarketWatch",
+      "title": "'Magnificent Seven' stocks decline as investors turn away from large tech companies",
+      "url": "https://www.marketwatch.com/livecoverage/stock-market-today-dow-s-p-500-and-nasdaq-set-to-retreat-as-tech-stocks-continue-to-reel/card/-magnificent-seven-stocks-decline-as-investors-turn-away-from-large-tech-companies-4pUC31rgCJl15mnIAI8d?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 28,
+      "currency_pair": "AMZN",
+      "source": "MarketWatch",
+      "title": "AI Stocks Reset In 2026 Amid Software Reckoning, Hyperscaler Capex Boom",
+      "url": "https://www.investors.com/news/technology/ai-stocks-artificial-intelligence-stocks-2026-disruption-openclaw-feb17/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "",
+      "asset_type": "stock"
+    },
+    {
+      "id": 29,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Marketplaces Are the Next Frontier in Publisher Deals With AI Companies",
@@ -263,7 +313,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 25,
+      "id": 30,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Alphabet and Anthropic CEOs Expected to Attend AI Summit. Why Nvidia’s Huang Isn’t.",
@@ -273,7 +323,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 26,
+      "id": 31,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Dow Jones Futures Rise; Apple, Google, Amazon, Meta, Nvidia In Focus",
@@ -283,7 +333,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 27,
+      "id": 32,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "‘Wuthering Heights’ is a hit with female moviegoers, earns $34.8 million in opening weekend",
@@ -293,7 +343,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 28,
+      "id": 33,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Here are 7 charts guaranteed to stress you out about the stock market",
@@ -303,7 +353,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 29,
+      "id": 34,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Amazon’s stock just clinched its worst losing streak in nearly 20 years. It’s giving investors AWS déjà vu.",
@@ -313,7 +363,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 30,
+      "id": 35,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "How Market Regulation Prevents Price Spikes Caused by Data Centers",
@@ -323,7 +373,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 31,
+      "id": 36,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Big Tech’s Spending Spree Could Limit Buybacks and Dividends",
@@ -333,7 +383,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 32,
+      "id": 37,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "AI spending fears drove Amazon’s stock into a bear market, alongside Microsoft’s",
@@ -343,7 +393,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 33,
+      "id": 38,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Why Amazon Stock and the Rest of Big Tech Could Be the Next GE. That’s Not a Good Thing.",
@@ -353,7 +403,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 34,
+      "id": 39,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Amazon heads for longest losing streak since 2006 as Big Tech takes a beating",
@@ -363,7 +413,7 @@
       "asset_type": "stock"
     },
     {
-      "id": 35,
+      "id": 40,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
       "title": "Amazon Joins Microsoft in Bear Market. Why Mag 7 Stocks Are Struggling.",
@@ -373,61 +423,11 @@
       "asset_type": "stock"
     },
     {
-      "id": 36,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "AI Stocks Rattled On Disruption Worries. This Week's Winners Defy The Noise.",
-      "url": "https://www.investors.com/news/technology/ai-stocks-artificial-intelligence-stocks-2026-leaders-laggards-feb9/?src=A00619&refcode=aflMarketWatch&mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 37,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "Hasbro Stock Still Has Room to Run",
-      "url": "https://www.barrons.com/articles/hasbro-stock-buy-games-a212c7bf?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 38,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "Dow's 135-point drop led by losses in shares of Cisco, Walt Disney",
-      "url": "https://www.marketwatch.com/data-news/dow-s-135-point-drop-led-by-losses-in-shares-of-cisco-walt-disney-8713b2ba-3635a7fe96ec?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 39,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "'Magnificent Seven' ETF risks lowest close of 2026",
-      "url": "https://www.marketwatch.com/livecoverage/stock-market-today-dow-sp500-nasdaq-higher-treasurys-steady-gold-silver-dip/card/-magnificent-seven-etf-risks-lowest-close-of-2026-WNZ1z3zoqGW3mRyC4afI?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 40,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "Amazon wants to be a satellite powerhouse. For now, the effort is a financial black hole.",
-      "url": "https://www.marketwatch.com/story/amazon-wants-to-be-a-satellite-powerhouse-for-now-the-effort-is-a-financial-black-hole-dde88b1d?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
       "id": 41,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "The Jobs Market Looks Strong. These Warning Signs Show AI Is a Growing Threat.",
-      "url": "https://www.barrons.com/articles/jobs-market-ai-things-to-know-today-9dd775c7?mod=mw_quote_news",
+      "title": "10 Top Stocks to Buy Right Now",
+      "url": "https://www.fool.com/investing/2026/02/18/10-top-stocks-to-buy-right-now/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=dae64d8b-ddcc-4313-bbbe-96c8af1d08cb&mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -436,8 +436,8 @@
       "id": 42,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Big Tech Accounting Creates a Blind Spot in the AI Boom",
-      "url": "https://www.wsj.com/finance/stocks/big-tech-accounting-creates-a-blind-spot-in-the-ai-boom-e2d7d1eb?mod=mw_quote_news",
+      "title": "Billionaire Investors Warren Buffett, Bill Ackman and Other Have Been Buying These Stocks",
+      "url": "https://www.fool.com/investing/2026/02/18/billionaire-investors-warren-buffett-bill-ackman-a/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=2b211757-9576-43d8-a332-6d64d71ef35c&mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -446,8 +446,8 @@
       "id": 43,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Why Amazon’s $6.5 billion chip deal with Astera Labs is a ‘double-edged sword’",
-      "url": "https://www.marketwatch.com/story/why-amazons-6-5-billion-chip-deal-with-astera-labs-is-a-double-edged-sword-209424ea?mod=mw_quote_news",
+      "title": "AAL, UAL, DAL: Billionaire Investor Stanley Druckenmiller Loads Up on Airline Stocks",
+      "url": "https://www.tipranks.com/news/aal-ual-dal-billionaire-investor-stanley-druckenmiller-loads-up-on-airline-stocks?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -456,28 +456,28 @@
       "id": 44,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Baillie Gifford Increases Stake in ODDITY Tech Ltd with Significant Share Acquisition",
-      "url": "https://www.gurufocus.com/news/8621277/baillie-gifford-increases-stake-in-oddity-tech-ltd-with-significant-share-acquisition?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "title": "The Magnificent 7 Trade Is Cracking — And The &#39;Great Valuation Rotation&#39; Is Here",
+      "url": "https://www.benzinga.com/markets/equities/26/02/50692269/the-magnificent-7-trade-is-cracking-and-the-great-valuation-rotation-is-here?mod=mw_quote_news",
       "published_at": null,
-      "snippet": "Baillie Gifford Increases Stake in ODDITY Tech Ltd with Significant Share Acquisition",
+      "snippet": "",
       "asset_type": "stock"
     },
     {
       "id": 45,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Baillie Gifford's Strategic Acquisition of Samsara Inc Shares",
-      "url": "https://www.gurufocus.com/news/8621276/baillie-giffords-strategic-acquisition-of-samsara-inc-shares?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "title": "Amazon (AMZN) Remains Morgan Stanley's Top Pick Amid GenAI Prospects",
+      "url": "https://www.gurufocus.com/news/8628343/amazon-amzn-remains-morgan-stanleys-top-pick-amid-genai-prospects?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
       "published_at": null,
-      "snippet": "Baillie Gifford's Strategic Acquisition of Samsara Inc Shares",
+      "snippet": "Amazon (AMZN) Remains Morgan Stanley's Top Pick Amid GenAI Prospects",
       "asset_type": "stock"
     },
     {
       "id": 46,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "The Best Stocks to Invest $1,000 in Right Now",
-      "url": "https://www.fool.com/investing/2026/02/16/the-best-stocks-to-invest-1000-in-right-now/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=9917c8b2-0be0-48ec-bf1b-67d542ab74f8&mod=mw_quote_news",
+      "title": "Big Opportunity Ahead in Software - How to Tell Software Stock Winners From Losers, Fed Minutes Ahead",
+      "url": "https://www.benzinga.com/Opinion/26/02/50691093/big-opportunity-ahead-in-software-how-to-tell-software-stock-winners-from-losers-fed-minutes-ahead?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -486,8 +486,8 @@
       "id": 47,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "The Best Warren Buffett Stocks to Buy With $1,000 Right Now",
-      "url": "https://www.fool.com/investing/2026/02/16/the-best-warren-buffett-stocks-to-buy-with-1000-ri/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=e44d5f3f-c2d3-4d60-ad71-2b060306baa0&mod=mw_quote_news",
+      "title": "Amazon&#39;s Diminished Free Cash Flow Makes It &#39;Difficult To Own:&#39; Jim Cramer",
+      "url": "https://www.benzinga.com/trading-ideas/movers/26/02/50688419/amazons-diminished-free-cash-flow-makes-it-difficult-to-own-jim-cramer?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -496,28 +496,28 @@
       "id": 48,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Harvard University Opens New Position in Ethereum (ETH)",
-      "url": "https://www.tipranks.com/news/harvard-university-opens-new-position-in-ethereum-eth?mod=mw_quote_news",
+      "title": "Amazon (AMZN) Valuation Highlights Potential Market Overcorrection",
+      "url": "https://www.gurufocus.com/news/8628118/amazon-amzn-valuation-highlights-potential-market-overcorrection?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
       "published_at": null,
-      "snippet": "",
+      "snippet": "Amazon (AMZN) Valuation Highlights Potential Market Overcorrection",
       "asset_type": "stock"
     },
     {
       "id": 49,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Amazon (AMZN) Leads Soros Fund's Tech-Heavy Portfolio",
-      "url": "https://www.gurufocus.com/news/8621054/amazon-amzn-leads-soros-funds-techheavy-portfolio?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "title": "Berkshire Cuts Amazon, Buys New York Times",
+      "url": "https://www.gurufocus.com/news/8626282/berkshire-cuts-amazon-buys-new-york-times?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
       "published_at": null,
-      "snippet": "Amazon (AMZN) Leads Soros Fund's Tech-Heavy Portfolio",
+      "snippet": "Berkshire Cuts Amazon, Buys New York Times",
       "asset_type": "stock"
     },
     {
       "id": 50,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "AI Spending Shock Triggers Big Tech Selloff And Small-Cap Revival",
-      "url": "https://www.benzinga.com/markets/tech/26/02/50638987/ai-spending-shock-triggers-big-tech-selloff-and-small-cap-revival?mod=mw_quote_news",
+      "title": "Big Investors, Including Warren Buffett, Trim ‘Magnificent Seven’ Stakes in Q4",
+      "url": "https://www.tipranks.com/news/big-investors-including-warren-buffett-trim-magnificent-seven-stakes-in-q4?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -526,8 +526,8 @@
       "id": 51,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "U.S. Chess Champion Sitting on Huge 35% Loss from Robinhood Stock",
-      "url": "https://www.tipranks.com/news/u-s-chess-champion-sitting-on-huge-35-loss-from-robinhood-stock?mod=mw_quote_news",
+      "title": "Retail ETFs in Spotlight as US Releases Holiday Season Report Card",
+      "url": "https://www.zacks.com/stock/news/2871147/retail-etfs-in-spotlight-as-us-releases-holiday-season-report-card?cid=CS-MKTWTCH-HL-etf_news_and_commentary-2871147&mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -536,8 +536,8 @@
       "id": 52,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Prediction: 2 Stocks That Will Be Worth More Than Amazon 3 Years From Now",
-      "url": "https://www.fool.com/investing/2026/02/16/predict-stocks-worth-more-than-amazon-tsm-avgo/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=5881f588-1e2c-4132-8e1f-659c0d8b060a&mod=mw_quote_news",
+      "title": "Mark Cuban Explains How Luck Helped Turn Jeff Bezos And Mark Zuckerberg Into Billionaires — &#39;Something Good Has Got to Happen&#39;",
+      "url": "https://www.benzinga.com/personal-finance/management/26/02/50686061/mark-cuban-explains-how-luck-helped-turn-jeff-bezos-and-mark-zuckerberg-into-billionaires-something-good-has-got-to-happen?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -546,38 +546,38 @@
       "id": 53,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Lee Ainslie's Strategic Moves: Alphabet Inc. Takes Center Stage with 3.85% Portfolio Share",
-      "url": "https://www.gurufocus.com/news/8621048/lee-ainslies-strategic-moves-alphabet-inc-takes-center-stage-with-385-portfolio-share?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "title": "Notable open interest changes for February 18th",
+      "url": "https://www.tipranks.com/news/the-fly/notable-open-interest-changes-for-february-18th-thefly-news?mod=mw_quote_news",
       "published_at": null,
-      "snippet": "Lee Ainslie's Strategic Moves: Alphabet Inc. Takes Center Stage with 3.85% Portfolio Share",
+      "snippet": "",
       "asset_type": "stock"
     },
     {
       "id": 54,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "George Soros Reduces Stake in Smurfit WestRock PLC by 68.99%",
-      "url": "https://www.gurufocus.com/news/8621046/george-soros-reduces-stake-in-smurfit-westrock-plc-by-6899?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
+      "title": "Amazon (AMZN) Veteran Joins Taboola as Chief Business Officer",
+      "url": "https://www.gurufocus.com/news/8627671/amazon-amzn-veteran-joins-taboola-as-chief-business-officer?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
       "published_at": null,
-      "snippet": "George Soros Reduces Stake in Smurfit WestRock PLC by 68.99%",
+      "snippet": "Amazon (AMZN) Veteran Joins Taboola as Chief Business Officer",
       "asset_type": "stock"
     },
     {
       "id": 55,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Magnificent 7 Wipes Out 2026 Gains as Tech Concerns Heighten",
-      "url": "https://www.tipranks.com/news/magnificent-7-wipes-out-2026-gains-as-tech-concerns-elevate?mod=mw_quote_news",
+      "title": "Vanguard Russell 1000 Value Index Fund Buys 10,316 Shares of Amazon.com Inc (AMZN)",
+      "url": "https://www.gurufocus.com/news/8627379/vanguard-russell-1000-value-index-fund-buys-10316-shares-of-amazoncom-inc-amzn?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
       "published_at": null,
-      "snippet": "",
+      "snippet": "Vanguard Russell 1000 Value Index Fund Buys 10,316 Shares of Amazon.com Inc (AMZN)",
       "asset_type": "stock"
     },
     {
       "id": 56,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "SNOW Stock Trades Higher Than Industry at 10.8 P/S: Buy, Sell or Hold?",
-      "url": "https://www.zacks.com/stock/news/2869824/snow-stock-trades-higher-than-industry-at-10-8-p-s-buy-sell-or-hold?cid=CS-MKTWTCH-HL-analyst_blog|most_popular_stocks-2869824&mod=mw_quote_news",
+      "title": "Prediction: 3 Stocks That Will Be Worth More Than Apple 3 Years From Now",
+      "url": "https://www.fool.com/investing/2026/02/18/prediction-3-stocks-will-be-worth-more-than-apple/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=4b14bad4-6de1-4284-9616-c3f837ac9867&mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -586,8 +586,8 @@
       "id": 57,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Nebius Stock Up Post Q4 Earnings: Buy, Stay Invested or Offload?",
-      "url": "https://www.zacks.com/stock/news/2869817/nebius-stock-up-post-q4-earnings-buy-stay-invested-or-offload?cid=CS-MKTWTCH-HL-analyst_blog|most_popular_stocks-2869817&mod=mw_quote_news",
+      "title": "Taboola names Bhatia as Chief Business Officer",
+      "url": "https://www.tipranks.com/news/the-fly/taboola-names-bhatia-as-chief-business-officer-thefly-news?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -596,18 +596,18 @@
       "id": 58,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "8 Cheap Stocks to Buy in 2026",
-      "url": "https://www.fool.com/investing/2026/02/16/8-cheap-stocks-to-buy-in-2026/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=4b6d6127-93e5-4807-a528-1625f310efbc&mod=mw_quote_news",
+      "title": "Berkshire Hathaway Reduces Amazon Stake, Invests in The New York Times",
+      "url": "https://www.gurufocus.com/news/8626968/berkshire-hathaway-reduces-amazon-stake-invests-in-the-new-york-times?utm_source=marketwatch&utm_medium=syndication&utm_campaign=headlines&r=4bf001661e6fdd88d0cd7a5659ff9748&mod=mw_quote_news",
       "published_at": null,
-      "snippet": "",
+      "snippet": "Berkshire Hathaway Reduces Amazon Stake, Invests in The New York Times",
       "asset_type": "stock"
     },
     {
       "id": 59,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "Micron (MU) Sounds Alarm on AI Memory Shortage as DRAM Prices Spike Into 2027",
-      "url": "https://www.tipranks.com/news/micron-mu-sounds-alarm-on-ai-memory-shortage-as-dram-prices-spike-into-2027?mod=mw_quote_news",
+      "title": "Amazon Abandons Blue Jay Warehouse Robot In Less Than Six Months, Pivots To New Technologies: Report",
+      "url": "https://www.benzinga.com/markets/tech/26/02/50681888/amazon-abandons-blue-jay-warehouse-robot-in-less-than-six-months-pivots-to-new-technologies-report?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
       "asset_type": "stock"
@@ -616,206 +616,12 @@
       "id": 60,
       "currency_pair": "AMZN",
       "source": "MarketWatch",
-      "title": "&#39;The AI Trade Is Stalling:&#39; Why This Wall Street Expert Is Betting Against The Nasdaq 100",
-      "url": "https://www.benzinga.com/markets/tech/26/02/50637557/david-woo-nasdaq-100-short-trade-ai-risks-hyperscalers-2026-market-risks?mod=mw_quote_news",
+      "title": "Amazon (AMZN) Gets a Buy from Bernstein",
+      "url": "https://www.tipranks.com/news/blurbs/amazon-amzn-gets-a-buy-from-bernstein-blurbs-news?mod=mw_quote_news",
       "published_at": null,
       "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 61,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "The First US Nuclear Fuel License In 50 Years Just Triggered A Uranium Race",
-      "url": "https://www.benzinga.com/markets/commodities/26/02/50637537/the-first-us-nuclear-fuel-license-in-50-years-just-triggered-a-uranium-race?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 62,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "AWS Chief Matt Garman Just Delivered Wonderful News for Amazon Shareholders",
-      "url": "https://www.fool.com/investing/2026/02/16/aws-chief-matt-garman-just-delivered-wonderful-new/?source=djc&utm_source=djc&utm_medium=feed&utm_campaign=article&referring_guid=aee0009e-d4d5-40c7-9191-fcad3853cbc4&mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 63,
-      "currency_pair": "AMZN",
-      "source": "MarketWatch",
-      "title": "IBM vs. Intel: Which AI-Focused Stock is the Better Buy Today?",
-      "url": "https://www.zacks.com/stock/news/2869507/ibm-vs-intel-which-ai-focused-stock-is-the-better-buy-today?cid=CS-MKTWTCH-HL-analyst_blog|most_popular_stocks-2869507&mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "stock"
-    },
-    {
-      "id": 64,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Oracle Surges 12% While Apple, Amazon Tumble in Choppy Tech Week",
-      "url": "https://247wallst.com/investing/2026/02/16/oracle-surges-12-while-apple-amazon-tumble-in-choppy-tech-week/?.tsrc=rss",
-      "published_at": "2026-02-16T23:00:24+00:00",
-      "snippet": "Tech stocks delivered a choppy week, with the sector’s biggest names diverging sharply as AI spending debates intensified and bear market territory claimed two Magnificent Seven members. Incredibly, every single Magnificent 7 stock is now down year-to-date after NVIDIA (NASDAQ: NVDA) shares slipped 2.23% on Friday. Let’s dive into the biggest storylines in technology this week. While many stocks ... Oracle Surges 12% While Apple, Amazon Tumble in Choppy Tech Week",
-      "asset_type": "stock"
-    },
-    {
-      "id": 65,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "DXC’s Enterprise AI Push Tests Whether New Capabilities Can Revive Growth",
-      "url": "https://finance.yahoo.com/news/dxc-enterprise-ai-push-tests-220800935.html?.tsrc=rss",
-      "published_at": "2026-02-16T22:08:00+00:00",
-      "snippet": "DXC Technology has completed a global deployment of Amazon Quick across its operations. The company has launched a dedicated Amazon Quick-focused AI implementation unit, the DXC Amazon Quick Practice. DXC has opened an AI-focused Customer Experience Center in London to showcase and test enterprise AI use cases. The firm has expanded its PoloWorks partnership with new AI-enabled platforms, including the Assure platform for insurance clients. DXC Technology (NYSE:DXC) is pushing into...",
-      "asset_type": "stock"
-    },
-    {
-      "id": 66,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "The Best Warren Buffett Stocks to Buy With $1,000 Right Now",
-      "url": "https://www.fool.com/investing/2026/02/16/the-best-warren-buffett-stocks-to-buy-with-1000-ri/?.tsrc=rss",
-      "published_at": "2026-02-16T21:24:00+00:00",
-      "snippet": "These two Warren Buffett stocks can deliver compelling long-term returns for patient investors.",
-      "asset_type": "stock"
-    },
-    {
-      "id": 67,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "MEDIA ADVISORY: Unifor update on Amazon Labour Relations Code violation and union's application for board-appointed mediation",
-      "url": "https://finance.yahoo.com/news/media-advisory-unifor-amazon-labour-210600271.html?.tsrc=rss",
-      "published_at": "2026-02-16T21:06:00+00:00",
-      "snippet": "Unifor will hold a media conference on February 17 to provide updates on the B.C. Labour Relations Board ruling that Amazon violated the Labour Relations Code, and the union's application for a board appointed mediator.",
-      "asset_type": "stock"
-    },
-    {
-      "id": 68,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Billionaire Bill Ackman Reveals New Position in This Top Artificial Intelligence (AI) Stock",
-      "url": "https://www.fool.com/investing/2026/02/16/billionaire-bill-ackman-position-top-ai-stock-meta/?.tsrc=rss",
-      "published_at": "2026-02-16T20:58:00+00:00",
-      "snippet": "Pershing Square management thinks this stock is \"deeply discounted.\"",
-      "asset_type": "stock"
-    },
-    {
-      "id": 69,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Microsoft's Quality Rank Surges As AI Spend Efficiency Calms Investor Nerves",
-      "url": "https://finance.yahoo.com/news/microsofts-quality-rank-surges-ai-203119515.html?.tsrc=rss",
-      "published_at": "2026-02-16T20:31:19+00:00",
-      "snippet": "Microsoft Corp. (NASDAQ:MSFT) has seen its fundamental strength reach elite levels, with its quality score on the Benzinga Edge rankings jumping from 79.51 to 90.08 week-on-week. Operational Excellence In An AI Arms Race This move into the top 10% of stocks for operational efficiency comes as the company demonstrates superior free cash flow (FCF) resilience compared to its “Big 5” hyperscaler peers, even as technical indicators show persistent short- and long-term price trend challenges. Improve",
-      "asset_type": "stock"
-    },
-    {
-      "id": 70,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Google (GOOGL) Cloud Revenue Just Surged 48% And May Have Delivered Knockout Blow To OpenAI",
-      "url": "https://247wallst.com/investing/2026/02/16/google-googl-cloud-revenue-just-surged-48-and-may-have-delivered-knockout-blow-to-openai/?.tsrc=rss",
-      "published_at": "2026-02-16T20:22:30+00:00",
-      "snippet": "Summary: Our AI Investor Podcasts have been counting down the 12 trends that AI investors should be watching in 2026. Recently, Eric Bleeker and Austin Smith focused their attention on the competitive battle between OpenAI and Alphabet. While OpenAI was the early leader in artificial intelligence, Alphabet has staged a powerful resurgence and now appears ahead ... Google (GOOGL) Cloud Revenue Just Surged 48% And May Have Delivered Knockout Blow To OpenAI",
-      "asset_type": "stock"
-    },
-    {
-      "id": 71,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "They Asked Middle-Class Americans Who Escaped Paycheck-To-Paycheck Living What Finally Worked. One Answer Kept Coming Up Again And Again",
-      "url": "https://finance.yahoo.com/news/asked-middle-class-americans-escaped-200120189.html?.tsrc=rss",
-      "published_at": "2026-02-16T20:01:20+00:00",
-      "snippet": "For a lot of middle-class Americans, the bills get paid. The lights stay on. The fridge is full. But there's no breathing room. One car repair or medical bill can wipe out months of progress. So when people who had actually broken out of paycheck-to-paycheck living were asked what finally changed, the answers weren't flashy. There were no secret stock tips. No overnight windfalls. But one response kept showing up again and again: Job hopping. Don't Miss: The AI Marketing Platform Backed by Insid",
-      "asset_type": "stock"
-    },
-    {
-      "id": 72,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Amazon Put Options at Lower Strike Prices Have High Yields",
-      "url": "https://www.barchart.com/story/news/243300/amazon-put-options-at-lower-strike-prices-high-high-yields?.tsrc=rss",
-      "published_at": "2026-02-16T18:40:59+00:00",
-      "snippet": "One-month away put options have high yields after Amazon's stock tumble last week. For example, at strike prices 10 to 15% lower than today's depressed price, yields are still high. This provides a great opportunity for value buyers in AMZN stock.",
-      "asset_type": "stock"
-    },
-    {
-      "id": 73,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Prediction: 2 Stocks That Will Be Worth More Than Amazon 3 Years From Now",
-      "url": "https://www.fool.com/investing/2026/02/16/predict-stocks-worth-more-than-amazon-tsm-avgo/?.tsrc=rss",
-      "published_at": "2026-02-16T17:05:00+00:00",
-      "snippet": "Taiwan Semiconductor Manufacturing and Broadcom could pass Amazon in market cap in the next couple of years.",
-      "asset_type": "stock"
-    },
-    {
-      "id": 74,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "They're Complete Opposites. He Saved More Than $100K And Pays For Everything, While She's $80K In Debt. 'I Ain't Saying She's The Gold Digger'",
-      "url": "https://finance.yahoo.com/news/theyre-complete-opposites-saved-more-170126327.html?.tsrc=rss",
-      "published_at": "2026-02-16T17:01:26+00:00",
-      "snippet": "When one partner has more than $100,000 saved and zero debt, while the other is tens of thousands in debt, tension is almost inevitable. Add in expensive vacations and one person quietly footing every bill, and even a strong relationship can start to feel uneven. That was the dilemma shared by a young man on “The Ramsey Show” recently. He earns $135,000 a year, maxes out his 401(k) and has built six figures in savings. His girlfriend earns about $50,000 and carries between $70,000 and $80,000 in",
-      "asset_type": "stock"
-    },
-    {
-      "id": 75,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "George Soros Reduces Stake in Smurfit WestRock PLC by 68.99%",
-      "url": "https://finance.yahoo.com/news/george-soros-reduces-stake-smurfit-170058099.html?.tsrc=rss",
-      "published_at": "2026-02-16T17:00:58+00:00",
-      "snippet": "Insight into Soros's Strategic Moves in Q4 2025",
-      "asset_type": "stock"
-    },
-    {
-      "id": 76,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "INVNT® Reports Record Growth, Expanding Global Infrastructure and Capabilities Across All Regions",
-      "url": "https://finance.yahoo.com/news/invnt-reports-record-growth-expanding-163000425.html?.tsrc=rss",
-      "published_at": "2026-02-16T16:30:00+00:00",
-      "snippet": "NEW YORK, February 16, 2026--INVNT® reports 60% year over year growth in 2025, expanding global infrastructure, AI innovation, and client partnerships worldwide.",
-      "asset_type": "stock"
-    },
-    {
-      "id": 77,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "'I'm Worth $7.3 Million,' Physician Says — Yet A $3 Drink For His Kids Gives Him Pause As 'Ramsey Show' Host Urges Him To 'Loosen The Purse Strings'",
-      "url": "https://finance.yahoo.com/news/im-worth-7-3-million-160234874.html?.tsrc=rss",
-      "published_at": "2026-02-16T16:02:34+00:00",
-      "snippet": "He has built significant wealth, yet a simple drink at dinner still makes his heart race. Mark told \"The Ramsey Show\" that despite earning about $390,000 a year as a physician in Honolulu, he feels anxious whenever his family spends even a few extra dollars. \"I'm worth $7.3 million,\" he said, yet small purchases still unsettle him. \"Man, that extra $3 we could have saved,\" he said of his reaction when his children ask for an extra drink at dinner. Mark asked hosts John Delony and Jade Warshaw wh",
-      "asset_type": "stock"
-    },
-    {
-      "id": 78,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Barry Silbert Forecasts Up To 10% Of Bitcoin's Market Cap Will Move To Privacy Coins—Crypto Mogul Says Zcash Can Rocket 500x, BTC Won't",
-      "url": "https://finance.yahoo.com/news/barry-silbert-forecasts-10-bitcoins-160229662.html?.tsrc=rss",
-      "published_at": "2026-02-16T16:02:29+00:00",
-      "snippet": "Barry Silbert, CEO of cryptocurrency conglomerate Digital Currency Group, said Wednesday that privacy-focused cryptocurrencies are poised to become the next big investment opportunity in the industry. Bitcoin Not Really ‘Anonymous’ During a conversation with Anthony Pompliano at the Bitcoin Investor...",
-      "asset_type": "stock"
-    },
-    {
-      "id": 79,
-      "currency_pair": "AMZN",
-      "source": "Yahoo Finance",
-      "title": "Marketplaces Are the Next Frontier in Publisher Deals With AI Companies",
-      "url": "https://finance.yahoo.com/m/dee333a7-cf02-3fe1-8c6d-cadf52f626bd/marketplaces-are-the-next.html?.tsrc=rss",
-      "published_at": "2026-02-16T16:00:00+00:00",
-      "snippet": "Microsoft, Amazon and others are planting flags in a new cottage industry as publishers look for additional revenue.",
       "asset_type": "stock"
     }
   ],
-  "analysis": {
-    "deepseek": "**1. Key Market Drivers**\n* **AI Sector Sentiment:** Negative pressure from \"AI spending fears\" hitting big tech valuations (News 2).\n* **Strategic Investment:** Positive long-term catalyst from Amazon-backed X-Energy securing a key nuclear fuel license, supporting energy needs for AWS/AI (News 6).\n* **Insider Activity:** Small, non-material stock sale by CEO Herrington ($208k), typically neutral but may be noted (News 4).\n* **Sector & Regulatory:** PJM power plan (News 8) could benefit AWS's data center expansion logistics. Broader tech trends (AI summits, digital trust alliances) provide sector context but no direct AMZN catalyst.\n\n**2. Short-Term Outlook (1-3 Days)**\n**Sideways to slightly bearish.** The dominant market narrative is negative for mega-cap tech due to AI spending concerns (News 2), which will likely weigh on AMZN alongside peers. The positive nuclear news is strategic, not earnings-impactful in the near term. Stock likely trades in line with tech sector sentiment.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\n**Sideways with a bullish bias.** The initial AI spending fear may stabilize. AMZN's concrete progress in securing long-term, clean power for its data centers (News 6, 8) is a material competitive advantage that may gain investor attention as a rebuttal to AI cost concerns. This could support relative outperformance.\n\n**4. Trading Bias & Reasoning**\n**Sideways (with a lean to buying dips).**\n*Reasoning:* The negative sector sentiment (AI cost fears) creates near-term headwinds. However, AMZN is actively addressing the core infrastructure challenge (energy) for AI/cloud growth, as shown by the nuclear license. This strategic positioning should provide a floor and make it a relative winner on any sector rebound.\n\n**5. Main Risks & Alternative Scenarios**\n* **Downside Risk:** Broader tech selloff intensifies on poor sector earnings or heightened AI spending fears, overwhelming AMZN-specific positives. A sharp rise in bond yields could pressure valuations further.\n* **Upside Risk:** Market quickly reframes narrative from \"AI spending fears\" to \"AI infrastructure winners,\" with AMZN's energy moves seen as a key moat. A strong broader market rally lifts all tech.\n* **Invalidation:** If AMZN issues guidance suggesting AI capex will severely pressure margins beyond expectations, the bearish sector narrative would dominate.",
-    "openai": "**Amazon (AMZN) Stock Analysis Based on Recent News**\n\n---\n\n### 1. Key Market Drivers\n\n- **Earnings & Insider Activity:**  \n  - Amazon CEO Herrington sold $208k in AMZN shares recently (News 4). Insider selling can be perceived as a mild negative signal, though the amount is relatively small and may be routine diversification.\n\n- **Product/Business Developments:**  \n  - Amazon-backed X-Energy received the first nuclear fuel license in 50 years (News 6). This signals Amazon’s strategic diversification into advanced energy sectors, potentially boosting long-term growth narratives.\n  - No direct new product launches or earnings updates reported in the news set.\n\n- **Sector & Market Trends:**  \n  - Big tech stocks are under pressure due to fears around increased AI spending impacting valuations (News 2). This broad tech selloff sentiment could weigh on AMZN short-term.\n  - Global AI summit in India highlights ongoing AI innovation but also intensifies competition (News 1).\n  - PJM plan may accelerate data center power deals (News 8), potentially benefiting Amazon Web Services (AWS) infrastructure growth.\n  - No direct Amazon-specific AI announcements, but sector-wide AI spending concerns are relevant.\n\n- **Macro & Competitive Landscape:**  \n  - Microsoft and Ericsson lead a digital trust alliance (News 5), indicating competitive tech alliances that could pressure Amazon’s cloud and AI ambitions.\n  - Alphabet’s strong investor confidence (News 7) contrasts with tech valuation fears, highlighting mixed sentiment in the sector.\n\n---\n\n### 2. Short-term Outlook (1–3 days)\n\n- **Likely Direction:** Mildly Bearish to Sideways  \n- **Rationale:**  \n  - Recent insider selling and broad tech sector valuation concerns around AI spending create near-term headwinds.  \n  - No positive Amazon-specific catalysts to offset sector weakness immediately.  \n  - Expect some volatility but limited downside given Amazon’s strong fundamentals and diversification.\n\n---\n\n### 3. Medium-term Outlook (1–2 weeks)\n\n- **Likely Direction:** Neutral to Slightly Bullish  \n- **Rationale:**  \n  - The nuclear fuel license news and potential acceleration in data center power deals could gain investor attention, supporting a modest rebound.  \n  - If broader tech sector stabilizes after initial AI spending fears, Amazon may benefit from its AWS and diversification stories.  \n  - Watch for upcoming earnings or economic data releases that could influence sentiment.\n\n---\n\n### 4. Trading Bias\n\n- **Bias:** Neutral / Slightly Bearish Short-term; Neutral to Slightly Bullish Medium-term  \n- **Reasoning:**  \n  - Short-term caution due to sector-wide AI spending fears and insider selling.  \n  - Medium-term potential upside from strategic diversification and infrastructure tailwinds.  \n  - Lack of immediate strong catalysts keeps bias balanced.\n\n---\n\n### 5. Main Risks / Alternative Scenarios\n\n- **Risks That Could Invalidate View:**  \n  - **Negative:**  \n    - Escalation of AI spending fears leading to a broader tech selloff dragging AMZN lower.  \n    - Disappointing upcoming earnings or guidance from Amazon.  \n    - Larger insider selling or negative management commentary.  \n  - **Positive:**  \n    - Strong earnings beat or positive guidance on AWS growth.  \n    - New product launches or AI-related announcements boosting investor confidence.  \n    - Resolution or easing of tech sector valuation concerns.\n\n---\n\n**Summary for Traders:**  \nExpect cautious trading in the next few days with potential sideways to mild downside pressure. Monitor sector sentiment and any Amazon-specific news closely. Medium-term, look for stabilization and possible upside from diversification and infrastructure growth stories. Maintain a balanced trading stance with tight stops given sector volatility.",
-    "gemini": "Okay, here's an analysis of AMZN stock based on the provided news snippets, structured for a trader:\n\n**1. Key Market Drivers:**\n\n*   **AI Spending Fears:** News 2 highlights concerns about excessive AI spending impacting valuations of big tech companies, including Amazon. This is a negative sentiment driver.\n*   **Nuclear Fuel License:** News 6 indicates Amazon's investment in X-Energy, which received a nuclear fuel license. This is a positive long-term driver, potentially reducing energy costs for data centers.\n*   **Data Center Power Deals:** News 8 suggests a PJM plan could accelerate data center power deals. This is a positive for AWS, as it could lead to more efficient and reliable power supply.\n*   **Insider Selling:** News 4 reports Amazon CEO Herrington sold $208k in AMZN stock. While not a huge amount, insider selling can sometimes create negative sentiment.\n*   **India AI Summit:** News 1 mentions India hosting a global AI summit. This is a positive for the AI sector in general, but the direct impact on AMZN is unclear.\n\n**2. Short-Term (1-3 days) Outlook:**\n\n*   Slightly Negative. The AI spending fears and insider selling could create some downward pressure. However, the news is not overwhelmingly negative.\n\n**3. Medium-Term (1-2 weeks) Outlook:**\n\n*   Neutral to Slightly Positive. The positive news regarding X-Energy and data center power deals could offset the AI spending concerns. The overall market sentiment will also play a significant role.\n\n**4. Trading Bias:**\n\n*   **Sideways.** The news presents a mixed picture. The negative sentiment around AI spending is countered by positive developments in energy and data centers. A sideways trading bias is appropriate until more concrete data emerges.\n\n**5. Main Risks/Alternative Scenarios:**\n\n*   **Broader Market Downturn:** A significant market correction could drag AMZN down, regardless of company-specific news.\n*   **Worse-than-Expected AWS Growth:** If AWS growth slows down significantly, it would negatively impact the stock.\n*   **Increased Regulatory Scrutiny:** Increased regulatory pressure on big tech could negatively impact AMZN.\n*   **Positive Earnings Surprise from a Competitor:** A competitor reporting significantly better-than-expected earnings could shift sentiment away from AMZN.\n*   **Unexpectedly High Inflation Data:** Higher-than-expected inflation data could lead to increased interest rates, negatively impacting growth stocks like AMZN."
-  }
+  "analysis": {}
 }

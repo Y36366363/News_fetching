@@ -14,6 +14,7 @@ Goals:
 import argparse
 import json
 import os
+import re
 import time
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
@@ -174,6 +175,48 @@ def fetch_article_snippet(url: str, max_paragraphs: int = 2) -> str:
             break
 
     return "\n\n".join(paragraphs[:max_paragraphs])
+
+
+def fetch_article_full_text(url: str) -> str:
+    """
+    Best-effort extraction of an article's full readable text from its URL.
+    """
+    html = fetch_html(url)
+    if not html:
+        return ""
+
+    soup = BeautifulSoup(html, "html.parser")
+    candidates = []
+    article = soup.find("article")
+    main = soup.find("main")
+    if article is not None:
+        candidates.append(article)
+    if main is not None and main is not article:
+        candidates.append(main)
+    if soup.body is not None and soup.body is not article and soup.body is not main:
+        candidates.append(soup.body)
+    candidates.append(soup)
+
+    def extract_from(node) -> str:
+        paras: List[str] = []
+        for p in node.find_all("p"):
+            txt = p.get_text(" ", strip=True)
+            if not txt or len(txt) < 40:
+                continue
+            paras.append(txt)
+        return "\n\n".join(paras)
+
+    # Prefer roots that look like they contain real article body.
+    for node in candidates:
+        text = extract_from(node)
+        if len(text) >= 800:  # enough substance to be a real article
+            return text
+        # If it has at least a few solid paragraphs, accept it.
+        if text.count("\n\n") >= 3 and len(text) >= 300:
+            return text
+
+    # Fall back to whatever we got from the full document.
+    return extract_from(soup)
 
 
 def within_date_range(dt: Optional[datetime],
@@ -418,6 +461,9 @@ def scrape_yahoo_pair(
 # NewsAPI (API source)
 # ---------------------------------------------------------------------------
 
+_NEWSAPI_FULL_CACHE: Dict[str, Dict] = {}
+
+
 def _make_newsapi_key() -> Optional[str]:
     key = os.getenv("NEWS_API_KEY")
     if not key:
@@ -539,6 +585,58 @@ def fetch_newsapi_fx_pair(
     if not isinstance(articles, list):
         return []
 
+    # Cache full NewsAPI articles for this run so we can optionally write
+    # a separate "full content" JSON file without making a second API call.
+    # (Never store apiKey.)
+    try:
+        cached_params = {k: v for k, v in params.items() if k != "apiKey"}
+        full_articles: List[Dict] = []
+        for a in articles:
+            if not isinstance(a, dict):
+                continue
+            published_at = a.get("publishedAt")
+            published_dt = (
+                parse_iso_like_datetime(published_at)
+                if isinstance(published_at, str) and published_at.strip()
+                else None
+            )
+            if not within_date_range(published_dt, start_date, end_date):
+                continue
+            full_articles.append(
+                {
+                    "source": a.get("source"),
+                    "author": a.get("author"),
+                    "title": a.get("title"),
+                    "description": a.get("description"),
+                    "content": a.get("content"),
+                    "url": a.get("url"),
+                    "urlToImage": a.get("urlToImage"),
+                    "publishedAt": (
+                        published_dt.astimezone(timezone.utc).isoformat()
+                        if isinstance(published_dt, datetime)
+                        else published_at
+                    ),
+                }
+            )
+
+        _NEWSAPI_FULL_CACHE[pair] = {
+            "schema_version": 1,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "pair": pair,
+            "request": {
+                "endpoint": "https://newsapi.org/v2/everything",
+                "params": cached_params,
+            },
+            "response": {
+                "status": data.get("status"),
+                "totalResults": data.get("totalResults"),
+            },
+            "articles": full_articles,
+        }
+    except Exception:
+        # Cache is best-effort; never fail the run because of it.
+        pass
+
     items: List[Dict] = []
     for a in articles:
         try:
@@ -584,6 +682,53 @@ def fetch_newsapi_fx_pair(
 
     print(f"[INFO] NewsAPI.org items collected: {len(items)}")
     return items
+
+
+def save_newsapi_full_json(pair: str, path: str) -> bool:
+    """
+    Save a separate JSON containing the full NewsAPI articles (including `content`)
+    for later reuse.
+    """
+    payload = _NEWSAPI_FULL_CACHE.get(pair)
+    if not isinstance(payload, dict):
+        return False
+
+    # Expand truncated `content` like "... [+1234 chars]" by fetching the
+    # original article URL and extracting full text. This is best-effort:
+    # some sites may block scraping or show paywalls.
+    try:
+        articles = payload.get("articles")
+        if isinstance(articles, list):
+            for a in articles:
+                if not isinstance(a, dict):
+                    continue
+                content = a.get("content")
+                url = a.get("url")
+                if not (isinstance(content, str) and isinstance(url, str) and url):
+                    continue
+
+                # NewsAPI often truncates content and appends "[+NNNN chars]".
+                if not re.search(r"\[\+\d+\schars\]\s*$", content):
+                    continue
+
+                full_text = fetch_article_full_text(url)
+                if full_text:
+                    a["content_truncated"] = content
+                    a["content"] = full_text
+                    a["content_extracted_from_url"] = True
+                else:
+                    a["content_extracted_from_url"] = False
+    except Exception:
+        pass
+
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Saved NewsAPI full content to {path!r}")
+        return True
+    except Exception as exc:
+        debug_log(f"[WARN] Failed to save NewsAPI full JSON: {exc}")
+        return False
 
 
 # ---------------------------------------------------------------------------
@@ -909,22 +1054,26 @@ def collect_news_for_pair(
         )
 
     # 4) NewsAPI.org (optional API source)
-    if enable_newsapi and (remaining is None or remaining > 0):
-        cap = remaining
-        if isinstance(newsapi_max_items, int) and newsapi_max_items > 0:
-            cap = min(cap, newsapi_max_items) if cap is not None else newsapi_max_items
-        before = len(raw_items)
-        raw_items.extend(
-            fetch_newsapi_fx_pair(
-                pair=pair,
-                start_date=start_date,
-                end_date=end_date,
-                max_items=cap,
-            )
+    # If enabled, always call it so we can also save a separate "full content"
+    # NewsAPI JSON file for future use (even if max_items was already reached).
+    if enable_newsapi:
+        cap = newsapi_max_items if isinstance(newsapi_max_items, int) else None
+        newsapi_items = fetch_newsapi_fx_pair(
+            pair=pair,
+            start_date=start_date,
+            end_date=end_date,
+            max_items=cap,
         )
-        if remaining is not None:
+
+        if remaining is None or remaining > 0:
+            before = len(raw_items)
+            if remaining is None:
+                raw_items.extend(newsapi_items)
+            else:
+                raw_items.extend(newsapi_items[:remaining])
             added = len(raw_items) - before
-            remaining = max(0, remaining - added)
+            if remaining is not None:
+                remaining = max(0, remaining - added)
 
     if not raw_items:
         return []
@@ -1573,6 +1722,20 @@ def main() -> None:
         "newsapi_max_items": cfg.get("newsapi_max_items", None),
         "llm_enabled": cfg.get("enabled_llm_providers", []),
     }
+
+    # Additionally save a separate NewsAPI-only JSON with full content
+    # for future access/reuse.
+    if (
+        asset_type == "currency"
+        and bool(cfg.get("enable_newsapi", False))
+        and isinstance(asset, str)
+    ):
+        base_no_ext, _ = os.path.splitext(output_path)
+        if base_no_ext.endswith("_news"):
+            newsapi_full_path = base_no_ext[:-5] + "_newsapi_full.json"
+        else:
+            newsapi_full_path = base_no_ext + "_newsapi_full.json"
+        save_newsapi_full_json(asset, newsapi_full_path)
 
     if args.no_llm:
         save_news_to_json(news_items, output_path, meta=meta, analysis={})

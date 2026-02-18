@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "meta": {
-    "generated_at": "2026-02-17T05:03:25.953552+00:00",
+    "generated_at": "2026-02-18T17:59:36.712944+00:00",
     "asset_type": "currency",
     "asset": "EUR/USD",
     "start_date": "2026-02-09",
@@ -27,7 +27,7 @@
       "title": "Analyst Ratings",
       "url": "https://www.investing.com/news/analyst-ratings",
       "published_at": null,
-      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "snippet": "Investing.com - The U.S. dollar edged higher Wednesday ahead of the release of the minutes from the Federal Reserve’s latest...",
       "asset_type": "currency"
     },
     {
@@ -37,7 +37,7 @@
       "title": "Economic Indicators",
       "url": "https://www.investing.com/news/economic-indicators",
       "published_at": null,
-      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "snippet": "Investing.com - The U.S. dollar edged higher Wednesday ahead of the release of the minutes from the Federal Reserve’s latest...",
       "asset_type": "currency"
     },
     {
@@ -47,7 +47,7 @@
       "title": "Sports & General",
       "url": "https://www.investing.com/news/general",
       "published_at": null,
-      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "snippet": "Investing.com - The U.S. dollar edged higher Wednesday ahead of the release of the minutes from the Federal Reserve’s latest...",
       "asset_type": "currency"
     },
     {
@@ -57,7 +57,7 @@
       "title": "Insider Trading",
       "url": "https://www.investing.com/news/insider-trading-news",
       "published_at": null,
-      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "snippet": "Investing.com - The U.S. dollar edged higher Wednesday ahead of the release of the minutes from the Federal Reserve’s latest...",
       "asset_type": "currency"
     },
     {
@@ -67,117 +67,117 @@
       "title": "Investment Ideas",
       "url": "https://www.investing.com/news/investment-ideas",
       "published_at": null,
-      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "snippet": "Investing.com - The U.S. dollar edged higher Wednesday ahead of the release of the minutes from the Federal Reserve’s latest...",
       "asset_type": "currency"
     },
     {
       "id": 6,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Dollar holds gains in thin trading as markets await Fed minutes, US GDP",
-      "url": "https://www.investing.com/news/economy-news/dollar-holds-gains-in-thin-trading-as-markets-await-fed-minutes-us-gdp-4507836",
+      "title": "Dollar rises ahead of Fed minutes; sterling turns lower as traders parse CPI",
+      "url": "https://www.investing.com/news/forex-news/dollar-edges-higher-ahead-of-fed-minutes-sterling-gains-post-cpi-4510274",
       "published_at": null,
-      "snippet": "By Rocky Swift TOKYO, Feb 17 (Reuters) - The dollar held gains on Tuesday as markets awaited signals, expected later this week,...",
+      "snippet": "Investing.com - The U.S. dollar edged higher Wednesday ahead of the release of the minutes from the Federal Reserve’s latest...",
       "asset_type": "currency"
     },
     {
       "id": 7,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "EUR/USD: Goldman sees further upside amid broad USD weakness",
-      "url": "https://www.investing.com/news/forex-news/eurusd-goldman-sees-further-upside-amid-broad-usd-weakness-93CH-4507614",
+      "title": "Euro dips on reports ECB chief to leave, dollar extends gains after data",
+      "url": "https://www.investing.com/news/economy-news/dollar-holds-gains-as-markets-focus-on-peace-talks-fed-minutes-4509951",
       "published_at": null,
-      "snippet": "Investing.com - Goldman Sachs raised its outlook for the Euro on Monday, projecting further upside in the coming months despite...",
+      "snippet": "By Chuck Mikolajczak NEW YORK, Feb 18 (Reuters) - The euro declined on Wednesday after a report that European Central Bank (ECB)...",
       "asset_type": "currency"
     },
     {
       "id": 8,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Factbox-How to boost the international role of the euro",
-      "url": "https://www.investing.com/news/economy-news/factboxhow-to-boost-the-international-role-of-the-euro-4507610",
+      "title": "Lagarde’s possible early departure leaves investors pondering replacements",
+      "url": "https://www.investing.com/news/economy-news/lagardes-possible-early-departure-leaves-investors-pondering-replacements-4511253",
       "published_at": null,
-      "snippet": "(Repeats) \nBy Jan Strupczewski BRUSSELS, Feb 16 (Reuters) - Euro zone finance ministers will discuss on Monday how to boost the...",
+      "snippet": "By Yoruk Bahceli and Harry Robertson LONDON, Feb 18 (Reuters) - Traders on Wednesday were trying to work out what European...",
       "asset_type": "currency"
     },
     {
       "id": 9,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Dollar struggles to post gains; yen suffers from weak growth data",
-      "url": "https://www.investing.com/news/forex-news/dollar-struggles-to-post-gains-yen-suffers-from-weak-growth-data-4507493",
+      "title": "Trading Day: AI disruption, US-Iran nuclear talks, rate cut bets keep investors on their toes",
+      "url": "https://www.investing.com/news/economy-news/trading-day-ai-disruption-usiran-nuclear-talks-rate-cut-bets-keep-investors-on-their-toes-4509904",
       "published_at": null,
-      "snippet": "Investing.com - The U.S. dollar edged marginally higher Monday, struggling to make much progress in holiday-thinned trade after...",
+      "snippet": "By Stephen Culp \nNEW YORK, Feb 17 (Reuters) - Wall Street stocks see-sawed to nominal gains on Tuesday as investors juggled...",
       "asset_type": "currency"
     },
     {
       "id": 10,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "How to boost the international role of the euro",
-      "url": "https://www.investing.com/news/economy-news/how-to-boost-the-international-role-of-the-euro-4507448",
+      "title": "Dollar firms ahead of data dump; sterling falls after quits rate hits 5-year high",
+      "url": "https://www.investing.com/news/forex-news/dollar-edges-higher-ahead-of-data-dump-sterling-weakens-on-weak-labor-market-4508057",
       "published_at": null,
-      "snippet": "By Jan Strupczewski BRUSSELS, Feb 13 (Reuters) - Euro zone finance ministers will on Monday discuss how to boost the...",
+      "snippet": "Investing.com -- The U.S. dollar rose Tuesday ahead of more key data as investors returned from a long weekend. Meanwhile, the...",
       "asset_type": "currency"
     },
     {
       "id": 11,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "GRAPHIC- Europe’s earnings gain pace while lofty valuations cap rewards",
-      "url": "https://www.investing.com/news/stock-market-news/europes-earnings-gain-pace-while-lofty-valuations-cap-rewards-4507359",
-      "published_at": null,
-      "snippet": "LONDON, Feb 16 (Reuters) - European company earnings growth is picking up this reporting season against a tentatively improving...",
+      "title": "EUR/USD: Goldman sees further upside amid broad USD weakness",
+      "url": "https://www.investing.com/news/forex-news/eurusd-goldman-sees-further-upside-amid-broad-usd-weakness-93CH-4507614",
+      "published_at": "2026-02-16T00:00:00+00:00",
+      "snippet": "Investing.com - Goldman Sachs raised its outlook for the Euro on Monday, projecting further upside in the coming months despite...",
       "asset_type": "currency"
     },
     {
       "id": 12,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "ECB makes euro backstop global to bolster currency’s role",
-      "url": "https://www.investing.com/news/economy-news/ecb-makes-euro-backstop-global-to-bolster-currencys-role-4507256",
-      "published_at": "2026-02-14T00:00:00+00:00",
-      "snippet": "FRANKFURT, Feb 14 (Reuters) - The European Central Bank unveiled plans on Saturday to widen access to its euro liquidity...",
+      "title": "Factbox-How to boost the international role of the euro",
+      "url": "https://www.investing.com/news/economy-news/factboxhow-to-boost-the-international-role-of-the-euro-4507610",
+      "published_at": "2026-02-16T00:00:00+00:00",
+      "snippet": "(Repeats) \nBy Jan Strupczewski BRUSSELS, Feb 16 (Reuters) - Euro zone finance ministers will discuss on Monday how to boost the...",
       "asset_type": "currency"
     },
     {
       "id": 13,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Factbox-ECB opens up euro lifeline in bid to boost global role",
-      "url": "https://www.investing.com/news/economy-news/factboxecb-opens-up-euro-lifeline-in-bid-to-boost-global-role-4507257",
-      "published_at": "2026-02-14T00:00:00+00:00",
-      "snippet": "FRANKFURT, Feb 14 (Reuters) - The European Central Bank is opening its euro lifeline to nearly all foreign countries to boost the...",
+      "title": "Dollar struggles to post gains; yen suffers from weak growth data",
+      "url": "https://www.investing.com/news/forex-news/dollar-struggles-to-post-gains-yen-suffers-from-weak-growth-data-4507493",
+      "published_at": "2026-02-16T00:00:00+00:00",
+      "snippet": "Investing.com - The U.S. dollar edged marginally higher Monday, struggling to make much progress in holiday-thinned trade after...",
       "asset_type": "currency"
     },
     {
       "id": 14,
       "currency_pair": "EUR/USD",
-      "source": "Investing.com",
-      "title": "What is the actual Forex impact on stock market? JPMorgan answers",
-      "url": "https://www.investing.com/news/pro/what-is-the-actual-forex-impact-on-stock-market-jpmorgan-answers-432SI-4507229",
-      "published_at": "2026-02-14T00:00:00+00:00",
-      "snippet": "Investing.com -- The U.S. dollar was marginally lower on Friday, as traders slightly upped their bets for further Federal Reserve...",
+      "source": "MarketWatch",
+      "title": "Dollar Rises After Better-Than-Expected U.S. Durable Goods Data",
+      "url": "https://www.wsj.com/finance/currencies/new-zealand-dollar-falls-on-a-more-dovish-than-expected-rbnz-4f68dbab?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The DXY dollar index extended gains after U.S. durable goods orders exceeded expectations.",
       "asset_type": "currency"
     },
     {
       "id": 15,
       "currency_pair": "EUR/USD",
-      "source": "Investing.com",
-      "title": "Dollar edges down after cooler inflation data, set for third weekly loss in four",
-      "url": "https://www.investing.com/news/forex-news/dollar-on-track-for-weekly-loss-cpi-data-in-spotlight-4504533",
-      "published_at": "2026-02-13T00:00:00+00:00",
-      "snippet": "Investing.com -- The U.S. dollar was marginally lower on Friday, as traders slightly upped their bets for further Federal Reserve...",
+      "source": "MarketWatch",
+      "title": "Gold falls below $5,000 mark, silver drops as demand weakens during Lunar New Year holiday",
+      "url": "https://www.marketwatch.com/story/gold-prices-tumble-below-5-000-as-china-holidays-dent-support-d093e677?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Sterling extended its losses to reach a four-week low against the euro after weak U.K. jobs data boosted the prospect of another interest-rate cut as soon as March.",
       "asset_type": "currency"
     },
     {
       "id": 16,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
-      "title": "Asian Currencies Consolidate as Lunar New Year Holidays Dim Trading",
+      "title": "Sterling Extends Losses After Soft Jobs Data",
       "url": "https://www.wsj.com/finance/currencies/yen-stronger-further-gains-may-rest-on-takaichis-econ-steps-6ed6dc0e?mod=mw_quote_news",
       "published_at": null,
-      "snippet": "Asian currencies consolidated against the U.S. dollar as Lunar New Year holidays in most of the region dim trading.",
+      "snippet": "Sterling extended its losses to reach a four-week low against the euro after weak U.K. jobs data boosted the prospect of another interest-rate cut as soon as March.",
       "asset_type": "currency"
     },
     {
@@ -337,7 +337,7 @@
       "title": "Bitcoin bounces above $70K but is still headed for its worst week since 2022",
       "url": "https://www.marketwatch.com/story/bitcoin-rises-after-brutal-week-of-selling-3e74d460?mod=mw_quote_news",
       "published_at": null,
-      "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+      "snippet": "",
       "asset_type": "currency"
     },
     {
@@ -347,31 +347,11 @@
       "title": "Bitcoin Booster’s $12 Billion Loss Headlines Crypto’s Worst Day Since 2022 Crash",
       "url": "https://www.wsj.com/finance/currencies/strategy-earnings-fourth-2025-33688dab?mod=mw_quote_news",
       "published_at": null,
-      "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
+      "snippet": "",
       "asset_type": "currency"
     },
     {
       "id": 34,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "The WSJ Dollar Index Rises 0.33% to 95.35",
-      "url": "https://www.wsj.com/finance/currencies/yen-consolidates-amid-risks-of-japans-verbal-intervention-f3a32df4?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The WSJ Dollar Index rose 0.3% — up four of the past five trading days.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 35,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "The WSJ Dollar Index Rises 0.29% to 95.03",
-      "url": "https://www.wsj.com/finance/currencies/yen-mostly-weakens-on-prospect-of-big-election-win-for-ldp-daafefbf?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The WSJ Dollar Index rose 0.3% — up three of the past four trading days.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 36,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: newsBTC",
       "title": "XRP Ledger Positioned At The Heart Of Japan’s Next Financial Transformation",
@@ -381,7 +361,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 37,
+      "id": 35,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: Cointelegraph",
       "title": "Germany‘s central bank president touts stablecoin and CBDC benefits for EU",
@@ -391,7 +371,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 38,
+      "id": 36,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: Crypto Briefing",
       "title": "Brent Johnson: Dedollarization is complex and unlikely, the Dollar Milkshake Theory reveals market impacts, and a currency crisis is mathematically inevitable | Bankless",
@@ -401,7 +381,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 39,
+      "id": 37,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: Theflightdeal.com",
       "title": "American: Philadelphia – Dublin, Ireland. $477 (Basic Economy) / $677 (Regular Economy). Roundtrip, including all Taxes",
@@ -411,7 +391,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 40,
+      "id": 38,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: GlobeNewswire",
       "title": "Vicat - FY 2025 Results",
@@ -421,7 +401,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 41,
+      "id": 39,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: Theflightdeal.com",
       "title": "Iberia: Miami – Madrid, Spain. $426 (Basic Economy) / $626 (Regular Economy). Roundtrip, including all Taxes",
@@ -431,7 +411,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 42,
+      "id": 40,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: CoinDesk",
       "title": "From Wall Street to Web3: This is crypto’s year of integration, Silicon Valley Bank says",
@@ -441,7 +421,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 43,
+      "id": 41,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: Financial Post",
       "title": "Euro-Area Finance Chiefs Push for Bigger Role of Single Currency",
@@ -451,7 +431,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 44,
+      "id": 42,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: Digital Journal",
       "title": "Asian markets sluggish as Lunar New Year holiday looms",
@@ -461,7 +441,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 45,
+      "id": 43,
       "currency_pair": "EUR/USD",
       "source": "NewsAPI: Theflightdeal.com",
       "title": "United: Boston – Porto, Portugal. $376 (Basic Economy) / $576 (Regular Economy). Roundtrip, including all Taxes",
@@ -471,7 +451,5 @@
       "asset_type": "currency"
     }
   ],
-  "analysis": {
-    "deepseek": "**1. Key Market Drivers**\n*   **Monetary Policy Focus:** Market attention is on the upcoming FOMC Meeting Minutes and US GDP data, which will shape expectations for the Fed's rate path.\n*   **Broad USD Weakness:** A prevailing theme of US Dollar softness, as cited by Goldman Sachs, is providing underlying support for EUR/USD.\n*   **Risk Sentiment & Liquidity:** Thin, pre-holiday trading conditions are amplifying price moves and may lead to heightened volatility around data releases.\n\n**2. Short-Term Outlook (1-3 Days)**\nSlightly bullish but choppy. The pair is likely to trade with an upward bias, driven by the broad USD weakness narrative. However, direction will be dictated by the reaction to the Fed Minutes and US GDP data. Any hawkish Fed nuances or strong US data could trigger a pullback, while dovish tones or weak data could accelerate gains. Expect increased volatility in thin year-end markets.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\nCautiously bullish, contingent on data. The path of least resistance remains higher if the USD weakness theme persists and key US data does not dramatically alter the Fed's dovish pivot narrative. The pair will aim to consolidate above recent resistance levels, but momentum may fade as the year ends due to reduced liquidity.\n\n**4. Trading Bias & Reasoning**\n**Bullish.**\n*   The primary driver is the cited \"broad USD weakness\" environment.\n*   Major bank analysis (Goldman Sachs) aligns with a continued upside view.\n*   Technical momentum favors bulls as long as key support holds.\n\n**5. Main Risks / Alternative Scenarios**\n*   **Hawkish Fed Surprise:** If the FOMC Minutes or upcoming US data (PCE) signal a more cautious, less dovish Fed than markets currently price, the USD could rebound sharply.\n*   **Year-End Liquidity Squeeze:** Illiquid markets can lead to exaggerated, technically-driven reversals that defy fundamental drivers.\n*   **Eurozone Data Deterioration:** Weak upcoming Eurozone data could shift the relative central bank policy outlook, undermining EUR support.\n*   **Risk-Off Shift:** A sudden deterioration in global risk sentiment could trigger safe-haven USD buying, overpowering the current weakness theme."
-  }
+  "analysis": {}
 }
