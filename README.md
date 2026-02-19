@@ -1,3 +1,12 @@
+Updates 2/19/2026
+1. Added a DeepSeek pre-analysis step for fx pairs to (a) compare news across sources, (b) rate news quality (relevance/credibility/signal/timeliness), (c) detect duplicates, and (d) recommend the best subset of articles before generating the final analysis report. The results are saved under `pre_analysis` in the output JSON.
+2. Supported FX pairs are: `"EUR/USD"`, `"USD/JPY"`, `"GBP/USD"`, `"USD/CNY"`, `"USD/CAD"`, `"AUD/USD"`. Change `currency_pair` in `default_config.json` to analyze a different pair.
+3. NewsAPI now saves two additional FX files:
+   - `{pair}_newsapi_content.json`: append-only content store (de-duplicated by URL; adds only newly seen articles)
+   - `{pair}_newsapi_quality.json`: DeepSeek relevance classification for the current run (counts printed once to terminal). The final LLM report uses only the related NewsAPI articles.
+4. Each enabled LLM provider also saves its terminal output to a separate JSON file:
+   - `{pair}_deepseek.json`, `{pair}_chatgpt.json`, `{pair}_gemini.json` once the targed LLM model is selected to output a report.
+
 Updates 2/18/2026
 1. Now with each run, the news collected from news api can be seen in another json file. For example, besides the basic information storaged in the file eur_usd_news.json, there is another file generated "eur_usd_news.json". In the column of "content", you can see the exact contents of the news collected. Since there is no valid access of contents to the cratching websites, only fx pairs of news api are available now.
 
@@ -67,6 +76,9 @@ This project is config-driven. The most important fields are:
 - **`stock`**: e.g. `"AAPL"` (used when `asset_type="stock"`)
 - **`start_date` / `end_date`**: `"YYYY-MM-DD"` (UTC, inclusive)
 - **`max_news`**: maximum number of news items to collect per run (`null` = no limit)
+- **`enable_pre_analysis`**: if `true`, uses DeepSeek to compare sources + rate article quality before the main report
+- **`pre_analysis_max_articles`**: how many collected articles are sent to DeepSeek for the pre-analysis step
+- **`pre_analysis_filter_for_report`**: if `true`, the main report LLM(s) will only see the `recommended_news_ids` subset from pre-analysis
 - **`llm_models`**: enable/disable each model with `{"enabled": true/false}`
 
 Example (FX mode):

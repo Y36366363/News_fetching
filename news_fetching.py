@@ -19,7 +19,7 @@ import time
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
 from datetime import date, datetime, timedelta, timezone
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 from bs4 import BeautifulSoup
@@ -684,51 +684,182 @@ def fetch_newsapi_fx_pair(
     return items
 
 
-def save_newsapi_full_json(pair: str, path: str) -> bool:
+def _load_json_file_best_effort(path: str) -> object:
+    if not os.path.exists(path):
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+
+def _is_newsapi_content_truncated(text: str) -> bool:
+    return bool(re.search(r"\[\+\d+\schars\]\s*$", text or ""))
+
+
+def _normalize_single_line(text: str) -> str:
     """
-    Save a separate JSON containing the full NewsAPI articles (including `content`)
-    for later reuse.
+    Collapse all whitespace (including newlines) into single spaces.
+    Useful for storing long article content compactly in JSON.
+    """
+    if not isinstance(text, str):
+        return ""
+    # Split/join collapses runs of whitespace and removes \n/\r/\t.
+    return " ".join(text.split()).strip()
+
+
+def update_newsapi_content_store(pair: str, path: str) -> Dict[str, Any]:
+    """
+    Maintain an append-only NewsAPI *content* store:
+    - Stores only article objects (root is a JSON list).
+    - Does NOT overwrite/reset previous content each run; it only appends new items.
+    - De-duplicates by `url`.
+
+    Returns: {"total": int, "added": int, "skipped_existing": int, "path": str}
     """
     payload = _NEWSAPI_FULL_CACHE.get(pair)
     if not isinstance(payload, dict):
-        return False
+        return {"total": 0, "added": 0, "skipped_existing": 0, "path": path, "error": "No cached NewsAPI payload for this run."}
 
-    # Expand truncated `content` like "... [+1234 chars]" by fetching the
-    # original article URL and extracting full text. This is best-effort:
-    # some sites may block scraping or show paywalls.
+    existing_raw = _load_json_file_best_effort(path)
+    existing_articles: List[Dict[str, Any]] = []
+    if isinstance(existing_raw, list):
+        existing_articles = [a for a in existing_raw if isinstance(a, dict)]
+    elif isinstance(existing_raw, dict) and isinstance(existing_raw.get("articles"), list):
+        # Backward compatibility: if an older dict format exists, read its articles.
+        existing_articles = [a for a in existing_raw["articles"] if isinstance(a, dict)]
+
+    # Normalize existing records in-place (single-line content; drop non-content metadata).
+    url_to_existing: Dict[str, Dict[str, Any]] = {}
+    for a in existing_articles:
+        url = a.get("url")
+        if not (isinstance(url, str) and url):
+            continue
+        a["content"] = _normalize_single_line(a.get("content") or "")
+        # These are useful for debugging, but the user wants only main content.
+        a.pop("content_truncated", None)
+        a.pop("content_extracted_from_url", None)
+        url_to_existing[url] = a
+
+    existing_urls = set(url_to_existing.keys())
+
+    cached_articles = payload.get("articles")
+    if not isinstance(cached_articles, list):
+        cached_articles = []
+
+    added = 0
+    skipped = 0
+    upgraded_existing = 0
+    new_articles: List[Dict[str, Any]] = []
+
+    for a in cached_articles:
+        if not isinstance(a, dict):
+            continue
+        url = a.get("url")
+        if not (isinstance(url, str) and url):
+            continue
+        if url in existing_urls:
+            # If we already have this URL but its content is still truncated/empty,
+            # try to upgrade it to full extracted text (best-effort).
+            existing = url_to_existing.get(url)
+            if isinstance(existing, dict):
+                existing_content = existing.get("content") or ""
+                if (not isinstance(existing_content, str)) or _is_newsapi_content_truncated(existing_content) or len(existing_content) < 200:
+                    full_text = fetch_article_full_text(url)
+                    if full_text:
+                        existing["content"] = _normalize_single_line(full_text)
+                        upgraded_existing += 1
+            skipped += 1
+            continue
+
+        # Expand truncated content best-effort for new items only.
+        content = a.get("content")
+        if isinstance(content, str) and _is_newsapi_content_truncated(content):
+            full_text = fetch_article_full_text(url)
+            if full_text:
+                a["content"] = full_text
+            else:
+                # Keep truncated string as-is if we cannot fetch full text.
+                pass
+
+        # Keep only the fields we want in the content store.
+        src = a.get("source")
+        src_name = src.get("name") if isinstance(src, dict) else None
+        stored: Dict[str, Any] = {
+            "source": src_name or src or None,
+            "author": a.get("author"),
+            "title": a.get("title"),
+            "description": a.get("description"),
+            "url": url,
+            "urlToImage": a.get("urlToImage"),
+            "publishedAt": a.get("publishedAt"),
+            "content": _normalize_single_line(a.get("content") or ""),
+        }
+
+        new_articles.append(stored)
+        existing_urls.add(url)
+        url_to_existing[url] = stored
+        added += 1
+
+    merged = existing_articles + new_articles
     try:
-        articles = payload.get("articles")
-        if isinstance(articles, list):
-            for a in articles:
-                if not isinstance(a, dict):
-                    continue
-                content = a.get("content")
-                url = a.get("url")
-                if not (isinstance(content, str) and isinstance(url, str) and url):
-                    continue
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(merged, f, ensure_ascii=False, indent=2)
+        print(
+            f"[INFO] Updated NewsAPI content store: added {added}, upgraded {upgraded_existing}, "
+            f"total {len(merged)} -> {path!r}"
+        )
+    except Exception as exc:
+        return {
+            "total": len(merged),
+            "added": added,
+            "upgraded_existing": upgraded_existing,
+            "skipped_existing": skipped,
+            "path": path,
+            "error": str(exc),
+        }
 
-                # NewsAPI often truncates content and appends "[+NNNN chars]".
-                if not re.search(r"\[\+\d+\schars\]\s*$", content):
-                    continue
+    return {
+        "total": len(merged),
+        "added": added,
+        "upgraded_existing": upgraded_existing,
+        "skipped_existing": skipped,
+        "path": path,
+    }
 
-                full_text = fetch_article_full_text(url)
-                if full_text:
-                    a["content_truncated"] = content
-                    a["content"] = full_text
-                    a["content_extracted_from_url"] = True
-                else:
-                    a["content_extracted_from_url"] = False
-    except Exception:
-        pass
+
+def normalize_newsapi_content_store(path: str) -> Dict[str, Any]:
+    """
+    One-shot formatter for an existing `{pair}_newsapi_content.json` file:
+    - Ensures `content` is stored as a single line (whitespace-collapsed).
+    - Removes `content_truncated` and `content_extracted_from_url` fields.
+
+    This does NOT fetch the network; it only rewrites formatting.
+    """
+    raw = _load_json_file_best_effort(path)
+    articles: List[Dict[str, Any]] = []
+    if isinstance(raw, list):
+        articles = [a for a in raw if isinstance(a, dict)]
+    elif isinstance(raw, dict) and isinstance(raw.get("articles"), list):
+        articles = [a for a in raw["articles"] if isinstance(a, dict)]
+
+    changed = 0
+    for a in articles:
+        before = a.get("content")
+        a["content"] = _normalize_single_line(a.get("content") or "")
+        a.pop("content_truncated", None)
+        a.pop("content_extracted_from_url", None)
+        if before != a.get("content"):
+            changed += 1
 
     try:
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
-        print(f"[INFO] Saved NewsAPI full content to {path!r}")
-        return True
+            json.dump(articles, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Normalized NewsAPI content store: changed {changed}, total {len(articles)} -> {path!r}")
+        return {"total": len(articles), "changed": changed, "path": path}
     except Exception as exc:
-        debug_log(f"[WARN] Failed to save NewsAPI full JSON: {exc}")
-        return False
+        return {"total": len(articles), "changed": changed, "path": path, "error": str(exc)}
 
 
 # ---------------------------------------------------------------------------
@@ -1229,6 +1360,7 @@ def save_news_to_json(
     *,
     meta: Optional[Dict] = None,
     analysis: Optional[Dict[str, str]] = None,
+    pre_analysis: Optional[Dict] = None,
 ) -> None:
     """
     Save crawled news to JSON.
@@ -1236,10 +1368,10 @@ def save_news_to_json(
     Backward compatible:
     - If meta/analysis are not provided, writes a simple list (legacy format).
     - If meta and/or analysis are provided, writes a report object:
-      {schema_version, meta, news, analysis}
+      {schema_version, meta, news, analysis, pre_analysis}
     """
     payload_news = [asdict(item) for item in news]
-    if meta is None and analysis is None:
+    if meta is None and analysis is None and pre_analysis is None:
         payload = payload_news
     else:
         payload = {
@@ -1247,6 +1379,7 @@ def save_news_to_json(
             "meta": meta or {},
             "news": payload_news,
             "analysis": analysis or {},
+            "pre_analysis": pre_analysis or {},
         }
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
@@ -1286,7 +1419,7 @@ def load_news_from_json(path: str) -> List[NewsItem]:
     return news
 
 
-def load_default_config() -> Dict[str, Optional[str]]:
+def load_default_config() -> Dict[str, object]:
     """
     Load default configuration from default_config.json if present.
     Only keys relevant to this script are used; unknown keys are ignored.
@@ -1304,6 +1437,9 @@ def load_default_config() -> Dict[str, Optional[str]]:
             "enable_yahoo": True,
             "enable_newsapi": False,
             "newsapi_max_items": None,
+            "enable_pre_analysis": True,
+            "pre_analysis_max_articles": 20,
+            "pre_analysis_filter_for_report": True,
             "enabled_llm_providers": ["deepseek", "openai"],
         }
 
@@ -1324,6 +1460,9 @@ def load_default_config() -> Dict[str, Optional[str]]:
             "enable_yahoo": True,
             "enable_newsapi": False,
             "newsapi_max_items": None,
+            "enable_pre_analysis": True,
+            "pre_analysis_max_articles": 20,
+            "pre_analysis_filter_for_report": True,
             "enabled_llm_providers": ["deepseek", "openai"],
         }
 
@@ -1340,6 +1479,9 @@ def load_default_config() -> Dict[str, Optional[str]]:
     enable_marketwatch = bool(data.get("enable_marketwatch", True))
     enable_yahoo = bool(data.get("enable_yahoo", True))
     enable_newsapi = bool(data.get("enable_newsapi", False))
+    enable_pre_analysis = bool(data.get("enable_pre_analysis", True))
+    pre_analysis_max_articles = data.get("pre_analysis_max_articles", 20)
+    pre_analysis_filter_for_report = bool(data.get("pre_analysis_filter_for_report", True))
     newsapi_max_items = data.get("newsapi_max_items", None)
     if not (isinstance(newsapi_max_items, int) and newsapi_max_items > 0):
         newsapi_max_items = None
@@ -1350,6 +1492,9 @@ def load_default_config() -> Dict[str, Optional[str]]:
     elif asset_type == "stock":
         if not stock or stock not in SUPPORTED_STOCKS:
             stock = "AAPL"  # Default to Apple if invalid stock
+
+    if not (isinstance(pre_analysis_max_articles, int) and pre_analysis_max_articles > 0):
+        pre_analysis_max_articles = 20
 
     # Parse llm_models: each model can have enabled=true/false
     enabled_providers: List[str] = []
@@ -1375,6 +1520,9 @@ def load_default_config() -> Dict[str, Optional[str]]:
         "enable_yahoo": enable_yahoo,
         "enable_newsapi": enable_newsapi,
         "newsapi_max_items": newsapi_max_items,
+        "enable_pre_analysis": enable_pre_analysis,
+        "pre_analysis_max_articles": pre_analysis_max_articles,
+        "pre_analysis_filter_for_report": pre_analysis_filter_for_report,
         "enabled_llm_providers": enabled_providers,
     }
 
@@ -1444,6 +1592,323 @@ def build_analysis_prompt(news_context: str, asset: str, asset_type: str = "curr
         )
 
 
+def _try_parse_json_object(text: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Best-effort JSON object parser for LLM responses.
+
+    Returns: (parsed_dict_or_None, error_message_or_None)
+    """
+    if not text:
+        return None, "empty response"
+
+    cleaned = text.strip()
+
+    # Strip common Markdown code fences.
+    if cleaned.startswith("```"):
+        cleaned = re.sub(r"^```[a-zA-Z0-9_-]*\n", "", cleaned)
+        cleaned = re.sub(r"\n```$", "", cleaned).strip()
+
+    # Fast path: full JSON
+    try:
+        obj = json.loads(cleaned)
+        if isinstance(obj, dict):
+            return obj, None
+        return None, "top-level JSON is not an object"
+    except Exception:
+        pass
+
+    # Fallback: extract the first {...} block.
+    start = cleaned.find("{")
+    end = cleaned.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return None, "no JSON object found"
+    candidate = cleaned[start : end + 1]
+    try:
+        obj = json.loads(candidate)
+        if isinstance(obj, dict):
+            return obj, None
+        return None, "extracted JSON is not an object"
+    except Exception as exc:
+        return None, f"failed to parse JSON: {exc}"
+
+
+def build_pre_analysis_prompt(news_context: str, pair: str) -> str:
+    return (
+        "You are a financial news quality rater for FX trading.\n"
+        f"Your task: compare and judge the quality of the collected news for {pair} "
+        "across different sources.\n\n"
+        "Return STRICT JSON (no markdown, no code fences, no extra text).\n"
+        "The JSON must follow this schema exactly:\n"
+        "{\n"
+        '  "pair": string,\n'
+        '  "source_summary": { "<source>": {"coverage": 0-10, "credibility": 0-10, "signal": 0-10, "notes": string} },\n'
+        '  "themes": [ {"theme": string, "importance": 0-10, "evidence_news_ids": [int]} ],\n'
+        '  "duplicates": [ {"group_id": string, "news_ids": [int], "canonical_news_id": int, "notes": string} ],\n'
+        '  "article_quality": [\n'
+        "    {\n"
+        '      "news_id": int,\n'
+        '      "source": string,\n'
+        '      "relevance": 0-10,\n'
+        '      "credibility": 0-10,\n'
+        '      "timeliness": 0-10,\n'
+        '      "signal": 0-10,\n'
+        '      "overall": 0-10,\n'
+        '      "is_duplicate": boolean,\n'
+        '      "duplicate_group_id": string | null,\n'
+        '      "reasons": [string]\n'
+        "    }\n"
+        "  ],\n"
+        '  "recommended_news_ids": [int],\n'
+        '  "excluded": [ {"news_id": int, "reason": string} ],\n'
+        '  "cross_source_comparison": {\n'
+        '     "agreements": [string],\n'
+        '     "conflicts": [string],\n'
+        '     "missing_coverage": [string],\n'
+        '     "best_sources": [string]\n'
+        "  }\n"
+        "}\n\n"
+        "Scoring guidance:\n"
+        "- credibility: original reporting / named sources / data-driven > opinion-only\n"
+        "- signal: macro, central bank, inflation, growth, risk sentiment, positioning > generic market recap\n"
+        "- timeliness: within the requested date window and latest updates score higher\n"
+        "- duplicates: group near-identical stories across sources\n"
+        "- recommended_news_ids: keep the smallest set that covers all key themes with high overall score\n\n"
+        "Here is the news context:\n\n"
+        f"{news_context}\n"
+    )
+
+
+def run_deepseek_pre_analysis(
+    news: List[NewsItem],
+    *,
+    pair: str,
+    max_articles: int = 20,
+) -> Dict[str, Any]:
+    """
+    DeepSeek-only pre-analysis: evaluate news quality + cross-source comparison.
+    Returns a dict; on failure, returns {"error": "..."}.
+    """
+    if not news:
+        return {"error": "No news provided for pre-analysis."}
+
+    client = make_deepseek_client()
+    if client is None:
+        return {"error": "DEEPSEEK_API_KEY not set; pre-analysis skipped."}
+
+    context = build_news_context_for_llm(
+        news, max_articles=max_articles, fetch_full_paragraphs=True
+    )
+    prompt = build_pre_analysis_prompt(context, pair)
+
+    print("\n[INFO] Requesting DeepSeek pre-analysis (quality + cross-source comparison)...")
+    try:
+        resp = client.chat.completions.create(
+            model="deepseek-chat",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.0,
+            max_tokens=2000,
+        )
+        raw = resp.choices[0].message.content or ""
+        parsed, err = _try_parse_json_object(raw)
+        if parsed is None:
+            return {"error": f"Failed to parse pre-analysis JSON: {err}", "raw": raw}
+        return parsed
+    except Exception as exc:
+        return {"error": f"Error calling DeepSeek for pre-analysis: {exc}"}
+
+
+def build_newsapi_relevance_prompt(pair: str, articles: List[Dict[str, Any]]) -> str:
+    """
+    Ask DeepSeek to classify NewsAPI articles by relevance to the FX pair.
+    """
+    blocks: List[str] = []
+    for idx, a in enumerate(articles, start=1):
+        if not isinstance(a, dict):
+            continue
+        url = a.get("url") or ""
+        title = a.get("title") or ""
+        published_at = a.get("publishedAt") or ""
+        source = a.get("source")
+        if isinstance(source, dict):
+            source = source.get("name")
+        content = a.get("content") or ""
+        if isinstance(content, str) and len(content) > 1200:
+            content = content[:1200] + "..."
+
+        blocks.append(
+            f"Article {idx}:\n"
+            f"URL: {url}\n"
+            f"Source: {source}\n"
+            f"Time: {published_at}\n"
+            f"Title: {title}\n"
+            f"Content: {content}\n"
+            f"---"
+        )
+
+    context = "\n\n".join(blocks)
+
+    return (
+        "You are a financial news relevance judge for FX trading.\n"
+        f"Classify NewsAPI articles by how relevant they are to the FX pair {pair}, and rate their quality.\n\n"
+        "Relevance rules:\n"
+        "- most_relevant: directly about the pair OR clearly about BOTH currencies and their exchange rate drivers\n"
+        "- relevant: clearly about ONLY ONE of the two currencies (EUR-only or USD-only), or a major USD/EUR driver but not explicitly the pair\n"
+        "- unrelated: not directly relevant to EUR or USD or FX; generic equity/crypto/corporate news without FX linkage\n\n"
+        "Return STRICT JSON only (no markdown, no extra text):\n"
+        "{\n"
+        '  "pair": string,\n'
+        '  "counts": {"most_relevant": int, "relevant": int, "unrelated": int},\n'
+        '  "selected_urls": [string],\n'
+        '  "items": [\n'
+        "    {\n"
+        '      "url": string,\n'
+        '      "label": "most_relevant" | "relevant" | "unrelated",\n'
+        '      "relevance_score": 0-10,\n'
+        '      "quality_score": 0-10,\n'
+        '      "reasons": [string]\n'
+        "    }\n"
+        "  ]\n"
+        "}\n\n"
+        "Important:\n"
+        "- Only include URLs that appear in the context.\n"
+        "- selected_urls should include ONLY most_relevant + relevant (exclude unrelated).\n"
+        "- Order selected_urls from best to worst using: (label, relevance_score, quality_score).\n\n"
+        "Here is the NewsAPI context:\n\n"
+        f"{context}\n"
+    )
+
+
+def run_deepseek_newsapi_relevance(
+    *,
+    pair: str,
+    articles: List[Dict[str, Any]],
+) -> Dict[str, Any]:
+    """
+    DeepSeek-only: classify NewsAPI articles by relevance to the FX pair.
+    """
+    client = make_deepseek_client()
+    if client is None:
+        return {"error": "DEEPSEEK_API_KEY not set; NewsAPI relevance analysis skipped."}
+    if not articles:
+        return {"error": "No NewsAPI articles provided for relevance analysis."}
+
+    prompt = build_newsapi_relevance_prompt(pair, articles)
+    print("\n[INFO] Requesting DeepSeek NewsAPI relevance analysis...")
+    try:
+        resp = client.chat.completions.create(
+            model="deepseek-chat",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.0,
+            max_tokens=1800,
+        )
+        raw = resp.choices[0].message.content or ""
+        parsed, err = _try_parse_json_object(raw)
+        if parsed is None:
+            return {"error": f"Failed to parse NewsAPI relevance JSON: {err}", "raw": raw}
+        return parsed
+    except Exception as exc:
+        return {"error": f"Error calling DeepSeek for NewsAPI relevance: {exc}"}
+
+
+def save_newsapi_relevance_json(pair: str, path: str, payload: Dict[str, Any]) -> bool:
+    try:
+        out = {
+            "schema_version": 1,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "pair": pair,
+            "relevance": payload,
+        }
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Saved NewsAPI relevance analysis to {path!r}")
+        return True
+    except Exception as exc:
+        debug_log(f"[WARN] Failed to save NewsAPI relevance JSON: {exc}")
+        return False
+
+
+def save_individual_llm_outputs(
+    *,
+    asset: str,
+    asset_type: str,
+    results: Dict[str, str],
+    output_prefix: str,
+) -> None:
+    """
+    Save each provider's analysis into its own JSON file, e.g.:
+    - eur_usd_deepseek.json
+    - eur_usd_chatgpt.json
+    - eur_usd_gemini.json
+    """
+    provider_to_filename = {
+        "deepseek": "deepseek",
+        "openai": "chatgpt",
+        "gemini": "gemini",
+    }
+
+    for provider, text in results.items():
+        if not isinstance(text, str):
+            continue
+        suffix = provider_to_filename.get(provider, provider)
+        path = f"{output_prefix}_{suffix}.json"
+        try:
+            payload = {
+                "schema_version": 1,
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "asset_type": asset_type,
+                "asset": asset,
+                "provider": provider,
+                "output": text,
+            }
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+            print(f"[INFO] Saved {provider} analysis output to {path!r}")
+        except Exception as exc:
+            debug_log(f"[WARN] Failed saving {provider} output JSON: {exc}")
+
+def _format_pre_analysis_summary(pre: Dict[str, Any]) -> str:
+    """
+    Compact summary injected into downstream LLM prompts.
+    """
+    if not pre or "error" in pre:
+        return ""
+
+    pair = pre.get("pair", "")
+    best_sources = []
+    csc = pre.get("cross_source_comparison")
+    if isinstance(csc, dict) and isinstance(csc.get("best_sources"), list):
+        best_sources = [str(x) for x in csc["best_sources"] if isinstance(x, str)]
+
+    themes = pre.get("themes")
+    top_themes: List[str] = []
+    if isinstance(themes, list):
+        for t in themes[:5]:
+            if isinstance(t, dict) and isinstance(t.get("theme"), str):
+                top_themes.append(t["theme"])
+
+    recommended = pre.get("recommended_news_ids")
+    rec_count = len(recommended) if isinstance(recommended, list) else 0
+
+    parts = [
+        "DeepSeek pre-analysis (news quality + cross-source comparison):",
+        f"- Pair: {pair}" if pair else "- Pair: (unknown)",
+        f"- Best sources: {', '.join(best_sources)}" if best_sources else "- Best sources: (not specified)",
+        f"- Key themes: {', '.join(top_themes)}" if top_themes else "- Key themes: (not specified)",
+        f"- Recommended articles: {rec_count}",
+        "Use this to prioritize high-signal, credible, non-duplicate items.",
+    ]
+    return "\n".join(parts) + "\n\n"
+
+
+def _select_news_by_ids(news: List[NewsItem], ids: List[int]) -> List[NewsItem]:
+    id_to_item = {n.id: n for n in news}
+    selected: List[NewsItem] = []
+    for i in ids:
+        if isinstance(i, int) and i in id_to_item:
+            selected.append(id_to_item[i])
+    return selected
+
+
 def make_deepseek_client() -> Optional[OpenAI]:
     key = os.getenv("DEEPSEEK_API_KEY")
     if not key:
@@ -1478,11 +1943,15 @@ def make_gemini_client() -> Optional[OpenAI]:
     )
 
 
-def run_llm_analysis(news: List[NewsItem],
-                     asset: str,
-                     asset_type: str = "currency",
-                     enabled_providers: Optional[List[str]] = None,
-                     max_articles: int = 8) -> Dict[str, str]:
+def run_llm_analysis(
+    news: List[NewsItem],
+    asset: str,
+    asset_type: str = "currency",
+    enabled_providers: Optional[List[str]] = None,
+    max_articles: int = 8,
+    *,
+    pre_analysis: Optional[Dict[str, Any]] = None,
+) -> Dict[str, str]:
     if not news:
         return {"error": "No news available for analysis."}
     if enabled_providers is None:
@@ -1491,7 +1960,8 @@ def run_llm_analysis(news: List[NewsItem],
     context = build_news_context_for_llm(
         news, max_articles=max_articles, fetch_full_paragraphs=True
     )
-    prompt = build_analysis_prompt(context, asset, asset_type)
+    pre_summary = _format_pre_analysis_summary(pre_analysis or {})
+    prompt = pre_summary + build_analysis_prompt(context, asset, asset_type)
 
     results: Dict[str, str] = {}
     providers = set(enabled_providers)
@@ -1612,6 +2082,12 @@ def parse_args() -> argparse.Namespace:
         help="Only crawl and save JSON; skip LLM analysis.",
     )
     parser.add_argument(
+        "--normalize-newsapi-content-store",
+        action="store_true",
+        help="Rewrite `{pair}_newsapi_content.json` to make `content` single-line "
+             "and remove non-content metadata (no network).",
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="Enable verbose logging (warnings, HTTP errors, etc.).",
@@ -1631,15 +2107,15 @@ def main() -> None:
     cfg = load_default_config()
 
     # Determine asset type and selection
-    asset_type = cfg.get("asset_type", "currency")
+    asset_type = str(cfg.get("asset_type", "currency"))
     if asset_type == "stock":
-        stock = cfg.get("stock", "AAPL")
+        stock = str(cfg.get("stock") or "AAPL")
         if stock not in SUPPORTED_STOCKS:
             stock = "AAPL"
         print(f"[INFO] Selected stock from config: {stock}")
         asset = stock
     else:
-        pair = cfg.get("currency_pair", "EUR/USD")
+        pair = str(cfg.get("currency_pair") or "EUR/USD")
         if pair not in SUPPORTED_PAIRS:
             pair = "EUR/USD"
         print(f"[INFO] Selected currency_pair from config: {pair}")
@@ -1665,6 +2141,26 @@ def main() -> None:
         )
 
     max_news = cfg.get("max_news")
+
+    # One-shot formatter for an existing NewsAPI content store.
+    # Must run BEFORE any crawling (no network).
+    if args.normalize_newsapi_content_store:
+        if asset_type != "currency":
+            print("[INFO] --normalize-newsapi-content-store only applies to FX pairs.")
+            return
+        safe_asset = asset.replace("/", "_").replace(" ", "").lower()
+        if args.output:
+            output_path = args.output
+        else:
+            output_path = f"{safe_asset}_news.json"
+
+        base_no_ext, _ = os.path.splitext(output_path)
+        if base_no_ext.endswith("_news"):
+            newsapi_content_path = base_no_ext[:-5] + "_newsapi_content.json"
+        else:
+            newsapi_content_path = base_no_ext + "_newsapi_content.json"
+        normalize_newsapi_content_store(newsapi_content_path)
+        return
 
     # Collect news based on asset type
     if asset_type == "stock":
@@ -1705,7 +2201,7 @@ def main() -> None:
             safe_asset = asset.replace("/", "_").replace(" ", "").lower()
             output_path = f"{safe_asset}_news.json"
 
-    meta = {
+    meta: Dict[str, Any] = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "asset_type": asset_type,
         "asset": asset,
@@ -1721,36 +2217,121 @@ def main() -> None:
         },
         "newsapi_max_items": cfg.get("newsapi_max_items", None),
         "llm_enabled": cfg.get("enabled_llm_providers", []),
+        "pre_analysis": {
+            "enabled": bool(cfg.get("enable_pre_analysis", True)),
+            "max_articles": cfg.get("pre_analysis_max_articles", 20),
+            "filter_for_report": bool(cfg.get("pre_analysis_filter_for_report", True)),
+        },
     }
 
-    # Additionally save a separate NewsAPI-only JSON with full content
-    # for future access/reuse.
-    if (
-        asset_type == "currency"
-        and bool(cfg.get("enable_newsapi", False))
-        and isinstance(asset, str)
-    ):
+    pre_max_articles = meta["pre_analysis"].get("max_articles")
+    if not (isinstance(pre_max_articles, int) and pre_max_articles > 0):
+        pre_max_articles = 20
+        meta["pre_analysis"]["max_articles"] = pre_max_articles
+
+    newsapi_relevance: Optional[Dict[str, Any]] = None
+
+    # Additionally save a separate NewsAPI-only JSON with full content for future access/reuse.
+    if asset_type == "currency" and bool(cfg.get("enable_newsapi", False)):
         base_no_ext, _ = os.path.splitext(output_path)
         if base_no_ext.endswith("_news"):
-            newsapi_full_path = base_no_ext[:-5] + "_newsapi_full.json"
+            newsapi_content_path = base_no_ext[:-5] + "_newsapi_content.json"
+            newsapi_relevance_path = base_no_ext[:-5] + "_newsapi_quality.json"
         else:
-            newsapi_full_path = base_no_ext + "_newsapi_full.json"
-        save_newsapi_full_json(asset, newsapi_full_path)
+            newsapi_content_path = base_no_ext + "_newsapi_content.json"
+            newsapi_relevance_path = base_no_ext + "_newsapi_quality.json"
+
+        # 1) Append-only content store
+        update_newsapi_content_store(asset, newsapi_content_path)
+
+        # 2) DeepSeek relevance/quality classification (for THIS run's NewsAPI articles)
+        cached = _NEWSAPI_FULL_CACHE.get(asset)
+        cached_articles = cached.get("articles") if isinstance(cached, dict) else None
+        if isinstance(cached_articles, list) and cached_articles:
+            cap = cfg.get("newsapi_max_items", None)
+            max_for_relevance = cap if isinstance(cap, int) and cap > 0 else 12
+            newsapi_relevance = run_deepseek_newsapi_relevance(
+                pair=asset,
+                articles=cached_articles[:max_for_relevance],
+            )
+            save_newsapi_relevance_json(asset, newsapi_relevance_path, newsapi_relevance)
+
+            counts = newsapi_relevance.get("counts") if isinstance(newsapi_relevance, dict) else None
+            if isinstance(counts, dict):
+                mr = counts.get("most_relevant", 0)
+                r = counts.get("relevant", 0)
+                u = counts.get("unrelated", 0)
+                print(f"[INFO] NewsAPI relevance counts (once): most_relevant={mr}, relevant={r}, unrelated={u}")
 
     if args.no_llm:
-        save_news_to_json(news_items, output_path, meta=meta, analysis={})
+        save_news_to_json(news_items, output_path, meta=meta, analysis={}, pre_analysis={})
         print("[INFO] Skipping LLM analysis (--no-llm specified).")
         return
 
+    pre_analysis: Dict[str, Any] = {}
+    analysis_news = news_items
+    if asset_type == "currency" and bool(cfg.get("enable_pre_analysis", True)):
+        pre_analysis = run_deepseek_pre_analysis(
+            news_items,
+            pair=asset,
+            max_articles=pre_max_articles,
+        )
+        rec_ids = pre_analysis.get("recommended_news_ids") if isinstance(pre_analysis, dict) else None
+        if (
+            bool(cfg.get("pre_analysis_filter_for_report", True))
+            and isinstance(rec_ids, list)
+            and rec_ids
+        ):
+            analysis_news = _select_news_by_ids(news_items, rec_ids)
+            if analysis_news:
+                meta["analysis_input_news_ids"] = [n.id for n in analysis_news]
+                meta["pre_analysis_recommended_news_ids"] = rec_ids
+
+    # If NewsAPI is enabled and we have a relevance classification for this run,
+    # feed only "related" NewsAPI items (most_relevant + relevant) to the final LLM report.
+    if asset_type == "currency" and bool(cfg.get("enable_newsapi", False)):
+        selected_urls = (
+            newsapi_relevance.get("selected_urls")
+            if isinstance(newsapi_relevance, dict)
+            else None
+        )
+        if isinstance(selected_urls, list) and selected_urls:
+            selected_set = {u for u in selected_urls if isinstance(u, str) and u}
+            related_news = [
+                n for n in news_items if isinstance(n.url, str) and n.url in selected_set
+            ]
+            if related_news:
+                analysis_news = related_news
+                meta["newsapi_selected_urls_for_report"] = list(selected_set)
+
     results = run_llm_analysis(
-        news_items,
+        analysis_news,
         asset=asset,
         asset_type=asset_type,
         enabled_providers=cfg.get("enabled_llm_providers", ["deepseek", "openai"]),
         max_articles=args.max_articles,
+        pre_analysis=pre_analysis,
     )
-    save_news_to_json(news_items, output_path, meta=meta, analysis=results)
+    save_news_to_json(
+        news_items,
+        output_path,
+        meta=meta,
+        analysis=results,
+        pre_analysis=pre_analysis,
+    )
     print_analysis_report(results, asset, asset_type)
+
+    # Save each provider output to its own JSON file as well.
+    if asset_type == "stock":
+        output_prefix = asset.lower()
+    else:
+        output_prefix = asset.replace("/", "_").replace(" ", "").lower()
+    save_individual_llm_outputs(
+        asset=asset,
+        asset_type=asset_type,
+        results=results,
+        output_prefix=output_prefix,
+    )
 
 
 if __name__ == "__main__":

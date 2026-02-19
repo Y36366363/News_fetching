@@ -1,6 +1,6 @@
 {
-  "start_date": "2026-02-09",
-  "end_date": "2026-02-16",
+  "start_date": "2026-02-12",
+  "end_date": "2026-02-19",
   "asset_type": "currency",
   "currency_pair": "EUR/USD",
   "stock": "AAPL",
@@ -10,6 +10,9 @@
   "enable_yahoo": true,
   "enable_newsapi": true,
   "newsapi_max_items": 10,
+  "enable_pre_analysis": true,
+  "pre_analysis_max_articles": 20,
+  "pre_analysis_filter_for_report": true,
   "llm_models": {
     "deepseek": {"enabled": true},
     "openai": {"enabled": false},
