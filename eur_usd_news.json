@@ -1,18 +1,26 @@
 {
   "schema_version": 2,
   "meta": {
-    "generated_at": "2026-02-19T21:23:26.927812+00:00",
+    "generated_at": "2026-02-21T01:22:51.772652+00:00",
     "asset_type": "currency",
     "asset": "EUR/USD",
-    "start_date": "2026-02-12",
-    "end_date": "2026-02-19",
+    "start_date": "2026-02-13",
+    "end_date": "2026-02-20",
     "max_news": null,
     "max_articles": 8,
     "sources": {
       "investing": true,
       "marketwatch": true,
       "yahoo": true,
-      "newsapi": true
+      "newsapi": false,
+      "alphavantage": true
+    },
+    "source_max_items": {
+      "investing": 10,
+      "marketwatch": 10,
+      "yahoo": 10,
+      "newsapi": 10,
+      "alphavantage": 10
     },
     "newsapi_max_items": 10,
     "llm_enabled": [
@@ -23,14 +31,10 @@
       "max_articles": 20,
       "filter_for_report": true
     },
-    "newsapi_selected_urls_for_report": [
-      "https://www.channelnewsasia.com/business/us-stocks-follow-european-shares-higher-geopolitical-jitters-boost-oil-gold-5937321",
-      "https://bitcoinist.com/german-central-bank-chief-stablecoins-cbdcs-europe/",
-      "https://cointelegraph.com/news/societe-generale-forge-expands-euro-stablecoin-to-xrp-ledger-in-multi-chain-push",
-      "https://financialpost.com/pmn/business-pmn/ecb-closely-watching-trends-in-foreign-exchange-villeroy-says",
-      "https://www.channelnewsasia.com/business/tech-leads-us-stocks-rally-renewed-geopolitical-strife-boosts-oil-gold-5937321",
-      "https://cointelegraph.com/news/lagarde-early-exit-ecb-digital-euro-mica-stablecoins-successor",
-      "https://punchng.com/european-stocks-rise-tracking-company-earnings-data/"
+    "alphavantage_selected_urls_for_report": [
+      "https://www.fxleaders.com/news/2026/02/19/forex-signals-feb-19-walmart-wmt-alibaba-rio-tinto-and-gold-fields-earnings-preview/",
+      "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
+      "https://www.stonex.com/en/market-intelligence/perspective-morning-commentary-february-18/"
     ]
   },
   "news": [
@@ -41,7 +45,7 @@
       "title": "Analyst Ratings",
       "url": "https://www.investing.com/news/analyst-ratings",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar rose on Thursday, hitting a nearly one-month high, after minutes from the Federal Reserve hinted...",
+      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
       "asset_type": "currency"
     },
     {
@@ -51,7 +55,7 @@
       "title": "Economic Indicators",
       "url": "https://www.investing.com/news/economic-indicators",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar rose on Thursday, hitting a nearly one-month high, after minutes from the Federal Reserve hinted...",
+      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
       "asset_type": "currency"
     },
     {
@@ -61,7 +65,7 @@
       "title": "Sports & General",
       "url": "https://www.investing.com/news/general",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar rose on Thursday, hitting a nearly one-month high, after minutes from the Federal Reserve hinted...",
+      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
       "asset_type": "currency"
     },
     {
@@ -71,7 +75,7 @@
       "title": "Insider Trading",
       "url": "https://www.investing.com/news/insider-trading-news",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar rose on Thursday, hitting a nearly one-month high, after minutes from the Federal Reserve hinted...",
+      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
       "asset_type": "currency"
     },
     {
@@ -81,131 +85,91 @@
       "title": "Investment Ideas",
       "url": "https://www.investing.com/news/investment-ideas",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar rose on Thursday, hitting a nearly one-month high, after minutes from the Federal Reserve hinted...",
+      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
       "asset_type": "currency"
     },
     {
       "id": 6,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Dollar rises to near one-month high after Fed minutes hint at possible rate hikes",
-      "url": "https://www.investing.com/news/forex-news/dollar-retains-most-of-gains-after-fomc-minutes-euro-on-backfoot-4512849",
+      "title": "Dollar slips after SCOTUS tariff ruling, but set for strongest week since November",
+      "url": "https://www.investing.com/news/forex-news/dollar-set-for-strongest-week-since-october-on-safehaven-demand-4515391",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar rose on Thursday, hitting a nearly one-month high, after minutes from the Federal Reserve hinted...",
+      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
       "asset_type": "currency"
     },
     {
       "id": 7,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Asia holidays as US, Iran work to avert conflict",
-      "url": "https://www.investing.com/news/economy-news/asia-holidays-as-us-iran-work-to-avert-conflict-4512583",
+      "title": "Global shares climb as risk appetite holds firm, US-Iran tensions boost oil",
+      "url": "https://www.investing.com/news/economy-news/global-shares-climb-as-risk-appetite-holds-firm-usiran-tensions-boost-oil-4515532",
       "published_at": null,
-      "snippet": "A look at the day ahead in European and global markets from Rae Wee Asian markets were pretty sedate on Thursday with parts of...",
+      "snippet": "By Niket Nishant and Tom Westbrook LONDON/SINGAPORE, Feb 20 (Reuters) - Global shares edged higher on Friday, brushing aside...",
       "asset_type": "currency"
     },
     {
       "id": 8,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Dollar gains after latest Fed minutes hints at possible rate hikes",
-      "url": "https://www.investing.com/news/forex-news/dollar-edges-higher-ahead-of-fed-minutes-sterling-gains-post-cpi-4510274",
+      "title": "Take Five: Nvidia earnings head for centre stage",
+      "url": "https://www.investing.com/news/economy-news/take-five-nvidia-earnings-head-for-centre-stage-4515361",
       "published_at": null,
-      "snippet": "Investing.com - The U.S. dollar edged higher Wednesday, as traders parsed the Federal Reserve’s latest minutes which hinted at...",
+      "snippet": "Feb 20 (Reuters) - Nvidia’s earnings report is next week’s centrepiece for markets, flanked by important data and politics in...",
       "asset_type": "currency"
     },
     {
       "id": 9,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Dollar perks up as Fed appears in no rush to cut rates",
-      "url": "https://www.investing.com/news/economy-news/dollar-perks-up-as-fed-appears-in-no-rush-to-cut-rates-4512416",
+      "title": "Lagarde expects to complete ECB term amid early exit speculation",
+      "url": "https://www.investing.com/news/world-news/lagarde-expects-to-complete-ecb-term-amid-early-exit-speculation-93CH-4515199",
       "published_at": null,
-      "snippet": "SINGAPORE, Feb 19 (Reuters) - The dollar was off recent lows on Thursday and hanging on to a bounce after minutes from the...",
+      "snippet": "Investing.com -- European Central Bank President Christine Lagarde said she anticipates completing her full term, addressing...",
       "asset_type": "currency"
     },
     {
       "id": 10,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Trading Day: Wall St rally fades as European shares close at record high; crude surges on supply worries",
-      "url": "https://www.investing.com/news/economy-news/trading-day-wall-st-rally-fades-as-european-shares-close-at-record-high-crude-surges-on-supply-worries-4512263",
+      "title": "Stocks dip and oil climbs as Trump turns up the heat on Iran",
+      "url": "https://www.investing.com/news/stock-market-news/stocks-dip-and-oil-climbs-as-trump-ramps-up-iran-threats-4515082",
       "published_at": null,
-      "snippet": "NEW YORK, Feb 18 (Reuters) - U.S. stocks chased their European counterparts higher on Wednesday, but lost some momentum as the...",
+      "snippet": "By Tom Westbrook SINGAPORE, Feb 20 (Reuters) - Stocks fell in Asia on Friday, the dollar headed for its largest weekly gain in...",
       "asset_type": "currency"
     },
     {
       "id": 11,
       "currency_pair": "EUR/USD",
-      "source": "Investing.com",
-      "title": "Euro weaker after report ECB chief to leave; dollar higher after data, Fed minutes",
-      "url": "https://www.investing.com/news/economy-news/dollar-holds-gains-as-markets-focus-on-peace-talks-fed-minutes-4509951",
-      "published_at": "2026-02-18T00:00:00+00:00",
-      "snippet": "By Chuck Mikolajczak NEW YORK, Feb 18 (Reuters) - The euro stumbled on Wednesday after a report that European Central Bank (ECB)...",
+      "source": "MarketWatch",
+      "title": "Dollar Down, Treasury Yields Slightly Up as Trump Vows New Tariffs",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-geopolitical-tensions-likely-to-weigh-1d99bc01?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The dollar weakened after President Trump said he will impose a 10% global tariff under a different authority in the wake of the Supreme Court’s tariff ruling.",
       "asset_type": "currency"
     },
     {
       "id": 12,
       "currency_pair": "EUR/USD",
-      "source": "Investing.com",
-      "title": "Lagarde’s possible early departure leaves investors pondering replacements",
-      "url": "https://www.investing.com/news/economy-news/lagardes-possible-early-departure-leaves-investors-pondering-replacements-4511253",
-      "published_at": "2026-02-18T00:00:00+00:00",
-      "snippet": "By Yoruk Bahceli and Harry Robertson LONDON, Feb 18 (Reuters) - Traders on Wednesday were trying to work out what European...",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Rises 0.08% to 94.90",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-fading-fed-rate-cut-prospects-could-weigh-7694c78e?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index rose 0.1% — up three of the past four trading days.",
       "asset_type": "currency"
     },
     {
       "id": 13,
       "currency_pair": "EUR/USD",
-      "source": "Investing.com",
-      "title": "Trading Day: AI disruption, US-Iran nuclear talks, rate cut bets keep investors on their toes",
-      "url": "https://www.investing.com/news/economy-news/trading-day-ai-disruption-usiran-nuclear-talks-rate-cut-bets-keep-investors-on-their-toes-4509904",
-      "published_at": "2026-02-17T00:00:00+00:00",
-      "snippet": "By Stephen Culp \nNEW YORK, Feb 17 (Reuters) - Wall Street stocks see-sawed to nominal gains on Tuesday as investors juggled...",
-      "asset_type": "currency"
-    },
-    {
-      "id": 14,
-      "currency_pair": "EUR/USD",
-      "source": "Investing.com",
-      "title": "Dollar firms ahead of data dump; sterling falls after quits rate hits 5-year high",
-      "url": "https://www.investing.com/news/forex-news/dollar-edges-higher-ahead-of-data-dump-sterling-weakens-on-weak-labor-market-4508057",
-      "published_at": "2026-02-17T00:00:00+00:00",
-      "snippet": "Investing.com -- The U.S. dollar rose Tuesday ahead of more key data as investors returned from a long weekend. Meanwhile, the...",
-      "asset_type": "currency"
-    },
-    {
-      "id": 15,
-      "currency_pair": "EUR/USD",
-      "source": "Investing.com",
-      "title": "BTCC Exchange Launches TradFi, Enabling Seamless Access to Global Traditional Markets with USDT",
-      "url": "https://www.investing.com/news/cryptocurrency-news/btcc-exchange-launches-tradfi-enabling-seamless-access-to-global-traditional-markets-with-usdt-4508631",
-      "published_at": "2026-02-17T00:00:00+00:00",
-      "snippet": "LODZ, Poland, February 17th, 2026, Chainwire\nBTCC, the world’s longest-serving cryptocurrency exchange, announces the launch of...",
-      "asset_type": "currency"
-    },
-    {
-      "id": 16,
-      "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "Here’s what’s driving the U.S. dollar to its strongest position in almost a month — and it’s not just Iran tensions",
       "url": "https://www.marketwatch.com/story/heres-whats-driving-the-u-s-dollar-to-its-strongest-position-in-almost-a-month-and-its-not-just-iran-tensions-f43ad39c?mod=mw_quote_news",
       "published_at": null,
-      "snippet": "The dollar strengthened as interest rates in the U.S. look increasingly likely to remain unchanged for the next few months.",
+      "snippet": "The DXY dollar index extended gains after U.S. durable goods orders exceeded expectations.",
       "asset_type": "currency"
     },
     {
-      "id": 17,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Dollar Gets Support From Prospect of Steady U.S. Interest Rates",
-      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-fading-fed-rate-cut-prospects-could-weigh-7694c78e?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The dollar strengthened as interest rates in the U.S. look increasingly likely to remain unchanged for the next few months.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 18,
+      "id": 14,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "Jobless claims fall to lowest level of the year, signaling a more stable labor market",
@@ -215,7 +179,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 19,
+      "id": 15,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "U.S. stocks are falling behind. It could be the beginning of an epic shift toward global markets.",
@@ -225,7 +189,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 20,
+      "id": 16,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "Fed minutes reveal discussion of a possible rate hike if inflation doesn’t cool",
@@ -235,7 +199,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 21,
+      "id": 17,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "Dollar Rises After Better-Than-Expected U.S. Durable Goods Data",
@@ -245,7 +209,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 22,
+      "id": 18,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "Gold falls below $5,000 mark, silver drops as demand weakens during Lunar New Year holiday",
@@ -255,7 +219,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 23,
+      "id": 19,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "Sterling Extends Losses After Soft Jobs Data",
@@ -265,7 +229,7 @@
       "asset_type": "currency"
     },
     {
-      "id": 24,
+      "id": 20,
       "currency_pair": "EUR/USD",
       "source": "MarketWatch",
       "title": "Dollar Positioning Reaches Most Negative in Over 14 Years",
@@ -275,221 +239,61 @@
       "asset_type": "currency"
     },
     {
+      "id": 21,
+      "currency_pair": "EUR/USD",
+      "source": "AlphaVantage: S&P Global",
+      "title": "Global Economic Outlook: February 2026",
+      "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
+      "published_at": "2026-02-19T17:26:31+00:00",
+      "snippet": "This February 2026 report from S&P Global analyzes the global economic outlook, highlighting the impact of geopolitical uncertainty on markets despite resilient economic conditions suggested by PMI data. It details key changes in their forecast, including higher real GDP growth projections for the US, India, and the eurozone, leading to an increased global growth forecast of 2.9% for 2026. The report also addresses consumer price inflation expectations, noting projected moderations driven by oil prices and easing underlying pressures, and discusses factors influencing US dollar depreciation an",
+      "asset_type": "currency"
+    },
+    {
+      "id": 22,
+      "currency_pair": "EUR/USD",
+      "source": "AlphaVantage: AD HOC NEWS",
+      "title": "Banco de Chile Stock: Quiet Latin Bank With U.S. Dollar Upside?",
+      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/banco-de-chile-stock-quiet-latin-bank-with-u-s-dollar-upside/68592281",
+      "published_at": "2026-02-19T05:27:18+00:00",
+      "snippet": "Banco de Chile, with its NYSE-listed ADR (BCH), is presented as a potentially appealing investment for U.S. investors seeking diversified bank exposure outside of U.S. mega-caps. The article highlights its profitability, above-average dividend, and conservative risk profile, while also noting its tight linkage to Chile's interest-rate cycle and the peso's performance. It emphasizes the importance of considering currency swings and emerging market risks, alongside the potential for geographic diversification and attractive dividends.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 23,
+      "currency_pair": "EUR/USD",
+      "source": "AlphaVantage: FXLeaders",
+      "title": "Forex Signals Feb 19: Walmart (WMT), Alibaba, Rio Tinto and Gold Fields Earnings Preview",
+      "url": "https://www.fxleaders.com/news/2026/02/19/forex-signals-feb-19-walmart-wmt-alibaba-rio-tinto-and-gold-fields-earnings-preview/",
+      "published_at": "2026-02-19T01:20:13+00:00",
+      "snippet": "This article provides an earnings preview for major companies reporting on February 19, 2026, including Walmart, Alibaba, Rio Tinto, and Gold Fields, highlighting their diverse sector representation. It discusses the strengthening U.S. dollar, supported by rising Treasury yields and positive economic data, alongside the hawkish tone of the FOMC minutes, indicating caution on rate easing. The report also touches on recent market volatility in gold, USD/JPY, and cryptocurrencies like Bitcoin and Ethereum.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 24,
+      "currency_pair": "EUR/USD",
+      "source": "AlphaVantage: AD HOC NEWS",
+      "title": "A Promising Opening for Vanguard's International Real Estate Fund",
+      "url": "https://www.ad-hoc-news.de/boerse/ueberblick/a-promising-opening-for-vanguard-s-international-real-estate-fund/68589761",
+      "published_at": "2026-02-18T17:23:35+00:00",
+      "snippet": "The Vanguard Global ex-U.S. Real Estate ETF (VNQI) is showing strong momentum driven by declining bond yields and a softer U.S. dollar, revaluing international property markets. With a low expense ratio (0.12%) and a diversified portfolio of 716 holdings outside the U.S., VNQI offers a solid dividend yield of 4.27% and projected long-term annual returns of 7.78%. The outlook for international real estate remains positive with improving fundamentals and potential for capital appreciation, positioning VNQI well for future growth.",
+      "asset_type": "currency"
+    },
+    {
       "id": 25,
       "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "The WSJ Dollar Index Falls 0.95% This Week to 94.15",
-      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-risk-off-sentiment-could-weigh-b4a63f52?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The WSJ Dollar Index edged lower — down for a sixth consecutive trading day.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 26,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Coinbase Swings to a Fourth-Quarter Loss Amid Crypto Meltdown",
-      "url": "https://www.wsj.com/finance/currencies/coinbase-swings-to-a-fourth-quarter-loss-amid-crypto-meltdown-a9d8d36e?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 27,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Dow ends below 50,000 threshold for first time since Friday as AI fears spark wider stock selloff",
-      "url": "https://www.marketwatch.com/story/dow-ends-below-50-000-threshold-for-first-time-since-friday-as-ai-fears-spark-wider-stock-selloff-f6ee91e1?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 28,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Post-Payrolls Dollar Decline Points to ‘Entrenched Bearishness’",
-      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-as-traders-digest-u-s-employment-report-1f73cd2b?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The dollar weakened despite signs of U.S. labor market resilience likely keeping the Fed on hold for an extended period of time. “That points to entrenched bearishness,” said Corpay.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 29,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Currency strategist who incurred Bessent’s wrath exposes safe-haven myth of the dollar",
-      "url": "https://www.marketwatch.com/story/currency-strategist-who-incurred-bessents-wrath-exposes-safe-haven-myth-of-the-dollar-b4e1125d?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 30,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "The WSJ Dollar Index Falls 0.10% to 94.20",
-      "url": "https://www.wsj.com/finance/currencies/usd-jpy-attempting-to-hold-above-153-90-154-34-range-8c2f2b05?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The WSJ Dollar Index declined 0.1% — down for four consecutive trading days.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 31,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "The WSJ Dollar Index Falls 0.10% to 94.29",
-      "url": "https://www.wsj.com/finance/currencies/yen-broadly-weakens-amid-mild-risk-appetite-e4d20e51?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The WSJ Dollar Index declined 0.1% — down for three consecutive trading days.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 32,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Treasury Yields, Dollar Fall Ahead of Data Reports",
-      "url": "https://www.wsj.com/finance/currencies/yen-mostly-strengthens-japanese-ldps-win-mostly-priced-in-by-markets-6e172e4c?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "The dollar fell ahead of a stream of data reports.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 33,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Gold futures reclaim $5,000 mark, buoyed by ‘gradual erosion of confidence’ in the U.S. dollar",
-      "url": "https://www.marketwatch.com/story/gold-futures-once-again-reclaim-5-000-mark-af3da5ee?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "currency"
-    },
-    {
-      "id": 34,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "‘Sell America’ fears drag dollar toward 4-year low on Japan election, China report",
-      "url": "https://www.marketwatch.com/story/sell-america-fears-drag-dollar-toward-4-year-low-on-japan-election-china-report-a87651a4?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "currency"
-    },
-    {
-      "id": 35,
-      "currency_pair": "EUR/USD",
-      "source": "MarketWatch",
-      "title": "Bitcoin’s attempt at a rebound runs into gold’s recapture of $5,000",
-      "url": "https://www.marketwatch.com/story/bitcoins-attempt-at-a-rebound-runs-into-golds-recapture-of-5-000-d18cd953?mod=mw_quote_news",
-      "published_at": null,
-      "snippet": "",
-      "asset_type": "currency"
-    },
-    {
-      "id": 36,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: GlobeNewswire",
-      "title": "Eramet: structural measures to strengthen balance sheet and prepare the future, after a challenging year 2025",
-      "url": "https://www.globenewswire.com/news-release/2026/02/18/3240519/0/en/Eramet-structural-measures-to-strengthen-balance-sheet-and-prepare-the-future-after-a-challenging-year-2025.html",
-      "published_at": "2026-02-18T17:45:00+00:00",
-      "snippet": "Paris, 18 February 2026, 6:45 p.m.  PRESS RELEASE   Eramet: structural measures to strengthen balance sheet and prepare the future, after a challenging...",
-      "asset_type": "currency"
-    },
-    {
-      "id": 37,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: Cointelegraph",
-      "title": "SocGen's FORGE expands euro stablecoin to XRP Ledger in multi-chain push",
-      "url": "https://cointelegraph.com/news/societe-generale-forge-expands-euro-stablecoin-to-xrp-ledger-in-multi-chain-push",
-      "published_at": "2026-02-18T17:41:42+00:00",
-      "snippet": "SG-FORGE deploys EUR CoinVertible on the XRP Ledger, expanding the euro-denominated stablecoin beyond Ethereum and Solana with Ripple custody support.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 38,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: CNA",
-      "title": "US stocks follow European shares higher; geopolitical jitters boost oil, gold",
-      "url": "https://www.channelnewsasia.com/business/us-stocks-follow-european-shares-higher-geopolitical-jitters-boost-oil-gold-5937321",
-      "published_at": "2026-02-18T16:26:51+00:00",
-      "snippet": "NEW YORK, Feb 18 : U.S. stocks rallied, European stocks notched a record closing high and crude oil prices rebounded on Wednesday as investors parsed the minutes from the U.S. Federal Reserve's most recent policy meeting and assessed evolving geopolitical dev…",
-      "asset_type": "currency"
-    },
-    {
-      "id": 39,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: CNA",
-      "title": "Tech leads US stocks rally; renewed geopolitical strife boosts oil, gold",
-      "url": "https://www.channelnewsasia.com/business/tech-leads-us-stocks-rally-renewed-geopolitical-strife-boosts-oil-gold-5937321",
-      "published_at": "2026-02-18T16:26:51+00:00",
-      "snippet": "NEW YORK, Feb 18 : U.S. stocks edged higher and crude oil prices rebounded on Wednesday as investors awaited the minutes from the U.S. Federal Reserve's most recent policy meeting and assessed shifting geopolitical developments.Technology shares helped boost …",
-      "asset_type": "currency"
-    },
-    {
-      "id": 40,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: MarketBeat",
-      "title": "MKS Q4 Earnings Call Highlights",
-      "url": "https://www.marketbeat.com/instant-alerts/mks-q4-earnings-call-highlights-2026-02-18/?utm_source=yahoofinance&amp;utm_medium=yahoofinance",
-      "published_at": "2026-02-18T15:50:50+00:00",
-      "snippet": "MKS (NASDAQ:MKSI) said it closed fiscal 2025 with “impressive execution” in a gradually improving demand environment, delivering double-digit sales growth...",
-      "asset_type": "currency"
-    },
-    {
-      "id": 41,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: Theflightdeal.com",
-      "title": "Scandinavian Airlines: Newark – Tallinn, Estonia. $389 (Basic Economy) / $489 (Regular Economy). Roundtrip, including all Taxes",
-      "url": "https://www.theflightdeal.com/2026/02/18/scandinavian-airlines-newark-tallinn-estonia-389-basic-economy-489-regular-economy-roundtrip-including-all-taxes/",
-      "published_at": "2026-02-18T15:13:15+00:00",
-      "snippet": "A good sale to Tallinn. Pricing will vary slightly depending on routing.Matrix Airfare Search by ITA Software will price this at $401 (Basic Economy). Use those dates on  Scandinavian should repr",
-      "asset_type": "currency"
-    },
-    {
-      "id": 42,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: The Punch",
-      "title": "European stocks rise, tracking company earnings, data",
-      "url": "https://punchng.com/european-stocks-rise-tracking-company-earnings-data/",
-      "published_at": "2026-02-18T12:00:51+00:00",
-      "snippet": "European stocks rise as traders weigh positive company earnings and key economic data. Oil prices tick higher amid US-Iran talks.\n\nRead More: https://punchng.com/european-stocks-rise-tracking-company-earnings-data/",
-      "asset_type": "currency"
-    },
-    {
-      "id": 43,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: Bitcoinist",
-      "title": "German Central Bank Chief Backs Stablecoins, CBDCs For Europe’s Payment Independence",
-      "url": "https://bitcoinist.com/german-central-bank-chief-stablecoins-cbdcs-europe/",
-      "published_at": "2026-02-18T12:00:31+00:00",
-      "snippet": "The President of the German central bank has supported the use of euro-pegged stablecoins and Central Bank Digital Currencies (CBDCs) to protect the bloc’s payments independence. Related Reading: Former White House Crypto Adviser Confident CLARITY Act Will Pa…",
-      "asset_type": "currency"
-    },
-    {
-      "id": 44,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: Cointelegraph",
-      "title": "Lagarde early exit report puts ECB succession and digital euro in focus",
-      "url": "https://cointelegraph.com/news/lagarde-early-exit-ecb-digital-euro-mica-stablecoins-successor",
-      "published_at": "2026-02-18T11:22:09+00:00",
-      "snippet": "European Central Bank President Christine Lagarde is reportedly weighing an early exit from the bank just as the EU enters a crucial phase for the digital euro.",
-      "asset_type": "currency"
-    },
-    {
-      "id": 45,
-      "currency_pair": "EUR/USD",
-      "source": "NewsAPI: Financial Post",
-      "title": "ECB Closely Watching Trends in Foreign Exchange, Villeroy Says",
-      "url": "https://financialpost.com/pmn/business-pmn/ecb-closely-watching-trends-in-foreign-exchange-villeroy-says",
-      "published_at": "2026-02-18T09:53:17+00:00",
-      "snippet": "The European Central Bank is closely watching trends in foreign-exchange markets and is ready to respond to any possible impact on inflation, Governing Council member Francois Villeroy de Galhau said.",
+      "source": "AlphaVantage: StoneX",
+      "title": "Perspective: Morning Commentary February 18",
+      "url": "https://www.stonex.com/en/market-intelligence/perspective-morning-commentary-february-18/",
+      "published_at": "2026-02-18T13:57:45+00:00",
+      "snippet": "This morning commentary by StoneX provides an update on the financial markets as of February 18. It covers the positive movement in the Dow Jones Industrials, S&P, and NASDAQ, anticipation for the January Fed minutes, and movements in treasury yields and the U.S. dollar. The article also discusses crude oil prices and the grain market, noting geopolitical risks and concerns over global crop conditions, particularly for wheat and soybeans.",
       "asset_type": "currency"
     }
   ],
   "analysis": {
-    "deepseek": "**1. Key Market Drivers**\n*   **Monetary Policy & ECB Uncertainty:** Reports of ECB President Lagarde considering an early exit (News 44) introduce political uncertainty, potentially creating a mild headwind for the Euro. Concurrently, ECB's Villeroy notes vigilance on FX impacts on inflation (News 45), signaling discomfort with excessive Euro weakness.\n*   **Risk Sentiment:** Positive, with European and US stocks at record highs (News 38, 39, 42). This typically supports cyclical currencies like the Euro against safe havens, but the rally may be limiting USD demand.\n*   **Geopolitical Tensions:** Jitters are boosting oil and gold (News 38, 39, 42), creating a mixed environment. This can cause sporadic USD strength, but the dominant risk-on equity move is more influential in this snapshot.\n*   **Economic Data:** Secondary focus here. Traders are digesting company earnings and awaiting Fed minutes (News 42). UK inflation data is a GBP story, not a direct EUR driver.\n\n**2. Short-Term Outlook (1-3 Days)**\n**Sideways to Slightly Bearish.** The Lagarde exit rumor (confirmed as a report, not a decision) creates a near-term negative narrative for the Euro, likely capping rallies. Positive risk sentiment offers some counter-support. Expect choppy trade, likely between **$1.1800 - $1.1900**, with a bias toward testing the lower end unless the rumor is formally dismissed.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\n**Sideways with Downside Risk.** The Lagarde story will evolve, potentially leading to speculation on her successor's policy lean (hawkish vs. dovish), keeping EUR volatility elevated. The broader driver will shift to comparative central bank policy signals (ECB vs. Fed). Unless Eurozone data surprises strongly to the upside, the ECB's cautious stance and political uncertainty may keep EUR/USD pressured, **testing support toward $1.1750**.\n\n**4. Trading Bias**\n**Bearish (Cautiously).**\n*   **Primary Reason:** The unexpected political overhang from the Lagarde exit report undermines Euro stability and introduces a new dovish speculation risk.\n*   **Secondary Reason:** The ECB's explicit focus on FX (Villeroy) is typically a reaction to weakness, not strength, acknowledging downward pressure.\n\n**5. Main Risks / Alternative Scenarios**\n*   **Risk-On Extension:** A sustained surge in global equities could overwhelm Euro-specific negatives, driving a short-covering rally back toward **$1.1950+**.\n*   **ECB Pushback:** Strong, coordinated denial of the Lagarde report by ECB officials could quickly reverse the bearish sentiment.\n*   **Dovish Fed Surprise:** If the upcoming Fed minutes are interpreted as markedly dovish, USD weakness could propel EUR/USD higher regardless of Eurozone news.\n*   **Geopolitical Escalation:** A sharp worsening of global tensions could trigger a flight to liquidity into the USD, accelerating EUR/USD declines."
+    "deepseek": "**1. Key Market Drivers**\n*   **Monetary Policy & Economic Data:** The primary driver is the US Supreme Court striking down sweeping tariffs, followed by the announcement of a new 10% global levy. This creates policy uncertainty and potential trade friction.\n*   **Risk Sentiment:** Mixed signals. Global shares are climbing, indicating firm risk appetite. However, the dollar initially slipped on the SCOTUS ruling but saw strong safe-haven demand earlier in the week, suggesting underlying caution.\n*   **Geopolitics:** US-Iran tensions are noted as a supporting factor for oil and a potential source of market volatility.\n\n**2. Short-Term Outlook (1-3 Days)**\nSlightly bearish for EUR/USD. The immediate market reaction to the SCOTUS ruling was a weaker dollar, but the subsequent announcement of a new 10% levy introduces fresh trade uncertainty. This may limit the euro's upside and could renew demand for the USD as a haven if risk sentiment sours. Price action is likely to be choppy and headline-driven.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\nSideways to bearish. The new tariff landscape creates a headwind for global growth and trade, which typically benefits the US dollar due to its liquidity and safe-haven status. Unless Eurozone data surprises strongly to the upside or the Fed signals a definitively dovish shift, the broader environment favors USD strength, capping EUR/USD rallies.\n\n**4. Trading Bias**\n**Bearish.** The combination of renewed US trade policy uncertainty and the dollar's demonstrated recent strength as a safe-haven (its strongest week since November) points to EUR/USD facing selling pressure on rallies. The path of least resistance is lower within a volatile range.\n\n**5. Main Risks / Alternative Scenarios**\n*   **Risk Rally Sustained:** If global risk appetite holds firm (e.g., driven by strong Nvidia earnings) and US data softens, the dollar's safe-haven bid could fade, leading to a stronger euro.\n*   **ECB Hawkish Surprise:** More hawkish-than-expected commentary from the European Central Bank could provide sustained support for the euro.\n*   **Tariff Details & Retaliation:** The specific details of the new 10% levy and the scale of retaliation from trading partners will be critical. A softer-than-feared implementation could invalidate the bearish view."
   },
   "pre_analysis": {
-    "error": "Failed to parse pre-analysis JSON: failed to parse JSON: Expecting ',' delimiter: line 202 column 10 (char 7612)",
-    "raw": "```json\n{\n    \"pair\": \"EUR/USD\",\n    \"source_summary\": {\n        \"Investing.com\": {\n            \"coverage\": 8,\n            \"credibility\": 5,\n            \"signal\": 6,\n            \"notes\": \"High volume of articles, but many are duplicates or low-relevance (e.g., sports, crypto). Good coverage of Fed minutes and ECB Lagarde story. Credibility lowered due to generic content repetition and lack of original analysis.\"\n        },\n        \"MarketWatch\": {\n            \"coverage\": 6,\n            \"credibility\": 7,\n            \"signal\": 8,\n            \"notes\": \"Fewer articles but higher quality. Provides specific analysis on dollar drivers (Fed, labor data). Includes direct reporting on Fed minutes content. More credible due to original reporting and named sources (e.g., Fed officials).\"\n        }\n    },\n    \"themes\": [\n        {\n            \"theme\": \"Hawkish Fed Minutes & Rate Hike Discussion\",\n            \"importance\": 10,\n            \"evidence_news_ids\": [6, 8, 9, 11, 16, 17, 20]\n        },\n        {\n            \"theme\": \"Strong USD on Higher-for-Longer Rates\",\n            \"importance\": 9,\n            \"evidence_news_ids\": [6, 8, 9, 11, 16, 17]\n        },\n        {\n            \"theme\": \"ECB Leadership Uncertainty (Lagarde Departure)\",\n            \"importance\": 7,\n            \"evidence_news_ids\": [11, 12]\n        },\n        {\n            \"theme\": \"Strong US Labor Market Data\",\n            \"importance\": 6,\n            \"evidence_news_ids\": [18]\n        },\n        {\n            \"theme\": \"Geopolitical Tensions (US-Iran)\",\n            \"importance\": 5,\n            \"evidence_news_ids\": [7, 13, 16]\n        }\n    ],\n    \"duplicates\": [\n        {\n            \"group_id\": \"DUP_GROUP_1\",\n            \"news_ids\": [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 13, 14],\n            \"canonical_news_id\": 6,\n            \"notes\": \"Multiple Investing.com articles with different titles/categories but identical or near-identical content snippet: 'U.S. stocks end lower after hawkish Fed minutes; Walmart guidance falls short'. News 6 is chosen as canonical as its title is most directly relevant to EUR/USD (Dollar rises...).\"\n        },\n        {\n            \"group_id\": \"DUP_GROUP_2\",\n            \"news_ids\": [6, 8, 9],\n            \"canonical_news_id\": 6,\n            \"notes\": \"Investing.com articles specifically about the dollar strengthening due to hawkish Fed minutes. Very similar themes and content. News 6 has the most comprehensive title.\"\n        }\n    ],\n    \"article_quality\": [\n        {\n            \"news_id\": 1,\n            \"source\": \"Investing.com\",\n            \"relevance\": 2,\n            \"credibility\": 3,\n            \"timeliness\": 3,\n            \"signal\": 2,\n            \"overall\": 2,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"Duplicate content\", \"Low relevance (Analyst Ratings)\", \"Generic market recap\"]\n        },\n        {\n            \"news_id\": 2,\n            \"source\": \"Investing.com\",\n            \"relevance\": 2,\n            \"credibility\": 3,\n            \"timeliness\": 3,\n            \"signal\": 2,\n            \"overall\": 2,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"Duplicate content\", \"Low relevance (Economic Indicators - but generic)\", \"Generic market recap\"]\n        },\n        {\n            \"news_id\": 3,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 2,\n            \"timeliness\": 3,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"Duplicate content\", \"Very low relevance (Sports & General)\", \"No FX signal\"]\n        },\n        {\n            \"news_id\": 4,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 4,\n            \"timeliness\": 3,\n            \"signal\": 4,\n            \"overall\": 3,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Unique content on Gold/Geopolitics/Fed\", \"Low direct EUR/USD relevance\", \"Some macro signal\"]\n        },\n        {\n            \"news_id\": 5,\n            \"source\": \"Investing.com\",\n            \"relevance\": 2,\n            \"credibility\": 3,\n            \"timeliness\": 3,\n            \"signal\": 2,\n            \"overall\": 2,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"Duplicate content\", \"Low relevance (Investment Ideas)\", \"Generic market recap\"]\n        },\n        {\n            \"news_id\": 6,\n            \"source\": \"Investing.com\",\n            \"relevance\": 9,\n            \"credibility\": 5,\n            \"timeliness\": 3,\n            \"signal\": 8,\n            \"overall\": 6,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"High relevance and signal\", \"Part of duplicate group\", \"Credibility lowered by generic content body\"]\n        },\n        {\n            \"news_id\": 7,\n            \"source\": \"Investing.com\",\n            \"relevance\": 4,\n            \"credibility\": 4,\n            \"timeliness\": 3,\n            \"signal\": 4,\n            \"overall\": 4,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"Geopolitical theme relevant\", \"Duplicate generic content body\", \"Indirect FX signal\"]\n        },\n        {\n            \"news_id\": 8,\n            \"source\": \"Investing.com\",\n            \"relevance\": 9,\n            \"credibility\": 5,\n            \"timeliness\": 3,\n            \"signal\": 8,\n            \"overall\": 6,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_2\",\n            \"reasons\": [\"High relevance and signal\", \"Duplicate of core theme\", \"Credibility lowered by generic content body\"]\n        },\n        {\n            \"news_id\": 9,\n            \"source\": \"Investing.com\",\n            \"relevance\": 9,\n            \"credibility\": 5,\n            \"timeliness\": 3,\n            \"signal\": 8,\n            \"overall\": 6,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_2\",\n            \"reasons\": [\"High relevance and signal\", \"Duplicate of core theme\", \"Credibility lowered by generic content body\"]\n        },\n        {\n            \"news_id\": 10,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 4,\n            \"timeliness\": 3,\n            \"signal\": 3,\n            \"overall\": 3,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"Low direct FX relevance\", \"Duplicate generic content\", \"Market recap signal only\"]\n        },\n        {\n            \"news_id\": 11,\n            \"source\": \"Investing.com\",\n            \"relevance\": 10,\n            \"credibility\": 6,\n            \"timeliness\": 8,\n            \"signal\": 9,\n            \"overall\": 8,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_GROUP_1\",\n            \"reasons\": [\"High relevance (EUR & USD themes)\", \"Good timeliness (date provided)\", \"Strong signal (ECB + Fed)\", \"Duplicate generic content body lowers credibility\"]\n        },\n        {\n            \"news_id\": 12,\n            \"source\": \"Investing.com\",\n            \"relevance\": 8,\n            \"credibility\": 6,\n            \"timeliness\": 8,\n            \"signal\": 7,\n            \"overall\": 7,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"High relevance (ECB-specific)\", \"Good timeliness\", \"Unique content on ECB leadership\", \"Important for EUR sentiment\"]\n        },\n        {\n            \"news_id\": 13,\n            \"source\": \"Investing.com\",\n            \"relevance\": 5,\n            \"credibility\": 4,\n            \"timeliness\": 8,\n            \"signal\": 5"
+    "error": "Failed to parse pre-analysis JSON: failed to parse JSON: Expecting ',' delimiter: line 208 column 10 (char 7600)",
+    "raw": "```json\n{\n    \"pair\": \"EUR/USD\",\n    \"source_summary\": {\n        \"Investing.com\": {\n            \"coverage\": 2,\n            \"credibility\": 1,\n            \"signal\": 1,\n            \"notes\": \"Severe content duplication issue. All articles (1-10) share identical content despite different titles and categories, suggesting a data feed or scraping error. This invalidates most of their output for this sample. One article (9) has a relevant ECB/Lagarde title but the content is corrupted.\"\n        },\n        \"MarketWatch\": {\n            \"coverage\": 7,\n            \"credibility\": 8,\n            \"signal\": 8,\n            \"notes\": \"Provides diverse, relevant, and non-duplicated news on dollar drivers (tariffs, data, Fed, positioning). Good mix of immediate price action and fundamental themes. Credibility is higher due to specific data points and named sources (Fed, BofA).\"\n        }\n    },\n    \"themes\": [\n        {\n            \"theme\": \"US Tariff Policy & Supreme Court Ruling\",\n            \"importance\": 9,\n            \"evidence_news_ids\": [11, 13]\n        },\n        {\n            \"theme\": \"US Economic Data & Fed Policy\",\n            \"importance\": 8,\n            \"evidence_news_ids\": [14, 16, 17]\n        },\n        {\n            \"theme\": \"USD Positioning & Sentiment\",\n            \"importance\": 7,\n            \"evidence_news_ids\": [13, 20]\n        },\n        {\n            \"theme\": \"Risk Sentiment & Geopolitics\",\n            \"importance\": 6,\n            \"evidence_news_ids\": [13]\n        },\n        {\n            \"theme\": \"ECB Leadership Speculation\",\n            \"importance\": 5,\n            \"evidence_news_ids\": [9]\n        }\n    ],\n    \"duplicates\": [\n        {\n            \"group_id\": \"DUP_INVESTING_MAIN\",\n            \"news_ids\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],\n            \"canonical_news_id\": 6,\n            \"notes\": \"All 10 Investing.com articles share the exact same content string about Trump tariffs, despite vastly different titles. This is a critical data integrity issue. News 6 is chosen as canonical as its title is most directly FX-relevant.\"\n        }\n    ],\n    \"article_quality\": [\n        {\n            \"news_id\": 1,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 2,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 3,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 4,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 5,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 6,\n            \"source\": \"Investing.com\",\n            \"relevance\": 8,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 5,\n            \"overall\": 3,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"High relevance title corrupted by wrong content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 7,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 8,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Irrelevant title (Nvidia)\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 9,\n            \"source\": \"Investing.com\",\n            \"relevance\": 7,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 5,\n            \"overall\": 3,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"High relevance title (ECB) corrupted by wrong content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 10,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 11,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 9,\n            \"credibility\": 8,\n            \"timeliness\": 7,\n            \"signal\": 9,\n            \"overall\": 9,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Direct FX impact (dollar weakens)\", \"Specific policy catalyst (tariffs, SCOTUS)\", \"Clear signal\"]\n        },\n        {\n            \"news_id\": 12,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 7,\n            \"credibility\": 7,\n            \"timeliness\": 7,\n            \"signal\": 6,\n            \"overall\": 7,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Direct price action data\", \"Short-term market context\"]\n        },\n        {\n            \"news_id\": 13,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 7,\n            \"timeliness\": 7,\n            \"signal\": 8,\n            \"overall\": 8,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Analyses multiple dollar drivers\", \"Context beyond headlines\", \"Good signal strength\"]\n        },\n        {\n            \"news_id\": 14,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 9,\n            \"timeliness\": 8,\n            \"signal\": 8,\n            \"over"
   }
 }

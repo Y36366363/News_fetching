@@ -684,6 +684,298 @@ def fetch_newsapi_fx_pair(
     return items
 
 
+# ---------------------------------------------------------------------------
+# Alpha Vantage (API source)
+# ---------------------------------------------------------------------------
+
+_ALPHAVANTAGE_FULL_CACHE: Dict[str, Dict[str, Any]] = {}
+
+
+def _make_alphavantage_key() -> Optional[str]:
+    key = (
+        os.getenv("ALPHA_VANTAGE_KEY")
+        or os.getenv("ALPHAVANTAGE_API_KEY")
+        or os.getenv("ALPHA_VANTAGE_API_KEY")
+    )
+    if not key:
+        debug_log("[WARN] ALPHA_VANTAGE_KEY not set; Alpha Vantage source will be skipped.")
+        return None
+    return key
+
+
+def _alphavantage_time_from(d: Optional[date]) -> Optional[str]:
+    if not isinstance(d, date):
+        return None
+    return d.strftime("%Y%m%dT0000")
+
+
+def _alphavantage_time_to(d: Optional[date]) -> Optional[str]:
+    if not isinstance(d, date):
+        return None
+    return d.strftime("%Y%m%dT2359")
+
+
+def parse_alphavantage_time_published(value: str) -> Optional[datetime]:
+    """
+    Alpha Vantage NEWS_SENTIMENT returns time like YYYYMMDDTHHMMSS or YYYYMMDDTHHMM.
+    Interpret it as UTC.
+    """
+    if not isinstance(value, str) or not value.strip():
+        return None
+    text = value.strip()
+    for fmt in ("%Y%m%dT%H%M%S", "%Y%m%dT%H%M"):
+        try:
+            dt = datetime.strptime(text, fmt).replace(tzinfo=timezone.utc)
+            return dt
+        except Exception:
+            continue
+    return None
+
+
+def fetch_alphavantage_news_sentiment(
+    *,
+    tickers: Optional[str] = None,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    limit: int = 10,
+    sort: str = "RELEVANCE",
+    topics: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    """
+    Fetch financial news from Alpha Vantage NEWS_SENTIMENT.
+    Returns normalized items compatible with the rest of the pipeline.
+    """
+    key = _make_alphavantage_key()
+    if not key:
+        return []
+
+    lim = limit if isinstance(limit, int) and 0 < limit <= 1000 else 10
+    params: Dict[str, Any] = {
+        "function": "NEWS_SENTIMENT",
+        "sort": sort,
+        "limit": lim,
+        "apikey": key,
+    }
+    if tickers:
+        params["tickers"] = tickers
+    if topics:
+        params["topics"] = topics
+    tf = _alphavantage_time_from(start_date)
+    tt = _alphavantage_time_to(end_date)
+    if tf:
+        params["time_from"] = tf
+    if tt:
+        params["time_to"] = tt
+
+    label = tickers or (f"topics={topics}" if topics else "all")
+    print(f"\n[INFO] Fetching Alpha Vantage news ({label})...")
+    def _do_request() -> Optional[Dict[str, Any]]:
+        try:
+            resp = requests.get(
+                "https://www.alphavantage.co/query",
+                params=params,
+                headers=HEADERS,
+                timeout=25,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            return data if isinstance(data, dict) else None
+        except Exception as exc:
+            debug_log(f"[WARN] Alpha Vantage request failed: {exc}")
+            return None
+
+    data = _do_request()
+    if data is None:
+        return []
+
+    # Alpha Vantage uses 200 responses with informational/error payloads.
+    info = data.get("Information") or data.get("Note") or data.get("Error Message")
+    if isinstance(info, str) and info.strip():
+        msg = info.strip()
+        # Free tier throttle is typically returned via "Note".
+        # Respect 1 request/sec and retry once.
+        if "spreading out your free API requests" in msg or "request per second" in msg:
+            print(f"[WARN] Alpha Vantage rate-limited: {msg}")
+            time.sleep(1.1)
+            data2 = _do_request()
+            if isinstance(data2, dict):
+                info2 = data2.get("Information") or data2.get("Note") or data2.get("Error Message")
+                if isinstance(info2, str) and info2.strip():
+                    print(f"[WARN] Alpha Vantage returned: {info2.strip()}")
+                    return []
+                data = data2
+            else:
+                return []
+        else:
+            print(f"[WARN] Alpha Vantage returned: {msg}")
+            return []
+
+    # Cache full response for this run (without apikey).
+    try:
+        cached_params = {k: v for k, v in params.items() if k != "apikey"}
+        cache_key = tickers or (f"topics:{topics}" if topics else "all")
+        _ALPHAVANTAGE_FULL_CACHE[cache_key] = {
+            "schema_version": 1,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "request": {"endpoint": "https://www.alphavantage.co/query", "params": cached_params},
+            "response": {
+                "items": data.get("items") if isinstance(data, dict) else None,
+                "sentiment_score_definition": data.get("sentiment_score_definition") if isinstance(data, dict) else None,
+                "relevance_score_definition": data.get("relevance_score_definition") if isinstance(data, dict) else None,
+            },
+            "raw": data,
+        }
+    except Exception:
+        pass
+
+    feed = data.get("feed") if isinstance(data, dict) else None
+    if not isinstance(feed, list):
+        if isinstance(data, dict) and data:
+            # Surface unexpected shape to help debugging.
+            print("[WARN] Alpha Vantage response did not contain a 'feed' list.")
+        return []
+
+    items: List[Dict[str, Any]] = []
+    for a in feed:
+        if not isinstance(a, dict):
+            continue
+        title = (a.get("title") or "").strip()
+        url = (a.get("url") or "").strip()
+        if not title or not url:
+            continue
+
+        published_dt = None
+        tp = a.get("time_published")
+        if isinstance(tp, str):
+            published_dt = parse_alphavantage_time_published(tp)
+        if not within_date_range(published_dt, start_date, end_date):
+            continue
+
+        src_val = a.get("source") or a.get("source_domain") or "AlphaVantage"
+        source = src_val.strip() if isinstance(src_val, str) else "AlphaVantage"
+        summary = (a.get("summary") or a.get("description") or "").strip()
+        if not summary:
+            # As a fallback, stitch a short snippet from topics/sentiment.
+            summary = ""
+
+        items.append(
+            {
+                "source": f"AlphaVantage: {source}",
+                # Caller should set currency_pair/asset_type appropriately.
+                "currency_pair": "UNKNOWN",
+                "asset_type": "currency",
+                "title": title,
+                "url": url,
+                "published_dt": published_dt,
+                "snippet": summary[:600],
+            }
+        )
+
+        if len(items) >= lim:
+            break
+
+    print(f"[INFO] Alpha Vantage items collected: {len(items)}")
+    return items
+
+
+def fetch_alphavantage_fx_pair(
+    pair: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: int = 10,
+) -> List[Dict[str, Any]]:
+    """
+    Alpha Vantage tickers filter is AND-based. For FX pairs we use both currencies
+    to prioritize pair-relevant news.
+    """
+    parts = pair.replace(" ", "").upper().split("/")
+    base = parts[0] if len(parts) > 0 else pair.upper()
+    quote = parts[1] if len(parts) > 1 else ""
+    lim = max_items if isinstance(max_items, int) and max_items > 0 else 10
+
+    # Avoid passing a future time_to (can cause empty results for some APIs).
+    today = datetime.now(timezone.utc).date()
+    effective_end = end_date if (isinstance(end_date, date) and end_date <= today) else None
+
+    # Alpha Vantage NEWS_SENTIMENT ticker support for forex is inconsistent:
+    # "FOREX:USD" is shown in the docs, but "FOREX:EUR" can return "Invalid inputs".
+    # To make FX news reliable, we query by *topics* (single API call), then
+    # filter locally for currency keywords.
+
+    code_to_names = {
+        "USD": ["dollar", "u.s. dollar", "us dollar"],
+        "EUR": ["euro"],
+        "JPY": ["yen"],
+        "GBP": ["pound", "sterling"],
+        "CNY": ["yuan", "renminbi"],
+        "CNH": ["yuan", "renminbi"],
+        "CAD": ["canadian dollar", "loonie"],
+        "AUD": ["australian dollar", "aussie"],
+    }
+    base_names = code_to_names.get(base, [])
+    quote_names = code_to_names.get(quote, []) if quote else []
+    keyword_patterns: List[str] = []
+    if base:
+        keyword_patterns.append(rf"\\b{re.escape(base.lower())}\\b")
+    if quote:
+        keyword_patterns.append(rf"\\b{re.escape(quote.lower())}\\b")
+    for n in base_names + quote_names:
+        keyword_patterns.append(re.escape(n.lower()))
+
+    topics = "economy_monetary,economy_macro,financial_markets"
+    batch = fetch_alphavantage_news_sentiment(
+        tickers=None,
+        start_date=start_date,
+        end_date=effective_end,
+        limit=50,
+        sort="LATEST",
+        topics=topics,
+    )
+
+    filtered: List[Dict[str, Any]] = []
+    seen_urls: set[str] = set()
+    for it in batch:
+        url = it.get("url")
+        if not (isinstance(url, str) and url) or url in seen_urls:
+            continue
+        title = (it.get("title") or "")
+        snippet = (it.get("snippet") or "")
+        text = f"{title} {snippet}".lower()
+        if any(re.search(p, text) for p in keyword_patterns):
+            it["currency_pair"] = pair
+            it["asset_type"] = "currency"
+            filtered.append(it)
+            seen_urls.add(url)
+            if len(filtered) >= lim:
+                break
+
+    print(f"[INFO] Alpha Vantage FX filtered items kept: {len(filtered)}")
+    return filtered
+
+
+def fetch_alphavantage_stock(
+    symbol: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: int = 10,
+) -> List[Dict[str, Any]]:
+    lim = max_items if isinstance(max_items, int) and max_items > 0 else 10
+    today = datetime.now(timezone.utc).date()
+    effective_end = end_date if (isinstance(end_date, date) and end_date <= today) else None
+
+    items = fetch_alphavantage_news_sentiment(
+        tickers=symbol.upper(),
+        start_date=start_date,
+        end_date=effective_end,
+        limit=lim,
+        sort="RELEVANCE",
+        topics="financial_markets,earnings,mergers_and_acquisitions,ipo",
+    )
+    for it in items:
+        it["currency_pair"] = symbol
+        it["asset_type"] = "stock"
+    return items
+
 def _load_json_file_best_effort(path: str) -> object:
     if not os.path.exists(path):
         return []
@@ -861,6 +1153,85 @@ def normalize_newsapi_content_store(path: str) -> Dict[str, Any]:
     except Exception as exc:
         return {"total": len(articles), "changed": changed, "path": path, "error": str(exc)}
 
+
+def update_alphavantage_content_store(asset: str, path: str, items: List["NewsItem"]) -> Dict[str, Any]:
+    """
+    Append-only content store for Alpha Vantage items, de-duplicated by URL.
+    Stores:
+    - source, title, url, publishedAt, content (single line)
+    For new URLs, tries to fetch full text; falls back to the snippet.
+    """
+    existing_raw = _load_json_file_best_effort(path)
+    existing_articles: List[Dict[str, Any]] = []
+    if isinstance(existing_raw, list):
+        existing_articles = [a for a in existing_raw if isinstance(a, dict)]
+    elif isinstance(existing_raw, dict) and isinstance(existing_raw.get("articles"), list):
+        existing_articles = [a for a in existing_raw["articles"] if isinstance(a, dict)]
+
+    existing_urls = {
+        a.get("url") for a in existing_articles if isinstance(a.get("url"), str) and a.get("url")
+    }
+
+    added = 0
+    skipped = 0
+    new_articles: List[Dict[str, Any]] = []
+
+    for it in items:
+        if not isinstance(it.url, str) or not it.url:
+            continue
+        if it.url in existing_urls:
+            skipped += 1
+            continue
+
+        body = fetch_article_full_text(it.url)
+        if body:
+            content = _normalize_single_line(body)
+        else:
+            content = _normalize_single_line(it.snippet or "")
+
+        new_articles.append(
+            {
+                "source": it.source,
+                "title": it.title,
+                "url": it.url,
+                "publishedAt": it.published_at,
+                "content": content,
+            }
+        )
+        existing_urls.add(it.url)
+        added += 1
+
+    merged = existing_articles + new_articles
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(merged, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Updated Alpha Vantage content store: added {added}, total {len(merged)} -> {path!r}")
+    except Exception as exc:
+        return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path, "error": str(exc)}
+
+    return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path}
+
+
+def _filter_api_source_items_by_urls(
+    news: List["NewsItem"],
+    *,
+    source_prefix: str,
+    selected_urls: set[str],
+) -> List["NewsItem"]:
+    """
+    Keep all non-matching sources, but for items whose source starts with source_prefix,
+    keep only those whose URL is in selected_urls.
+    """
+    if not selected_urls:
+        return news
+    out: List[NewsItem] = []
+    for n in news:
+        if isinstance(n.source, str) and n.source.startswith(source_prefix):
+            if isinstance(n.url, str) and n.url in selected_urls:
+                out.append(n)
+        else:
+            out.append(n)
+    return out
 
 # ---------------------------------------------------------------------------
 # Stock scrapers
@@ -1118,10 +1489,15 @@ def collect_news_for_pair(
     end_date: Optional[date],
     max_items: Optional[int] = None,
     enable_investing: bool = True,
+    investing_max_items: Optional[int] = None,
     enable_marketwatch: bool = True,
+    marketwatch_max_items: Optional[int] = None,
     enable_yahoo: bool = True,
+    yahoo_max_items: Optional[int] = None,
     enable_newsapi: bool = False,
     newsapi_max_items: Optional[int] = None,
+    enable_alphavantage: bool = False,
+    alphavantage_max_items: Optional[int] = None,
 ) -> List[NewsItem]:
     """
     Aggregate news from all configured sources, de-duplicate, and convert
@@ -1138,9 +1514,14 @@ def collect_news_for_pair(
         )
 
     remaining = max_items
+    def effective_cap(remaining_budget: Optional[int], per_source_cap: Optional[int]) -> Optional[int]:
+        if isinstance(per_source_cap, int) and per_source_cap > 0:
+            return per_source_cap if remaining_budget is None else min(remaining_budget, per_source_cap)
+        return remaining_budget
 
     # 1) Investing.com
     if enable_investing and (remaining is None or remaining > 0):
+        cap = effective_cap(remaining, investing_max_items)
         before = len(raw_items)
         raw_items.extend(
             scrape_investing_pair(
@@ -1148,7 +1529,7 @@ def collect_news_for_pair(
                 url=cfg["investing_url"],
                 start_date=start_date,
                 end_date=end_date,
-                max_items=remaining,
+                max_items=cap,
             )
         )
         if remaining is not None:
@@ -1158,6 +1539,7 @@ def collect_news_for_pair(
     # 2) MarketWatch (only if we still want more items and URL is configured)
     mw_url = cfg.get("marketwatch_url")
     if enable_marketwatch and mw_url and (remaining is None or remaining > 0):
+        cap = effective_cap(remaining, marketwatch_max_items)
         before = len(raw_items)
         raw_items.extend(
             scrape_marketwatch_pair(
@@ -1165,7 +1547,7 @@ def collect_news_for_pair(
                 url=mw_url,
                 start_date=start_date,
                 end_date=end_date,
-                max_items=remaining,
+                max_items=cap,
             )
         )
         if remaining is not None:
@@ -1175,14 +1557,18 @@ def collect_news_for_pair(
     # 3) Yahoo Finance (currently configured only for some pairs, e.g. EUR/USD)
     yahoo_url = cfg.get("yahoo_url")
     if enable_yahoo and yahoo_url and (remaining is None or remaining > 0):
+        cap = effective_cap(remaining, yahoo_max_items)
         before = len(raw_items)
         raw_items.extend(
             scrape_yahoo_pair(
                 pair=pair,
                 url=yahoo_url,
-                max_items=remaining,
+                max_items=cap,
             )
         )
+        if remaining is not None:
+            added = len(raw_items) - before
+            remaining = max(0, remaining - added)
 
     # 4) NewsAPI.org (optional API source)
     # If enabled, always call it so we can also save a separate "full content"
@@ -1205,6 +1591,28 @@ def collect_news_for_pair(
             added = len(raw_items) - before
             if remaining is not None:
                 remaining = max(0, remaining - added)
+
+    # 5) Alpha Vantage NEWS_SENTIMENT (optional API source)
+    if enable_alphavantage and (remaining is None or remaining > 0):
+        cap = (
+            alphavantage_max_items
+            if isinstance(alphavantage_max_items, int) and alphavantage_max_items > 0
+            else 10
+        )
+        before = len(raw_items)
+        av_items = fetch_alphavantage_fx_pair(
+            pair=pair,
+            start_date=start_date,
+            end_date=end_date,
+            max_items=cap,
+        )
+        if remaining is None:
+            raw_items.extend(av_items)
+        else:
+            raw_items.extend(av_items[:remaining])
+        added = len(raw_items) - before
+        if remaining is not None:
+            remaining = max(0, remaining - added)
 
     if not raw_items:
         return []
@@ -1248,8 +1656,13 @@ def collect_news_for_stock(
     end_date: Optional[date],
     max_items: Optional[int] = None,
     enable_investing: bool = True,
+    investing_max_items: Optional[int] = None,
     enable_marketwatch: bool = True,
+    marketwatch_max_items: Optional[int] = None,
     enable_yahoo: bool = True,
+    yahoo_max_items: Optional[int] = None,
+    enable_alphavantage: bool = False,
+    alphavantage_max_items: Optional[int] = None,
 ) -> List[NewsItem]:
     """
     Aggregate news from all configured sources for a stock, de-duplicate, and convert
@@ -1265,10 +1678,15 @@ def collect_news_for_stock(
         )
 
     remaining = max_items
+    def effective_cap(remaining_budget: Optional[int], per_source_cap: Optional[int]) -> Optional[int]:
+        if isinstance(per_source_cap, int) and per_source_cap > 0:
+            return per_source_cap if remaining_budget is None else min(remaining_budget, per_source_cap)
+        return remaining_budget
 
     # 1) Investing.com
     investing_url = cfg.get("investing_url")
     if enable_investing and investing_url and (remaining is None or remaining > 0):
+        cap = effective_cap(remaining, investing_max_items)
         before = len(raw_items)
         raw_items.extend(
             scrape_investing_stock(
@@ -1276,7 +1694,7 @@ def collect_news_for_stock(
                 url=investing_url,
                 start_date=start_date,
                 end_date=end_date,
-                max_items=remaining,
+                max_items=cap,
             )
         )
         if remaining is not None:
@@ -1286,6 +1704,7 @@ def collect_news_for_stock(
     # 2) MarketWatch
     mw_url = cfg.get("marketwatch_url")
     if enable_marketwatch and mw_url and (remaining is None or remaining > 0):
+        cap = effective_cap(remaining, marketwatch_max_items)
         before = len(raw_items)
         raw_items.extend(
             scrape_marketwatch_stock(
@@ -1293,7 +1712,7 @@ def collect_news_for_stock(
                 url=mw_url,
                 start_date=start_date,
                 end_date=end_date,
-                max_items=remaining,
+                max_items=cap,
             )
         )
         if remaining is not None:
@@ -1303,6 +1722,7 @@ def collect_news_for_stock(
     # 3) Yahoo Finance
     yahoo_url = cfg.get("yahoo_url")
     if enable_yahoo and yahoo_url and (remaining is None or remaining > 0):
+        cap = effective_cap(remaining, yahoo_max_items)
         before = len(raw_items)
         raw_items.extend(
             scrape_yahoo_stock(
@@ -1310,9 +1730,34 @@ def collect_news_for_stock(
                 url=yahoo_url,
                 start_date=start_date,
                 end_date=end_date,
-                max_items=remaining,
+                max_items=cap,
             )
         )
+        if remaining is not None:
+            added = len(raw_items) - before
+            remaining = max(0, remaining - added)
+
+    # 4) Alpha Vantage NEWS_SENTIMENT (optional API source)
+    if enable_alphavantage and (remaining is None or remaining > 0):
+        cap = (
+            alphavantage_max_items
+            if isinstance(alphavantage_max_items, int) and alphavantage_max_items > 0
+            else 10
+        )
+        before = len(raw_items)
+        av_items = fetch_alphavantage_stock(
+            symbol=symbol,
+            start_date=start_date,
+            end_date=end_date,
+            max_items=cap,
+        )
+        if remaining is None:
+            raw_items.extend(av_items)
+        else:
+            raw_items.extend(av_items[:remaining])
+        added = len(raw_items) - before
+        if remaining is not None:
+            remaining = max(0, remaining - added)
 
     if not raw_items:
         return []
@@ -1433,10 +1878,15 @@ def load_default_config() -> Dict[str, object]:
             "stock": None,
             "max_news": None,
             "enable_investing": True,
+            "investing_max_items": None,
             "enable_marketwatch": True,
+            "marketwatch_max_items": None,
             "enable_yahoo": True,
+            "yahoo_max_items": None,
             "enable_newsapi": False,
             "newsapi_max_items": None,
+            "enable_alphavantage": False,
+            "alphavantage_max_items": 10,
             "enable_pre_analysis": True,
             "pre_analysis_max_articles": 20,
             "pre_analysis_filter_for_report": True,
@@ -1456,10 +1906,15 @@ def load_default_config() -> Dict[str, object]:
             "stock": None,
             "max_news": None,
             "enable_investing": True,
+            "investing_max_items": None,
             "enable_marketwatch": True,
+            "marketwatch_max_items": None,
             "enable_yahoo": True,
+            "yahoo_max_items": None,
             "enable_newsapi": False,
             "newsapi_max_items": None,
+            "enable_alphavantage": False,
+            "alphavantage_max_items": 10,
             "enable_pre_analysis": True,
             "pre_analysis_max_articles": 20,
             "pre_analysis_filter_for_report": True,
@@ -1476,15 +1931,28 @@ def load_default_config() -> Dict[str, object]:
     stock = data.get("stock")
     max_news = data.get("max_news", None)
     enable_investing = bool(data.get("enable_investing", True))
+    investing_max_items = data.get("investing_max_items", None)
+    if not (isinstance(investing_max_items, int) and investing_max_items > 0):
+        investing_max_items = None
     enable_marketwatch = bool(data.get("enable_marketwatch", True))
+    marketwatch_max_items = data.get("marketwatch_max_items", None)
+    if not (isinstance(marketwatch_max_items, int) and marketwatch_max_items > 0):
+        marketwatch_max_items = None
     enable_yahoo = bool(data.get("enable_yahoo", True))
+    yahoo_max_items = data.get("yahoo_max_items", None)
+    if not (isinstance(yahoo_max_items, int) and yahoo_max_items > 0):
+        yahoo_max_items = None
     enable_newsapi = bool(data.get("enable_newsapi", False))
+    enable_alphavantage = bool(data.get("enable_alphavantage", False))
     enable_pre_analysis = bool(data.get("enable_pre_analysis", True))
     pre_analysis_max_articles = data.get("pre_analysis_max_articles", 20)
     pre_analysis_filter_for_report = bool(data.get("pre_analysis_filter_for_report", True))
     newsapi_max_items = data.get("newsapi_max_items", None)
     if not (isinstance(newsapi_max_items, int) and newsapi_max_items > 0):
         newsapi_max_items = None
+    alphavantage_max_items = data.get("alphavantage_max_items", 10)
+    if not (isinstance(alphavantage_max_items, int) and alphavantage_max_items > 0):
+        alphavantage_max_items = 10
     
     if asset_type == "currency":
         if currency_pair not in SUPPORTED_PAIRS:
@@ -1516,10 +1984,15 @@ def load_default_config() -> Dict[str, object]:
         "stock": stock if isinstance(stock, str) else None,
         "max_news": max_news if isinstance(max_news, int) and max_news > 0 else None,
         "enable_investing": enable_investing,
+        "investing_max_items": investing_max_items,
         "enable_marketwatch": enable_marketwatch,
+        "marketwatch_max_items": marketwatch_max_items,
         "enable_yahoo": enable_yahoo,
+        "yahoo_max_items": yahoo_max_items,
         "enable_newsapi": enable_newsapi,
         "newsapi_max_items": newsapi_max_items,
+        "enable_alphavantage": enable_alphavantage,
+        "alphavantage_max_items": alphavantage_max_items,
         "enable_pre_analysis": enable_pre_analysis,
         "pre_analysis_max_articles": pre_analysis_max_articles,
         "pre_analysis_filter_for_report": pre_analysis_filter_for_report,
@@ -1717,9 +2190,10 @@ def run_deepseek_pre_analysis(
         return {"error": f"Error calling DeepSeek for pre-analysis: {exc}"}
 
 
-def build_newsapi_relevance_prompt(pair: str, articles: List[Dict[str, Any]]) -> str:
+def build_source_relevance_prompt(asset: str, source_name: str, articles: List[Dict[str, Any]]) -> str:
     """
-    Ask DeepSeek to classify NewsAPI articles by relevance to the FX pair.
+    Ask DeepSeek to classify source articles by relevance to the asset (FX pair),
+    and to rate their quality.
     """
     blocks: List[str] = []
     for idx, a in enumerate(articles, start=1):
@@ -1749,7 +2223,7 @@ def build_newsapi_relevance_prompt(pair: str, articles: List[Dict[str, Any]]) ->
 
     return (
         "You are a financial news relevance judge for FX trading.\n"
-        f"Classify NewsAPI articles by how relevant they are to the FX pair {pair}, and rate their quality.\n\n"
+        f"Classify {source_name} articles by how relevant they are to {asset}, and rate their quality.\n\n"
         "Relevance rules:\n"
         "- most_relevant: directly about the pair OR clearly about BOTH currencies and their exchange rate drivers\n"
         "- relevant: clearly about ONLY ONE of the two currencies (EUR-only or USD-only), or a major USD/EUR driver but not explicitly the pair\n"
@@ -1773,9 +2247,16 @@ def build_newsapi_relevance_prompt(pair: str, articles: List[Dict[str, Any]]) ->
         "- Only include URLs that appear in the context.\n"
         "- selected_urls should include ONLY most_relevant + relevant (exclude unrelated).\n"
         "- Order selected_urls from best to worst using: (label, relevance_score, quality_score).\n\n"
-        "Here is the NewsAPI context:\n\n"
+        f"Here is the {source_name} context:\n\n"
         f"{context}\n"
     )
+
+
+def build_newsapi_relevance_prompt(pair: str, articles: List[Dict[str, Any]]) -> str:
+    """
+    Ask DeepSeek to classify NewsAPI articles by relevance to the FX pair.
+    """
+    return build_source_relevance_prompt(pair, "NewsAPI", articles)
 
 
 def run_deepseek_newsapi_relevance(
@@ -1810,6 +2291,36 @@ def run_deepseek_newsapi_relevance(
         return {"error": f"Error calling DeepSeek for NewsAPI relevance: {exc}"}
 
 
+def run_deepseek_source_relevance(
+    *,
+    asset: str,
+    source_name: str,
+    articles: List[Dict[str, Any]],
+) -> Dict[str, Any]:
+    client = make_deepseek_client()
+    if client is None:
+        return {"error": "DEEPSEEK_API_KEY not set; relevance analysis skipped."}
+    if not articles:
+        return {"error": f"No {source_name} articles provided for relevance analysis."}
+
+    prompt = build_source_relevance_prompt(asset, source_name, articles)
+    print(f"\n[INFO] Requesting DeepSeek {source_name} relevance analysis...")
+    try:
+        resp = client.chat.completions.create(
+            model="deepseek-chat",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.0,
+            max_tokens=1800,
+        )
+        raw = resp.choices[0].message.content or ""
+        parsed, err = _try_parse_json_object(raw)
+        if parsed is None:
+            return {"error": f"Failed to parse {source_name} relevance JSON: {err}", "raw": raw}
+        return parsed
+    except Exception as exc:
+        return {"error": f"Error calling DeepSeek for {source_name} relevance: {exc}"}
+
+
 def save_newsapi_relevance_json(pair: str, path: str, payload: Dict[str, Any]) -> bool:
     try:
         out = {
@@ -1824,6 +2335,24 @@ def save_newsapi_relevance_json(pair: str, path: str, payload: Dict[str, Any]) -
         return True
     except Exception as exc:
         debug_log(f"[WARN] Failed to save NewsAPI relevance JSON: {exc}")
+        return False
+
+
+def save_source_relevance_json(asset: str, path: str, *, source_name: str, payload: Dict[str, Any]) -> bool:
+    try:
+        out = {
+            "schema_version": 1,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "asset": asset,
+            "source": source_name,
+            "relevance": payload,
+        }
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Saved {source_name} relevance analysis to {path!r}")
+        return True
+    except Exception as exc:
+        debug_log(f"[WARN] Failed to save {source_name} relevance JSON: {exc}")
         return False
 
 
@@ -2170,8 +2699,13 @@ def main() -> None:
             end_date,
             max_items=max_news,
             enable_investing=bool(cfg.get("enable_investing", True)),
+            investing_max_items=cfg.get("investing_max_items", None),
             enable_marketwatch=bool(cfg.get("enable_marketwatch", True)),
+            marketwatch_max_items=cfg.get("marketwatch_max_items", None),
             enable_yahoo=bool(cfg.get("enable_yahoo", True)),
+            yahoo_max_items=cfg.get("yahoo_max_items", None),
+            enable_alphavantage=bool(cfg.get("enable_alphavantage", False)),
+            alphavantage_max_items=cfg.get("alphavantage_max_items", 10),
         )
     else:
         news_items = collect_news_for_pair(
@@ -2180,10 +2714,15 @@ def main() -> None:
             end_date,
             max_items=max_news,
             enable_investing=bool(cfg.get("enable_investing", True)),
+            investing_max_items=cfg.get("investing_max_items", None),
             enable_marketwatch=bool(cfg.get("enable_marketwatch", True)),
+            marketwatch_max_items=cfg.get("marketwatch_max_items", None),
             enable_yahoo=bool(cfg.get("enable_yahoo", True)),
+            yahoo_max_items=cfg.get("yahoo_max_items", None),
             enable_newsapi=bool(cfg.get("enable_newsapi", False)),
             newsapi_max_items=cfg.get("newsapi_max_items", None),
+            enable_alphavantage=bool(cfg.get("enable_alphavantage", False)),
+            alphavantage_max_items=cfg.get("alphavantage_max_items", 10),
         )
 
     if not news_items:
@@ -2214,6 +2753,14 @@ def main() -> None:
             "marketwatch": bool(cfg.get("enable_marketwatch", True)),
             "yahoo": bool(cfg.get("enable_yahoo", True)),
             "newsapi": bool(cfg.get("enable_newsapi", False)),
+            "alphavantage": bool(cfg.get("enable_alphavantage", False)),
+        },
+        "source_max_items": {
+            "investing": cfg.get("investing_max_items", None),
+            "marketwatch": cfg.get("marketwatch_max_items", None),
+            "yahoo": cfg.get("yahoo_max_items", None),
+            "newsapi": cfg.get("newsapi_max_items", None),
+            "alphavantage": cfg.get("alphavantage_max_items", 10),
         },
         "newsapi_max_items": cfg.get("newsapi_max_items", None),
         "llm_enabled": cfg.get("enabled_llm_providers", []),
@@ -2230,6 +2777,9 @@ def main() -> None:
         meta["pre_analysis"]["max_articles"] = pre_max_articles
 
     newsapi_relevance: Optional[Dict[str, Any]] = None
+    newsapi_selected_urls: set[str] = set()
+    alphavantage_relevance: Optional[Dict[str, Any]] = None
+    alphavantage_selected_urls: set[str] = set()
 
     # Additionally save a separate NewsAPI-only JSON with full content for future access/reuse.
     if asset_type == "currency" and bool(cfg.get("enable_newsapi", False)):
@@ -2263,6 +2813,57 @@ def main() -> None:
                 u = counts.get("unrelated", 0)
                 print(f"[INFO] NewsAPI relevance counts (once): most_relevant={mr}, relevant={r}, unrelated={u}")
 
+            sel = newsapi_relevance.get("selected_urls") if isinstance(newsapi_relevance, dict) else None
+            if isinstance(sel, list):
+                newsapi_selected_urls = {u for u in sel if isinstance(u, str) and u}
+
+    # Alpha Vantage: save content store + DeepSeek relevance/quality (similar to NewsAPI)
+    if bool(cfg.get("enable_alphavantage", False)):
+        base_no_ext, _ = os.path.splitext(output_path)
+        if base_no_ext.endswith("_news"):
+            av_content_path = base_no_ext[:-5] + "_alphavantage_content.json"
+            av_quality_path = base_no_ext[:-5] + "_alphavantage_quality.json"
+        else:
+            av_content_path = base_no_ext + "_alphavantage_content.json"
+            av_quality_path = base_no_ext + "_alphavantage_quality.json"
+
+        av_items = [n for n in news_items if isinstance(n.source, str) and n.source.startswith("AlphaVantage")]
+        if av_items:
+            update_alphavantage_content_store(asset, av_content_path, av_items)
+
+            # Build per-run article dicts for DeepSeek relevance/quality scoring.
+            av_articles: List[Dict[str, Any]] = []
+            for n in av_items:
+                av_articles.append(
+                    {
+                        "url": n.url,
+                        "source": n.source,
+                        "publishedAt": n.published_at,
+                        "title": n.title,
+                        "content": n.snippet or "",
+                    }
+                )
+            max_for_relevance = int(cfg.get("alphavantage_max_items", 10) or 10)
+            if max_for_relevance <= 0:
+                max_for_relevance = 10
+            alphavantage_relevance = run_deepseek_source_relevance(
+                asset=asset,
+                source_name="AlphaVantage",
+                articles=av_articles[:max_for_relevance],
+            )
+            save_source_relevance_json(asset, av_quality_path, source_name="AlphaVantage", payload=alphavantage_relevance)
+
+            counts = alphavantage_relevance.get("counts") if isinstance(alphavantage_relevance, dict) else None
+            if isinstance(counts, dict):
+                mr = counts.get("most_relevant", 0)
+                r = counts.get("relevant", 0)
+                u = counts.get("unrelated", 0)
+                print(f"[INFO] AlphaVantage relevance counts (once): most_relevant={mr}, relevant={r}, unrelated={u}")
+
+            sel = alphavantage_relevance.get("selected_urls") if isinstance(alphavantage_relevance, dict) else None
+            if isinstance(sel, list):
+                alphavantage_selected_urls = {u for u in sel if isinstance(u, str) and u}
+
     if args.no_llm:
         save_news_to_json(news_items, output_path, meta=meta, analysis={}, pre_analysis={})
         print("[INFO] Skipping LLM analysis (--no-llm specified).")
@@ -2288,21 +2889,23 @@ def main() -> None:
                 meta["pre_analysis_recommended_news_ids"] = rec_ids
 
     # If NewsAPI is enabled and we have a relevance classification for this run,
-    # feed only "related" NewsAPI items (most_relevant + relevant) to the final LLM report.
+    # filter only the API-source items (keep other sources).
     if asset_type == "currency" and bool(cfg.get("enable_newsapi", False)):
-        selected_urls = (
-            newsapi_relevance.get("selected_urls")
-            if isinstance(newsapi_relevance, dict)
-            else None
+        if newsapi_selected_urls:
+            analysis_news = _filter_api_source_items_by_urls(
+                analysis_news,
+                source_prefix="NewsAPI",
+                selected_urls=newsapi_selected_urls,
+            )
+            meta["newsapi_selected_urls_for_report"] = sorted(newsapi_selected_urls)
+
+    if bool(cfg.get("enable_alphavantage", False)) and alphavantage_selected_urls:
+        analysis_news = _filter_api_source_items_by_urls(
+            analysis_news,
+            source_prefix="AlphaVantage",
+            selected_urls=alphavantage_selected_urls,
         )
-        if isinstance(selected_urls, list) and selected_urls:
-            selected_set = {u for u in selected_urls if isinstance(u, str) and u}
-            related_news = [
-                n for n in news_items if isinstance(n.url, str) and n.url in selected_set
-            ]
-            if related_news:
-                analysis_news = related_news
-                meta["newsapi_selected_urls_for_report"] = list(selected_set)
+        meta["alphavantage_selected_urls_for_report"] = sorted(alphavantage_selected_urls)
 
     results = run_llm_analysis(
         analysis_news,

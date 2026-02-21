@@ -1,3 +1,10 @@
+Updates 2/20/2026
+1. Added contrains for a limit of maximum news to collect for a run for a single website source (investing, marketwatch, yahoo), it also can be set up the value of "null" with no limits. 
+2. Added Alpha Vantage now saves two additional files (when enabled):
+   - `{pair}_alphavantage_content.json`: append-only content store (de-duplicated by URL; adds only newly seen articles)
+   - `{pair}_alphavantage_quality.json`: DeepSeek relevance/quality classification for the current run (counts printed once to terminal). The final LLM report filters Alpha Vantage items to related URLs.
+   - with the alpha vantage accessable, please add your alpha vantage api in the .env file for the settings.
+
 Updates 2/19/2026
 1. Added a DeepSeek pre-analysis step for fx pairs to (a) compare news across sources, (b) rate news quality (relevance/credibility/signal/timeliness), (c) detect duplicates, and (d) recommend the best subset of articles before generating the final analysis report. The results are saved under `pre_analysis` in the output JSON.
 2. Supported FX pairs are: `"EUR/USD"`, `"USD/JPY"`, `"GBP/USD"`, `"USD/CNY"`, `"USD/CAD"`, `"AUD/USD"`. Change `currency_pair` in `default_config.json` to analyze a different pair.
@@ -46,6 +53,8 @@ This project crawls trading-related news directly from public web pages (no offi
 - **Yahoo Finance**:
   - **Stocks**: uses the **RSS feed** (more stable than JS-rendered pages).
   - **FX**: best-effort HTML scraping.
+- **NewsAPI.org** (FX only): API-based news collection with optional full-content store.
+- **Alpha Vantage**: API-based financial news via `NEWS_SENTIMENT` (stocks + FX).
 
 ## Setup
 
@@ -63,6 +72,8 @@ Create a `.env` file (you already have one) with any keys you want to use:
 DEEPSEEK_API_KEY=your_deepseek_key_here
 OPENAI_API_KEY=your_openai_key_here
 GEMINI_API_KEY=your_gemini_key_here
+NEWS_API_KEY=your_newsapi_key_here
+ALPHA_VANTAGE_KEY=your_alpha_vantage_key_here
 ```
 
 You can run with **one** provider enabled, or multiple.
@@ -76,6 +87,10 @@ This project is config-driven. The most important fields are:
 - **`stock`**: e.g. `"AAPL"` (used when `asset_type="stock"`)
 - **`start_date` / `end_date`**: `"YYYY-MM-DD"` (UTC, inclusive)
 - **`max_news`**: maximum number of news items to collect per run (`null` = no limit)
+- **`investing_max_items`**: max items from Investing crawler (`null` = no limit; still respects `max_news`)
+- **`marketwatch_max_items`**: max items from MarketWatch crawler (`null` = no limit; still respects `max_news`)
+- **`yahoo_max_items`**: max items from Yahoo crawler (`null` = no limit; still respects `max_news`)
+- **`newsapi_max_items`**: max items from NewsAPI (`null` = no limit; still respects `max_news`)
 - **`enable_pre_analysis`**: if `true`, uses DeepSeek to compare sources + rate article quality before the main report
 - **`pre_analysis_max_articles`**: how many collected articles are sent to DeepSeek for the pre-analysis step
 - **`pre_analysis_filter_for_report`**: if `true`, the main report LLM(s) will only see the `recommended_news_ids` subset from pre-analysis
@@ -91,6 +106,10 @@ Example (FX mode):
   "currency_pair": "EUR/USD",
   "stock": "AAPL",
   "max_news": null,
+  "investing_max_items": null,
+  "marketwatch_max_items": null,
+  "yahoo_max_items": null,
+  "newsapi_max_items": 10,
   "llm_models": {
     "deepseek": {"enabled": true},
     "openai": {"enabled": false},
@@ -109,6 +128,9 @@ Example (stock mode):
   "currency_pair": "EUR/USD",
   "stock": "AAPL",
   "max_news": null,
+  "investing_max_items": null,
+  "marketwatch_max_items": null,
+  "yahoo_max_items": null,
   "llm_models": {
     "deepseek": {"enabled": true},
     "openai": {"enabled": false},

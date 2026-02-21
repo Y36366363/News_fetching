@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-02-21T01:23:37.502237+00:00",
+  "asset": "EUR/USD",
+  "source": "AlphaVantage",
+  "relevance": {
+    "pair": "EUR/USD",
+    "counts": {
+      "most_relevant": 0,
+      "relevant": 3,
+      "unrelated": 2
+    },
+    "selected_urls": [
+      "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
+      "https://www.fxleaders.com/news/2026/02/19/forex-signals-feb-19-walmart-wmt-alibaba-rio-tinto-and-gold-fields-earnings-preview/",
+      "https://www.stonex.com/en/market-intelligence/perspective-morning-commentary-february-18/"
+    ],
+    "items": [
+      {
+        "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
+        "label": "relevant",
+        "relevance_score": 7,
+        "quality_score": 9,
+        "reasons": [
+          "Explicitly discusses economic growth forecasts for both the US and the eurozone, key drivers for EUR/USD.",
+          "Mentions factors influencing US dollar depreciation, a direct USD driver.",
+          "High-quality source (S&P Global) with comprehensive economic analysis."
+        ]
+      },
+      {
+        "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/banco-de-chile-stock-quiet-latin-bank-with-u-s-dollar-upside/68592281",
+        "label": "unrelated",
+        "relevance_score": 1,
+        "quality_score": 5,
+        "reasons": [
+          "Focus is on a specific Chilean bank stock and its ADR for US investors.",
+          "Mentions currency swings and the Chilean peso, not EUR or USD fundamentals.",
+          "No direct link to EUR/USD drivers or the pair itself."
+        ]
+      },
+      {
+        "url": "https://www.fxleaders.com/news/2026/02/19/forex-signals-feb-19-walmart-wmt-alibaba-rio-tinto-and-gold-fields-earnings-preview/",
+        "label": "relevant",
+        "relevance_score": 6,
+        "quality_score": 6,
+        "reasons": [
+          "Directly discusses the strengthening U.S. dollar, supported by yields and Fed policy, a major USD driver.",
+          "Source is FX-focused, but content is a mix of earnings previews and general FX commentary.",
+          "Does not mention the Euro or EUR/USD pair specifically."
+        ]
+      },
+      {
+        "url": "https://www.ad-hoc-news.de/boerse/ueberblick/a-promising-opening-for-vanguard-s-international-real-estate-fund/68589761",
+        "label": "unrelated",
+        "relevance_score": 2,
+        "quality_score": 5,
+        "reasons": [
+          "Primary focus is on a specific international real estate ETF (VNQI).",
+          "Mentions a softer U.S. dollar as a background market condition benefiting the fund, but this is not the article's core subject.",
+          "No analysis of EUR or direct EUR/USD implications."
+        ]
+      },
+      {
+        "url": "https://www.stonex.com/en/market-intelligence/perspective-morning-commentary-february-18/",
+        "label": "relevant",
+        "relevance_score": 5,
+        "quality_score": 7,
+        "reasons": [
+          "Discusses movements in the U.S. dollar and anticipation for Fed minutes, key USD drivers.",
+          "Provides a broad market update from a reputable source.",
+          "Does not mention the Euro or EUR/USD pair, focusing solely on USD and other asset classes."
+        ]
+      }
+    ]
+  }
+}
