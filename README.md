@@ -1,3 +1,9 @@
+Updates 2/21/2026
+1. Added EODHD now saves two additional files (when enabled):
+   - `{pair}_eodhd_content.json`: append-only content store (de-duplicated by URL; adds only newly seen articles)
+   - `{pair}_eodhd_quality.json`: DeepSeek relevance/quality classification for the current run (counts printed once to terminal). The final LLM report filters EODHD items to related URLs.
+   - with the alpha vantage accessable, please add your EODHD api in the .env file for the settings.
+
 Updates 2/20/2026
 1. Added contrains for a limit of maximum news to collect for a run for a single website source (investing, marketwatch, yahoo), it also can be set up the value of "null" with no limits. 
 2. Added Alpha Vantage now saves two additional files (when enabled):
@@ -40,7 +46,7 @@ Updates 2/10/2026
 2. Added currency_pair
 	currently there are three pairs available: EUR/USD; USD/JPN; GBP/USD
 3. Added max_news
-	set up the number of maximum news to collect in one run, default is None 
+	set up the number of maximum news to collect in one run, default is null 
 
 # News Fetching & LLM Trading Analysis (FX + NASDAQ stocks)
 

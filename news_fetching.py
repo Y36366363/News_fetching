@@ -20,6 +20,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -691,6 +692,160 @@ def fetch_newsapi_fx_pair(
 _ALPHAVANTAGE_FULL_CACHE: Dict[str, Dict[str, Any]] = {}
 
 
+# ---------------------------------------------------------------------------
+# EODHD (API source)
+# ---------------------------------------------------------------------------
+
+_EODHD_FULL_CACHE: Dict[str, Dict[str, Any]] = {}
+
+
+def _make_eodhd_key() -> Optional[str]:
+    key = (
+        os.getenv("EODHD_API_KEY")
+        or os.getenv("EODHD_API_TOKEN")
+        or os.getenv("EODHD_TOKEN")
+        or os.getenv("EODHD_KEY")
+    )
+    if not key:
+        debug_log("[WARN] EODHD_API_KEY not set; EODHD source will be skipped.")
+        return None
+    return key
+
+
+def _eodhd_symbol_for_fx_pair(pair: str) -> str:
+    parts = pair.replace(" ", "").upper().split("/")
+    base = parts[0] if len(parts) > 0 else pair.upper()
+    quote = parts[1] if len(parts) > 1 else ""
+    return f"{base}{quote}.FOREX" if quote else f"{base}.FOREX"
+
+
+def _eodhd_symbol_for_stock(symbol: str) -> str:
+    # Your NASDAQ-100 list is US tickers; EODHD uses suffixes like .US
+    return f"{symbol.upper()}.US"
+
+
+def _hostname_from_url(url: str) -> str:
+    try:
+        host = urlparse(url).netloc or ""
+        return host.lower()
+    except Exception:
+        return ""
+
+
+def fetch_eodhd_news(
+    *,
+    asset_label: str,
+    eodhd_symbol: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    limit: int = 10,
+    offset: int = 0,
+) -> List[Dict[str, Any]]:
+    """
+    Fetch financial news from EODHD News API: https://eodhd.com/api/news
+    Returns normalized items compatible with the rest of the pipeline.
+    """
+    key = _make_eodhd_key()
+    if not key:
+        return []
+
+    lim = limit if isinstance(limit, int) and 0 < limit <= 1000 else 10
+    off = offset if isinstance(offset, int) and offset >= 0 else 0
+
+    params: Dict[str, Any] = {
+        "s": eodhd_symbol,
+        "offset": off,
+        "limit": lim,
+        "api_token": key,
+        "fmt": "json",
+    }
+    if start_date:
+        params["from"] = start_date.isoformat()
+    if end_date:
+        params["to"] = end_date.isoformat()
+
+    print(f"\n[INFO] Fetching EODHD news ({eodhd_symbol})...")
+    try:
+        resp = requests.get(
+            "https://eodhd.com/api/news",
+            params=params,
+            headers=HEADERS,
+            timeout=25,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as exc:
+        debug_log(f"[WARN] EODHD request failed: {exc}")
+        return []
+
+    # EODHD returns list for success; dict for errors.
+    if isinstance(data, dict):
+        msg = data.get("message") or data.get("error") or data.get("Error Message")
+        if isinstance(msg, str) and msg.strip():
+            print(f"[WARN] EODHD returned: {msg.strip()}")
+        else:
+            print("[WARN] EODHD returned an unexpected response.")
+        return []
+
+    if not isinstance(data, list):
+        return []
+
+    # Cache full payload (without api_token).
+    try:
+        cached_params = {k: v for k, v in params.items() if k != "api_token"}
+        _EODHD_FULL_CACHE[asset_label] = {
+            "schema_version": 1,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "asset": asset_label,
+            "symbol": eodhd_symbol,
+            "request": {"endpoint": "https://eodhd.com/api/news", "params": cached_params},
+            "articles": data,
+        }
+    except Exception:
+        pass
+
+    items: List[Dict[str, Any]] = []
+    for a in data:
+        if not isinstance(a, dict):
+            continue
+        title = (a.get("title") or "").strip()
+        link = (a.get("link") or "").strip()
+        if not title or not link:
+            continue
+
+        published_dt: Optional[datetime] = None
+        d = a.get("date")
+        if isinstance(d, str) and d.strip():
+            published_dt = parse_iso_like_datetime(d) or None
+
+        if not within_date_range(published_dt, start_date, end_date):
+            continue
+
+        content = (a.get("content") or "").strip()
+        snippet = content[:600] if content else ""
+
+        host = _hostname_from_url(link)
+        source_label = f"EODHD: {host}" if host else "EODHD"
+
+        items.append(
+            {
+                "source": source_label,
+                "currency_pair": asset_label,
+                "asset_type": "currency",
+                "title": title,
+                "url": link,
+                "published_dt": published_dt,
+                "snippet": snippet,
+            }
+        )
+
+        if len(items) >= lim:
+            break
+
+    print(f"[INFO] EODHD items collected: {len(items)}")
+    return items
+
+
 def _make_alphavantage_key() -> Optional[str]:
     key = (
         os.getenv("ALPHA_VANTAGE_KEY")
@@ -1212,6 +1367,64 @@ def update_alphavantage_content_store(asset: str, path: str, items: List["NewsIt
     return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path}
 
 
+def update_eodhd_content_store(asset: str, path: str, articles: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Append-only content store for EODHD news articles, de-duplicated by link.
+    Stores: source(host), title, url, publishedAt, content (single line).
+    """
+    existing_raw = _load_json_file_best_effort(path)
+    existing_articles: List[Dict[str, Any]] = []
+    if isinstance(existing_raw, list):
+        existing_articles = [a for a in existing_raw if isinstance(a, dict)]
+    elif isinstance(existing_raw, dict) and isinstance(existing_raw.get("articles"), list):
+        existing_articles = [a for a in existing_raw["articles"] if isinstance(a, dict)]
+
+    existing_urls = {
+        a.get("url") for a in existing_articles if isinstance(a.get("url"), str) and a.get("url")
+    }
+
+    added = 0
+    skipped = 0
+    new_articles: List[Dict[str, Any]] = []
+
+    for a in articles:
+        if not isinstance(a, dict):
+            continue
+        url = (a.get("link") or "").strip() if isinstance(a.get("link"), str) else ""
+        if not url:
+            continue
+        if url in existing_urls:
+            skipped += 1
+            continue
+
+        title = (a.get("title") or "").strip()
+        published_at = a.get("date")
+        content = _normalize_single_line(a.get("content") or "")
+        host = _hostname_from_url(url)
+        source = host or "eodhd"
+
+        new_articles.append(
+            {
+                "source": source,
+                "title": title,
+                "url": url,
+                "publishedAt": published_at,
+                "content": content,
+            }
+        )
+        existing_urls.add(url)
+        added += 1
+
+    merged = existing_articles + new_articles
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(merged, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Updated EODHD content store: added {added}, total {len(merged)} -> {path!r}")
+    except Exception as exc:
+        return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path, "error": str(exc)}
+
+    return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path}
+
 def _filter_api_source_items_by_urls(
     news: List["NewsItem"],
     *,
@@ -1498,6 +1711,8 @@ def collect_news_for_pair(
     newsapi_max_items: Optional[int] = None,
     enable_alphavantage: bool = False,
     alphavantage_max_items: Optional[int] = None,
+    enable_eodhd: bool = False,
+    eodhd_max_items: Optional[int] = None,
 ) -> List[NewsItem]:
     """
     Aggregate news from all configured sources, de-duplicate, and convert
@@ -1614,6 +1829,27 @@ def collect_news_for_pair(
         if remaining is not None:
             remaining = max(0, remaining - added)
 
+    # 6) EODHD News API (optional API source)
+    if enable_eodhd and (remaining is None or remaining > 0):
+        cap = eodhd_max_items if isinstance(eodhd_max_items, int) and eodhd_max_items > 0 else 10
+        before = len(raw_items)
+        eodhd_symbol = _eodhd_symbol_for_fx_pair(pair)
+        eodhd_items = fetch_eodhd_news(
+            asset_label=pair,
+            eodhd_symbol=eodhd_symbol,
+            start_date=start_date,
+            end_date=end_date,
+            limit=cap,
+            offset=0,
+        )
+        if remaining is None:
+            raw_items.extend(eodhd_items)
+        else:
+            raw_items.extend(eodhd_items[:remaining])
+        added = len(raw_items) - before
+        if remaining is not None:
+            remaining = max(0, remaining - added)
+
     if not raw_items:
         return []
 
@@ -1663,6 +1899,8 @@ def collect_news_for_stock(
     yahoo_max_items: Optional[int] = None,
     enable_alphavantage: bool = False,
     alphavantage_max_items: Optional[int] = None,
+    enable_eodhd: bool = False,
+    eodhd_max_items: Optional[int] = None,
 ) -> List[NewsItem]:
     """
     Aggregate news from all configured sources for a stock, de-duplicate, and convert
@@ -1755,6 +1993,30 @@ def collect_news_for_stock(
             raw_items.extend(av_items)
         else:
             raw_items.extend(av_items[:remaining])
+        added = len(raw_items) - before
+        if remaining is not None:
+            remaining = max(0, remaining - added)
+
+    # 5) EODHD News API (optional API source)
+    if enable_eodhd and (remaining is None or remaining > 0):
+        cap = eodhd_max_items if isinstance(eodhd_max_items, int) and eodhd_max_items > 0 else 10
+        before = len(raw_items)
+        eodhd_symbol = _eodhd_symbol_for_stock(symbol)
+        eodhd_items = fetch_eodhd_news(
+            asset_label=symbol,
+            eodhd_symbol=eodhd_symbol,
+            start_date=start_date,
+            end_date=end_date,
+            limit=cap,
+            offset=0,
+        )
+        for it in eodhd_items:
+            it["asset_type"] = "stock"
+            it["currency_pair"] = symbol
+        if remaining is None:
+            raw_items.extend(eodhd_items)
+        else:
+            raw_items.extend(eodhd_items[:remaining])
         added = len(raw_items) - before
         if remaining is not None:
             remaining = max(0, remaining - added)
@@ -1887,6 +2149,8 @@ def load_default_config() -> Dict[str, object]:
             "newsapi_max_items": None,
             "enable_alphavantage": False,
             "alphavantage_max_items": 10,
+            "enable_eodhd": False,
+            "eodhd_max_items": 10,
             "enable_pre_analysis": True,
             "pre_analysis_max_articles": 20,
             "pre_analysis_filter_for_report": True,
@@ -1915,6 +2179,8 @@ def load_default_config() -> Dict[str, object]:
             "newsapi_max_items": None,
             "enable_alphavantage": False,
             "alphavantage_max_items": 10,
+            "enable_eodhd": False,
+            "eodhd_max_items": 10,
             "enable_pre_analysis": True,
             "pre_analysis_max_articles": 20,
             "pre_analysis_filter_for_report": True,
@@ -1944,6 +2210,7 @@ def load_default_config() -> Dict[str, object]:
         yahoo_max_items = None
     enable_newsapi = bool(data.get("enable_newsapi", False))
     enable_alphavantage = bool(data.get("enable_alphavantage", False))
+    enable_eodhd = bool(data.get("enable_eodhd", False))
     enable_pre_analysis = bool(data.get("enable_pre_analysis", True))
     pre_analysis_max_articles = data.get("pre_analysis_max_articles", 20)
     pre_analysis_filter_for_report = bool(data.get("pre_analysis_filter_for_report", True))
@@ -1953,6 +2220,10 @@ def load_default_config() -> Dict[str, object]:
     alphavantage_max_items = data.get("alphavantage_max_items", 10)
     if not (isinstance(alphavantage_max_items, int) and alphavantage_max_items > 0):
         alphavantage_max_items = 10
+
+    eodhd_max_items = data.get("eodhd_max_items", 10)
+    if not (isinstance(eodhd_max_items, int) and eodhd_max_items > 0):
+        eodhd_max_items = 10
     
     if asset_type == "currency":
         if currency_pair not in SUPPORTED_PAIRS:
@@ -1993,6 +2264,8 @@ def load_default_config() -> Dict[str, object]:
         "newsapi_max_items": newsapi_max_items,
         "enable_alphavantage": enable_alphavantage,
         "alphavantage_max_items": alphavantage_max_items,
+        "enable_eodhd": enable_eodhd,
+        "eodhd_max_items": eodhd_max_items,
         "enable_pre_analysis": enable_pre_analysis,
         "pre_analysis_max_articles": pre_analysis_max_articles,
         "pre_analysis_filter_for_report": pre_analysis_filter_for_report,
@@ -2706,6 +2979,8 @@ def main() -> None:
             yahoo_max_items=cfg.get("yahoo_max_items", None),
             enable_alphavantage=bool(cfg.get("enable_alphavantage", False)),
             alphavantage_max_items=cfg.get("alphavantage_max_items", 10),
+            enable_eodhd=bool(cfg.get("enable_eodhd", False)),
+            eodhd_max_items=cfg.get("eodhd_max_items", 10),
         )
     else:
         news_items = collect_news_for_pair(
@@ -2723,6 +2998,8 @@ def main() -> None:
             newsapi_max_items=cfg.get("newsapi_max_items", None),
             enable_alphavantage=bool(cfg.get("enable_alphavantage", False)),
             alphavantage_max_items=cfg.get("alphavantage_max_items", 10),
+            enable_eodhd=bool(cfg.get("enable_eodhd", False)),
+            eodhd_max_items=cfg.get("eodhd_max_items", 10),
         )
 
     if not news_items:
@@ -2754,6 +3031,7 @@ def main() -> None:
             "yahoo": bool(cfg.get("enable_yahoo", True)),
             "newsapi": bool(cfg.get("enable_newsapi", False)),
             "alphavantage": bool(cfg.get("enable_alphavantage", False)),
+            "eodhd": bool(cfg.get("enable_eodhd", False)),
         },
         "source_max_items": {
             "investing": cfg.get("investing_max_items", None),
@@ -2761,6 +3039,7 @@ def main() -> None:
             "yahoo": cfg.get("yahoo_max_items", None),
             "newsapi": cfg.get("newsapi_max_items", None),
             "alphavantage": cfg.get("alphavantage_max_items", 10),
+            "eodhd": cfg.get("eodhd_max_items", 10),
         },
         "newsapi_max_items": cfg.get("newsapi_max_items", None),
         "llm_enabled": cfg.get("enabled_llm_providers", []),
@@ -2864,6 +3143,57 @@ def main() -> None:
             if isinstance(sel, list):
                 alphavantage_selected_urls = {u for u in sel if isinstance(u, str) and u}
 
+    # EODHD: save content store + DeepSeek relevance/quality (similar to NewsAPI)
+    eodhd_selected_urls: set[str] = set()
+    if bool(cfg.get("enable_eodhd", False)):
+        base_no_ext, _ = os.path.splitext(output_path)
+        if base_no_ext.endswith("_news"):
+            eodhd_content_path = base_no_ext[:-5] + "_eodhd_content.json"
+            eodhd_quality_path = base_no_ext[:-5] + "_eodhd_quality.json"
+        else:
+            eodhd_content_path = base_no_ext + "_eodhd_content.json"
+            eodhd_quality_path = base_no_ext + "_eodhd_quality.json"
+
+        cached = _EODHD_FULL_CACHE.get(asset)
+        cached_articles = cached.get("articles") if isinstance(cached, dict) else None
+        if isinstance(cached_articles, list) and cached_articles:
+            update_eodhd_content_store(asset, eodhd_content_path, cached_articles)
+
+            # Build per-run dicts for DeepSeek.
+            eodhd_articles_for_llm: List[Dict[str, Any]] = []
+            for a in cached_articles:
+                if not isinstance(a, dict):
+                    continue
+                eodhd_articles_for_llm.append(
+                    {
+                        "url": a.get("link"),
+                        "source": _hostname_from_url(a.get("link") or ""),
+                        "publishedAt": a.get("date"),
+                        "title": a.get("title"),
+                        "content": a.get("content") or "",
+                    }
+                )
+            max_for_relevance = int(cfg.get("eodhd_max_items", 10) or 10)
+            if max_for_relevance <= 0:
+                max_for_relevance = 10
+            eodhd_relevance = run_deepseek_source_relevance(
+                asset=asset,
+                source_name="EODHD",
+                articles=eodhd_articles_for_llm[:max_for_relevance],
+            )
+            save_source_relevance_json(asset, eodhd_quality_path, source_name="EODHD", payload=eodhd_relevance)
+
+            counts = eodhd_relevance.get("counts") if isinstance(eodhd_relevance, dict) else None
+            if isinstance(counts, dict):
+                mr = counts.get("most_relevant", 0)
+                r = counts.get("relevant", 0)
+                u = counts.get("unrelated", 0)
+                print(f"[INFO] EODHD relevance counts (once): most_relevant={mr}, relevant={r}, unrelated={u}")
+
+            sel = eodhd_relevance.get("selected_urls") if isinstance(eodhd_relevance, dict) else None
+            if isinstance(sel, list):
+                eodhd_selected_urls = {u for u in sel if isinstance(u, str) and u}
+
     if args.no_llm:
         save_news_to_json(news_items, output_path, meta=meta, analysis={}, pre_analysis={})
         print("[INFO] Skipping LLM analysis (--no-llm specified).")
@@ -2906,6 +3236,14 @@ def main() -> None:
             selected_urls=alphavantage_selected_urls,
         )
         meta["alphavantage_selected_urls_for_report"] = sorted(alphavantage_selected_urls)
+
+    if bool(cfg.get("enable_eodhd", False)) and eodhd_selected_urls:
+        analysis_news = _filter_api_source_items_by_urls(
+            analysis_news,
+            source_prefix="EODHD",
+            selected_urls=eodhd_selected_urls,
+        )
+        meta["eodhd_selected_urls_for_report"] = sorted(eodhd_selected_urls)
 
     results = run_llm_analysis(
         analysis_news,

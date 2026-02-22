@@ -1,26 +1,28 @@
 {
   "schema_version": 2,
   "meta": {
-    "generated_at": "2026-02-21T01:22:51.772652+00:00",
+    "generated_at": "2026-02-22T01:57:02.121729+00:00",
     "asset_type": "currency",
     "asset": "EUR/USD",
-    "start_date": "2026-02-13",
-    "end_date": "2026-02-20",
+    "start_date": "2026-02-14",
+    "end_date": "2026-02-21",
     "max_news": null,
     "max_articles": 8,
     "sources": {
       "investing": true,
       "marketwatch": true,
       "yahoo": true,
-      "newsapi": false,
-      "alphavantage": true
+      "newsapi": true,
+      "alphavantage": false,
+      "eodhd": false
     },
     "source_max_items": {
       "investing": 10,
       "marketwatch": 10,
       "yahoo": 10,
       "newsapi": 10,
-      "alphavantage": 10
+      "alphavantage": 10,
+      "eodhd": 10
     },
     "newsapi_max_items": 10,
     "llm_enabled": [
@@ -31,10 +33,11 @@
       "max_articles": 20,
       "filter_for_report": true
     },
-    "alphavantage_selected_urls_for_report": [
-      "https://www.fxleaders.com/news/2026/02/19/forex-signals-feb-19-walmart-wmt-alibaba-rio-tinto-and-gold-fields-earnings-preview/",
-      "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
-      "https://www.stonex.com/en/market-intelligence/perspective-morning-commentary-february-18/"
+    "newsapi_selected_urls_for_report": [
+      "https://cointelegraph.com/news/what-next-crypto-europe-ecb-christine-lagarde",
+      "https://economictimes.indiatimes.com/markets/forex/forex-news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128634375.cms",
+      "https://financialpost.com/pmn/business-pmn/charting-the-global-economy-trumps-tariffs-struck-down-by-supreme-court",
+      "https://japantoday.com/category/world/fears-of-renewed-conflict-haunt-tehran-as-us-issues-threats"
     ]
   },
   "news": [
@@ -45,7 +48,7 @@
       "title": "Analyst Ratings",
       "url": "https://www.investing.com/news/analyst-ratings",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
+      "snippet": "Investing.com – The U.S. trade landscape was upended on Friday after the Supreme Court ruled the Trump administration’s...",
       "asset_type": "currency"
     },
     {
@@ -55,7 +58,7 @@
       "title": "Economic Indicators",
       "url": "https://www.investing.com/news/economic-indicators",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
+      "snippet": "Investing.com – The U.S. trade landscape was upended on Friday after the Supreme Court ruled the Trump administration’s...",
       "asset_type": "currency"
     },
     {
@@ -65,7 +68,7 @@
       "title": "Sports & General",
       "url": "https://www.investing.com/news/general",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
+      "snippet": "Investing.com – The U.S. trade landscape was upended on Friday after the Supreme Court ruled the Trump administration’s...",
       "asset_type": "currency"
     },
     {
@@ -75,7 +78,7 @@
       "title": "Insider Trading",
       "url": "https://www.investing.com/news/insider-trading-news",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
+      "snippet": "Investing.com – The U.S. trade landscape was upended on Friday after the Supreme Court ruled the Trump administration’s...",
       "asset_type": "currency"
     },
     {
@@ -85,57 +88,57 @@
       "title": "Investment Ideas",
       "url": "https://www.investing.com/news/investment-ideas",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
+      "snippet": "Investing.com – The U.S. trade landscape was upended on Friday after the Supreme Court ruled the Trump administration’s...",
       "asset_type": "currency"
     },
     {
       "id": 6,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Dollar slips after SCOTUS tariff ruling, but set for strongest week since November",
-      "url": "https://www.investing.com/news/forex-news/dollar-set-for-strongest-week-since-october-on-safehaven-demand-4515391",
+      "title": "LPL Research: 8 reasons why the SCOTUS tariff win isn’t a total victory",
+      "url": "https://www.investing.com/news/economy-news/lpl-research-8-reasons-why-the-scotus-tariff-win-isnt-a-total-victory-4517482",
       "published_at": null,
-      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
+      "snippet": "Investing.com – The U.S. trade landscape was upended on Friday after the Supreme Court ruled the Trump administration’s...",
       "asset_type": "currency"
     },
     {
       "id": 7,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Global shares climb as risk appetite holds firm, US-Iran tensions boost oil",
-      "url": "https://www.investing.com/news/economy-news/global-shares-climb-as-risk-appetite-holds-firm-usiran-tensions-boost-oil-4515532",
-      "published_at": null,
-      "snippet": "By Niket Nishant and Tom Westbrook LONDON/SINGAPORE, Feb 20 (Reuters) - Global shares edged higher on Friday, brushing aside...",
+      "title": "Dollar slips after SCOTUS tariff ruling, but set for strongest week since November",
+      "url": "https://www.investing.com/news/forex-news/dollar-set-for-strongest-week-since-october-on-safehaven-demand-4515391",
+      "published_at": "2026-02-20T00:00:00+00:00",
+      "snippet": "Investing.com -- The U.S. dollar slipped on Friday, as traders assessed the fallout from the Supreme Court’s ruling striking down...",
       "asset_type": "currency"
     },
     {
       "id": 8,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Take Five: Nvidia earnings head for centre stage",
-      "url": "https://www.investing.com/news/economy-news/take-five-nvidia-earnings-head-for-centre-stage-4515361",
-      "published_at": null,
-      "snippet": "Feb 20 (Reuters) - Nvidia’s earnings report is next week’s centrepiece for markets, flanked by important data and politics in...",
+      "title": "Global shares climb as risk appetite holds firm, US-Iran tensions boost oil",
+      "url": "https://www.investing.com/news/economy-news/global-shares-climb-as-risk-appetite-holds-firm-usiran-tensions-boost-oil-4515532",
+      "published_at": "2026-02-20T00:00:00+00:00",
+      "snippet": "By Niket Nishant and Tom Westbrook LONDON/SINGAPORE, Feb 20 (Reuters) - Global shares edged higher on Friday, brushing aside...",
       "asset_type": "currency"
     },
     {
       "id": 9,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Lagarde expects to complete ECB term amid early exit speculation",
-      "url": "https://www.investing.com/news/world-news/lagarde-expects-to-complete-ecb-term-amid-early-exit-speculation-93CH-4515199",
-      "published_at": null,
-      "snippet": "Investing.com -- European Central Bank President Christine Lagarde said she anticipates completing her full term, addressing...",
+      "title": "Take Five: Nvidia earnings head for centre stage",
+      "url": "https://www.investing.com/news/economy-news/take-five-nvidia-earnings-head-for-centre-stage-4515361",
+      "published_at": "2026-02-20T00:00:00+00:00",
+      "snippet": "Feb 20 (Reuters) - Nvidia’s earnings report is next week’s centrepiece for markets, flanked by important data and politics in...",
       "asset_type": "currency"
     },
     {
       "id": 10,
       "currency_pair": "EUR/USD",
       "source": "Investing.com",
-      "title": "Stocks dip and oil climbs as Trump turns up the heat on Iran",
-      "url": "https://www.investing.com/news/stock-market-news/stocks-dip-and-oil-climbs-as-trump-ramps-up-iran-threats-4515082",
-      "published_at": null,
-      "snippet": "By Tom Westbrook SINGAPORE, Feb 20 (Reuters) - Stocks fell in Asia on Friday, the dollar headed for its largest weekly gain in...",
+      "title": "Lagarde expects to complete ECB term amid early exit speculation",
+      "url": "https://www.investing.com/news/world-news/lagarde-expects-to-complete-ecb-term-amid-early-exit-speculation-93CH-4515199",
+      "published_at": "2026-02-20T00:00:00+00:00",
+      "snippet": "Investing.com -- European Central Bank President Christine Lagarde said she anticipates completing her full term, addressing...",
       "asset_type": "currency"
     },
     {
@@ -241,59 +244,109 @@
     {
       "id": 21,
       "currency_pair": "EUR/USD",
-      "source": "AlphaVantage: S&P Global",
-      "title": "Global Economic Outlook: February 2026",
-      "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
-      "published_at": "2026-02-19T17:26:31+00:00",
-      "snippet": "This February 2026 report from S&P Global analyzes the global economic outlook, highlighting the impact of geopolitical uncertainty on markets despite resilient economic conditions suggested by PMI data. It details key changes in their forecast, including higher real GDP growth projections for the US, India, and the eurozone, leading to an increased global growth forecast of 2.9% for 2026. The report also addresses consumer price inflation expectations, noting projected moderations driven by oil prices and easing underlying pressures, and discusses factors influencing US dollar depreciation an",
+      "source": "NewsAPI: Japan Today",
+      "title": "Fears of renewed conflict haunt Tehran as U.S. issues threats",
+      "url": "https://japantoday.com/category/world/fears-of-renewed-conflict-haunt-tehran-as-us-issues-threats",
+      "published_at": "2026-02-21T21:37:04+00:00",
+      "snippet": "Tehran resident Hamid struggles to sleep as fears of renewed conflict haunt the Iranian capital after last year's 12-day war with Israel. &quot;I don't sleep well at night even while taking pills,&quot; Hamid told AFP, as he expressed concern for his &quot;fa…",
       "asset_type": "currency"
     },
     {
       "id": 22,
       "currency_pair": "EUR/USD",
-      "source": "AlphaVantage: AD HOC NEWS",
-      "title": "Banco de Chile Stock: Quiet Latin Bank With U.S. Dollar Upside?",
-      "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/banco-de-chile-stock-quiet-latin-bank-with-u-s-dollar-upside/68592281",
-      "published_at": "2026-02-19T05:27:18+00:00",
-      "snippet": "Banco de Chile, with its NYSE-listed ADR (BCH), is presented as a potentially appealing investment for U.S. investors seeking diversified bank exposure outside of U.S. mega-caps. The article highlights its profitability, above-average dividend, and conservative risk profile, while also noting its tight linkage to Chile's interest-rate cycle and the peso's performance. It emphasizes the importance of considering currency swings and emerging market risks, alongside the potential for geographic diversification and attractive dividends.",
+      "source": "NewsAPI: Theflightdeal.com",
+      "title": "Scandinavian Airlines: Miami – Tallinn, Estonia. $460 (Basic Economy) / $560 (Regular Economy). Roundtrip, including all Taxes",
+      "url": "https://www.theflightdeal.com/2026/02/21/scandinavian-airlines-miami-tallinn-estonia-460-basic-economy-560-regular-economy-roundtrip-including-all-taxes/",
+      "published_at": "2026-02-21T16:10:47+00:00",
+      "snippet": "A good sale to TallinnMatrix Airfare Search by ITA Software will price this at $472 (Basic Economy). Use those dates on  Scandinavian should reprice to $460 (Basic Economy) / $560 (Regular Econom",
       "asset_type": "currency"
     },
     {
       "id": 23,
       "currency_pair": "EUR/USD",
-      "source": "AlphaVantage: FXLeaders",
-      "title": "Forex Signals Feb 19: Walmart (WMT), Alibaba, Rio Tinto and Gold Fields Earnings Preview",
-      "url": "https://www.fxleaders.com/news/2026/02/19/forex-signals-feb-19-walmart-wmt-alibaba-rio-tinto-and-gold-fields-earnings-preview/",
-      "published_at": "2026-02-19T01:20:13+00:00",
-      "snippet": "This article provides an earnings preview for major companies reporting on February 19, 2026, including Walmart, Alibaba, Rio Tinto, and Gold Fields, highlighting their diverse sector representation. It discusses the strengthening U.S. dollar, supported by rising Treasury yields and positive economic data, alongside the hawkish tone of the FOMC minutes, indicating caution on rate easing. The report also touches on recent market volatility in gold, USD/JPY, and cryptocurrencies like Bitcoin and Ethereum.",
+      "source": "NewsAPI: Theflightdeal.com",
+      "title": "Scandinavian Airlines: Newark – Vilnius, Lithuania. $385 (Basic Economy) / $485 (Regular Economy). Roundtrip, including all Taxes",
+      "url": "https://www.theflightdeal.com/2026/02/21/scandinavian-airlines-newark-vilnius-lithuania-385-basic-economy-485-regular-economy-roundtrip-including-all-taxes/",
+      "published_at": "2026-02-21T16:05:22+00:00",
+      "snippet": "A good sale to Vilnius. Pricing will vary slightly depending on routingMatrix Airfare Search by ITA Software will price this at $397 (Basic Economy). Use those dates on  Scandinavian should repri",
       "asset_type": "currency"
     },
     {
       "id": 24,
       "currency_pair": "EUR/USD",
-      "source": "AlphaVantage: AD HOC NEWS",
-      "title": "A Promising Opening for Vanguard's International Real Estate Fund",
-      "url": "https://www.ad-hoc-news.de/boerse/ueberblick/a-promising-opening-for-vanguard-s-international-real-estate-fund/68589761",
-      "published_at": "2026-02-18T17:23:35+00:00",
-      "snippet": "The Vanguard Global ex-U.S. Real Estate ETF (VNQI) is showing strong momentum driven by declining bond yields and a softer U.S. dollar, revaluing international property markets. With a low expense ratio (0.12%) and a diversified portfolio of 716 holdings outside the U.S., VNQI offers a solid dividend yield of 4.27% and projected long-term annual returns of 7.78%. The outlook for international real estate remains positive with improving fundamentals and potential for capital appreciation, positioning VNQI well for future growth.",
+      "source": "NewsAPI: Theflightdeal.com",
+      "title": "Scandinavian Airlines: Washington D.C. – Tallinn, Estonia. $450 (Basic Economy) / $550 (Regular Economy). Roundtrip, including all Taxes",
+      "url": "https://www.theflightdeal.com/2026/02/21/scandinavian-airlines-washington-d-c-tallinn-estonia-450-basic-economy-550-regular-economy-roundtrip-including-all-taxes/",
+      "published_at": "2026-02-21T15:53:02+00:00",
+      "snippet": "A good sale to Tallinn.Matrix Airfare Search by ITA Software will price this at $462 (Basic Economy). Use those dates on  Scandinavian should reprice to $450 (Basic Economy) / $550 (Regular Econo",
       "asset_type": "currency"
     },
     {
       "id": 25,
       "currency_pair": "EUR/USD",
-      "source": "AlphaVantage: StoneX",
-      "title": "Perspective: Morning Commentary February 18",
-      "url": "https://www.stonex.com/en/market-intelligence/perspective-morning-commentary-february-18/",
-      "published_at": "2026-02-18T13:57:45+00:00",
-      "snippet": "This morning commentary by StoneX provides an update on the financial markets as of February 18. It covers the positive movement in the Dow Jones Industrials, S&P, and NASDAQ, anticipation for the January Fed minutes, and movements in treasury yields and the U.S. dollar. The article also discusses crude oil prices and the grain market, noting geopolitical risks and concerns over global crop conditions, particularly for wheat and soybeans.",
+      "source": "NewsAPI: Cointelegraph",
+      "title": "What’s next for crypto in Europe after Christine Lagarde steps down?",
+      "url": "https://cointelegraph.com/news/what-next-crypto-europe-ecb-christine-lagarde",
+      "published_at": "2026-02-21T13:00:00+00:00",
+      "snippet": "Crypto-skeptic European Central Bank president Christine Lagarde aims to step down sometime before the French presidential elections in 2027.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 26,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: newsBTC",
+      "title": "XRP Tipped As Central Bank Bridge Asset — Bigger Than Bitcoin?",
+      "url": "http://www.newsbtc.com/altcoin/xrp-tipped-as-central-bank-bridge-asset-bigger-than-bitcoin/",
+      "published_at": "2026-02-21T12:00:38+00:00",
+      "snippet": "A seasoned investor’s bold claim about XRP has reignited a common question in crypto markets: could a token built for fast settlement ever outgrow the original store-of-value? Related Reading: Bitcoin Market Bleeds $1 Trillion, Saylor Signals Strongest Crypto…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 27,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: Financial Post",
+      "title": "Charting the Global Economy: Trump’s Tariffs Struck Down by Supreme Court",
+      "url": "https://financialpost.com/pmn/business-pmn/charting-the-global-economy-trumps-tariffs-struck-down-by-supreme-court",
+      "published_at": "2026-02-21T10:22:08+00:00",
+      "snippet": "US President Donald Trump’s global tariffs were struck down by the Supreme Court, undercutting his signature economic policy and kicking off what could be a prolonged battle over refunds.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 28,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: The Times of India",
+      "title": "Down, Not Defeated: Is the Dollar ready for its comeback?",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128638103.cms",
+      "published_at": "2026-02-21T05:18:08+00:00",
+      "snippet": "The U.S. dollar’s recent weakness may be reversing as economic resilience, easing policy concerns and geopolitical factors support a rebound. With global and domestic pressures building, the Indian rupee could face depreciation. The Dollar Index is seen movin…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 29,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: The Times of India",
+      "title": "Down, Not Defeated: Is the Dollar ready for its comeback?",
+      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128634375.cms",
+      "published_at": "2026-02-21T05:18:08+00:00",
+      "snippet": "The U.S. dollar’s recent weakness may be reversing as economic resilience, easing policy concerns and geopolitical factors support a rebound. With global and domestic pressures building, the Indian rupee could face depreciation. The Dollar Index is seen movin…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 30,
+      "currency_pair": "EUR/USD",
+      "source": "NewsAPI: The Times of India",
+      "title": "Down, Not Defeated: Is the Dollar Ready for Its Comeback?",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128634375.cms",
+      "published_at": "2026-02-21T05:18:08+00:00",
+      "snippet": "The U.S. dollar’s recent weakness may be reversing as economic resilience, easing policy concerns and geopolitical factors support a rebound. With global and domestic pressures building, the Indian rupee could face depreciation. The Dollar Index is seen movin…",
       "asset_type": "currency"
     }
   ],
   "analysis": {
-    "deepseek": "**1. Key Market Drivers**\n*   **Monetary Policy & Economic Data:** The primary driver is the US Supreme Court striking down sweeping tariffs, followed by the announcement of a new 10% global levy. This creates policy uncertainty and potential trade friction.\n*   **Risk Sentiment:** Mixed signals. Global shares are climbing, indicating firm risk appetite. However, the dollar initially slipped on the SCOTUS ruling but saw strong safe-haven demand earlier in the week, suggesting underlying caution.\n*   **Geopolitics:** US-Iran tensions are noted as a supporting factor for oil and a potential source of market volatility.\n\n**2. Short-Term Outlook (1-3 Days)**\nSlightly bearish for EUR/USD. The immediate market reaction to the SCOTUS ruling was a weaker dollar, but the subsequent announcement of a new 10% levy introduces fresh trade uncertainty. This may limit the euro's upside and could renew demand for the USD as a haven if risk sentiment sours. Price action is likely to be choppy and headline-driven.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\nSideways to bearish. The new tariff landscape creates a headwind for global growth and trade, which typically benefits the US dollar due to its liquidity and safe-haven status. Unless Eurozone data surprises strongly to the upside or the Fed signals a definitively dovish shift, the broader environment favors USD strength, capping EUR/USD rallies.\n\n**4. Trading Bias**\n**Bearish.** The combination of renewed US trade policy uncertainty and the dollar's demonstrated recent strength as a safe-haven (its strongest week since November) points to EUR/USD facing selling pressure on rallies. The path of least resistance is lower within a volatile range.\n\n**5. Main Risks / Alternative Scenarios**\n*   **Risk Rally Sustained:** If global risk appetite holds firm (e.g., driven by strong Nvidia earnings) and US data softens, the dollar's safe-haven bid could fade, leading to a stronger euro.\n*   **ECB Hawkish Surprise:** More hawkish-than-expected commentary from the European Central Bank could provide sustained support for the euro.\n*   **Tariff Details & Retaliation:** The specific details of the new 10% levy and the scale of retaliation from trading partners will be critical. A softer-than-feared implementation could invalidate the bearish view."
+    "deepseek": "**1. Key Market Drivers**\n*   **Monetary Policy & Economic Data:** Dominant theme is the **US Supreme Court ruling enabling Trump to impose a 15% global tariff**. This is a major fiscal/monetary shock, likely driving Fed expectations and growth differentials.\n*   **Risk Sentiment:** Mixed signals. Global equities are climbing (News 8), suggesting risk appetite. However, the dollar initially saw safe-haven demand (News 7), indicating underlying caution about the tariff's global growth impact.\n\n**2. Short-Term Outlook (1-3 Days): Sideways to Slightly Bearish EUR/USD**\n*   Immediate reaction saw dollar slip (News 7), but it remains strong for the week. Markets are digesting the ruling's implications. Initial risk-on moves (equities up) may cap USD strength, but the tariff's deflationary/demand-dampening effect on Europe and China likely favors the USD as the \"cleanest dirty shirt.\" Expect choppy, headline-driven trading with a bias toward dollar resilience.\n\n**3. Medium-Term Outlook (1-2 Weeks): Bearish EUR/USD**\n*   The tariff implementation is a clear negative for the Eurozone, a large, open, export-dependent economy. It threatens EU growth, complicates ECB policy, and could trigger capital flows into the US. The dollar's status as the primary safe-haven and the US's relatively more closed economy should see it outperform the euro as the tariff reality sets in.\n\n**4. Trading Bias: Bearish (on rallies)**\n*   **Reasoning:** The structural shock of new US tariffs is a greater relative burden for the Eurozone economy than for the US. This should widen growth and interest rate differentials in the USD's favor over the coming weeks. Any short-term EUR/USD rallies on fleeting risk appetite are likely to be sold into.\n\n**5. Main Risks / Alternative Scenarios**\n*   **Risk 1: Aggressive ECB Response.** If the ECB signals a more hawkish stance to combat potential imported inflation from tariffs, EUR could find support.\n*   **Risk 2: US Growth Scare.** If US data deteriorates sharply on tariff fallout, markets may price in aggressive Fed cuts, weakening the USD.\n*   **Risk 3: Escalating Geopolitics.** A significant flare-up in US-Iran tensions (News 8) could cause a broad USD squeeze, boosting EUR/USD temporarily.\n*   **Risk 4: EU Retaliation.** A coordinated, forceful EU trade retaliation could alter the growth impact calculus and limit EUR downside."
   },
   "pre_analysis": {
-    "error": "Failed to parse pre-analysis JSON: failed to parse JSON: Expecting ',' delimiter: line 208 column 10 (char 7600)",
-    "raw": "```json\n{\n    \"pair\": \"EUR/USD\",\n    \"source_summary\": {\n        \"Investing.com\": {\n            \"coverage\": 2,\n            \"credibility\": 1,\n            \"signal\": 1,\n            \"notes\": \"Severe content duplication issue. All articles (1-10) share identical content despite different titles and categories, suggesting a data feed or scraping error. This invalidates most of their output for this sample. One article (9) has a relevant ECB/Lagarde title but the content is corrupted.\"\n        },\n        \"MarketWatch\": {\n            \"coverage\": 7,\n            \"credibility\": 8,\n            \"signal\": 8,\n            \"notes\": \"Provides diverse, relevant, and non-duplicated news on dollar drivers (tariffs, data, Fed, positioning). Good mix of immediate price action and fundamental themes. Credibility is higher due to specific data points and named sources (Fed, BofA).\"\n        }\n    },\n    \"themes\": [\n        {\n            \"theme\": \"US Tariff Policy & Supreme Court Ruling\",\n            \"importance\": 9,\n            \"evidence_news_ids\": [11, 13]\n        },\n        {\n            \"theme\": \"US Economic Data & Fed Policy\",\n            \"importance\": 8,\n            \"evidence_news_ids\": [14, 16, 17]\n        },\n        {\n            \"theme\": \"USD Positioning & Sentiment\",\n            \"importance\": 7,\n            \"evidence_news_ids\": [13, 20]\n        },\n        {\n            \"theme\": \"Risk Sentiment & Geopolitics\",\n            \"importance\": 6,\n            \"evidence_news_ids\": [13]\n        },\n        {\n            \"theme\": \"ECB Leadership Speculation\",\n            \"importance\": 5,\n            \"evidence_news_ids\": [9]\n        }\n    ],\n    \"duplicates\": [\n        {\n            \"group_id\": \"DUP_INVESTING_MAIN\",\n            \"news_ids\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],\n            \"canonical_news_id\": 6,\n            \"notes\": \"All 10 Investing.com articles share the exact same content string about Trump tariffs, despite vastly different titles. This is a critical data integrity issue. News 6 is chosen as canonical as its title is most directly FX-relevant.\"\n        }\n    ],\n    \"article_quality\": [\n        {\n            \"news_id\": 1,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 2,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 3,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 4,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 5,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 6,\n            \"source\": \"Investing.com\",\n            \"relevance\": 8,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 5,\n            \"overall\": 3,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"High relevance title corrupted by wrong content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 7,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 8,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Irrelevant title (Nvidia)\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 9,\n            \"source\": \"Investing.com\",\n            \"relevance\": 7,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 5,\n            \"overall\": 3,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"High relevance title (ECB) corrupted by wrong content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 10,\n            \"source\": \"Investing.com\",\n            \"relevance\": 3,\n            \"credibility\": 1,\n            \"timeliness\": 5,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_MAIN\",\n            \"reasons\": [\"Duplicate content\", \"Mismatched title/content\", \"Low credibility due to data error\"]\n        },\n        {\n            \"news_id\": 11,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 9,\n            \"credibility\": 8,\n            \"timeliness\": 7,\n            \"signal\": 9,\n            \"overall\": 9,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Direct FX impact (dollar weakens)\", \"Specific policy catalyst (tariffs, SCOTUS)\", \"Clear signal\"]\n        },\n        {\n            \"news_id\": 12,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 7,\n            \"credibility\": 7,\n            \"timeliness\": 7,\n            \"signal\": 6,\n            \"overall\": 7,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Direct price action data\", \"Short-term market context\"]\n        },\n        {\n            \"news_id\": 13,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 7,\n            \"timeliness\": 7,\n            \"signal\": 8,\n            \"overall\": 8,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Analyses multiple dollar drivers\", \"Context beyond headlines\", \"Good signal strength\"]\n        },\n        {\n            \"news_id\": 14,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 9,\n            \"timeliness\": 8,\n            \"signal\": 8,\n            \"over"
+    "error": "Failed to parse pre-analysis JSON: failed to parse JSON: Expecting ',' delimiter: line 201 column 10 (char 7719)",
+    "raw": "```json\n{\n    \"pair\": \"EUR/USD\",\n    \"source_summary\": {\n        \"Investing.com\": {\n            \"coverage\": 2,\n            \"credibility\": 1,\n            \"signal\": 1,\n            \"notes\": \"Severe data quality issue. Multiple articles across unrelated categories (Sports, Insider Trading, etc.) have identical, irrelevant content about Trump tariffs. This suggests a scraping or data processing error. Only a few articles (IDs 7, 10) have unique, potentially relevant content, but their credibility is low due to the source's overall compromised state.\"\n        },\n        \"MarketWatch\": {\n            \"coverage\": 7,\n            \"credibility\": 8,\n            \"signal\": 8,\n            \"notes\": \"Provides diverse, relevant FX and macro news (Fed, jobs data, dollar positioning, risk sentiment). Articles are specific, data-driven, and cover multiple themes impacting EUR/USD. Credibility is higher due to association with WSJ and specific data/catalyst reporting.\"\n        }\n    },\n    \"themes\": [\n        {\n            \"theme\": \"US Dollar Strength & Drivers\",\n            \"importance\": 9,\n            \"evidence_news_ids\": [7, 11, 13, 17, 20]\n        },\n        {\n            \"theme\": \"US Monetary Policy (Fed)\",\n            \"importance\": 8,\n            \"evidence_news_ids\": [16]\n        },\n        {\n            \"theme\": \"US Economic Data (Labor Market)\",\n            \"importance\": 7,\n            \"evidence_news_ids\": [14]\n        },\n        {\n            \"theme\": \"Risk Sentiment & Global Markets\",\n            \"importance\": 6,\n            \"evidence_news_ids\": [8, 15]\n        },\n        {\n            \"theme\": \"ECB Leadership Speculation\",\n            \"importance\": 5,\n            \"evidence_news_ids\": [10]\n        },\n        {\n            \"theme\": \"Trade Policy/Tariff Impact\",\n            \"importance\": 4,\n            \"evidence_news_ids\": [11]\n        }\n    ],\n    \"duplicates\": [\n        {\n            \"group_id\": \"DUP_INVESTING_TARIFF\",\n            \"news_ids\": [1, 2, 3, 4, 5, 6, 8, 9],\n            \"canonical_news_id\": 7,\n            \"notes\": \"Investing.com articles IDs 1-6, 8, 9 all contain the identical, likely erroneous line 'Trump to raise global tariff rate to 15% after Supreme Court ruling', regardless of title/topic. ID 7 is selected as canonical as it is the only one in this group with a timestamp and a unique, relevant title/content snippet for FX.\"\n        }\n    ],\n    \"article_quality\": [\n        {\n            \"news_id\": 1,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"No timestamp\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 2,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"No timestamp\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 3,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"No timestamp\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 4,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"No timestamp\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 5,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"No timestamp\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 6,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"No timestamp\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 7,\n            \"source\": \"Investing.com\",\n            \"relevance\": 7,\n            \"credibility\": 3,\n            \"timeliness\": 8,\n            \"signal\": 6,\n            \"overall\": 5,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Has timestamp\", \"Directly discusses dollar movement post-tariff ruling\", \"Signal is generic market recap\", \"Credibility low due to source context\"]\n        },\n        {\n            \"news_id\": 8,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 9,\n            \"source\": \"Investing.com\",\n            \"relevance\": 1,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 1,\n            \"overall\": 1,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"DUP_INVESTING_TARIFF\",\n            \"reasons\": [\"Erroneous/irrelevant content\", \"Duplicate of other articles\", \"Title/content mismatch\"]\n        },\n        {\n            \"news_id\": 10,\n            \"source\": \"Investing.com\",\n            \"relevance\": 6,\n            \"credibility\": 5,\n            \"timeliness\": 8,\n            \"signal\": 5,\n            \"overall\": 6,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Relevant for ECB/Euro side\", \"Has timestamp\", \"Provides specific information\", \"Credibility moderate\"]\n        },\n        {\n            \"news_id\": 11,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 7,\n            \"timeliness\": 5,\n            \"signal\": 7,\n            \"overall\": 7,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Direct FX impact (dollar weakens on tariff news)\", \"Specific catalyst and price action\", \"No timestamp reduces timeliness score\"]\n        },\n        {\n            \"news_id\": 12,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 6,\n            \"credibility\": 7,\n            \"timeliness\": 5,\n            \"signal\": 5,\n            \"overall\": 6,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Provides dollar index level and short-term trend\", \"Data-driven\", \"No timestamp\", \"Signal is low (basic update)\"]\n        },\n        {\n            \"news_id\": 13,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 7,\n            \"timeliness\": 5,\n            \"signal\": 7"
   }
 }
