@@ -1,3 +1,14 @@
+Updates 2/22/2026
+1. Added a new benchmarking tool for the 3 API sources (NewsAPI / Alpha Vantage / EODHD):
+   - `api_sources_benchmark.py`: benchmarks each FX pair by (a) newest-news lag, (b) coverage counts, and (c) a rule-based quality/reliability score (optional DeepSeek pass).
+2. Benchmark runs now auto-log into:
+   - `benchmarks/api_benchmark_log.jsonl` (JSONL append-only; can be disabled with `--no-log`).
+3. Added a new config field to control whether to benchmark one pair or all 6 pairs:
+   - `benchmark_fx_pairs`: set to `"EUR/USD"` (single) or `"all"` (all pairs).
+4. Benchmark output now prints clearer time information:
+   - run timestamp in both UTC and local time
+   - per-provider “HQ newest” table and a separate “RAW newest” table (regardless of quality), with UTC + local timestamps.
+
 Updates 2/21/2026
 1. Added EODHD now saves two additional files (when enabled):
    - `{pair}_eodhd_content.json`: append-only content store (de-duplicated by URL; adds only newly seen articles)
@@ -61,6 +72,7 @@ This project crawls trading-related news directly from public web pages (no offi
   - **FX**: best-effort HTML scraping.
 - **NewsAPI.org** (FX only): API-based news collection with optional full-content store.
 - **Alpha Vantage**: API-based financial news via `NEWS_SENTIMENT` (stocks + FX).
+- **EODHD**: API-based financial news via EODHD News API (FX + stocks).
 
 ## Setup
 
@@ -90,6 +102,7 @@ This project is config-driven. The most important fields are:
 
 - **`asset_type`**: `"currency"` or `"stock"`
 - **`currency_pair`**: e.g. `"EUR/USD"` (used when `asset_type="currency"`)
+- **`benchmark_fx_pairs`**: `"EUR/USD"` (single) or `"all"` (benchmark all 6 FX pairs) for `api_sources_benchmark.py`
 - **`stock`**: e.g. `"AAPL"` (used when `asset_type="stock"`)
 - **`start_date` / `end_date`**: `"YYYY-MM-DD"` (UTC, inclusive)
 - **`max_news`**: maximum number of news items to collect per run (`null` = no limit)
@@ -177,6 +190,49 @@ python news_fetching.py --no-llm
 
 ```bash
 python news_fetching.py --verbose
+```
+
+## API source benchmarking (`api_sources_benchmark.py`)
+
+This tool benchmarks the 3 API providers (**NewsAPI**, **Alpha Vantage**, **EODHD**) for FX pairs.
+It reports:
+- **Recency**: newest item lag, plus newest *high-quality* item lag (rule-based filter)
+- **Coverage**: item counts and unique host counts
+- **Time clarity**: prints both **UTC** and **local** timestamps (lag is computed at run time)
+
+### Benchmark (no API calls, uses cached content stores)
+
+If you already have content stores from `news_fetching.py` (e.g. `eur_usd_newsapi_content.json`),
+you can benchmark without consuming API quota:
+
+```bash
+python api_sources_benchmark.py --from-cache --cache-root . --window-days 30
+```
+
+### Benchmark (live API calls)
+
+```bash
+python api_sources_benchmark.py --window-days 7
+```
+
+### Logging
+
+Each run appends to:
+- `benchmarks/api_benchmark_log.jsonl`
+
+Disable logging:
+
+```bash
+python api_sources_benchmark.py --no-log
+```
+
+### FX pair selection
+
+- Default: uses `benchmark_fx_pairs` in `default_config.json` (`"EUR/USD"` or `"all"`).
+- Override from CLI:
+
+```bash
+python api_sources_benchmark.py --pairs "EUR/USD,GBP/USD"
 ```
 
 ## Output

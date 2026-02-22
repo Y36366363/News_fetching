@@ -1,8 +1,9 @@
 {
-  "start_date": "2026-02-14",
-  "end_date": "2026-02-21",
+  "start_date": "2026-02-15",
+  "end_date": "2026-02-22",
   "asset_type": "currency",
   "currency_pair": "EUR/USD",
+  "benchmark_fx_pairs": "EUR/USD",
   "stock": "AAPL",
   "max_news": null,
   "enable_investing": true,
@@ -21,7 +22,7 @@
   "pre_analysis_max_articles": 20,
   "pre_analysis_filter_for_report": true,
   "llm_models": {
-    "deepseek": {"enabled": true},
+    "deepseek": {"enabled": false},
     "openai": {"enabled": false},
     "gemini": {"enabled": false}
   }
