@@ -1,3 +1,6 @@
+Updates 2/23/2026
+1. Added the new fx pair: AUD/CAD, now the tool has 7 fx pairs in total and if AUC/CAD pair is needed to be analyzed, you can change the settings in the default_config.json.
+
 Updates 2/22/2026
 1. Added a new benchmarking tool for the 3 API sources (NewsAPI / Alpha Vantage / EODHD):
    - `api_sources_benchmark.py`: benchmarks each FX pair by (a) newest-news lag, (b) coverage counts, and (c) a rule-based quality/reliability score (optional DeepSeek pass).
@@ -24,7 +27,7 @@ Updates 2/20/2026
 
 Updates 2/19/2026
 1. Added a DeepSeek pre-analysis step for fx pairs to (a) compare news across sources, (b) rate news quality (relevance/credibility/signal/timeliness), (c) detect duplicates, and (d) recommend the best subset of articles before generating the final analysis report. The results are saved under `pre_analysis` in the output JSON.
-2. Supported FX pairs are: `"EUR/USD"`, `"USD/JPY"`, `"GBP/USD"`, `"USD/CNY"`, `"USD/CAD"`, `"AUD/USD"`. Change `currency_pair` in `default_config.json` to analyze a different pair.
+2. Supported FX pairs are: `"EUR/USD"`, `"USD/JPY"`, `"GBP/USD"`, `"USD/CNY"`, `"USD/CAD"`, `"AUD/USD"`, `"AUD/CAD"`. Change `currency_pair` in `default_config.json` to analyze a different pair.
 3. NewsAPI now saves two additional FX files:
    - `{pair}_newsapi_content.json`: append-only content store (de-duplicated by URL; adds only newly seen articles)
    - `{pair}_newsapi_quality.json`: DeepSeek relevance classification for the current run (counts printed once to terminal). The final LLM report uses only the related NewsAPI articles.
@@ -47,7 +50,7 @@ Updates 2/12/2026
 3. Tested Yahoo Finance for stocks and can gather about 78 news for a single stock.
 
 Updates 2/11/2026
-1. Now the tool can del with 6 different pairs of currency trading. Please    revise the variable "currency_pair" to see the effects. The 6 pairs are "EUR/USD", "USD/JPY", "GBP/USD", "USD/CNY", "USD/CAD", "AUD/USD".
+1. Now the tool can del with 7 different pairs of currency trading. Please    revise the variable "currency_pair" to see the effects. The 7 pairs are "EUR/USD", "USD/JPY", "GBP/USD", "USD/CNY", "USD/CAD", "AUD/USD", "AUD/CAD".
 2. Modified the news sources. Now in all 6 cases, investing.com can fetch 15 news and market watch can fetch 20 news. Yahoo Finance can fetch news only for EUR/USD.
 3. Added Gemini model. You can fill in the gemini_api_key to get those news reported in Gemini as well. In default_config.json, you can decide on whether models to use in variable "llm_models". 
 

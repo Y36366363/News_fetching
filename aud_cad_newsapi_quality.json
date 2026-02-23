@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-02-23T05:08:35.698286+00:00",
+  "pair": "AUD/CAD",
+  "relevance": {
+    "pair": "AUD/CAD",
+    "counts": {
+      "most_relevant": 7,
+      "relevant": 0,
+      "unrelated": 0
+    },
+    "selected_urls": [
+      "https://english.khabarhub.com/2026/22/536132/",
+      "https://english.khabarhub.com/2026/21/536028/",
+      "https://english.khabarhub.com/2026/20/535867/",
+      "https://english.khabarhub.com/2026/19/535735/",
+      "https://english.khabarhub.com/2026/18/535595/",
+      "https://english.khabarhub.com/2026/17/535451/",
+      "https://english.khabarhub.com/2026/16/535316/"
+    ],
+    "items": [
+      {
+        "url": "https://english.khabarhub.com/2026/22/536132/",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly lists official exchange rates for both AUD and CAD in Nepalese Rupees, allowing for cross-rate calculation."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/21/536028/",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly lists official exchange rates for both AUD and CAD in Nepalese Rupees, allowing for cross-rate calculation."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/20/535867/",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly lists official exchange rates for both AUD and CAD in Nepalese Rupees, allowing for cross-rate calculation."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/19/535735/",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly lists official exchange rates for both AUD and CAD in Nepalese Rupees, allowing for cross-rate calculation."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/18/535595/",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly lists official exchange rates for both AUD and CAD in Nepalese Rupees, allowing for cross-rate calculation."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/17/535451/",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly lists official exchange rates for both AUD and CAD in Nepalese Rupees, allowing for cross-rate calculation."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/16/535316/",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly lists official exchange rates for both AUD and CAD in Nepalese Rupees, allowing for cross-rate calculation."
+        ]
+      }
+    ]
+  }
+}

@@ -35,7 +35,7 @@ from dotenv import load_dotenv
 import news_fetching as nf
 
 
-DEFAULT_FX_PAIRS: List[str] = ["EUR/USD", "USD/JPY", "GBP/USD", "USD/CNY", "USD/CAD", "AUD/USD"]
+DEFAULT_FX_PAIRS: List[str] = ["EUR/USD", "USD/JPY", "GBP/USD", "USD/CNY", "USD/CAD", "AUD/USD", "AUD/CAD"]
 DEFAULT_LOG_JSONL = os.path.join("benchmarks", "api_benchmark_log.jsonl")
 
 
@@ -779,14 +779,21 @@ def _pairs_from_default_config(cfg: Dict[str, Any]) -> List[str]:
     - ["EUR/USD", "USD/JPY", ...]: run a list
     Falls back to DEFAULT_FX_PAIRS if unset/invalid.
     """
+    def _norm(x: str) -> str:
+        s = x.strip()
+        m = re.match(r"^([A-Za-z]{3})[_/ ]([A-Za-z]{3})$", s)
+        if m:
+            return f"{m.group(1).upper()}/{m.group(2).upper()}"
+        return s
+
     raw = cfg.get("benchmark_fx_pairs")
     if isinstance(raw, str):
-        val = raw.strip()
+        val = _norm(raw)
         if not val:
             # Fall back to the main configured pair if present.
             cp = cfg.get("currency_pair")
             if isinstance(cp, str) and cp.strip():
-                return [cp.strip()]
+                return [_norm(cp)]
             return DEFAULT_FX_PAIRS[:]
         if val.lower() == "all":
             return DEFAULT_FX_PAIRS[:]
@@ -795,11 +802,11 @@ def _pairs_from_default_config(cfg: Dict[str, Any]) -> List[str]:
         out: List[str] = []
         for x in raw:
             if isinstance(x, str) and x.strip():
-                out.append(x.strip())
+                out.append(_norm(x))
         return out if out else DEFAULT_FX_PAIRS[:]
     cp = cfg.get("currency_pair")
     if isinstance(cp, str) and cp.strip():
-        return [cp.strip()]
+        return [_norm(cp)]
     return DEFAULT_FX_PAIRS[:]
 
 
@@ -870,7 +877,14 @@ def main() -> None:
     cfg = _load_default_config_raw(getattr(nf, "DEFAULT_CONFIG_PATH", "default_config.json"))
 
     if isinstance(args.pairs, str) and args.pairs.strip():
-        pairs = [x.strip() for x in args.pairs.split(",") if x.strip()]
+        def _norm_cli(x: str) -> str:
+            s = x.strip()
+            m = re.match(r"^([A-Za-z]{3})[_/ ]([A-Za-z]{3})$", s)
+            if m:
+                return f"{m.group(1).upper()}/{m.group(2).upper()}"
+            return s
+
+        pairs = [_norm_cli(x) for x in args.pairs.split(",") if x.strip()]
     else:
         pairs = _pairs_from_default_config(cfg)
 

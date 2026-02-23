@@ -1,0 +1,277 @@
+{
+  "schema_version": 2,
+  "meta": {
+    "generated_at": "2026-02-23T05:08:17.217111+00:00",
+    "asset_type": "currency",
+    "asset": "AUD/CAD",
+    "start_date": "2026-02-16",
+    "end_date": "2026-02-23",
+    "max_news": null,
+    "max_articles": 8,
+    "sources": {
+      "investing": true,
+      "marketwatch": true,
+      "yahoo": true,
+      "newsapi": true,
+      "alphavantage": true,
+      "eodhd": true
+    },
+    "source_max_items": {
+      "investing": 10,
+      "marketwatch": 10,
+      "yahoo": 10,
+      "newsapi": null,
+      "alphavantage": 10,
+      "eodhd": 10
+    },
+    "newsapi_max_items": null,
+    "llm_enabled": [
+      "deepseek",
+      "openai"
+    ],
+    "pre_analysis": {
+      "enabled": true,
+      "max_articles": 20,
+      "filter_for_report": true
+    },
+    "newsapi_selected_urls_for_report": [
+      "https://english.khabarhub.com/2026/16/535316/",
+      "https://english.khabarhub.com/2026/17/535451/",
+      "https://english.khabarhub.com/2026/18/535595/",
+      "https://english.khabarhub.com/2026/19/535735/",
+      "https://english.khabarhub.com/2026/20/535867/",
+      "https://english.khabarhub.com/2026/21/536028/",
+      "https://english.khabarhub.com/2026/22/536132/"
+    ]
+  },
+  "news": [
+    {
+      "id": 1,
+      "currency_pair": "AUD/CAD",
+      "source": "Investing.com",
+      "title": "Analyst Ratings",
+      "url": "https://www.investing.com/news/analyst-ratings",
+      "published_at": null,
+      "snippet": "Investing.com -- On Thursday, BCA Research strategist Chester Ntonifor offered a report outlining expectations for the Canadian...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 2,
+      "currency_pair": "AUD/CAD",
+      "source": "Investing.com",
+      "title": "Economic Indicators",
+      "url": "https://www.investing.com/news/economic-indicators",
+      "published_at": null,
+      "snippet": "Investing.com -- On Thursday, BCA Research strategist Chester Ntonifor offered a report outlining expectations for the Canadian...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 3,
+      "currency_pair": "AUD/CAD",
+      "source": "Investing.com",
+      "title": "Sports & General",
+      "url": "https://www.investing.com/news/general",
+      "published_at": null,
+      "snippet": "Investing.com -- On Thursday, BCA Research strategist Chester Ntonifor offered a report outlining expectations for the Canadian...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 4,
+      "currency_pair": "AUD/CAD",
+      "source": "Investing.com",
+      "title": "Insider Trading",
+      "url": "https://www.investing.com/news/insider-trading-news",
+      "published_at": null,
+      "snippet": "Investing.com -- On Thursday, BCA Research strategist Chester Ntonifor offered a report outlining expectations for the Canadian...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 5,
+      "currency_pair": "AUD/CAD",
+      "source": "Investing.com",
+      "title": "Investment Ideas",
+      "url": "https://www.investing.com/news/investment-ideas",
+      "published_at": null,
+      "snippet": "Investing.com -- On Thursday, BCA Research strategist Chester Ntonifor offered a report outlining expectations for the Canadian...",
+      "asset_type": "currency"
+    },
+    {
+      "id": 6,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Singapore Dollar Strengthens Slightly as Traders Digest U.S. Tariff Developments",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-strengthen-amid-risk-on-sentiment-c9902264?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The Singapore dollar strengthened slightly against its U.S. counterpart as traders digested U.S. tariff developments.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 7,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Dollar Down, Treasury Yields Slightly Up as Trump Vows New Tariffs",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-geopolitical-tensions-likely-to-weigh-1d99bc01?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The dollar weakened after President Trump said he will impose a 10% global tariff under a different authority in the wake of the Supreme Court’s tariff ruling.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 8,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "The WSJ Dollar Index Rises 0.08% to 94.90",
+      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-fading-fed-rate-cut-prospects-could-weigh-7694c78e?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The WSJ Dollar Index rose 0.1% — up three of the past four trading days.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 9,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Here’s what’s driving the U.S. dollar to its strongest position in almost a month — and it’s not just Iran tensions",
+      "url": "https://www.marketwatch.com/story/heres-whats-driving-the-u-s-dollar-to-its-strongest-position-in-almost-a-month-and-its-not-just-iran-tensions-f43ad39c?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The DXY dollar index extended gains after U.S. durable goods orders exceeded expectations.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 10,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Jobless claims fall to lowest level of the year, signaling a more stable labor market",
+      "url": "https://www.marketwatch.com/story/jobless-claims-fall-to-lowest-level-of-the-year-signaling-a-more-stable-labor-market-8c619fef?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The DXY dollar index extended gains after U.S. durable goods orders exceeded expectations.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 11,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "U.S. stocks are falling behind. It could be the beginning of an epic shift toward global markets.",
+      "url": "https://www.marketwatch.com/story/u-s-stocks-are-falling-behind-it-could-be-the-beginning-of-an-epic-shift-toward-global-markets-832e2785?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The DXY dollar index extended gains after U.S. durable goods orders exceeded expectations.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 12,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Fed minutes reveal discussion of a possible rate hike if inflation doesn’t cool",
+      "url": "https://www.marketwatch.com/story/fed-minutes-reveal-discussion-of-a-possible-rate-hike-if-inflation-doesnt-cool-6b0580bd?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The DXY dollar index extended gains after U.S. durable goods orders exceeded expectations.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 13,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Dollar Rises After Better-Than-Expected U.S. Durable Goods Data",
+      "url": "https://www.wsj.com/finance/currencies/new-zealand-dollar-falls-on-a-more-dovish-than-expected-rbnz-4f68dbab?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "The DXY dollar index extended gains after U.S. durable goods orders exceeded expectations.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 14,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Gold falls below $5,000 mark, silver drops as demand weakens during Lunar New Year holiday",
+      "url": "https://www.marketwatch.com/story/gold-prices-tumble-below-5-000-as-china-holidays-dent-support-d093e677?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Sterling extended its losses to reach a four-week low against the euro after weak U.K. jobs data boosted the prospect of another interest-rate cut as soon as March.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 15,
+      "currency_pair": "AUD/CAD",
+      "source": "MarketWatch",
+      "title": "Sterling Extends Losses After Soft Jobs Data",
+      "url": "https://www.wsj.com/finance/currencies/yen-stronger-further-gains-may-rest-on-takaichis-econ-steps-6ed6dc0e?mod=mw_quote_news",
+      "published_at": null,
+      "snippet": "Sterling extended its losses to reach a four-week low against the euro after weak U.K. jobs data boosted the prospect of another interest-rate cut as soon as March.",
+      "asset_type": "currency"
+    },
+    {
+      "id": 16,
+      "currency_pair": "AUD/CAD",
+      "source": "NewsAPI: Khabarhub.com",
+      "title": "Foreign currency exchange rates fixed for today",
+      "url": "https://english.khabarhub.com/2026/22/536132/",
+      "published_at": "2026-02-22T00:06:56+00:00",
+      "snippet": "KATHMANDU: Nepal Rastra Bank has set the foreign currency exchange rates for today. The buying rate of one US dollar has been fixed at Rs 145.28 and the selling rate at Rs 145.88. The buying rate of one euro stands at Rs 170.92 and the selling rate at Rs 171.…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 17,
+      "currency_pair": "AUD/CAD",
+      "source": "NewsAPI: Khabarhub.com",
+      "title": "Foreign currency exchange rates fixed for today",
+      "url": "https://english.khabarhub.com/2026/21/536028/",
+      "published_at": "2026-02-21T02:45:59+00:00",
+      "snippet": "KAHTMANDU: Nepal Rastra Bank (NRB) has published the foreign currency exchange rates for today. According to the central bank, the buying rate of one US dollar has been set at Rs 145.28 and the selling rate at Rs 145.88. The buying rate of one euro stands at …",
+      "asset_type": "currency"
+    },
+    {
+      "id": 18,
+      "currency_pair": "AUD/CAD",
+      "source": "NewsAPI: Khabarhub.com",
+      "title": "Foreign currency exchange rates fixed for today",
+      "url": "https://english.khabarhub.com/2026/20/535867/",
+      "published_at": "2026-02-20T01:44:25+00:00",
+      "snippet": "KATHMANDU: Nepal Rastra Bank has published the official foreign exchange rates for today (Friday). According to the central bank, the buying rate of one US dollar has been fixed at Rs 144.78 and the selling rate at Rs 145.38. The buying rate of one Euro stand…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 19,
+      "currency_pair": "AUD/CAD",
+      "source": "NewsAPI: Khabarhub.com",
+      "title": "Foreign exchange rates fixed for today",
+      "url": "https://english.khabarhub.com/2026/19/535735/",
+      "published_at": "2026-02-19T02:45:00+00:00",
+      "snippet": "KATHMANDU: Nepal Rastra Bank (NRB) has published the official foreign exchange rates for today. According to the central bank, the buying rate of one US dollar has been fixed at Rs 144.47 and the selling rate at Rs 145.38. The buying rate of one euro stands a…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 20,
+      "currency_pair": "AUD/CAD",
+      "source": "NewsAPI: Khabarhub.com",
+      "title": "Foreign currency exchange rates fixed for today",
+      "url": "https://english.khabarhub.com/2026/18/535595/",
+      "published_at": "2026-02-17T23:46:11+00:00",
+      "snippet": "KATHMANDU: Nepal Rastra Bank has published the official foreign exchange rates for today. According to the central bank, the buying rate of one US dollar has been set at Rs 144.78 and the selling rate at Rs 145.38. The buying rate of one euro stands at Rs 171…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 21,
+      "currency_pair": "AUD/CAD",
+      "source": "NewsAPI: Khabarhub.com",
+      "title": "Foreign currency exchange rates fixed for today",
+      "url": "https://english.khabarhub.com/2026/17/535451/",
+      "published_at": "2026-02-17T00:45:14+00:00",
+      "snippet": "KATHMANDU: Nepal Rastra Bank has determined the foreign currency exchange rates for today. According to the central bank, the buying rate of one US dollar has been fixed at Rs 144.75 and the selling rate at Rs 145.35. Similarly, the buying rate of one euro st…",
+      "asset_type": "currency"
+    },
+    {
+      "id": 22,
+      "currency_pair": "AUD/CAD",
+      "source": "NewsAPI: Khabarhub.com",
+      "title": "Foreign currency exchange rates for today",
+      "url": "https://english.khabarhub.com/2026/16/535316/",
+      "published_at": "2026-02-16T01:41:08+00:00",
+      "snippet": "KATHMANDU: Nepal Rastra Bank (NRB) has set the foreign exchange rates for today. According to the central bank, the buying rate of one US dollar is Rs 144.72 and the selling rate is Rs 145.32. The buying rate of one euro stands at Rs 171.76, while the selling…",
+      "asset_type": "currency"
+    }
+  ],
+  "analysis": {
+    "deepseek": "**AUD/CAD Analysis**\n\n**1. Key Market Drivers**\n*   **Risk Sentiment:** Mixed. Asian currency strength (News 6) and a weaker USD (News 7) suggest a modest \"risk-on\" tilt, which is typically AUD-supportive. However, the driver is new U.S. tariff threats, which create medium-term growth uncertainty.\n*   **Monetary Policy:** No direct data, but the slight uptick in Treasury yields (News 7) and a firming USD Index (News 8) reflect markets weighing delayed Fed cuts. This generally pressures commodity/risk currencies like the AUD more than the CAD.\n*   **Commodities:** The repeated gold price speculation in the provided \"AUD/CAD\" news is irrelevant noise. The real commodity driver is the **tariff news** (News 7), which threatens global trade and growth, negatively impacting Australia's export-heavy economy. CAD finds some offsetting support as a petrocurrency if tariffs spur economic uncertainty and oil volatility.\n\n**2. Short-Term Outlook (1-3 Days)**\n**Sideways to Slightly Bearish.** The immediate \"risk-on\" Asian FX move (AUD positive) from tariff headlines is likely to be fleeting. As the implications of broader tariffs sink in, growth concerns should weigh more heavily on the cyclical AUD than the CAD. AUD/CAD may struggle to find sustained upward momentum.\n\n**3. Medium-Term Outlook (1-2 Weeks)**\n**Bearish.** The prospect of escalating global trade barriers is a clear net negative for the Australian economy relative to Canada. Australia is more exposed to Chinese/Asian demand shocks from tariffs. Canada, while also trade-exposed, has a more resilient energy sector (oil price support) and direct trade ties to the US. This divergence favors CAD over AUD.\n\n**4. Trading Bias**\n**Bearish.**\n*   **Reasoning:** AUD is more vulnerable to a deterioration in global trade sentiment and slowing growth in key export markets (China). CAD benefits from relative US trade proximity and oil-linked support. The monetary policy backdrop (less-dovish Fed) is also a headwind for both, but typically impacts the higher-beta AUD more.\n\n**5. Main Risks / Alternative Scenarios**\n*   **Risk Reversal:** A rapid de-escalation of tariff rhetoric or surprisingly strong Chinese data could trigger a sharp risk rally, boosting AUD/CAD.\n*   **Oil Price Collapse:** A significant drop in crude oil prices, perhaps due to demand fears outweighing supply risks, would undermine the CAD's key support, potentially reversing the bearish AUD/CAD view.\n*   **Domestic Data Surprise:** Strong Australian employment or inflation data could revive RBA hike expectations, while weak Canadian CPI could boost BoC cut bets, supporting AUD/CAD.",
+    "openai": "**AUD/CAD Forex Analysis**\n\n---\n\n### 1. Key Market Drivers\n\n- **Economic Data:**  \n  No direct recent AUD or CAD-specific economic releases mentioned. However, general risk sentiment and USD movements are influencing commodity currencies like AUD and CAD.\n\n- **Monetary Policy:**  \n  Fed rate cut prospects are fading, supporting USD strength. No direct RBA or BoC updates, but the broader USD trend impacts AUD/CAD.\n\n- **Risk Sentiment:**  \n  - U.S. tariff tensions persist with Trump announcing new tariffs, causing some USD weakness but also geopolitical uncertainty.  \n  - Asian currencies, including the SGD, are strengthening amid risk-on sentiment, which typically supports AUD.  \n  - Treasury yields slightly up, indicating cautious risk appetite.\n\n- **Commodity Influence:**  \n  Gold-related news is prominent but not directly linked to AUD/CAD. However, commodity price trends (oil for CAD, metals for AUD) remain relevant but no fresh data here.\n\n---\n\n### 2. Short-term (1–3 days) Outlook\n\n- **Outlook:** Mild AUD strength vs CAD likely, supported by risk-on sentiment in Asia and USD softness from tariff concerns.  \n- **Drivers:** Slight USD weakness and risk appetite favor AUD over CAD, which is more tied to oil and global trade concerns.  \n- **Expected Range:** AUD/CAD may test resistance near 0.9200, with support around 0.9150.\n\n---\n\n### 3. Medium-term (1–2 weeks) Outlook\n\n- **Outlook:** Sideways to mildly bullish for AUD/CAD, pending clarity on U.S. tariff developments and commodity price movements.  \n- **Drivers:** If tariffs escalate, risk sentiment could deteriorate, pressuring AUD. Conversely, easing tensions or stable commodity prices support AUD/CAD upside.  \n- **Expected Range:** 0.9100–0.9250, with potential volatility spikes around tariff news or economic data releases.\n\n---\n\n### 4. Trading Bias\n\n- **Bias:** Mildly **bullish** on AUD/CAD.  \n- **Reasoning:** Risk-on sentiment in Asia and USD softness provide short-term tailwinds for AUD over CAD. No strong CAD-specific positive drivers currently. However, geopolitical risks cap upside.\n\n---\n\n### 5. Main Risks / Alternative Scenarios\n\n- **Risks that could invalidate bullish bias:**  \n  - Escalation of U.S. tariffs leading to risk-off sentiment, hurting AUD more than CAD.  \n  - Stronger-than-expected Canadian economic data or BoC hawkish signals.  \n  - Sharp commodity price drops (oil for CAD or metals for AUD) altering relative currency strength.  \n  - Renewed USD strength from hawkish Fed or safe-haven demand.\n\n- **Alternative scenario:** If USD rebounds strongly or risk aversion spikes, AUD/CAD could quickly reverse lower, testing 0.9100 or below.\n\n---\n\n**Summary for Traders:**  \nExpect mild AUD/CAD gains near term on risk-on and USD softness, but remain cautious around tariff headlines. Use tight stops and monitor commodity prices and U.S. trade developments closely."
+  },
+  "pre_analysis": {
+    "error": "Failed to parse pre-analysis JSON: failed to parse JSON: Expecting ',' delimiter: line 213 column 10 (char 7714)",
+    "raw": "```json\n{\n    \"pair\": \"AUD/CAD\",\n    \"source_summary\": {\n        \"Investing.com\": {\n            \"coverage\": 0,\n            \"credibility\": 1,\n            \"signal\": 0,\n            \"notes\": \"All articles are about gold price speculation for 2026, completely irrelevant to AUD/CAD. Low credibility for FX context.\"\n        },\n        \"MarketWatch\": {\n            \"coverage\": 6,\n            \"credibility\": 7,\n            \"signal\": 6,\n            \"notes\": \"Provides relevant macro themes (USD dynamics, Fed, labor data, risk sentiment) but lacks direct AUD or CAD analysis. Good signal on broader drivers.\"\n        },\n        \"NewsAPI: Khabarhub.com\": {\n            \"coverage\": 1,\n            \"credibility\": 5,\n            \"signal\": 1,\n            \"notes\": \"Official Nepalese central bank FX fixing rates. Credible as official data but has zero relevance to AUD/CAD pair.\"\n        }\n    },\n    \"themes\": [\n        {\n            \"theme\": \"US Dollar Strength & Drivers\",\n            \"importance\": 8,\n            \"evidence_news_ids\": [7, 8, 9, 13]\n        },\n        {\n            \"theme\": \"US Monetary Policy (Fed Hawkishness)\",\n            \"importance\": 9,\n            \"evidence_news_ids\": [12]\n        },\n        {\n            \"theme\": \"US Labor Market Strength\",\n            \"importance\": 7,\n            \"evidence_news_ids\": [10]\n        },\n        {\n            \"theme\": \"Global Risk Sentiment & Equity Flows\",\n            \"importance\": 6,\n            \"evidence_news_ids\": [6, 11]\n        },\n        {\n            \"theme\": \"Commodity Price Movements (Gold)\",\n            \"importance\": 5,\n            \"evidence_news_ids\": [14]\n        },\n        {\n            \"theme\": \"Other G10 Central Bank Policy (BoE)\",\n            \"importance\": 5,\n            \"evidence_news_ids\": [15]\n        }\n    ],\n    \"duplicates\": [\n        {\n            \"group_id\": \"gold_2026_speculation\",\n            \"news_ids\": [1, 2, 3, 4, 5],\n            \"canonical_news_id\": 1,\n            \"notes\": \"Identical content about gold price speculation in 2026 across different Investing.com categories. All irrelevant to AUD/CAD.\"\n        },\n        {\n            \"group_id\": \"nrb_fx_fixing\",\n            \"news_ids\": [16, 17, 18, 19, 20],\n            \"canonical_news_id\": 16,\n            \"notes\": \"Near-identical daily reports of Nepal Rastra Bank's official FX fixing rates. Slight variations in rates and dates. All irrelevant to AUD/CAD.\"\n        }\n    ],\n    \"article_quality\": [\n        {\n            \"news_id\": 1,\n            \"source\": \"Investing.com\",\n            \"relevance\": 0,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 0,\n            \"overall\": 0,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"gold_2026_speculation\",\n            \"reasons\": [\"Completely irrelevant content (gold)\", \"No timeliness info\", \"Duplicate content\", \"Zero signal for AUD/CAD\"]\n        },\n        {\n            \"news_id\": 2,\n            \"source\": \"Investing.com\",\n            \"relevance\": 0,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 0,\n            \"overall\": 0,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"gold_2026_speculation\",\n            \"reasons\": [\"Completely irrelevant content (gold)\", \"No timeliness info\", \"Duplicate content\", \"Zero signal for AUD/CAD\"]\n        },\n        {\n            \"news_id\": 3,\n            \"source\": \"Investing.com\",\n            \"relevance\": 0,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 0,\n            \"overall\": 0,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"gold_2026_speculation\",\n            \"reasons\": [\"Completely irrelevant content (gold)\", \"No timeliness info\", \"Duplicate content\", \"Zero signal for AUD/CAD\"]\n        },\n        {\n            \"news_id\": 4,\n            \"source\": \"Investing.com\",\n            \"relevance\": 0,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 0,\n            \"overall\": 0,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"gold_2026_speculation\",\n            \"reasons\": [\"Completely irrelevant content (gold)\", \"No timeliness info\", \"Duplicate content\", \"Zero signal for AUD/CAD\"]\n        },\n        {\n            \"news_id\": 5,\n            \"source\": \"Investing.com\",\n            \"relevance\": 0,\n            \"credibility\": 1,\n            \"timeliness\": 1,\n            \"signal\": 0,\n            \"overall\": 0,\n            \"is_duplicate\": true,\n            \"duplicate_group_id\": \"gold_2026_speculation\",\n            \"reasons\": [\"Completely irrelevant content (gold)\", \"No timeliness info\", \"Duplicate content\", \"Zero signal for AUD/CAD\"]\n        },\n        {\n            \"news_id\": 6,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 4,\n            \"credibility\": 6,\n            \"timeliness\": 5,\n            \"signal\": 4,\n            \"overall\": 5,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Indirect relevance via Asian FX/risk sentiment\", \"No direct AUD/CAD mention\", \"Useful for broader market context\"]\n        },\n        {\n            \"news_id\": 7,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 7,\n            \"credibility\": 7,\n            \"timeliness\": 5,\n            \"signal\": 7,\n            \"overall\": 7,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"High relevance for USD dynamics (key driver for AUD/CAD)\", \"Clear policy signal (tariffs)\", \"Good credibility\"]\n        },\n        {\n            \"news_id\": 8,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 7,\n            \"credibility\": 7,\n            \"timeliness\": 5,\n            \"signal\": 6,\n            \"overall\": 6,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Direct USD index data point\", \"Relevant for broad USD strength context\", \"Factual reporting\"]\n        },\n        {\n            \"news_id\": 9,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 7,\n            \"credibility\": 7,\n            \"timeliness\": 5,\n            \"signal\": 7,\n            \"overall\": 7,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Analysis of multi-factor USD strength\", \"High relevance for cross dynamics\", \"Good signal on driver complexity\"]\n        },\n        {\n            \"news_id\": 10,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 8,\n            \"timeliness\": 5,\n            \"signal\": 8,\n            \"overall\": 7,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Strong US data supports USD/hawkish Fed\", \"High macro relevance for AUD/CAD\", \"Credible data-driven story\"]\n        },\n        {\n            \"news_id\": 11,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 5,\n            \"credibility\": 6,\n            \"timeliness\": 5,\n            \"signal\": 5,\n            \"overall\": 5,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Relevant for global risk sentiment & flows\", \"Indirect impact on commodity/AUD\", \"Speculative forward-looking\"]\n        },\n        {\n            \"news_id\": 12,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 9,\n            \"credibility\": 8,\n            \"timeliness\": 5,\n            \"signal\": 9,\n            \"overall\": 8,\n            \"is_duplicate\": false,\n            \"duplicate_group_id\": null,\n            \"reasons\": [\"Top-tier macro signal (Fed hawkish bias)\", \"Critical for USD and global rates\", \"High credibility (Fed minutes)\"]\n        },\n        {\n            \"news_id\": 13,\n            \"source\": \"MarketWatch\",\n            \"relevance\": 8,\n            \"credibility\": 7,\n            \"timeliness\": 5,\n            \"signal\": 7,\n            \"over"
+  }
+}

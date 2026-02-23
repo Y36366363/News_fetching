@@ -130,6 +130,24 @@ def parse_iso_like_datetime(value: str) -> Optional[datetime]:
     return dt
 
 
+def normalize_fx_pair(value: object) -> str:
+    """
+    Normalize common FX pair inputs into the canonical form used by this project:
+    - "AUD/CAD" -> "AUD/CAD"
+    - "AUD_CAD" -> "AUD/CAD"
+    - "aud cad" -> "AUD/CAD"
+
+    If it doesn't look like a 3-letter/3-letter pair, returns the trimmed string.
+    """
+    if not isinstance(value, str):
+        return "EUR/USD"
+    text = value.strip()
+    m = re.match(r"^([A-Za-z]{3})\s*[_/ ]\s*([A-Za-z]{3})$", text)
+    if m:
+        return f"{m.group(1).upper()}/{m.group(2).upper()}"
+    return text
+
+
 def fetch_html(url: str, retries: int = 3, delay: int = 2) -> Optional[str]:
     """
     Fetch HTML content with simple retry and backoff.
@@ -1718,6 +1736,7 @@ def collect_news_for_pair(
     Aggregate news from all configured sources, de-duplicate, and convert
     to NewsItem objects.
     """
+    pair = normalize_fx_pair(pair)
     raw_items: List[Dict] = []
 
     # Currently Investing.com and MarketWatch are used as sources.
@@ -2193,7 +2212,7 @@ def load_default_config() -> Dict[str, object]:
     if asset_type not in ("currency", "stock"):
         asset_type = "currency"
     
-    currency_pair = data.get("currency_pair", "EUR/USD")
+    currency_pair = normalize_fx_pair(data.get("currency_pair", "EUR/USD"))
     stock = data.get("stock")
     max_news = data.get("max_news", None)
     enable_investing = bool(data.get("enable_investing", True))

@@ -44,6 +44,11 @@ SUPPORTED_PAIRS: Dict[str, Dict[str, str]] = {
         "marketwatch_url": "https://www.marketwatch.com/investing/currency/audusd",
         "yahoo_url": "https://finance.yahoo.com/quote/AUDUSD=X/",
     },
+    "AUD/CAD": {
+        "investing_url": "https://www.investing.com/currencies/aud-cad-news",
+        "marketwatch_url": "https://www.marketwatch.com/investing/currency/audcad",
+        "yahoo_url": "https://finance.yahoo.com/quote/AUDCAD=X/",
+    },
 }
 
 
