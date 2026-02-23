@@ -1,6 +1,7 @@
 """
 Benchmark the quality of *API* FX news sources:
 - NewsAPI.org
+- ForexNewsAPI (forexnewsapi.com)
 - Alpha Vantage (NEWS_SENTIMENT)
 - EODHD News API
 
@@ -15,6 +16,7 @@ What it measures per FX pair & provider (per run):
 Notes:
 - For historical probing without burning API quotas, you can use `--from-cache`
   to read your append-only content stores: `{pair}_newsapi_content.json`,
+  `{pair}_forexnewsapi_content.json`,
   `{pair}_alphavantage_content.json`, `{pair}_eodhd_content.json`.
 """
 
@@ -284,6 +286,7 @@ def load_cached_provider_articles(
     Read append-only cache files produced by `news_fetching.py`:
     - newsapi:  `{pair}_newsapi_content.json` (list of NewsAPI article objects)
     - alphavantage: `{pair}_alphavantage_content.json` (list of normalized objects)
+    - forexnewsapi: `{pair}_forexnewsapi_content.json` (list of normalized objects)
     - eodhd: `{pair}_eodhd_content.json` (list of normalized objects)
     """
     prefix = _pair_to_prefix(pair)
@@ -292,6 +295,8 @@ def load_cached_provider_articles(
         path = os.path.join(root_dir, f"{prefix}_newsapi_content.json")
     elif provider == "alphavantage":
         path = os.path.join(root_dir, f"{prefix}_alphavantage_content.json")
+    elif provider == "forexnewsapi":
+        path = os.path.join(root_dir, f"{prefix}_forexnewsapi_content.json")
     elif provider == "eodhd":
         path = os.path.join(root_dir, f"{prefix}_eodhd_content.json")
     else:
@@ -387,6 +392,7 @@ def fetch_provider_articles_live(
     start_date: Optional[date],
     end_date: Optional[date],
     newsapi_max_items: int,
+    forexnewsapi_max_items: int,
     alphavantage_max_items: int,
     eodhd_limit: int,
 ) -> List[Dict[str, Any]]:
@@ -436,6 +442,33 @@ def fetch_provider_articles_live(
             dt = it.get("published_dt")
             snippet = it.get("snippet") or ""
             source = it.get("source") or "AlphaVantage"
+            if not (isinstance(url, str) and url.strip() and isinstance(title, str) and title.strip()):
+                continue
+            out.append(
+                {
+                    "url": url.strip(),
+                    "title": title.strip(),
+                    "publishedAt": dt.astimezone(timezone.utc).isoformat() if isinstance(dt, datetime) else "",
+                    "content": snippet,
+                    "source": source,
+                }
+            )
+        return out
+
+    if provider == "forexnewsapi":
+        items = nf.fetch_forexnewsapi_fx_pair(
+            pair=pair,
+            start_date=start_date,
+            end_date=end_date,
+            max_items=forexnewsapi_max_items,
+        )
+        out = []
+        for it in items:
+            url = it.get("url")
+            title = it.get("title")
+            dt = it.get("published_dt")
+            snippet = it.get("snippet") or ""
+            source = it.get("source") or "ForexNewsAPI"
             if not (isinstance(url, str) and url.strip() and isinstance(title, str) and title.strip()):
                 continue
             out.append(
@@ -669,6 +702,8 @@ def _deepseek_provider_label(provider: str) -> str:
         return "NewsAPI"
     if p == "alphavantage":
         return "AlphaVantage"
+    if p == "forexnewsapi":
+        return "ForexNewsAPI"
     if p == "eodhd":
         return "EODHD"
     return provider
@@ -757,6 +792,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--cache-root", type=str, default=".", help="Directory containing *_content.json files.")
 
     p.add_argument("--newsapi-max", type=int, default=100, help="Max items per NewsAPI call (<=100).")
+    p.add_argument("--forexnewsapi-max", type=int, default=3, help="Max items per ForexNewsAPI call (trial plans may require <=3).")
     p.add_argument("--alphavantage-max", type=int, default=50, help="Max FX items kept after AlphaVantage filtering.")
     p.add_argument("--eodhd-limit", type=int, default=100, help="EODHD limit parameter.")
 
@@ -902,7 +938,7 @@ def main() -> None:
     now_local = datetime.now().astimezone()
     print(f"[RUN] run_at_utc={now_utc.isoformat()} | run_at_local={now_local.isoformat()}")
 
-    providers = ["newsapi", "alphavantage", "eodhd"]
+    providers = ["newsapi", "forexnewsapi", "alphavantage", "eodhd"]
 
     all_results: Dict[str, Any] = {
         "schema_version": 1,
@@ -929,6 +965,7 @@ def main() -> None:
                     start_date=start_date,
                     end_date=end_date,
                     newsapi_max_items=int(args.newsapi_max),
+                    forexnewsapi_max_items=int(args.forexnewsapi_max),
                     alphavantage_max_items=int(args.alphavantage_max),
                     eodhd_limit=int(args.eodhd_limit),
                 )

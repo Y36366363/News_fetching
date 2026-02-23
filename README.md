@@ -1,5 +1,6 @@
 Updates 2/23/2026
 1. Added the new fx pair: AUD/CAD, now the tool has 7 fx pairs in total and if AUC/CAD pair is needed to be analyzed, you can change the settings in the default_config.json.
+2. Added a new news collecting source "Forex api", if you have a valid api key, please fill it with your key in .env and set up the "enabled" variable in default_config.json and then you can start to use Forex api as well.
 
 Updates 2/22/2026
 1. Added a new benchmarking tool for the 3 API sources (NewsAPI / Alpha Vantage / EODHD):
@@ -197,7 +198,7 @@ python news_fetching.py --verbose
 
 ## API source benchmarking (`api_sources_benchmark.py`)
 
-This tool benchmarks the 3 API providers (**NewsAPI**, **Alpha Vantage**, **EODHD**) for FX pairs.
+This tool benchmarks the 4 API providers (**NewsAPI**, **ForexNewsAPI**, **Alpha Vantage**, **EODHD**) for FX pairs.
 It reports:
 - **Recency**: newest item lag, plus newest *high-quality* item lag (rule-based filter)
 - **Coverage**: item counts and unique host counts

@@ -704,6 +704,244 @@ def fetch_newsapi_fx_pair(
 
 
 # ---------------------------------------------------------------------------
+# ForexNewsAPI (API source) - https://forexnewsapi.com/
+# ---------------------------------------------------------------------------
+
+_FOREXNEWSAPI_FULL_CACHE: Dict[str, Dict[str, Any]] = {}
+
+
+def _make_forexnewsapi_key() -> Optional[str]:
+    key = (
+        os.getenv("FOREX_API_KEY")
+        or os.getenv("FOREXNEWSAPI_KEY")
+        or os.getenv("FOREXNEWSAPI_TOKEN")
+    )
+    if not key:
+        debug_log("[WARN] FOREX_API_KEY not set; ForexNewsAPI source will be skipped.")
+        return None
+    return key
+
+
+def _forexnewsapi_currencypair(pair: str) -> str:
+    pair = normalize_fx_pair(pair)
+    parts = pair.replace(" ", "").upper().split("/")
+    base = parts[0] if len(parts) > 0 else pair.upper()
+    quote = parts[1] if len(parts) > 1 else ""
+    return f"{base}-{quote}" if quote else base
+
+
+def _parse_forexnewsapi_published(value: object) -> Optional[datetime]:
+    """
+    ForexNewsAPI time fields are not documented consistently; accept common shapes.
+    Interpret timezone-aware strings as UTC, naive strings as UTC.
+    """
+    if not isinstance(value, str) or not value.strip():
+        return None
+    text = value.strip()
+    dt = parse_iso_like_datetime(text)
+    if isinstance(dt, datetime):
+        return dt
+    try:
+        dt2 = date_parser.parse(text)
+        if dt2.tzinfo is None:
+            dt2 = dt2.replace(tzinfo=timezone.utc)
+        else:
+            dt2 = dt2.astimezone(timezone.utc)
+        return dt2
+    except Exception:
+        return None
+
+
+def fetch_forexnewsapi_fx_pair(
+    pair: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[Dict[str, Any]]:
+    """
+    Fetch FX news from ForexNewsAPI (https://forexnewsapi.com/api/v1).
+    Returns items compatible with the rest of the pipeline.
+    """
+    key = _make_forexnewsapi_key()
+    if not key:
+        return []
+
+    cp = _forexnewsapi_currencypair(pair)
+    remaining = max_items if isinstance(max_items, int) and max_items > 0 else None
+
+    items: List[Dict[str, Any]] = []
+    cached_articles: List[Dict[str, Any]] = []
+    seen_urls: set[str] = set()
+
+    page = 1
+    # ForexNewsAPI `items` is capped (docs show 1-50).
+    page_size = 50 if remaining is None else min(remaining, 50)
+    retried_trial_cap = False
+
+    print(f"\n[INFO] Fetching ForexNewsAPI ({pair} news)...")
+    while True:
+        params: Dict[str, Any] = {
+            "currencypair": cp,
+            "items": page_size,
+            "page": page,
+            "token": key,
+        }
+        if start_date:
+            params["from"] = start_date.isoformat()
+        if end_date:
+            params["to"] = end_date.isoformat()
+
+        try:
+            resp = requests.get(
+                "https://forexnewsapi.com/api/v1",
+                params=params,
+                headers=HEADERS,
+                timeout=25,
+            )
+            # Some plans return 403 with a JSON {"message": "..."}.
+            if resp.status_code == 403:
+                msg = ""
+                try:
+                    data = resp.json()
+                    if isinstance(data, dict) and isinstance(data.get("message"), str):
+                        msg = data.get("message", "").strip()
+                except Exception:
+                    msg = ""
+                # Trial plans can require items<=3. Auto-retry once with 3 items for usability.
+                if (not retried_trial_cap) and page == 1 and page_size > 3 and "up to 3" in msg.lower():
+                    retried_trial_cap = True
+                    page_size = 3
+                    print("[WARN] ForexNewsAPI plan limit detected; retrying with items=3.")
+                    continue
+                print(f"[WARN] ForexNewsAPI returned 403{(': ' + msg) if msg else ''}")
+                break
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as exc:
+            debug_log(f"[WARN] ForexNewsAPI request failed: {exc}")
+            break
+
+        # Response shape varies by plan/version; accept common list locations.
+        feed: Optional[List[Any]] = None
+        if isinstance(data, dict):
+            msg = data.get("message")
+            if isinstance(msg, str) and msg.strip():
+                # ForexNewsAPI sometimes returns informational errors in a 200 payload.
+                print(f"[WARN] ForexNewsAPI returned message: {msg.strip()}")
+                break
+            for k in ("data", "news", "articles", "results", "items"):
+                v = data.get(k)
+                if isinstance(v, list):
+                    feed = v
+                    break
+        elif isinstance(data, list):
+            feed = data
+
+        if not feed:
+            break
+
+        for a in feed:
+            if not isinstance(a, dict):
+                continue
+            title = (a.get("title") or a.get("headline") or "").strip()
+            url = (a.get("news_url") or a.get("url") or a.get("link") or "").strip()
+            if not title or not url or url in seen_urls:
+                continue
+            seen_urls.add(url)
+
+            published_val = (
+                a.get("publishedAt")
+                or a.get("published_at")
+                or a.get("published")
+                or a.get("date")
+                or a.get("time")
+            )
+            published_dt = _parse_forexnewsapi_published(published_val)
+            if not within_date_range(published_dt, start_date, end_date):
+                continue
+
+            src = (a.get("source_name") or a.get("source") or a.get("publisher") or "").strip()
+            snippet = (
+                (a.get("text") or "")
+                or (a.get("description") or "")
+                or (a.get("summary") or "")
+                or (a.get("content") or "")
+                or ""
+            )
+            snippet = snippet.strip()
+
+            source_label = f"ForexNewsAPI: {src}" if src else "ForexNewsAPI"
+
+            items.append(
+                {
+                    "source": source_label,
+                    "currency_pair": pair,
+                    "asset_type": "currency",
+                    "title": title,
+                    "url": url,
+                    "published_dt": published_dt,
+                    "snippet": snippet[:600],
+                }
+            )
+
+            cached_articles.append(
+                {
+                    "url": url,
+                    "source": src or source_label,
+                    "publishedAt": (
+                        published_dt.astimezone(timezone.utc).isoformat()
+                        if isinstance(published_dt, datetime)
+                        else (published_val.strip() if isinstance(published_val, str) else "")
+                    ),
+                    "title": title,
+                    "content": snippet[:1200],
+                    # Keep a few raw fields when present (best-effort).
+                    "sentiment": a.get("sentiment"),
+                    "image": a.get("image_url") or a.get("image") or a.get("urlToImage"),
+                    "currencypair": a.get("currencypair") or cp,
+                }
+            )
+
+            if remaining is not None:
+                remaining -= 1
+                if remaining <= 0:
+                    break
+
+        if remaining is not None and remaining <= 0:
+            break
+
+        # Stop if we got fewer than requested on this page.
+        if len(feed) < page_size:
+            break
+
+        page += 1
+        if page > 10:
+            # Safety cap to avoid unexpected infinite pagination.
+            break
+
+    # Cache full payload for this run (without token).
+    try:
+        cached_params = {
+            "currencypair": cp,
+            "items": page_size,
+            "from": start_date.isoformat() if start_date else None,
+            "to": end_date.isoformat() if end_date else None,
+        }
+        _FOREXNEWSAPI_FULL_CACHE[pair] = {
+            "schema_version": 1,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "pair": pair,
+            "request": {"endpoint": "https://forexnewsapi.com/api/v1", "params": cached_params},
+            "articles": cached_articles,
+        }
+    except Exception:
+        pass
+
+    print(f"[INFO] ForexNewsAPI items collected: {len(items)}")
+    return items
+
+
+# ---------------------------------------------------------------------------
 # Alpha Vantage (API source)
 # ---------------------------------------------------------------------------
 
@@ -1443,6 +1681,72 @@ def update_eodhd_content_store(asset: str, path: str, articles: List[Dict[str, A
 
     return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path}
 
+
+def update_forexnewsapi_content_store(pair: str, path: str) -> Dict[str, Any]:
+    """
+    Append-only content store for ForexNewsAPI, de-duplicated by URL.
+    Stores: source, title, url, publishedAt, content (single line).
+    """
+    payload = _FOREXNEWSAPI_FULL_CACHE.get(pair)
+    if not isinstance(payload, dict):
+        return {"total": 0, "added": 0, "skipped_existing": 0, "path": path, "error": "No cached ForexNewsAPI payload for this run."}
+
+    cached_articles = payload.get("articles")
+    if not isinstance(cached_articles, list):
+        cached_articles = []
+
+    existing_raw = _load_json_file_best_effort(path)
+    existing_articles: List[Dict[str, Any]] = []
+    if isinstance(existing_raw, list):
+        existing_articles = [a for a in existing_raw if isinstance(a, dict)]
+    elif isinstance(existing_raw, dict) and isinstance(existing_raw.get("articles"), list):
+        existing_articles = [a for a in existing_raw["articles"] if isinstance(a, dict)]
+
+    existing_urls = {
+        a.get("url") for a in existing_articles if isinstance(a.get("url"), str) and a.get("url")
+    }
+
+    added = 0
+    skipped = 0
+    new_articles: List[Dict[str, Any]] = []
+
+    for a in cached_articles:
+        if not isinstance(a, dict):
+            continue
+        url = (a.get("url") or "").strip() if isinstance(a.get("url"), str) else ""
+        if not url:
+            continue
+        if url in existing_urls:
+            skipped += 1
+            continue
+
+        title = (a.get("title") or "").strip()
+        published_at = a.get("publishedAt") or ""
+        content = _normalize_single_line(a.get("content") or "")
+        source = (a.get("source") or "forexnewsapi").strip() if isinstance(a.get("source"), str) else "forexnewsapi"
+
+        new_articles.append(
+            {
+                "source": source,
+                "title": title,
+                "url": url,
+                "publishedAt": published_at,
+                "content": content,
+            }
+        )
+        existing_urls.add(url)
+        added += 1
+
+    merged = existing_articles + new_articles
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(merged, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Updated ForexNewsAPI content store: added {added}, total {len(merged)} -> {path!r}")
+    except Exception as exc:
+        return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path, "error": str(exc)}
+
+    return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path}
+
 def _filter_api_source_items_by_urls(
     news: List["NewsItem"],
     *,
@@ -1727,6 +2031,8 @@ def collect_news_for_pair(
     yahoo_max_items: Optional[int] = None,
     enable_newsapi: bool = False,
     newsapi_max_items: Optional[int] = None,
+    enable_forexnewsapi: bool = False,
+    forexnewsapi_max_items: Optional[int] = None,
     enable_alphavantage: bool = False,
     alphavantage_max_items: Optional[int] = None,
     enable_eodhd: bool = False,
@@ -1826,7 +2132,26 @@ def collect_news_for_pair(
             if remaining is not None:
                 remaining = max(0, remaining - added)
 
-    # 5) Alpha Vantage NEWS_SENTIMENT (optional API source)
+    # 5) ForexNewsAPI (optional API source)
+    if enable_forexnewsapi:
+        cap = forexnewsapi_max_items if isinstance(forexnewsapi_max_items, int) else None
+        fxn_items = fetch_forexnewsapi_fx_pair(
+            pair=pair,
+            start_date=start_date,
+            end_date=end_date,
+            max_items=cap,
+        )
+        if remaining is None or remaining > 0:
+            before = len(raw_items)
+            if remaining is None:
+                raw_items.extend(fxn_items)
+            else:
+                raw_items.extend(fxn_items[:remaining])
+            added = len(raw_items) - before
+            if remaining is not None:
+                remaining = max(0, remaining - added)
+
+    # 6) Alpha Vantage NEWS_SENTIMENT (optional API source)
     if enable_alphavantage and (remaining is None or remaining > 0):
         cap = (
             alphavantage_max_items
@@ -1848,7 +2173,7 @@ def collect_news_for_pair(
         if remaining is not None:
             remaining = max(0, remaining - added)
 
-    # 6) EODHD News API (optional API source)
+    # 7) EODHD News API (optional API source)
     if enable_eodhd and (remaining is None or remaining > 0):
         cap = eodhd_max_items if isinstance(eodhd_max_items, int) and eodhd_max_items > 0 else 10
         before = len(raw_items)
@@ -2166,6 +2491,8 @@ def load_default_config() -> Dict[str, object]:
             "yahoo_max_items": None,
             "enable_newsapi": False,
             "newsapi_max_items": None,
+            "enable_forexnewsapi": False,
+            "forexnewsapi_max_items": 3,
             "enable_alphavantage": False,
             "alphavantage_max_items": 10,
             "enable_eodhd": False,
@@ -2196,6 +2523,8 @@ def load_default_config() -> Dict[str, object]:
             "yahoo_max_items": None,
             "enable_newsapi": False,
             "newsapi_max_items": None,
+            "enable_forexnewsapi": False,
+            "forexnewsapi_max_items": 3,
             "enable_alphavantage": False,
             "alphavantage_max_items": 10,
             "enable_eodhd": False,
@@ -2228,6 +2557,7 @@ def load_default_config() -> Dict[str, object]:
     if not (isinstance(yahoo_max_items, int) and yahoo_max_items > 0):
         yahoo_max_items = None
     enable_newsapi = bool(data.get("enable_newsapi", False))
+    enable_forexnewsapi = bool(data.get("enable_forexnewsapi", False))
     enable_alphavantage = bool(data.get("enable_alphavantage", False))
     enable_eodhd = bool(data.get("enable_eodhd", False))
     enable_pre_analysis = bool(data.get("enable_pre_analysis", True))
@@ -2236,6 +2566,10 @@ def load_default_config() -> Dict[str, object]:
     newsapi_max_items = data.get("newsapi_max_items", None)
     if not (isinstance(newsapi_max_items, int) and newsapi_max_items > 0):
         newsapi_max_items = None
+
+    forexnewsapi_max_items = data.get("forexnewsapi_max_items", 3)
+    if not (isinstance(forexnewsapi_max_items, int) and forexnewsapi_max_items > 0):
+        forexnewsapi_max_items = 3
     alphavantage_max_items = data.get("alphavantage_max_items", 10)
     if not (isinstance(alphavantage_max_items, int) and alphavantage_max_items > 0):
         alphavantage_max_items = 10
@@ -2281,6 +2615,8 @@ def load_default_config() -> Dict[str, object]:
         "yahoo_max_items": yahoo_max_items,
         "enable_newsapi": enable_newsapi,
         "newsapi_max_items": newsapi_max_items,
+        "enable_forexnewsapi": enable_forexnewsapi,
+        "forexnewsapi_max_items": forexnewsapi_max_items,
         "enable_alphavantage": enable_alphavantage,
         "alphavantage_max_items": alphavantage_max_items,
         "enable_eodhd": enable_eodhd,
@@ -3015,6 +3351,8 @@ def main() -> None:
             yahoo_max_items=cfg.get("yahoo_max_items", None),
             enable_newsapi=bool(cfg.get("enable_newsapi", False)),
             newsapi_max_items=cfg.get("newsapi_max_items", None),
+            enable_forexnewsapi=bool(cfg.get("enable_forexnewsapi", False)),
+            forexnewsapi_max_items=cfg.get("forexnewsapi_max_items", 10),
             enable_alphavantage=bool(cfg.get("enable_alphavantage", False)),
             alphavantage_max_items=cfg.get("alphavantage_max_items", 10),
             enable_eodhd=bool(cfg.get("enable_eodhd", False)),
@@ -3049,6 +3387,7 @@ def main() -> None:
             "marketwatch": bool(cfg.get("enable_marketwatch", True)),
             "yahoo": bool(cfg.get("enable_yahoo", True)),
             "newsapi": bool(cfg.get("enable_newsapi", False)),
+            "forexnewsapi": bool(cfg.get("enable_forexnewsapi", False)),
             "alphavantage": bool(cfg.get("enable_alphavantage", False)),
             "eodhd": bool(cfg.get("enable_eodhd", False)),
         },
@@ -3057,10 +3396,12 @@ def main() -> None:
             "marketwatch": cfg.get("marketwatch_max_items", None),
             "yahoo": cfg.get("yahoo_max_items", None),
             "newsapi": cfg.get("newsapi_max_items", None),
+            "forexnewsapi": cfg.get("forexnewsapi_max_items", 10),
             "alphavantage": cfg.get("alphavantage_max_items", 10),
             "eodhd": cfg.get("eodhd_max_items", 10),
         },
         "newsapi_max_items": cfg.get("newsapi_max_items", None),
+        "forexnewsapi_max_items": cfg.get("forexnewsapi_max_items", 10),
         "llm_enabled": cfg.get("enabled_llm_providers", []),
         "pre_analysis": {
             "enabled": bool(cfg.get("enable_pre_analysis", True)),
@@ -3076,6 +3417,8 @@ def main() -> None:
 
     newsapi_relevance: Optional[Dict[str, Any]] = None
     newsapi_selected_urls: set[str] = set()
+    forexnewsapi_relevance: Optional[Dict[str, Any]] = None
+    forexnewsapi_selected_urls: set[str] = set()
     alphavantage_relevance: Optional[Dict[str, Any]] = None
     alphavantage_selected_urls: set[str] = set()
 
@@ -3114,6 +3457,42 @@ def main() -> None:
             sel = newsapi_relevance.get("selected_urls") if isinstance(newsapi_relevance, dict) else None
             if isinstance(sel, list):
                 newsapi_selected_urls = {u for u in sel if isinstance(u, str) and u}
+
+    # ForexNewsAPI: save content store + DeepSeek relevance/quality (similar to NewsAPI)
+    if asset_type == "currency" and bool(cfg.get("enable_forexnewsapi", False)):
+        base_no_ext, _ = os.path.splitext(output_path)
+        if base_no_ext.endswith("_news"):
+            fxn_content_path = base_no_ext[:-5] + "_forexnewsapi_content.json"
+            fxn_quality_path = base_no_ext[:-5] + "_forexnewsapi_quality.json"
+        else:
+            fxn_content_path = base_no_ext + "_forexnewsapi_content.json"
+            fxn_quality_path = base_no_ext + "_forexnewsapi_quality.json"
+
+        update_forexnewsapi_content_store(asset, fxn_content_path)
+
+        cached = _FOREXNEWSAPI_FULL_CACHE.get(asset)
+        cached_articles = cached.get("articles") if isinstance(cached, dict) else None
+        if isinstance(cached_articles, list) and cached_articles:
+            max_for_relevance = int(cfg.get("forexnewsapi_max_items", 10) or 10)
+            if max_for_relevance <= 0:
+                max_for_relevance = 10
+            forexnewsapi_relevance = run_deepseek_source_relevance(
+                asset=asset,
+                source_name="ForexNewsAPI",
+                articles=cached_articles[:max_for_relevance],
+            )
+            save_source_relevance_json(asset, fxn_quality_path, source_name="ForexNewsAPI", payload=forexnewsapi_relevance)
+
+            counts = forexnewsapi_relevance.get("counts") if isinstance(forexnewsapi_relevance, dict) else None
+            if isinstance(counts, dict):
+                mr = counts.get("most_relevant", 0)
+                r = counts.get("relevant", 0)
+                u = counts.get("unrelated", 0)
+                print(f"[INFO] ForexNewsAPI relevance counts (once): most_relevant={mr}, relevant={r}, unrelated={u}")
+
+            sel = forexnewsapi_relevance.get("selected_urls") if isinstance(forexnewsapi_relevance, dict) else None
+            if isinstance(sel, list):
+                forexnewsapi_selected_urls = {u for u in sel if isinstance(u, str) and u}
 
     # Alpha Vantage: save content store + DeepSeek relevance/quality (similar to NewsAPI)
     if bool(cfg.get("enable_alphavantage", False)):
@@ -3247,6 +3626,16 @@ def main() -> None:
                 selected_urls=newsapi_selected_urls,
             )
             meta["newsapi_selected_urls_for_report"] = sorted(newsapi_selected_urls)
+
+    # ForexNewsAPI: filter only the API-source items (keep other sources).
+    if asset_type == "currency" and bool(cfg.get("enable_forexnewsapi", False)):
+        if forexnewsapi_selected_urls:
+            analysis_news = _filter_api_source_items_by_urls(
+                analysis_news,
+                source_prefix="ForexNewsAPI",
+                selected_urls=forexnewsapi_selected_urls,
+            )
+            meta["forexnewsapi_selected_urls_for_report"] = sorted(forexnewsapi_selected_urls)
 
     if bool(cfg.get("enable_alphavantage", False)) and alphavantage_selected_urls:
         analysis_news = _filter_api_source_items_by_urls(
