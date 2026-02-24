@@ -1,125 +1,129 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-02-22T01:57:35.011618+00:00",
+  "generated_at": "2026-02-24T07:19:25.410533+00:00",
   "pair": "EUR/USD",
   "relevance": {
     "pair": "EUR/USD",
     "counts": {
-      "most_relevant": 1,
-      "relevant": 3,
+      "most_relevant": 0,
+      "relevant": 6,
       "unrelated": 6
     },
     "selected_urls": [
-      "https://economictimes.indiatimes.com/markets/forex/forex-news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128634375.cms",
-      "https://cointelegraph.com/news/what-next-crypto-europe-ecb-christine-lagarde",
-      "https://financialpost.com/pmn/business-pmn/charting-the-global-economy-trumps-tariffs-struck-down-by-supreme-court",
-      "https://japantoday.com/category/world/fears-of-renewed-conflict-haunt-tehran-as-us-issues-threats"
+      "https://www.thedailyupside.com/advisor/investing-strategies/advisors-muscle-up-client-portfolios-as-dollar-weakens/",
+      "https://economictimes.indiatimes.com/markets/forex/dollar-dips-as-trumps-tariff-wall-slips/articleshow/128695099.cms",
+      "https://www.irishtimes.com/business/2026/02/23/wall-st-futures-and-dollar-skid-on-us-tariff-tumult/",
+      "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-asian-shares-hesitant-dollar-slips-amid-tariff-confusion/articleshow/128694314.cms",
+      "https://www.channelnewsasia.com/business/wall-st-futures-dollar-drop-amid-us-tariff-tumult-5946081",
+      "https://www.channelnewsasia.com/business/asia-shahes-hesitant-dollar-slips-amid-tariff-confusion-5946081"
     ],
     "items": [
       {
-        "url": "https://japantoday.com/category/world/fears-of-renewed-conflict-haunt-tehran-as-us-issues-threats",
-        "label": "relevant",
-        "relevance_score": 4,
-        "quality_score": 7,
-        "reasons": [
-          "Focuses on US foreign policy and geopolitical tensions (US-Iran).",
-          "Geopolitical risk can be a driver for the USD as a safe-haven currency.",
-          "No direct mention of EUR, FX, or economic policy."
-        ]
-      },
-      {
-        "url": "https://www.theflightdeal.com/2026/02/21/scandinavian-airlines-miami-tallinn-estonia-460-basic-economy-560-regular-economy-roundtrip-including-all-taxes/",
-        "label": "unrelated",
-        "relevance_score": 0,
-        "quality_score": 3,
-        "reasons": [
-          "Article about airline ticket sales and travel deals.",
-          "No connection to EUR, USD, FX markets, or macroeconomic drivers."
-        ]
-      },
-      {
-        "url": "https://www.theflightdeal.com/2026/02/21/scandinavian-airlines-newark-vilnius-lithuania-385-basic-economy-485-regular-economy-roundtrip-including-all-taxes/",
-        "label": "unrelated",
-        "relevance_score": 0,
-        "quality_score": 3,
-        "reasons": [
-          "Article about airline ticket sales and travel deals.",
-          "No connection to EUR, USD, FX markets, or macroeconomic drivers."
-        ]
-      },
-      {
-        "url": "https://www.theflightdeal.com/2026/02/21/scandinavian-airlines-washington-d-c-tallinn-estonia-450-basic-economy-550-regular-economy-roundtrip-including-all-taxes/",
-        "label": "unrelated",
-        "relevance_score": 0,
-        "quality_score": 3,
-        "reasons": [
-          "Article about airline ticket sales and travel deals.",
-          "No connection to EUR, USD, FX markets, or macroeconomic drivers."
-        ]
-      },
-      {
-        "url": "https://cointelegraph.com/news/what-next-crypto-europe-ecb-christine-lagarde",
+        "url": "https://www.irishtimes.com/business/2026/02/23/wall-st-futures-and-dollar-skid-on-us-tariff-tumult/",
         "label": "relevant",
         "relevance_score": 7,
         "quality_score": 8,
         "reasons": [
-          "Directly discusses the European Central Bank (ECB) and its president.",
-          "Covers ECB policy on digital euro and crypto regulation, key for EUR monetary policy outlook.",
-          "No direct mention of USD or the EUR/USD exchange rate."
+          "Directly discusses USD movement ('dollar slid') due to US tariff news, a key USD driver."
         ]
       },
       {
-        "url": "http://www.newsbtc.com/altcoin/xrp-tipped-as-central-bank-bridge-asset-bigger-than-bitcoin/",
+        "url": "https://economictimes.indiatimes.com/markets/forex/dollar-dips-as-trumps-tariff-wall-slips/articleshow/128695099.cms",
+        "label": "relevant",
+        "relevance_score": 8,
+        "quality_score": 7,
+        "reasons": [
+          "Forex-focused article on USD decline due to US political/tariff developments, a major USD driver."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/23/536297/",
         "label": "unrelated",
         "relevance_score": 1,
         "quality_score": 4,
         "reasons": [
-          "Primarily about cryptocurrency (XRP) speculation.",
-          "Brief, indirect mention of Federal Reserve/Treasury monitoring dollar/yen, but this is a minor detail in a crypto-focused article.",
-          "No substantive analysis of USD or EUR drivers."
+          "Lists Nepal's official USD/NPR and EUR/NPR rates; purely administrative, no analysis of EUR/USD drivers."
         ]
       },
       {
-        "url": "https://financialpost.com/pmn/business-pmn/charting-the-global-economy-trumps-tariffs-struck-down-by-supreme-court",
+        "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-asian-shares-hesitant-dollar-slips-amid-tariff-confusion/articleshow/128694314.cms",
         "label": "relevant",
-        "relevance_score": 6,
+        "relevance_score": 7,
+        "quality_score": 7,
+        "reasons": [
+          "Discusses broad market sentiment and USD movement ('dollar slid') linked to US tariff policy."
+        ]
+      },
+      {
+        "url": "https://www.channelnewsasia.com/business/wall-st-futures-dollar-drop-amid-us-tariff-tumult-5946081",
+        "label": "relevant",
+        "relevance_score": 7,
         "quality_score": 8,
         "reasons": [
-          "Covers major US trade policy (tariffs) and a Supreme Court decision.",
-          "US trade policy is a significant driver for the USD and global risk sentiment.",
-          "Mentions US economic growth and trade data. No direct link to EUR."
+          "Reports on USD decline ('dollar slid') in response to US tariff news, impacting FX sentiment."
         ]
       },
       {
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128638103.cms",
-        "label": "most_relevant",
-        "relevance_score": 9,
-        "quality_score": 7,
+        "url": "https://www.channelnewsasia.com/business/asia-shares-hesitant-dollar-slips-amid-tariff-confusion-5946081",
+        "label": "relevant",
+        "relevance_score": 7,
+        "quality_score": 8,
         "reasons": [
-          "Headline and source (forex news) directly analyze the US Dollar's prospects.",
-          "Analysis of the USD is a primary driver of the EUR/USD pair.",
-          "Appears to be a forex-focused article, making it highly relevant."
+          "Highlights USD weakness ('dollar slips') amid US policy uncertainty, a key FX driver."
         ]
       },
       {
-        "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128634375.cms",
-        "label": "most_relevant",
-        "relevance_score": 9,
-        "quality_score": 7,
-        "reasons": [
-          "Headline and source (forex news) directly analyze the US Dollar's prospects.",
-          "Published in a 'forex' section, confirming its focus on currency markets.",
-          "Analysis of the USD is a primary driver of the EUR/USD pair."
-        ]
-      },
-      {
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/down-not-defeated-is-the-dollar-ready-for-its-comeback/articleshow/128634375.cms",
+        "url": "https://chinaarticles.substack.com/p/the-supreme-court-strikes-down-ieepa",
         "label": "unrelated",
-        "relevance_score": 1,
+        "relevance_score": 2,
         "quality_score": 3,
         "reasons": [
-          "Despite promising headline, the provided snippet is generic stock market boilerplate with no actual content about the USD.",
-          "Appears to be a duplicate/error with no substantive forex analysis in the provided text."
+          "Primarily about US Supreme Court ruling on tariffs (IEEPA) but content appears mixed with non-financial commentary; not focused on FX impact."
+        ]
+      },
+      {
+        "url": "https://www.theflightdeal.com/2026/02/22/air-canada-new-york-lyon-france-415-basic-economy-615-regular-economy-roundtrip-including-all-taxes/",
+        "label": "unrelated",
+        "relevance_score": 1,
+        "quality_score": 2,
+        "reasons": [
+          "Travel deal announcement for flights between US and France; no FX or economic analysis."
+        ]
+      },
+      {
+        "url": "https://www.cbsnews.com/news/face-the-nation-full-transcript-02-22-2026/",
+        "label": "unrelated",
+        "relevance_score": 3,
+        "quality_score": 6,
+        "reasons": [
+          "News transcript may contain trade policy discussion, but not focused on currency markets; relevance to FX is indirect and unspecified."
+        ]
+      },
+      {
+        "url": "https://www.thedailyupside.com/advisor/investing-strategies/advisors-muscle-up-client-portfolios-as-dollar-weakens/",
+        "label": "relevant",
+        "relevance_score": 9,
+        "quality_score": 7,
+        "reasons": [
+          "Explicitly discusses USD weakening and its broad implications for investment portfolios, a core USD driver."
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/jactus/",
+        "label": "unrelated",
+        "relevance_score": 0,
+        "quality_score": 5,
+        "reasons": [
+          "Announcement of a Python finance library; no relation to EUR, USD, or current market events."
+        ]
+      },
+      {
+        "url": "https://english.khabarhub.com/2026/22/536132/",
+        "label": "unrelated",
+        "relevance_score": 1,
+        "quality_score": 4,
+        "reasons": [
+          "Administrative listing of Nepal's USD and EUR exchange rates; no analysis relevant to EUR/USD pair."
         ]
       }
     ]

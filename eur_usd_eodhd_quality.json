@@ -1,133 +1,125 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-02-22T01:53:50.628608+00:00",
+  "generated_at": "2026-02-24T07:20:17.368183+00:00",
   "asset": "EUR/USD",
   "source": "EODHD",
   "relevance": {
     "pair": "EUR/USD",
     "counts": {
-      "most_relevant": 4,
-      "relevant": 5,
-      "unrelated": 1
+      "most_relevant": 5,
+      "relevant": 3,
+      "unrelated": 2
     },
     "selected_urls": [
-      "https://www.fxstreet.com/news/eur-usd-holds-ground-as-weak-us-gdp-clashes-with-firm-inflation-data-202602201445",
-      "https://www.fxstreet.com/news/eur-usd-january-rally-unwinds-on-ecb-risks-mufg-202602201124",
-      "https://www.fxstreet.com/news/eur-usd-downside-risk-to-1160-on-oil-shock-ing-202602200808",
-      "https://www.fxstreet.com/news/when-is-the-us-flash-sp-global-pmi-data-and-how-could-it-affect-eur-usd-202602201225",
-      "https://www.fxstreet.com/news/euro-area-pmi-recovery-supports-moderate-growth-commerzbank-202602201426",
-      "https://finance.yahoo.com/m/79cf2aca-89af-35a9-b4b9-331211bb1548/treasury-yields-oscillate-as.html",
-      "https://www.fxstreet.com/news/ecb-euro-areas-negotiated-wages-rise-295-yoy-in-q4-vs-189-in-q3-202602201005",
-      "https://finance.yahoo.com/m/41bfd491-ff8b-3766-a76f-43064bc5f30a/exclusive-%7C-lagarde-says-her.html",
-      "https://www.fxstreet.com/news/eur-gbp-weakens-as-robust-uk-data-outweigh-upbeat-eurozone-pmi-readings-202602201224"
+      "https://www.fxstreet.com/news/eur-usd-price-forecast-bears-flirt-with-618-fibo-support-near-11775-area-202602240448",
+      "https://www.fxstreet.com/news/eur-usd-gains-traction-to-near-11800-as-tariff-uncertainty-weighs-on-us-dollar-202602240040",
+      "https://www.fxstreet.com/news/eur-usd-bearish-dollar-view-to-lift-pair-toward-122-ing-202602231421",
+      "https://www.fxstreet.com/news/eur-usd-trims-intraday-gains-holds-above-11800-as-german-ifo-survey-fails-to-inspire-202602230909",
+      "https://www.fxstreet.com/news/euro-area-inflation-risks-tilt-higher-beyond-2026-nomura-202602231408",
+      "https://www.fxstreet.com/news/eur-gbp-softens-below-08750-on-trade-uncertainty-202602240621",
+      "https://www.fxstreet.com/news/eur-jpy-price-forecast-remains-above-nine-day-ema-near-18250-202602240247",
+      "https://www.fxstreet.com/news/eur-jpy-trades-lower-as-investors-await-eurozone-inflation-boj-rate-signals-202602231459"
     ],
     "items": [
       {
-        "url": "https://www.fxstreet.com/news/eur-usd-holds-ground-as-weak-us-gdp-clashes-with-firm-inflation-data-202602201445",
+        "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-bears-flirt-with-618-fibo-support-near-11775-area-202602240448",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly about EUR/USD pair price action and forecast.",
+          "Explicitly mentions pair, price levels, and USD strength as driver."
+        ]
+      },
+      {
+        "url": "https://www.fxstreet.com/news/eur-usd-gains-traction-to-near-11800-as-tariff-uncertainty-weighs-on-us-dollar-202602240040",
+        "label": "most_relevant",
+        "relevance_score": 10,
+        "quality_score": 8,
+        "reasons": [
+          "Directly about EUR/USD pair price action.",
+          "Explicitly links USD weakness (from tariff uncertainty) to pair movement.",
+          "Mentions upcoming US PPI data as a key driver."
+        ]
+      },
+      {
+        "url": "https://www.fxstreet.com/news/eur-usd-bearish-dollar-view-to-lift-pair-toward-122-ing-202602231421",
         "label": "most_relevant",
         "relevance_score": 10,
         "quality_score": 9,
         "reasons": [
-          "Directly about EUR/USD pair",
-          "Discusses specific price levels and drivers (US GDP, inflation)",
-          "High-quality FX analysis"
+          "Directly about EUR/USD pair forecast from a major bank.",
+          "Explicitly discusses fundamental drivers for both currencies (US rates, growth)."
         ]
       },
       {
-        "url": "https://www.fxstreet.com/news/eur-usd-january-rally-unwinds-on-ecb-risks-mufg-202602201124",
+        "url": "https://www.fxstreet.com/news/eur-usd-trims-intraday-gains-holds-above-11800-as-german-ifo-survey-fails-to-inspire-202602230909",
         "label": "most_relevant",
         "relevance_score": 10,
-        "quality_score": 8,
-        "reasons": [
-          "Directly about EUR/USD pair",
-          "Analyzes price movement and ECB drivers",
-          "Institutional research perspective"
-        ]
-      },
-      {
-        "url": "https://www.fxstreet.com/news/eur-usd-downside-risk-to-1160-on-oil-shock-ing-202602200808",
-        "label": "most_relevant",
-        "relevance_score": 10,
-        "quality_score": 8,
-        "reasons": [
-          "Directly about EUR/USD pair",
-          "Provides specific price target and driver analysis (oil shock)",
-          "Institutional research perspective"
-        ]
-      },
-      {
-        "url": "https://www.fxstreet.com/news/when-is-the-us-flash-sp-global-pmi-data-and-how-could-it-affect-eur-usd-202602201225",
-        "label": "most_relevant",
-        "relevance_score": 9,
         "quality_score": 7,
         "reasons": [
-          "Explicitly about how US data will affect EUR/USD",
-          "Event preview for key FX driver",
-          "Directly links US data to pair impact"
+          "Directly about EUR/USD pair price action.",
+          "Links Eurozone data (German IFO) to pair movement."
         ]
       },
       {
-        "url": "https://www.fxstreet.com/news/euro-area-pmi-recovery-supports-moderate-growth-commerzbank-202602201426",
-        "label": "relevant",
-        "relevance_score": 8,
+        "url": "https://www.fxstreet.com/news/euro-area-inflation-risks-tilt-higher-beyond-2026-nomura-202602231408",
+        "label": "most_relevant",
+        "relevance_score": 9,
         "quality_score": 8,
         "reasons": [
-          "Eurozone-only economic data (PMI)",
-          "Key driver for EUR value",
-          "Institutional analysis"
+          "Directly about a key Eurozone inflation outlook from a major bank.",
+          "Eurozone inflation is a primary driver for ECB policy and the EUR, a core component of EUR/USD."
         ]
       },
       {
-        "url": "https://finance.yahoo.com/m/79cf2aca-89af-35a9-b4b9-331211bb1548/treasury-yields-oscillate-as.html",
-        "label": "relevant",
-        "relevance_score": 8,
-        "quality_score": 6,
-        "reasons": [
-          "US-only economic data (GDP, inflation)",
-          "Key driver for USD via Treasury yields",
-          "Limited content preview"
-        ]
-      },
-      {
-        "url": "https://www.fxstreet.com/news/ecb-euro-areas-negotiated-wages-rise-295-yoy-in-q4-vs-189-in-q3-202602201005",
+        "url": "https://www.fxstreet.com/news/eur-gbp-softens-below-08750-on-trade-uncertainty-202602240621",
         "label": "relevant",
         "relevance_score": 7,
         "quality_score": 7,
         "reasons": [
-          "Eurozone-only data (wages)",
-          "Key ECB policy input affecting EUR",
-          "Direct from central bank source"
+          "EUR-only news (Euro weakness).",
+          "The driver (global trade concerns, US tariff measures) is also a major USD driver, making it indirectly relevant to EUR/USD."
         ]
       },
       {
-        "url": "https://finance.yahoo.com/m/41bfd491-ff8b-3766-a76f-43064bc5f30a/exclusive-%7C-lagarde-says-her.html",
+        "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-remains-above-nine-day-ema-near-18250-202602240247",
         "label": "relevant",
         "relevance_score": 6,
         "quality_score": 6,
         "reasons": [
-          "ECB leadership news affecting EUR policy outlook",
-          "Political stability factor for EUR",
-          "Limited content preview"
+          "EUR-cross pair analysis (EUR/JPY).",
+          "Provides insight into Euro dynamics via a major cross, relevant for understanding broader EUR sentiment."
         ]
       },
       {
-        "url": "https://www.fxstreet.com/news/eur-gbp-weakens-as-robust-uk-data-outweigh-upbeat-eurozone-pmi-readings-202602201224",
+        "url": "https://www.fxstreet.com/news/eur-jpy-trades-lower-as-investors-await-eurozone-inflation-boj-rate-signals-202602231459",
         "label": "relevant",
+        "relevance_score": 6,
+        "quality_score": 6,
         "reasons": [
-          "Discusses EUR performance in EUR/GBP context",
-          "Contains Eurozone PMI data affecting EUR",
-          "Indirect EUR driver analysis"
+          "EUR-cross pair analysis (EUR/JPY).",
+          "Mentions anticipation of Eurozone inflation data, a key EUR driver."
         ]
       },
       {
-        "url": "https://www.fxstreet.com/news/eur-jpy-climbs-on-eurozone-growth-easing-japanese-inflation-202602201043",
+        "url": "https://www.fxstreet.com/news/eur-gbp-trades-sideways-as-investors-await-eurozone-cpi-and-german-gdp-202602231242",
         "label": "unrelated",
-        "relevance_score": 2,
-        "quality_score": 7,
+        "relevance_score": 3,
+        "quality_score": 5,
         "reasons": [
-          "About EUR/JPY pair, not EUR/USD",
-          "Eurozone data mentioned but for different currency pair",
-          "No direct USD or EUR/USD linkage"
+          "Primarily about EUR/GBP cross with no explicit link to USD or EUR/USD.",
+          "Mentioned Eurozone data is generic and not analyzed for EUR/USD impact."
+        ]
+      },
+      {
+        "url": "https://www.fxstreet.com/news/eur-huf-forint-carry-to-face-nbh-test-ing-202602231557",
+        "label": "unrelated",
+        "relevance_score": 1,
+        "quality_score": 5,
+        "reasons": [
+          "Focus is on a minor EUR cross (EUR/HUF) and Hungarian central bank policy.",
+          "No connection to USD or broader EUR/USD drivers."
         ]
       }
     ]

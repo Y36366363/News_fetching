@@ -942,6 +942,203 @@ def fetch_forexnewsapi_fx_pair(
 
 
 # ---------------------------------------------------------------------------
+# Financial Modeling Prep (FMP) - API source
+# Docs:
+# - https://site.financialmodelingprep.com/developer/docs/stable/forex-news
+# - https://site.financialmodelingprep.com/developer/docs/stable/search-forex-news
+# ---------------------------------------------------------------------------
+
+_FMP_FULL_CACHE: Dict[str, Dict[str, Any]] = {}
+
+
+def _make_fmp_key() -> Optional[str]:
+    key = (
+        os.getenv("FMP_API_KEY")
+        or os.getenv("FMP_KEY")
+        or os.getenv("FINANCIAL_MODELING_PREP_API_KEY")
+    )
+    if not key:
+        debug_log("[WARN] FMP_API_KEY not set; FMP source will be skipped.")
+        return None
+    return key
+
+
+def _fmp_symbol_for_fx_pair(pair: str) -> str:
+    pair = normalize_fx_pair(pair)
+    parts = pair.replace(" ", "").upper().split("/")
+    base = parts[0] if len(parts) > 0 else pair.upper()
+    quote = parts[1] if len(parts) > 1 else ""
+    return f"{base}{quote}" if quote else base
+
+
+def _parse_fmp_published(value: object) -> Optional[datetime]:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    text = value.strip()
+    dt = parse_iso_like_datetime(text)
+    if isinstance(dt, datetime):
+        return dt
+    try:
+        dt2 = date_parser.parse(text)
+        if dt2.tzinfo is None:
+            dt2 = dt2.replace(tzinfo=timezone.utc)
+        else:
+            dt2 = dt2.astimezone(timezone.utc)
+        return dt2
+    except Exception:
+        return None
+
+
+def fetch_fmp_fx_pair(
+    pair: str,
+    start_date: Optional[date],
+    end_date: Optional[date],
+    max_items: Optional[int] = None,
+) -> List[Dict[str, Any]]:
+    """
+    Fetch FX news from Financial Modeling Prep.
+
+    Preferred endpoint (symbol search):
+      https://financialmodelingprep.com/stable/news/forex?symbols=EURUSD&apikey=...
+
+    Fallback endpoint (latest feed; then filter by symbol if present):
+      https://financialmodelingprep.com/stable/news/forex-latest?page=0&limit=20&apikey=...
+    """
+    key = _make_fmp_key()
+    if not key:
+        return []
+
+    symbol = _fmp_symbol_for_fx_pair(pair)
+    lim = max_items if isinstance(max_items, int) and max_items > 0 else 20
+    lim = min(lim, 250)  # FMP docs often cap to 250/req on latest feeds
+
+    print(f"\n[INFO] Fetching FMP forex news ({pair})...")
+
+    def _get_json(url: str, params: Dict[str, Any]) -> Tuple[Optional[object], Optional[str]]:
+        try:
+            resp = requests.get(url, params=params, headers=HEADERS, timeout=25)
+            # FMP returns 402 with plaintext 'Restricted Endpoint...' (not JSON).
+            if resp.status_code == 402:
+                return None, (resp.text or "").strip() or "Restricted Endpoint (402)"
+            resp.raise_for_status()
+            ct = resp.headers.get("content-type", "")
+            if "application/json" not in ct:
+                # Some errors are plaintext even with 200.
+                text = (resp.text or "").strip()
+                return None, text[:500] if text else "Non-JSON response"
+            return resp.json(), None
+        except Exception as exc:
+            return None, str(exc)
+
+    # 1) Try symbol-based search endpoint.
+    data, err = _get_json(
+        "https://financialmodelingprep.com/stable/news/forex",
+        {"symbols": symbol, "apikey": key},
+    )
+
+    # 2) Fallback to latest feed if restricted or invalid.
+    if data is None:
+        if err:
+            print(f"[WARN] FMP forex endpoint unavailable: {err}")
+        data, err2 = _get_json(
+            "https://financialmodelingprep.com/stable/news/forex-latest",
+            {"page": 0, "limit": lim, "apikey": key},
+        )
+        if data is None:
+            if err2:
+                debug_log(f"[WARN] FMP forex-latest unavailable: {err2}")
+            # Cache empty so the store updater can still run without crashing.
+            _FMP_FULL_CACHE[pair] = {
+                "schema_version": 1,
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "pair": pair,
+                "request": {"endpoint": "(unavailable)", "params": {"symbols": symbol}},
+                "articles": [],
+            }
+            print("[INFO] FMP items collected: 0")
+            return []
+
+    feed: List[Dict[str, Any]] = []
+    if isinstance(data, list):
+        feed = [x for x in data if isinstance(x, dict)]
+    elif isinstance(data, dict) and isinstance(data.get("data"), list):
+        feed = [x for x in data.get("data") if isinstance(x, dict)]
+
+    seen_urls: set[str] = set()
+    items: List[Dict[str, Any]] = []
+    cached_articles: List[Dict[str, Any]] = []
+
+    for a in feed:
+        title = (a.get("title") or a.get("headline") or "").strip()
+        url = (a.get("url") or a.get("news_url") or a.get("link") or "").strip()
+        if not title or not url or url in seen_urls:
+            continue
+        seen_urls.add(url)
+
+        published_val = a.get("publishedDate") or a.get("publishedAt") or a.get("date")
+        published_dt = _parse_fmp_published(published_val)
+        if not within_date_range(published_dt, start_date, end_date):
+            continue
+
+        # If using latest feed, try to keep only relevant symbol when present.
+        sym = (a.get("symbol") or a.get("symbols") or "").strip() if isinstance(a.get("symbol") or a.get("symbols"), str) else ""
+        if sym and symbol not in sym.replace("/", "").replace("-", "").upper():
+            # Some feeds may include non-FX symbols; skip if clearly not matching.
+            pass
+
+        site = (a.get("site") or a.get("source") or a.get("source_name") or "").strip()
+        text = (a.get("text") or a.get("content") or a.get("description") or "").strip()
+
+        source_label = f"FMP: {site}" if site else "FMP"
+        items.append(
+            {
+                "source": source_label,
+                "currency_pair": pair,
+                "asset_type": "currency",
+                "title": title,
+                "url": url,
+                "published_dt": published_dt,
+                "snippet": text[:600],
+            }
+        )
+
+        cached_articles.append(
+            {
+                "url": url,
+                "source": site or source_label,
+                "publishedAt": (
+                    published_dt.astimezone(timezone.utc).isoformat()
+                    if isinstance(published_dt, datetime)
+                    else (published_val.strip() if isinstance(published_val, str) else "")
+                ),
+                "title": title,
+                "content": text[:1200],
+                "symbol": sym or symbol,
+                "image": a.get("image") or a.get("image_url"),
+            }
+        )
+
+        if isinstance(max_items, int) and max_items > 0 and len(items) >= max_items:
+            break
+
+    # Cache run payload (without apikey).
+    try:
+        _FMP_FULL_CACHE[pair] = {
+            "schema_version": 1,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "pair": pair,
+            "request": {
+                "endpoint": "https://financialmodelingprep.com/stable/news/forex",
+                "params": {"symbols": symbol, "limit": lim},
+            },
+            "articles": cached_articles,
+        }
+    except Exception:
+        pass
+
+    print(f"[INFO] FMP items collected: {len(items)}")
+    return items
+# ---------------------------------------------------------------------------
 # Alpha Vantage (API source)
 # ---------------------------------------------------------------------------
 
@@ -1747,6 +1944,72 @@ def update_forexnewsapi_content_store(pair: str, path: str) -> Dict[str, Any]:
 
     return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path}
 
+
+def update_fmp_content_store(pair: str, path: str) -> Dict[str, Any]:
+    """
+    Append-only content store for FMP forex news, de-duplicated by URL.
+    Stores: source, title, url, publishedAt, content (single line).
+    """
+    payload = _FMP_FULL_CACHE.get(pair)
+    if not isinstance(payload, dict):
+        return {"total": 0, "added": 0, "skipped_existing": 0, "path": path, "error": "No cached FMP payload for this run."}
+
+    cached_articles = payload.get("articles")
+    if not isinstance(cached_articles, list):
+        cached_articles = []
+
+    existing_raw = _load_json_file_best_effort(path)
+    existing_articles: List[Dict[str, Any]] = []
+    if isinstance(existing_raw, list):
+        existing_articles = [a for a in existing_raw if isinstance(a, dict)]
+    elif isinstance(existing_raw, dict) and isinstance(existing_raw.get("articles"), list):
+        existing_articles = [a for a in existing_raw["articles"] if isinstance(a, dict)]
+
+    existing_urls = {
+        a.get("url") for a in existing_articles if isinstance(a.get("url"), str) and a.get("url")
+    }
+
+    added = 0
+    skipped = 0
+    new_articles: List[Dict[str, Any]] = []
+
+    for a in cached_articles:
+        if not isinstance(a, dict):
+            continue
+        url = (a.get("url") or "").strip() if isinstance(a.get("url"), str) else ""
+        if not url:
+            continue
+        if url in existing_urls:
+            skipped += 1
+            continue
+
+        title = (a.get("title") or "").strip()
+        published_at = a.get("publishedAt") or ""
+        content = _normalize_single_line(a.get("content") or "")
+        source = (a.get("source") or "fmp").strip() if isinstance(a.get("source"), str) else "fmp"
+
+        new_articles.append(
+            {
+                "source": source,
+                "title": title,
+                "url": url,
+                "publishedAt": published_at,
+                "content": content,
+            }
+        )
+        existing_urls.add(url)
+        added += 1
+
+    merged = existing_articles + new_articles
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(merged, f, ensure_ascii=False, indent=2)
+        print(f"[INFO] Updated FMP content store: added {added}, total {len(merged)} -> {path!r}")
+    except Exception as exc:
+        return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path, "error": str(exc)}
+
+    return {"total": len(merged), "added": added, "skipped_existing": skipped, "path": path}
+
 def _filter_api_source_items_by_urls(
     news: List["NewsItem"],
     *,
@@ -2033,6 +2296,8 @@ def collect_news_for_pair(
     newsapi_max_items: Optional[int] = None,
     enable_forexnewsapi: bool = False,
     forexnewsapi_max_items: Optional[int] = None,
+    enable_fmp: bool = False,
+    fmp_max_items: Optional[int] = None,
     enable_alphavantage: bool = False,
     alphavantage_max_items: Optional[int] = None,
     enable_eodhd: bool = False,
@@ -2151,7 +2416,26 @@ def collect_news_for_pair(
             if remaining is not None:
                 remaining = max(0, remaining - added)
 
-    # 6) Alpha Vantage NEWS_SENTIMENT (optional API source)
+    # 6) FMP (optional API source)
+    if enable_fmp:
+        cap = fmp_max_items if isinstance(fmp_max_items, int) else None
+        fmp_items = fetch_fmp_fx_pair(
+            pair=pair,
+            start_date=start_date,
+            end_date=end_date,
+            max_items=cap,
+        )
+        if remaining is None or remaining > 0:
+            before = len(raw_items)
+            if remaining is None:
+                raw_items.extend(fmp_items)
+            else:
+                raw_items.extend(fmp_items[:remaining])
+            added = len(raw_items) - before
+            if remaining is not None:
+                remaining = max(0, remaining - added)
+
+    # 7) Alpha Vantage NEWS_SENTIMENT (optional API source)
     if enable_alphavantage and (remaining is None or remaining > 0):
         cap = (
             alphavantage_max_items
@@ -2173,7 +2457,7 @@ def collect_news_for_pair(
         if remaining is not None:
             remaining = max(0, remaining - added)
 
-    # 7) EODHD News API (optional API source)
+    # 8) EODHD News API (optional API source)
     if enable_eodhd and (remaining is None or remaining > 0):
         cap = eodhd_max_items if isinstance(eodhd_max_items, int) and eodhd_max_items > 0 else 10
         before = len(raw_items)
@@ -2493,6 +2777,8 @@ def load_default_config() -> Dict[str, object]:
             "newsapi_max_items": None,
             "enable_forexnewsapi": False,
             "forexnewsapi_max_items": 3,
+            "enable_fmp": False,
+            "fmp_max_items": 20,
             "enable_alphavantage": False,
             "alphavantage_max_items": 10,
             "enable_eodhd": False,
@@ -2525,6 +2811,8 @@ def load_default_config() -> Dict[str, object]:
             "newsapi_max_items": None,
             "enable_forexnewsapi": False,
             "forexnewsapi_max_items": 3,
+            "enable_fmp": False,
+            "fmp_max_items": 20,
             "enable_alphavantage": False,
             "alphavantage_max_items": 10,
             "enable_eodhd": False,
@@ -2558,6 +2846,7 @@ def load_default_config() -> Dict[str, object]:
         yahoo_max_items = None
     enable_newsapi = bool(data.get("enable_newsapi", False))
     enable_forexnewsapi = bool(data.get("enable_forexnewsapi", False))
+    enable_fmp = bool(data.get("enable_fmp", False))
     enable_alphavantage = bool(data.get("enable_alphavantage", False))
     enable_eodhd = bool(data.get("enable_eodhd", False))
     enable_pre_analysis = bool(data.get("enable_pre_analysis", True))
@@ -2570,6 +2859,10 @@ def load_default_config() -> Dict[str, object]:
     forexnewsapi_max_items = data.get("forexnewsapi_max_items", 3)
     if not (isinstance(forexnewsapi_max_items, int) and forexnewsapi_max_items > 0):
         forexnewsapi_max_items = 3
+
+    fmp_max_items = data.get("fmp_max_items", 20)
+    if not (isinstance(fmp_max_items, int) and fmp_max_items > 0):
+        fmp_max_items = 20
     alphavantage_max_items = data.get("alphavantage_max_items", 10)
     if not (isinstance(alphavantage_max_items, int) and alphavantage_max_items > 0):
         alphavantage_max_items = 10
@@ -2617,6 +2910,8 @@ def load_default_config() -> Dict[str, object]:
         "newsapi_max_items": newsapi_max_items,
         "enable_forexnewsapi": enable_forexnewsapi,
         "forexnewsapi_max_items": forexnewsapi_max_items,
+        "enable_fmp": enable_fmp,
+        "fmp_max_items": fmp_max_items,
         "enable_alphavantage": enable_alphavantage,
         "alphavantage_max_items": alphavantage_max_items,
         "enable_eodhd": enable_eodhd,
@@ -3353,6 +3648,8 @@ def main() -> None:
             newsapi_max_items=cfg.get("newsapi_max_items", None),
             enable_forexnewsapi=bool(cfg.get("enable_forexnewsapi", False)),
             forexnewsapi_max_items=cfg.get("forexnewsapi_max_items", 10),
+            enable_fmp=bool(cfg.get("enable_fmp", False)),
+            fmp_max_items=cfg.get("fmp_max_items", 20),
             enable_alphavantage=bool(cfg.get("enable_alphavantage", False)),
             alphavantage_max_items=cfg.get("alphavantage_max_items", 10),
             enable_eodhd=bool(cfg.get("enable_eodhd", False)),
@@ -3388,6 +3685,7 @@ def main() -> None:
             "yahoo": bool(cfg.get("enable_yahoo", True)),
             "newsapi": bool(cfg.get("enable_newsapi", False)),
             "forexnewsapi": bool(cfg.get("enable_forexnewsapi", False)),
+            "fmp": bool(cfg.get("enable_fmp", False)),
             "alphavantage": bool(cfg.get("enable_alphavantage", False)),
             "eodhd": bool(cfg.get("enable_eodhd", False)),
         },
@@ -3397,11 +3695,13 @@ def main() -> None:
             "yahoo": cfg.get("yahoo_max_items", None),
             "newsapi": cfg.get("newsapi_max_items", None),
             "forexnewsapi": cfg.get("forexnewsapi_max_items", 10),
+            "fmp": cfg.get("fmp_max_items", 20),
             "alphavantage": cfg.get("alphavantage_max_items", 10),
             "eodhd": cfg.get("eodhd_max_items", 10),
         },
         "newsapi_max_items": cfg.get("newsapi_max_items", None),
         "forexnewsapi_max_items": cfg.get("forexnewsapi_max_items", 10),
+        "fmp_max_items": cfg.get("fmp_max_items", 20),
         "llm_enabled": cfg.get("enabled_llm_providers", []),
         "pre_analysis": {
             "enabled": bool(cfg.get("enable_pre_analysis", True)),
@@ -3419,6 +3719,8 @@ def main() -> None:
     newsapi_selected_urls: set[str] = set()
     forexnewsapi_relevance: Optional[Dict[str, Any]] = None
     forexnewsapi_selected_urls: set[str] = set()
+    fmp_relevance: Optional[Dict[str, Any]] = None
+    fmp_selected_urls: set[str] = set()
     alphavantage_relevance: Optional[Dict[str, Any]] = None
     alphavantage_selected_urls: set[str] = set()
 
@@ -3493,6 +3795,42 @@ def main() -> None:
             sel = forexnewsapi_relevance.get("selected_urls") if isinstance(forexnewsapi_relevance, dict) else None
             if isinstance(sel, list):
                 forexnewsapi_selected_urls = {u for u in sel if isinstance(u, str) and u}
+
+    # FMP: save content store + DeepSeek relevance/quality (similar to NewsAPI)
+    if asset_type == "currency" and bool(cfg.get("enable_fmp", False)):
+        base_no_ext, _ = os.path.splitext(output_path)
+        if base_no_ext.endswith("_news"):
+            fmp_content_path = base_no_ext[:-5] + "_fmp_content.json"
+            fmp_quality_path = base_no_ext[:-5] + "_fmp_quality.json"
+        else:
+            fmp_content_path = base_no_ext + "_fmp_content.json"
+            fmp_quality_path = base_no_ext + "_fmp_quality.json"
+
+        update_fmp_content_store(asset, fmp_content_path)
+
+        cached = _FMP_FULL_CACHE.get(asset)
+        cached_articles = cached.get("articles") if isinstance(cached, dict) else None
+        if isinstance(cached_articles, list) and cached_articles:
+            max_for_relevance = int(cfg.get("fmp_max_items", 20) or 20)
+            if max_for_relevance <= 0:
+                max_for_relevance = 20
+            fmp_relevance = run_deepseek_source_relevance(
+                asset=asset,
+                source_name="FMP",
+                articles=cached_articles[:max_for_relevance],
+            )
+            save_source_relevance_json(asset, fmp_quality_path, source_name="FMP", payload=fmp_relevance)
+
+            counts = fmp_relevance.get("counts") if isinstance(fmp_relevance, dict) else None
+            if isinstance(counts, dict):
+                mr = counts.get("most_relevant", 0)
+                r = counts.get("relevant", 0)
+                u = counts.get("unrelated", 0)
+                print(f"[INFO] FMP relevance counts (once): most_relevant={mr}, relevant={r}, unrelated={u}")
+
+            sel = fmp_relevance.get("selected_urls") if isinstance(fmp_relevance, dict) else None
+            if isinstance(sel, list):
+                fmp_selected_urls = {u for u in sel if isinstance(u, str) and u}
 
     # Alpha Vantage: save content store + DeepSeek relevance/quality (similar to NewsAPI)
     if bool(cfg.get("enable_alphavantage", False)):
@@ -3636,6 +3974,14 @@ def main() -> None:
                 selected_urls=forexnewsapi_selected_urls,
             )
             meta["forexnewsapi_selected_urls_for_report"] = sorted(forexnewsapi_selected_urls)
+
+    if bool(cfg.get("enable_fmp", False)) and fmp_selected_urls:
+        analysis_news = _filter_api_source_items_by_urls(
+            analysis_news,
+            source_prefix="FMP",
+            selected_urls=fmp_selected_urls,
+        )
+        meta["fmp_selected_urls_for_report"] = sorted(fmp_selected_urls)
 
     if bool(cfg.get("enable_alphavantage", False)) and alphavantage_selected_urls:
         analysis_news = _filter_api_source_items_by_urls(

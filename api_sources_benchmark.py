@@ -778,7 +778,7 @@ def append_jsonl(path: str, obj: Dict[str, Any]) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Benchmark API FX news sources (NewsAPI / AlphaVantage / EODHD).")
+    p = argparse.ArgumentParser(description="Benchmark API FX news sources (NewsAPI / ForexNewsAPI / AlphaVantage / EODHD).")
     p.add_argument(
         "--pairs",
         type=str,

@@ -1,3 +1,6 @@
+Updates 2/24/2026
+1. Added a new news collecting source "FMP api", with valid api key prepared in .env, it may work for news searching tool but it is not currently available at news quality tool. Since I do not have a valid api key now, I have not tested it successfully already.
+
 Updates 2/23/2026
 1. Added the new fx pair: AUD/CAD, now the tool has 7 fx pairs in total and if AUC/CAD pair is needed to be analyzed, you can change the settings in the default_config.json.
 2. Added a new news collecting source "Forex api", if you have a valid api key, please fill it with your key in .env and set up the "enabled" variable in default_config.json and then you can start to use Forex api as well.
